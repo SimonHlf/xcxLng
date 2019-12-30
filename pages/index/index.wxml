@@ -1,2 +1,2 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<image src="../../images/lng.jpg" style="width:88rpx;height:88rpx;"></image>
