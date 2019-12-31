@@ -1,0 +1,63 @@
+@import './fonts/iconfont.wxss';
+/*清浮动*/
+.clearfix{zoom:1;}
+.clearfix:after{content:"";display:block;clear:both;}
+/* 多余文字...显示（单行） */
+.ellip{
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+/* 多余文字...显示（多行） */
+.multiEllip{
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-box-orient: vertical;
+}
+.blockA{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.triangle{
+	width: 0px;
+	height: 0px;
+	border-width: 11rpx;
+}
+.triTop{
+	border-style: solid dashed dashed dashed;
+	border-color:#c8c8c8 transparent transparent transparent ;
+}
+.lngAnim{
+	-webkit-animation-duration:.3s;
+	animation-duration:.3s;
+	-webkit-animation-fill-mode:both;
+	animation-fill-mode:both;
+}
+@-webkit-keyframes lngAnim-upbit {
+		from {
+		-webkit-transform:translate3d(0,30px,0);
+		opacity:.3
+	}
+	to {
+		-webkit-transform:translate3d(0,0,0);
+		opacity:1
+	}
+}
+@keyframes lngAnim-upbit {
+	from {
+		transform:translate3d(0,30px,0);
+		opacity:.3
+	}
+	to {
+		transform:translate3d(0,0,0);
+		opacity:1
+	}
+}
+.lngAnim-anim-upbit {
+	-webkit-animation-name:lngAnim-upbit;
+	animation-name:lngAnim-upbit
+}

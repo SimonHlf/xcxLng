@@ -1,0 +1,149 @@
+page{
+	background: #efefef;
+}
+.header{
+	height:220rpx;
+	position: relative;
+}
+.header image,
+.header .userInfo,
+.header .noLoginState{
+	width: 100%;
+	height: 220rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.header image{
+	z-index: 1;
+}
+.header .userInfo,
+.header .noLoginState{
+	z-index: 2;
+	padding: 0 30rpx;
+}
+.userImg,
+.noLoginImg{
+	width:120rpx;
+	height: 120rpx;
+	border-radius: 50%;
+	float: left;
+	margin-top: 40rpx;
+}
+.userImg{
+	background: #fff;
+}
+.noLoginImg{
+	background: #efefef;
+	text-align: center;
+	line-height: 120rpx;
+}
+.userInfoTxt{
+	float: left;
+	height: 120rpx;
+	margin:40rpx 0 0 15rpx;
+}
+.userName{
+	height: 60rpx;
+	line-height: 60rpx;
+	color: #fff;
+	font-size: 30rpx;
+}
+.editInfoBtn{
+	width: 198rpx;
+	height: 38rpx;
+	line-height: 38rpx;
+	border:1rpx solid #d8e5fb;
+	border-radius: 4rpx;
+	display: block;
+	color: #cbddf9;
+	font-size: 24rpx;
+}
+.editInfoBtn i{
+	font-size: 24rpx;
+	margin:0 10rpx 0 10rpx;
+}
+.noLoginImg i{
+	color: #dddddd;
+	font-size: 60rpx;
+}
+.goLogin{
+	float: left;
+	margin-left: 15rpx;
+	margin-top: 40rpx;
+	line-height: 120rpx;
+	font-size: 30rpx;
+	color:#fff;
+}
+.mineNav,
+.mineItem{
+	padding: 0 30rpx;
+}
+.innerMineNav{
+	background: #fff;
+	height: 120rpx;
+	margin-top: -26rpx;
+	position: relative;
+	z-index: 2;
+	border-radius: 8rpx;
+	margin-bottom: 20rpx;
+}
+.innerMineNav .mineNavItem{
+	width: 50%;
+	height: 100%;
+	float: left;
+	position: relative;
+	font-size: 26rpx;
+	color: #121212;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.innerMineNav .mineNavItem .lineView{
+	width: 1px;
+	height: 70rpx;
+	background: #efefef;
+	position: absolute;
+	right: 10rpx;
+	top: 28rpx;
+	z-index: 10;
+}
+.innerMineNav .mineNavItem image{
+	width: 60rpx;
+	height: 60rpx;
+	margin-right: 15rpx;
+}
+.innerMineItem{
+	background: #fff;
+	height:180rpx;
+	border-radius: 8rpx;
+	padding: 0 15rpx;
+}
+.innerMineItem .mineItemTit{
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	font-weight: 620;
+}
+.mineItemWrap{
+	height:120rpx;
+}
+.mineItemWrap .listItem{
+	width: 25%;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+.mineItemWrap .listItem image{
+	width: 60rpx;
+	height: 60rpx;
+	margin-top: 10rpx;
+}
+.mineItemWrap .listItem text{
+	font-size: 26rpx;
+	color: #606060;
+	display: block;
+}
+.hasMargBot{
+	margin-bottom: 20rpx;
+}

@@ -1,12 +1,53 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/rqMaoyi/index",
+    "pages/mine/index",
+    "pages/index/index",
+    "pages/lngHq/index",
+    "pages/msg/index",
+    "pages/autorLogin/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "燃气之家",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#606060",
+    "selectedColor": "#3c7de9",
+    "list": [
+      {
+        "pagePath": "pages/lngHq/index",
+        "text": "行情",
+        "iconPath": "images/tabIcon/hangqing.png",
+        "selectedIconPath": "images/tabIcon/hangqing_sel.png"
+      },
+      {
+        "pagePath": "pages/rqMaoyi/index",
+        "text": "贸易",
+        "iconPath": "images/tabIcon/maoyi.png",
+        "selectedIconPath": "images/tabIcon/maoyi_sel.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabIcon/index.png",
+        "selectedIconPath": "images/tabIcon/index_sel.png"
+      },
+      {
+        "pagePath": "pages/msg/index",
+        "text": "消息",
+        "iconPath": "images/tabIcon/msg.png",
+        "selectedIconPath": "images/tabIcon/msg_sel.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "images/tabIcon/mine.png",
+        "selectedIconPath": "images/tabIcon/mine_sel.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,90 @@
+<view class="header">
+	<image src="../../images/mine.png"></image>
+	<!-- 不存在登录状态 -->
+	<div class="noLoginState">
+		<view class="noLoginImg">
+			<i class="iconfont icon-defaultHead"></i>
+		</view>
+		<navigator class="goLogin" hover-class="none">去登录</navigator>
+	</div>
+	<view class="userInfo" style="display: none;">
+		<view class="userImg">
+		</view>
+		<!-- 存在登录状态u -->
+		 <view class="userInfoTxt">
+			<view class="userName">Simon</view>
+			<navigator class="editInfoBtn" hover-class="none">
+				<i class="iconfont icon-edit"></i>
+				<text>编辑个人资料</text>
+			</navigator>
+		 </view>
+	</view>
+</view>
+<!-- mineCon -->
+<view class="mineNav">
+	<view class="innerMineNav">
+		<view class="mineNavItem">
+			<image src="../../images/mine/myComp.png"></image>
+			<text>我的发布</text>
+			<view class="lineView"></view>
+		</view>
+		<view class="mineNavItem">
+			<image src="../../images/mine/myFocus.png"></image>
+			<text>我的关注</text>
+		</view>
+	</view>
+</view>
+<!-- mineItem -->
+<view class="mineItem hasMargBot">
+	<view class="innerMineItem">
+		<view class="mineItemTit">我是卖家</view>
+		<view class="mineItemWrap">
+			<view class="listItem">
+				<image src="../../images/mine/myPub.png"></image>
+				<text>我的发布</text>
+			</view>
+			<view class="listItem">
+				<image src="../../images/mine/sellGas.png"></image>
+				<text>卖出的气</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- mineItem -->
+<view class="mineItem hasMargBot">
+	<view class="innerMineItem">
+		<view class="mineItemTit">我是买家</view>
+		<view class="mineItemWrap">
+			<view class="listItem">
+				<image src="../../images/mine/myOrder.png"></image>
+				<text>我的订单</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- mineItem -->
+<view class="mineItem hasMargBot">
+	<view class="innerMineItem">
+		<view class="mineItemTit">其他工具</view>
+		<view class="mineItemWrap">
+			<view class="listItem">
+				<image src="../../images/mine/feedBack.png"></image>
+				<text>意见反馈</text>
+			</view>
+			<view class="listItem">
+				<image src="../../images/mine/aboutUs.png"></image>
+				<text>关于我们</text>
+			</view>
+			<view class="listItem">
+				<image src="../../images/mine/myProfile.png"></image>
+				<text>我的简历</text>
+			</view>
+			<view class="listItem">
+				<image src="../../images/mine/myZp.png"></image>
+				<text>我的招聘</text>
+			</view>
+		</view>
+	</view>
+</view>

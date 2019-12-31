@@ -1,0 +1,93 @@
+<view class="filterItem">
+	<navigator class="leaveMsgBtn" hover-class="none">行情留言</navigator>
+	<view class="pickerDateView">
+		<picker mode="date" value="{{nowDate}}" bindchange="bindDateChange">
+			<view class="picker">
+				<text>{{nowDate}}</text>
+				<i class="iconfont icon-sanjiao"></i>
+			</view>
+		</picker>
+	</view>
+	<view class="filterBtn">
+		<text>筛选</text>
+		<i class="iconfont icon-shaixuan"></i>
+	</view>
+</view>
+<!-- 行情ListNav -->
+<view class="listNav">
+	<view class="nameView">名称</view>
+	<view class="areaView">地域</view>
+	<view class="lqName">液质</view>
+	<view class="priceView">11-27</view>
+	<view class="priceView">11-28</view>
+	<view class="priceView">11-29</view>
+</view>
+<!-- listCon -->
+<view class="listCon">
+	<scroll-view scroll-y="true">
+		<view class="listItem">
+			<view class="nameView">正泰易达</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView">--</view>
+		</view>
+		<view class="listItem">
+			<view class="nameView">正泰易达</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView upPrice">4350<i class="iconfont icon-shangsheng"></i></view>
+		</view>
+		<view class="listItem">
+			<view class="nameView">正泰易达</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
+		</view>
+		<view class="listItem">
+			<view class="nameView">正泰易达</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView">--</view>
+		</view>
+		<view class="listItem">
+			<view class="nameView">正泰易达</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView upPrice">4350<i class="iconfont icon-shangsheng"></i></view>
+		</view>
+		<view class="listItem">
+			<view class="nameView">正泰易达发生的</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气哈哈好</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
+		</view>
+		<view class="listItem clearfix">
+			<view class="nameView">正泰易达发生的发生大幅</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气哈哈好</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
+		</view>
+		<view class="listItem clearfix">
+			<view class="nameView">正泰易达生的发生大幅</view>
+			<view class="areaView">内蒙古自治区</view>
+			<view class="lqName">煤层气哈哈好</view>
+			<view class="priceView">4200</view>
+			<view class="priceView">4300</view>
+			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
+		</view>
+	</scroll-view>
+</view>

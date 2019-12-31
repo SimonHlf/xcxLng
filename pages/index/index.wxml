@@ -1,2 +1,198 @@
-<!--pages/index/index.wxml-->
-<image src="../../images/lng.jpg" style="width:88rpx;height:88rpx;"></image>
+<!-- tabNav -->
+<view class="tabNav">
+	<view class="tabNavList clearfix">
+		<view class="listTab">
+			<navigator url="/pages/lngHq/index" open-type="switchTab" hover-class="none">
+				<view class="imgView">
+					<image src="../../images/lng.jpg"></image>
+				</view>
+				<text class="listTabTit">LNG行情</text>
+			</navigator>
+		</view>
+		<view class="listTab">
+			<navigator>
+				<view class="imgView">
+					<image src="../../images/yyd.jpg"></image>
+				</view>
+				<text class="listTabTit">液源地</text>
+			</navigator>
+		</view>
+		<view class="listTab">
+			<navigator>
+				<view class="imgView">
+					<image src="../../images/rqmy.jpg"></image>
+				</view>
+				<text class="listTabTit">燃气贸易</text>
+			</navigator>
+		</view>
+		<view class="listTab">
+			<navigator>
+				<view class="imgView">
+					<image src="../../images/cczm.jpg"></image>
+				</view>
+				<text class="listTabTit">槽车租卖</text>
+			</navigator>
+		</view>
+	</view>
+	
+	<view class="tabNavList clearfix">
+		<view class="listTab">
+			<navigator>
+				<view class="imgView">
+					<image src="../../images/rqsb.jpg"></image>
+				</view>
+				<text class="listTabTit">燃气设备</text>
+			</navigator>
+		</view>
+		<view class="listTab">
+			<navigator>
+				<view class="imgView">
+					<image src="../../images/cgzm.jpg"></image>
+				</view>
+				<text class="listTabTit">储罐租卖</text>
+			</navigator>
+		</view>
+		<view class="listTab">
+			<navigator>
+				<view class="imgView">
+					<image src="../../images/sjqz.jpg"></image>
+				</view>
+				<text class="listTabTit">司机求职</text>
+			</navigator>
+		</view>
+		<view class="listTab">
+			<navigator>
+				<view class="imgView">
+					<image src="../../images/pysj.jpg"></image>
+				</view>
+				<text class="listTabTit">聘用司机</text>
+			</navigator>
+		</view>
+	</view>
+</view>
+<!-- 今日头条 -->
+<view class="hotNews">
+	<image src="../../images/tt.png" mode="widthFix"></image>
+	<swiper
+		autoplay="true"
+		interval="3000"
+		vertical="true"
+		class="swiper">
+		<swiper-item>
+			<navigator>
+				<view class="swiper-item ellip">凡事都是独立开发建设地方</view>
+			</navigator>
+		</swiper-item>
+		<swiper-item>
+			<navigator>
+				<view class="swiper-item ellip">凡事都是独立开发建凡事都是独立开发建设地凡事都是独立开发建设地凡事都是独立开发建设地设地方111</view>
+			</navigator>
+		</swiper-item>
+	</swiper>
+	<navigator class="goMore" hover-class="none">
+		<i class="iconfont icon-gengduo"></i>
+	</navigator>
+</view>
+<!-- 燃气贸易 -->
+<view class="rqMaoyi">
+	<view class="myTit">
+		<text>燃气贸易</text>
+		<navigator hover-class="none">更多</navigator>
+	</view>
+	<view class="rqMyList clearfix">
+		<view class="myImg">
+			
+		</view>
+		<view class="rqMyListCon">
+			<view class="rqMyListTit ellip">蔡先生发布了一条卖气信息</view>
+			<view class="psArea">配送区域：北京/天津/河北</view>
+			<view class="yzyy">
+				<text>液质：井口气22</text>
+				<text>液源：内蒙古</text>
+			</view>
+			<navigator class="goViewBtn">去查看</navigator>
+		</view>
+	</view>
+</view>
+<!-- mainBlock -->
+<view class="modulePart">
+	<view class="modItem">
+		<navigator class="blockA" hover-class="none">
+			<text class="modTit">货车租卖</text>
+			<view class="newPubNum hczuCol">0条新发布</view>
+			<image src="../../images/hczmBig.png"></image>
+		</navigator>
+	</view>
+	<view class="modItem">
+		<navigator class="blockA">
+			<text class="modTit">设备买卖</text>
+			<view class="newPubNum sbmmCol">3条新发布</view>
+			<image src="../../images/sbmmBig.png"></image>
+		</navigator>
+	</view>
+	<view class="modItem">
+		<navigator class="blockA">
+			<text class="modTit">储罐买卖</text>
+			<view class="newPubNum cgmmCol">3条新发布</view>
+			<image src="../../images/cgmmBig.png"></image>
+		</navigator>
+	</view>
+</view>
+<!-- 行业资讯 -->
+<view class="newsList">
+	<view class="myTit">
+	 	<text>行业资讯</text>
+		<text class="subTxt">最新政策早知道</text>
+		<navigator hover-class="none">更多</navigator>
+	</view>
+	<view class="newsListCon">
+		<view class="listNews clearfix">
+			<navigator>
+				<view class="listNewsImg">
+					
+				</view>
+				<view class="listNewsCon">
+					<view class="newsTit ellip">如何确保天然气迎峰度冬？发改委峰度冬？发改委从</view>
+					<view class="from">
+						<text>来源:LNG新闻</text>
+						<text>2019-12-31</text>
+						<text>阅读全文</text>
+					</view>
+				</view>
+			</navigator>
+		</view>
+		<view class="listNews clearfix">
+			<navigator>
+				<view class="listNewsImg">
+					
+				</view>
+				<view class="listNewsCon">
+					<view class="newsTit ellip">如何确保天然气迎峰度冬？发改委峰度冬？发改委从</view>
+					<view class="from">
+						<text>来源:LNG新闻</text>
+						<text>2019-12-31</text>
+						<text>阅读全文</text>
+					</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+</view>
+<!-- 找人找活 -->
+<view class="zpQz">
+	<view class="myTit">
+	 	<text>找人/找活</text>
+	</view>
+	<view class="zpQzList clearfix">
+		<view class="zpQzItem zpItem">
+			<view class="typeItem zpItem">聘司机</view>
+			<view class="zpQzTit ellip">荣达能源有限公荣达能源有限公</view>
+			<view class="zpQzTxt multiEllip">现工司需要招聘工司需要招聘一名司机， 具体要求如工司需要招聘一名司机， 具体要求如一名司机， 具体要求如下：男性，3-5</view>
+		</view>
+		<view class="zpQzItem qzItem">
+			<view class="typeItem qzItem">求职</view>
+			<view class="zpQzTit">李先生</view>
+			<view class="zpQzTxt multiEllip">35周岁   B2驾照   驾龄5年</view>
+		</view>
+	</view>
+</view>

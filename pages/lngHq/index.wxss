@@ -1,0 +1,110 @@
+.filterItem{
+	height: 80rpx;
+	padding: 0 30rpx; 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1rpx solid #e8e8e8;
+	margin-top: 10rpx;
+}
+.leaveMsgBtn{
+	width: 118rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	border:1rpx solid #3c7de9;
+	color: #3c7de9;
+	font-size: 24rpx;
+	text-align: center;
+	border-radius: 26rpx;
+}
+.pickerDateView picker .picker{
+	width: 100%;
+	height:80rpx;
+	color:#202020 ;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 32rpx;
+}
+.pickerDateView i{
+	font-size: 18rpx;
+	color:#c8c8c8 ;
+	margin-left: 12rpx;
+	margin-top: 6rpx;
+}
+.filterBtn text{
+	font-size: 28rpx;
+	color:#606060 ;
+	margin-right:12rpx ;
+}
+.filterBtn i{
+	color:#606060 ;
+	font-size: 26rpx;
+}
+/* listNav */
+.listNav{
+	height: 86rpx;
+	line-height: 86rpx;
+	background:#3c7de9 ;
+}
+.listNav view{
+	float: left;
+	font-size: 28rpx;
+	color: #fff;
+	text-align: center;
+}
+.nameView{
+	width: 18%;
+}
+.areaView{
+	width: 18%;
+}
+.lqName,
+.priceView{
+	width: 16%;
+}
+.priceView{
+	font-size: 30rpx !important;
+	font-weight: 620;
+}
+.priceView.upPrice{
+	color: #d32f2f;
+}
+.priceView.downPrice{
+	color: #43a047;
+}
+.priceView i,
+.downPrice i{
+	font-size: 18rpx;
+	margin:8rpx 0 0 2rpx;
+	float: left;
+}
+.listCon{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 179rpx;
+	bottom: 0;
+	overflow: hidden;
+}
+.listCon scroll-view{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+}
+.listItem{
+	min-height: 86rpx;
+}
+.listItem:nth-of-type(2n){
+	background: #e9f5ff;
+}
+.listItem view{
+	min-height: 86rpx;
+	display: flex;
+	align-items: center;
+	font-size: 26rpx;
+	float: left;
+	justify-content: center;
+	text-align: center;
+	color: #121212;
+}
