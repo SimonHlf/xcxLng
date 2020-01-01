@@ -1,0 +1,158 @@
+.filterWrap{
+	width: 100%;
+	height: 100rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #fff;
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	top: 0;
+}
+.inputView{
+	width: 100%;
+	height: 70rpx;
+	background: #efefef;
+	border-radius: 40rpx;
+	position: relative;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+}
+.inputView i{
+	position: absolute;
+	left: 4%;
+	top: 22rpx;
+	color: #606060;
+	font-size: 32rpx;
+}
+.inputView input{
+	width: 70%;
+	font-size: 28rpx;
+	height: 100%;
+	padding: 0 15%;
+	color: #606060;
+}
+.rgDevWrap{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100rpx;
+	bottom: 0;
+}
+.rgDevWrap .leftRqDevLm{
+	width: 200rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: yellow;
+}
+.rgDevWrap .rightRqDevCon{
+	position: absolute;
+	left: 215rpx;
+	right: 15rpx;
+	top: 0;
+	bottom: 0;
+}
+.rgDevWrap .leftRqDevLm scroll-view,
+.rgDevWrap .rightRqDevCon scroll-view{
+	height: 100%;
+}
+.rgDevWrap .leftRqDevLm scroll-view{
+	background: #efefef;
+}
+.rgDevWrap .rightRqDevCon scroll-view{
+	background: #fff;
+}
+.lmItem{
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	position: relative;
+	font-size: 30rpx;
+	color: #606060;
+	padding: 0 8rpx;
+}
+.lmItem.active{
+	background: #fff;
+	color: #3c7de9;
+}
+.lmItem .lineView{
+	width: 8rpx;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background:#3c7de9 ;
+	display: none;
+}
+.lmItem.active .lineView{
+	display: block;
+}
+.rqDevItemCon{
+	padding: 15rpx 0;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.imgView{
+	width: 158rpx;
+	height: 158rpx;
+	border:1rpx solid #e8e8e8;
+	border-radius: 6rpx;
+	float: left;
+	margin-right: 15rpx;
+}
+.imgView image{
+	width: 100%;
+	height: 100%;
+	border-radius: 6rpx;
+}
+.itemCon{
+	width: 66%;
+	height: 160rpx;
+	float: left;
+}
+.devName{
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.tagView{
+	margin-top: 10rpx;
+}
+.volumeItem{
+	float: left;
+	padding: 0 15rpx;
+	height: 38rpx;
+	line-height: 38rpx;
+	border:1rpx solid #3c7de9;
+	color: #3c7de9;
+	font-size: 24rpx;
+	border-radius: 6rpx;
+	display: block;
+}
+.volumeItem:first-child{
+	max-width: 45%;
+	margin-right: 15rpx;
+}
+.volumeItem:last-child{
+	max-width: 28%;
+	margin-right: 15rpx;
+}
+.priceView{
+	height: 40rpx;
+	line-height: 40rpx;
+	margin-top: 10rpx;
+}
+.priceView text{
+	color: #d32f2f;
+}
+.priceView text:first-child{
+	font-size: 24rpx;
+	margin-right: 5rpx;
+}
+.priceView text.priceNum{
+	font-size: 32rpx;
+	font-weight: 620;
+}

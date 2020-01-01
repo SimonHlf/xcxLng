@@ -1,0 +1,170 @@
+page{
+	margin-top: 190rpx;
+}
+.filterWrap{
+	width: 100%;
+	height: 100rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #fff;
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	top: 0;
+}
+.inputView{
+	width: 80%;
+	height: 70rpx;
+	background: #efefef;
+	border-radius: 40rpx;
+	position: relative;
+	margin-left: 30rpx;
+}
+.inputView i{
+	position: absolute;
+	left: 4%;
+	top: 22rpx;
+	color: #606060;
+	font-size: 32rpx;
+}
+.inputView input{
+	width: 70%;
+	font-size: 28rpx;
+	height: 100%;
+	padding: 0 15%;
+	color: #606060;
+}
+.filterBtn {
+	margin-right: 30rpx;
+}
+.filterBtn text{
+	font-size: 28rpx;
+	color:#606060 ;
+	margin-right:12rpx ;
+}
+.filterBtn i{
+	color:#606060 ;
+	font-size: 26rpx;
+}
+.tabFilter{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+	background: #fff;
+	z-index: 5;
+	position: fixed;
+	left: 0;
+	top: 100rpx;
+}
+.tabItem{
+	float: left;
+	height: 100%;
+	margin-right: 40rpx;
+	position: relative;
+	padding: 0 20rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.tabItem:first-child{
+	margin-left: 30rpx;
+}
+.tabItem.active{
+	color: #3c7de9;
+}
+.tabItem .lineView{
+	width: 100%;
+	height: 8rpx;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background:#3c7de9;
+	border-radius: 26rpx;
+	display: none;
+}
+.tabItem.active .lineView{
+	display: block;
+}
+.potList{
+	padding: 0 30rpx;
+}
+.listItem{
+	border-bottom: 1rpx solid #e8e8e8;
+	padding: 20rpx 0;
+}
+.imgView{
+	width: 180rpx;
+	height: 180rpx;
+	float: left;
+	background: pink;
+	margin-right: 15rpx;
+}
+.listItemCon{
+	width: 72%;
+	height: 180rpx;
+	float: left;
+	position: relative;
+}
+.psArea{
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.volume{
+	margin-top: 10rpx;
+}
+.volumeItem{
+	float: left;
+	padding: 0 15rpx;
+	height: 38rpx;
+	line-height: 38rpx;
+	border:1rpx solid #3c7de9;
+	color: #3c7de9;
+	font-size: 24rpx;
+	border-radius: 6rpx;
+}
+.volumeItem:first-child{
+	margin-right: 15rpx;
+}
+.volumeItem:last-child{
+	max-width: 55%;
+	display: block;
+}
+.proDate{
+	height: 36rpx;
+	line-height: 36rpx;
+	color: #606060;
+	font-size: 24rpx;
+	margin-top: 10rpx;
+}
+.proDate text:last-child{
+	margin-left: 15rpx;
+	padding: 0 10rpx;
+	height: 36rpx;
+	display: inline-block;
+	background: #ffc107;
+	color: #fff;
+}
+.priceView{
+	height: 40rpx;
+	line-height: 40rpx;
+}
+.priceView text{
+	color: #d32f2f;
+}
+.priceView text:first-child{
+	font-size: 24rpx;
+	margin-right: 5rpx;
+}
+.priceView text.priceNum{
+	font-size: 32rpx;
+	font-weight: 620;
+}
+.priceView i{
+	color: #acacac;
+	font-size: 24rpx;
+	float: right;
+	margin-top: 3rpx;
+}

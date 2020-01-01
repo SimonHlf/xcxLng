@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/rqDev/index",
+    "pages/potTrade/index",
     "pages/rqMaoyi/index",
     "pages/mine/index",
     "pages/index/index",
     "pages/lngHq/index",
-    "pages/msg/index",
-    "pages/autorLogin/index"
+    "pages/msg/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

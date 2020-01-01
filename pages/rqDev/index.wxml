@@ -1,0 +1,41 @@
+<view class="filterWrap">
+	<view class="inputView">
+		<i class="iconfont icon-sousuo"></i>
+		<input type="text" placeholder="请输入商品关键字" confirm-type="search" />
+	</view>
+</view>
+<view class="rgDevWrap">
+	<view class="leftRqDevLm">
+		<scroll-view scroll-y="true">
+			<view class="lmItem active ellip"><view class="lineView"></view>调压调压设备调压设备设备类</view>
+			<view class="lmItem ellip"><view class="lineView"></view>调压调压设</view>
+		</scroll-view>
+	</view>
+	<view class="rightRqDevCon">
+		<scroll-view scroll-y="true">
+			<view class="rqDevItemCon clearfix">
+				<view class="imgView">
+					
+				</view>
+				<view class="itemCon">
+					<view class="devName ellip">YLA-E01燃气泄漏报警器</view>
+					<view class="tagView clearfix">
+						<text class="volumeItem ellip">产地:河北河北省河北省省</text>
+						<text class="volumeItem ellip">品牌:润润美</text>
+					</view>
+					<view class="priceView">
+						<text>¥</text>
+						<text class="priceNum">8000</text>
+					</view>
+				</view>
+			</view>
+			
+		</scroll-view>
+	</view>
+</view>
+ 
+ 
+ <!-- 发布 -->
+ <view class="pubBtnWrap">
+ 	<image src="../../images/pub.png"></image>
+ </view>

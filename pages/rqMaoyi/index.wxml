@@ -1,1 +1,273 @@
-
+<view class="filterWrap">
+	<view class="inputView">
+		<i class="iconfont icon-sousuo"></i>
+		<input type="text" placeholder="请输入关键字" confirm-type="search" />
+	</view>
+	<view class="filterBtn">
+		<text>筛选</text>
+		<i class="iconfont icon-shaixuan"></i>
+	</view>
+</view>
+<!-- list -->
+<view class="rqList">
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮河南濮阳河南濮阳阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	
+	
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮河南濮阳河南濮阳阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮河南濮阳河南濮阳阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+			<view class="yzyyd ellip">
+				<text>液质：煤制气</text>
+				<text>液源地：河南濮阳</text>
+			</view>
+			<view class="priceView">
+				<view class="detPrice">
+					<text class="rmb">¥</text>
+					<text class="priceNum">3200</text>
+					<text class="unitTxt">/m³</text>
+				</view>
+				<view class="zzl">装载量2000m³</view>
+			</view>
+			<view class="judgeTxt">公司好评度98%</view>
+		</view>
+	</view>
+	
+</view>
+<!-- 发布 -->
+<view class="pubBtnWrap">
+	<image src="../../images/pub.png"></image>
+</view>

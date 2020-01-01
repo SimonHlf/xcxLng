@@ -1,0 +1,43 @@
+<view class="filterWrap">
+	<view class="inputView">
+		<i class="iconfont icon-sousuo"></i>
+		<input type="text" placeholder="请输入储罐品牌" confirm-type="search" />
+	</view>
+	<view class="filterBtn">
+		<text>筛选</text>
+		<i class="iconfont icon-shaixuan"></i>
+	</view>
+</view>
+<view class="tabFilter">
+	<view class="tabItem active"><view class="lineView"></view>卖储罐</view>
+	<view class="tabItem"><view class="lineView"></view>租储罐</view>
+</view>
+<!-- listView -->
+<view class="potList">
+	<view class="listItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">大型 卧式储罐 化工 液体 </view>
+			<view class="volume clearfix">
+				<view class="volumeItem">容积:200m³</view>
+				<view class="volumeItem ellip">品牌:百恒达详</view>
+			</view>
+			<view class="proDate">
+				<text>生产日期：2018-12-03</text>
+				<text>有手续</text>
+			</view>
+			<view class="priceView">
+				<text>¥</text>
+				<text class="priceNum">8000</text>
+				<i class="iconfont icon-gengduo"></i>
+			</view>
+		</view>
+	</view>
+	
+</view>
+<!-- 发布 -->
+<view class="pubBtnWrap">
+	<image src="../../images/pub.png"></image>
+</view>
