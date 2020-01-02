@@ -90,7 +90,6 @@ Component({
 		},  
 		login : function(code,encryptedData,iv,sessionKey,openId){
 			var field =  {code:code,encryptedData:encryptedData,iv:iv,sessionKey:sessionKey,openId:openId};
-			console.log(field)
 			let that = this;
 			util.showLoading('登录中...');
 			wx.request({

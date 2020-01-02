@@ -37,8 +37,6 @@ Page({
 		this.commonLogin();
 	},
 	commonLogin : function(){
-		console.log("zhixingmei?")
-		console.log(wx.getStorageSync('userId'))
 		if(wx.getStorageSync('userId')){
 			this.setData({
 				isLogin : true,

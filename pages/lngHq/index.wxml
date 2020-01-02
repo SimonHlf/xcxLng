@@ -1,9 +1,3 @@
-<wxs module="tool">
-	function createLngDate(dateStr){
-		return dateStr.split(':');
-	}
-	module.exports = createLngDate;
-</wxs>
 <view class="filterItem">
 	<navigator class="leaveMsgBtn" hover-class="none">行情留言</navigator>
 	<view class="pickerDateView">
@@ -30,46 +24,75 @@
 </view>
 <!-- listCon --> 
 <view class="listCon">
-	<scroll-view scroll-y="true">
-		<block wx:if="{{lngData.lngPriceList.length > 0}}">
-			<view class="listItem"
-				wx:for="{{lngData.lngPriceList}}"
-				wx:key="{{lngData.lngPriceList.gfId}}"
-			>
-				<view class="nameView">{{item.gfName}}</view>
-				<view class="areaView">{{item.province}}</view>
-				<view class="lqName">{{item.gfType}}</view>
-				<view class="priceView">{{item.prePrice}}</view>
+	<block wx:if="{{priceList.length > 0}}">
+		<view class="listItem"
+			wx:for="{{priceList}}"
+			wx:key="*this"
+			data-id="{{item.gfId}}"
+			bindtap="goGfDet"
+		>
+			<view class="nameView">{{item.gfName}}</view>
+			<view class="areaView">{{item.province}}</view>
+			<view class="lqName">{{item.gfType}}</view>
+			<view class="priceView">{{item.prePrice}}</view>
+			<block wx:if="{{item.diffPrice_curr > 0}}">
+				<view class="priceView upPrice">{{item.currPrice}}<i class="iconfont icon-shangsheng"></i></view>
+			</block>
+			<block wx:elif="{{item.diffPrice_curr < 0}}">
+				<view class="priceView downPrice">{{item.currPrice}}<i class="iconfont icon-xiajiang"></i></view>
+			</block>
+			<block wx:else>
 				<view class="priceView">{{item.currPrice}}</view>
+			</block>
+			<block wx:if="{{item.diffPrice_next > 0}}">
+				<view class="priceView upPrice">{{item.nextPrice}}<i class="iconfont icon-shangsheng"></i></view>
+			</block>
+			<block wx:elif="{{item.diffPrice_next < 0}}">
+				<view class="priceView downPrice">{{item.nextPrice}}<i class="iconfont icon-xiajiang"></i></view>
+			</block>
+			<block wx:else>
 				<view class="priceView">{{item.nextPrice}}</view>
-			</view>
-		</block>
-		<block wx:else>
-			<view>暂无液厂数据</view>
-		</block>
-		<!-- <view class="listItem">
-			<view class="nameView">正泰易达</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView">--</view>
+			</block>
 		</view>
-		<view class="listItem">
-			<view class="nameView">正泰易达</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView upPrice">4350<i class="iconfont icon-shangsheng"></i></view>
-		</view>
-		<view class="listItem">
-			<view class="nameView">正泰易达</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
-		</view> -->
-	</scroll-view>
+	</block>
+	<!-- <view class="listItem">
+		<view class="nameView">正泰易达</view>
+		<view class="areaView">内蒙古自治区</view>
+		<view class="lqName">煤层气</view>
+		<view class="priceView">4200</view>
+		<view class="priceView">4300</view>
+		<view class="priceView">--</view>
+	</view>
+	<view class="listItem">
+		<view class="nameView">正泰易达</view>
+		<view class="areaView">内蒙古自治区</view>
+		<view class="lqName">煤层气</view>
+		<view class="priceView">4200</view>
+		<view class="priceView">4300</view>
+		<view class="priceView upPrice">4350<i class="iconfont icon-shangsheng"></i></view>
+	</view>
+	<view class="listItem">
+		<view class="nameView">正泰易达</view>
+		<view class="areaView">内蒙古自治区</view>
+		<view class="lqName">煤层气</view>
+		<view class="priceView">4200</view>
+		<view class="priceView">4300</view>
+		<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
+	</view> -->
+	<!-- <scroll-view scroll-y="true" bindscrolltolower="getMoreData" lower-threshold="20">
+		
+	</scroll-view> -->
+	
 </view>
+<view class="loadingIcon">
+	<block wx:if="{{loading}}">
+		<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+	</block>
+	<block wx:else>
+		<view class="noDataTxt">
+			<text>——————</text>
+			<text>我是有底线的~</text>
+			<text>——————</text>
+		</view>
+	</block>
+</view> 

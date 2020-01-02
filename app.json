@@ -1,11 +1,12 @@
 {
   "pages": [
-	"pages/index/index",
+	"pages/lngHqDet/index",
+    "pages/lngHq/index",
+    "pages/index/index",
     "pages/rqDev/index",
     "pages/potTrade/index",
     "pages/rqMaoyi/index",
     "pages/mine/index",
-    "pages/lngHq/index",
     "pages/msg/index"
   ],
   "window": {
@@ -13,7 +14,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "燃气之家",
     "navigationBarTextStyle": "black"
-  }, 
+  },
   "tabBar": {
     "color": "#606060",
     "selectedColor": "#3c7de9",

@@ -1,11 +1,19 @@
+page{
+	height: 100%;
+	margin-top: 167rpx;
+}
 .filterItem{
+	width: 100%;
 	height: 80rpx;
-	padding: 0 30rpx; 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	border-top: 1rpx solid #e8e8e8;
-	margin-top: 10rpx;
+	position: fixed;
+	left: 0;
+	top: 0rpx;
+	z-index: 10;
+	background: #fff;
 }
 .leaveMsgBtn{
 	width: 118rpx;
@@ -16,6 +24,7 @@
 	font-size: 24rpx;
 	text-align: center;
 	border-radius: 26rpx;
+	margin-left: 30rpx;
 }
 .pickerDateView picker .picker{
 	width: 100%;
@@ -32,6 +41,9 @@
 	margin-left: 12rpx;
 	margin-top: 6rpx;
 }
+.filterBtn{
+	margin-right: 30rpx;
+}
 .filterBtn text{
 	font-size: 28rpx;
 	color:#606060 ;
@@ -43,9 +55,14 @@
 }
 /* listNav */
 .listNav{
+	width: 100%;
 	height: 86rpx;
 	line-height: 86rpx;
 	background:#3c7de9 ;
+	position: fixed;
+	z-index: 10;
+	top: 81rpx;
+	left: 0;
 }
 .listNav view{
 	float: left;
@@ -79,19 +96,6 @@
 	margin:8rpx 0 0 2rpx;
 	float: left;
 }
-.listCon{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 179rpx;
-	bottom: 0;
-	overflow: hidden;
-}
-.listCon scroll-view{
-	width: 100%;
-	height: 100%;
-	background: #fff;
-}
 .listItem{
 	min-height: 86rpx;
 }
@@ -107,4 +111,19 @@
 	justify-content: center;
 	text-align: center;
 	color: #121212;
+}
+.loadingIcon{
+	text-align: center;
+}
+.loadingIcon image{
+	width: 100rpx;
+}
+.noDataTxt{
+	height: 90rpx;
+	line-height: 90rpx;
+	color: #a9a9a9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26rpx;
 }
