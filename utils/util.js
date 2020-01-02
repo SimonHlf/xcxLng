@@ -13,7 +13,52 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-
+function showLoading(content){
+	wx.showLoading({
+		title : content
+	});
+}
+function hideLoading(){
+	wx.hideLoading();
+}
+function showToastSuc(content) {
+	wx.showToast({
+		title: content,
+		icon: 'success',
+		duration: 1800
+	})
+}
+function showToast(content) {
+	wx.showToast({
+		title: content,
+		icon: 'none',
+		duration: 1800
+	})
+}
+function navigateTo(page) {
+	wx.navigateTo({
+		url: page
+	})
+}
+function redirectTo(page) {
+	wx.redirectTo({
+		url: page
+	})
+}
+function appendZero(obj){
+	if (obj < 10) {
+	  return '0' + obj
+	} else {
+	  return obj
+	}
+}
 module.exports = {
-  formatTime: formatTime
+	formatTime: formatTime,
+	showLoading : showLoading,
+	hideLoading : hideLoading,
+	showToastSuc :showToastSuc,
+	showToast　:　showToast,
+	navigateTo : navigateTo,
+	redirectTo : redirectTo,
+	appendZero : appendZero
 }

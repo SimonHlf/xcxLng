@@ -5,7 +5,7 @@ page{
 	height:220rpx;
 	position: relative;
 }
-.header image,
+.header image.bgImg,
 .header .userInfo,
 .header .noLoginState{
 	width: 100%;
@@ -14,7 +14,7 @@ page{
 	left: 0;
 	top: 0;
 }
-.header image{
+.header image.bgImg{
 	z-index: 1;
 }
 .header .userInfo,
@@ -32,6 +32,11 @@ page{
 }
 .userImg{
 	background: #fff;
+}
+.userImg image{
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 50%;
 }
 .noLoginImg{
 	background: #efefef;

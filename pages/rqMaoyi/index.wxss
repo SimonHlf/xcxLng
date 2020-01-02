@@ -45,7 +45,7 @@
 	border-bottom: 1rpx solid #e8e8e8;
 	padding: 20rpx 0;
 }
-.imgView{
+.imgView{ 
 	width: 160rpx;
 	height: 160rpx;
 	float: left;
@@ -58,7 +58,7 @@
 	border-radius: 6rpx;
 }
 .listItemCon{
-	width: 75%;
+	width: 74%;
 	height: 160rpx;
 	float: left;
 	position: relative;

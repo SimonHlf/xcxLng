@@ -43,6 +43,11 @@ page{
 	background: #fff;
 	margin-bottom: 20rpx;
 }
+.noTmpData{
+	color: #a9a9a9;
+	font-size: 28rpx;
+	line-height: 88rpx;
+}
 .hotNews image{
 	width:80rpx ;
 	height: 56rpx;
@@ -121,6 +126,8 @@ page{
 }
 .rqMyListCon .rqMyListTit{
 	width: 100%;
+	height: 35rpx;
+	line-height: 35rpx;
 	font-size: 29rpx;
 	color: #121212;
 }
@@ -129,6 +136,9 @@ page{
 .from{
 	font-size: 24rpx;
 	color:#a9a9a9 ;
+}
+.rqMyListCon .psArea{
+	width: 70%;
 }
 .rqMyListCon .yzyy text:last-child,
 .from text:nth-of-type(3n-1){

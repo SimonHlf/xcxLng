@@ -1,0 +1,9 @@
+<!-- 未登录情况下拉起授权登录按钮 -->
+<button class='author_btn' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" withCredentials="{{true}}" lang='zh_CN' wx:if="{{!isAuthor}}"></button>
+<!-- 已登陆继续执行 -->
+<button class='author_btn' bindtap='goOn' wx:else></button>
+
+<!-- <view class="likes">
+	<i class="iconfont icon-dianzan" style="font-size:60rpx"></i>
+	<isAuthor bind:flagEvent="likesClick"></isAuthor>
+</view> -->

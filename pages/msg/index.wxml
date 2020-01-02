@@ -1,2 +1,6 @@
-<!--pages/msg/index.wxml-->
-<text>pages/msg/index.wxml</text>
+<view class="home" style="{{translate}}">Home</view>
+
+
+<view class="page_tab">Page_tab</view>
+
+<view class='bg' bindtap='hideview' style='display:{{display}}'></view> 

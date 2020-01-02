@@ -1,26 +1,33 @@
 <view class="header">
-	<image src="../../images/mine.png"></image>
+	<image class="bgImg" src="../../images/mine.png"></image>
 	<!-- 不存在登录状态 -->
-	<div class="noLoginState">
-		<view class="noLoginImg">
-			<i class="iconfont icon-defaultHead"></i>
+	<block wx:if="{{isLogin}}">
+		<view class="userInfo">
+			<view class="userImg">
+				<image src="{{userImg == '' ? 'aaa' : userImg}}"></image>
+			</view>  
+			<!-- 存在登录状态u -->
+			 <view class="userInfoTxt">
+				<view class="userName">{{userName}}</view>
+				<navigator class="editInfoBtn" hover-class="none">
+					<i class="iconfont icon-edit"></i>
+					<text>编辑个人资料</text>
+				</navigator> 
+			 </view>  
 		</view>
-		<navigator class="goLogin" hover-class="none">去登录</navigator>
-	</div>
-	<view class="userInfo" style="display: none;">
-		<view class="userImg">
-		</view>
-		<!-- 存在登录状态u -->
-		 <view class="userInfoTxt">
-			<view class="userName">Simon</view>
-			<navigator class="editInfoBtn" hover-class="none">
-				<i class="iconfont icon-edit"></i>
-				<text>编辑个人资料</text>
-			</navigator>
-		 </view>
-	</view>
-</view>
-<!-- mineCon -->
+	</block>
+	<block wx:else> 
+		<div class="noLoginState">
+			<view class="noLoginImg">
+				<i class="iconfont icon-defaultHead"></i>
+			</view>
+			<view class="goLogin">
+				去登录
+			</view>
+		</div>
+	</block>
+</view> 
+<!-- mineCon --> 
 <view class="mineNav">
 	<view class="innerMineNav">
 		<view class="mineNavItem">
@@ -87,4 +94,8 @@
 			</view>
 		</view>
 	</view>
+</view>
+<!-- 透明遮罩层 -->
+<view class="layer" hidden="{{isShowFlag_page}}" isLogin="{{isLogin}}">
+	<isAuthor bind:flagEvent="goAuthLogin"></isAuthor>
 </view>

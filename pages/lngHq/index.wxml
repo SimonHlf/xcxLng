@@ -1,3 +1,9 @@
+<wxs module="tool">
+	function createLngDate(dateStr){
+		return dateStr.split(':');
+	}
+	module.exports = createLngDate;
+</wxs>
 <view class="filterItem">
 	<navigator class="leaveMsgBtn" hover-class="none">行情留言</navigator>
 	<view class="pickerDateView">
@@ -18,14 +24,30 @@
 	<view class="nameView">名称</view>
 	<view class="areaView">地域</view>
 	<view class="lqName">液质</view>
-	<view class="priceView">11-27</view>
-	<view class="priceView">11-28</view>
-	<view class="priceView">11-29</view>
+	<view class="priceView">{{yesterday}}</view>
+	<view class="priceView">{{today}}</view>
+	<view class="priceView">{{tomorrow}}</view>
 </view>
-<!-- listCon -->
+<!-- listCon --> 
 <view class="listCon">
 	<scroll-view scroll-y="true">
-		<view class="listItem">
+		<block wx:if="{{lngData.lngPriceList.length > 0}}">
+			<view class="listItem"
+				wx:for="{{lngData.lngPriceList}}"
+				wx:key="{{lngData.lngPriceList.gfId}}"
+			>
+				<view class="nameView">{{item.gfName}}</view>
+				<view class="areaView">{{item.province}}</view>
+				<view class="lqName">{{item.gfType}}</view>
+				<view class="priceView">{{item.prePrice}}</view>
+				<view class="priceView">{{item.currPrice}}</view>
+				<view class="priceView">{{item.nextPrice}}</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view>暂无液厂数据</view>
+		</block>
+		<!-- <view class="listItem">
 			<view class="nameView">正泰易达</view>
 			<view class="areaView">内蒙古自治区</view>
 			<view class="lqName">煤层气</view>
@@ -48,46 +70,6 @@
 			<view class="priceView">4200</view>
 			<view class="priceView">4300</view>
 			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
-		</view>
-		<view class="listItem">
-			<view class="nameView">正泰易达</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView">--</view>
-		</view>
-		<view class="listItem">
-			<view class="nameView">正泰易达</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView upPrice">4350<i class="iconfont icon-shangsheng"></i></view>
-		</view>
-		<view class="listItem">
-			<view class="nameView">正泰易达发生的</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气哈哈好</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
-		</view>
-		<view class="listItem clearfix">
-			<view class="nameView">正泰易达发生的发生大幅</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气哈哈好</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
-		</view>
-		<view class="listItem clearfix">
-			<view class="nameView">正泰易达生的发生大幅</view>
-			<view class="areaView">内蒙古自治区</view>
-			<view class="lqName">煤层气哈哈好</view>
-			<view class="priceView">4200</view>
-			<view class="priceView">4300</view>
-			<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
-		</view>
+		</view> -->
 	</scroll-view>
 </view>
