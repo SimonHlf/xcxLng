@@ -1,0 +1,61 @@
+<view class="mysListWrap">
+	<view class="mysListItem clearfix">
+		<view class="imgView"></view>
+		<view class="mysListCon">
+			<view class="mysTit ellip">我的贸易商名称就叫贸易商</view>
+			<view class="mysName">
+				<view class="mysNameItem">
+					<i class="iconfont icon-xingming"></i>
+					<text>耿女士</text>
+				</view>
+				<view class="mysNameItem">
+					<i class="iconfont icon-shouji"></i>
+					<text>18790958171 </text>
+				</view>
+			</view>
+		</view>
+		<view class="telWrap" bindtap="callMys">
+			<i class="iconfont icon-tel"></i>
+		</view>
+	</view>
+	
+	<view class="mysListItem clearfix">
+		<view class="imgView"></view>
+		<view class="mysListCon">
+			<view class="mysTit ellip">我的贸易商名称就我的贸易商名称就叫贸易我的贸易商名称就叫贸易叫贸易商</view>
+			<view class="mysName">
+				<view class="mysNameItem">
+					<i class="iconfont icon-xingming"></i>
+					<text>耿女士</text>
+				</view>
+				<view class="mysNameItem">
+					<i class="iconfont icon-shouji"></i>
+					<text>18790958171 </text>
+				</view>
+			</view>
+		</view>
+		<view class="telWrap" bindtap="callMys">
+			<i class="iconfont icon-tel"></i>
+		</view>
+	</view>
+	
+	<view class="mysListItem clearfix">
+		<view class="imgView"></view>
+		<view class="mysListCon">
+			<view class="mysTit ellip">我的贸易商名称就叫贸易商</view>
+			<view class="mysName">
+				<view class="mysNameItem">
+					<i class="iconfont icon-xingming"></i>
+					<text>耿女士</text>
+				</view>
+				<view class="mysNameItem">
+					<i class="iconfont icon-shouji"></i>
+					<text>18790958171 </text>
+				</view>
+			</view>
+		</view>
+		<view class="telWrap" bindtap="callMys">
+			<i class="iconfont icon-tel"></i>
+		</view>
+	</view>
+</view>

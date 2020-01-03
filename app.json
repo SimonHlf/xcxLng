@@ -1,13 +1,19 @@
 {
   "pages": [
-	"pages/lngHqDet/index",
     "pages/lngHq/index",
+    "pages/lngHqDet/index",
+    "pages/lngHqYzbg/index",
+    "pages/lngHqMsg/leaveMsg",
+    "pages/lngHqMsg/lngHqMsgDet",
+    "pages/lngHqMsg/index",
+    "pages/lngHqMysList/index", 
     "pages/index/index",
     "pages/rqDev/index",
     "pages/potTrade/index",
     "pages/rqMaoyi/index",
     "pages/mine/index",
     "pages/msg/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

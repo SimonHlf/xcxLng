@@ -1,0 +1,8 @@
+<view class="yzBgImgWrap padd">
+	<view class="yzbgImgItem"
+		wx:for="{{yzbgImg}}"
+		wx:key="*this"
+	>
+		<image src="{{item}}"></image>
+	</view>
+</view>

@@ -1,5 +1,5 @@
 <view class="filterItem">
-	<navigator class="leaveMsgBtn" hover-class="none">行情留言</navigator>
+	<navigator class="leaveMsgBtn" hover-class="none" bindtap="goLngHqMsgPage">行情留言</navigator>
 	<view class="pickerDateView">
 		<picker mode="date" value="{{nowDate}}" bindchange="bindDateChange">
 			<view class="picker">

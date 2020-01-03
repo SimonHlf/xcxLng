@@ -1,6 +1,28 @@
 page{
 	background: #efefef;
 }
+.filter{
+	height: 80rpx;
+	line-height: 80rpx;
+}
+.filterType{
+	float: left;
+	font-size: 28rpx;
+	color:#121212 ;
+}
+.filterDate{
+	float: right;
+	font-size: 28rpx;
+	color:#121212 ;
+}
+.filterDate i,
+.filterType i{
+	font-size: 24rpx;
+	color:#a9a9a9 ;
+	margin-left: 5rpx;
+	display: inline-block;
+	transform: rotate(270deg);
+}
 .echartWrap{
 	padding: 0 30rpx;
 	height: 420rpx;
@@ -15,4 +37,27 @@ page{
 	height: 96rpx;
 	line-height: 96rpx;
 	border-bottom: 1rpx solid #e8e8e8;
+	font-size: 28rpx;
+	color:#121212 ;
+}
+.gfDetItem i,
+.gfDetItem text.itemTit{
+	float: left;
+}
+.gfDetItem i{
+	color: #90caf9;
+	font-size: 32rpx;
+	margin:0 15rpx; 
+}
+.gfDetItem text.subTxt{
+	float: right;
+	color: #d32f2f;
+	font-size: 25rpx;
+}
+.gfDetItem .moreBtn{
+	float: right;
+}
+.gfDetItem .moreBtn i{
+	color: #606060;
+	font-size: 24rpx;
 }

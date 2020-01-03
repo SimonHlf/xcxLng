@@ -1,0 +1,158 @@
+<view class="msgDetWrap">
+	<view class="msgDetTitWrap clearfix">
+		<view class="imgView"> 
+			
+		</view>
+		<view class="msgListCon">
+			<view class="msgUserName">
+				<text class="currUserName">黄利峰</text>
+				<view class="dianzan">
+					<i class="iconfont icon-wodexiaoxi"></i>
+					<text>10</text>
+				</view>
+				<view class="dianzan">
+					<i class="iconfont icon-dianzan"></i>
+					<text>20</text>
+				</view>
+			</view>
+			<view class="botFun">
+				<view class="timeView">
+					<text>12-01</text>
+					<text>11:11</text>
+				</view>
+			</view>
+			<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+		</view>
+	</view>
+	
+	<!-- 回复list -->
+	<view class="replyList padd">
+		<view class="replyListItem">
+			<view class="imgView">
+				
+			</view>
+			<view class="msgListCon">
+				<view class="msgUserName">
+					<text class="currUserName">黄利峰</text>
+				</view>
+				<view class="botFun">
+					<view class="timeView">
+						<text>12-01</text>
+						<text>11:11</text>
+					</view>
+				</view>
+				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+			</view>
+		</view>
+		
+		<view class="replyListItem">
+			<view class="imgView">
+				
+			</view>
+			<view class="msgListCon">
+				<view class="msgUserName">
+					<text class="currUserName">黄利峰</text>
+				</view>
+				<view class="botFun">
+					<view class="timeView">
+						<text>12-01</text>
+						<text>11:11</text>
+					</view>
+				</view>
+				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格阳的燃气价格是燃气价格是4300，上涨了！</view>
+			</view>
+		</view>
+		
+		
+		<view class="replyListItem">
+			<view class="imgView">
+				
+			</view>
+			<view class="msgListCon">
+				<view class="msgUserName">
+					<text class="currUserName">黄利峰</text>
+				</view>
+				<view class="botFun">
+					<view class="timeView">
+						<text>12-01</text>
+						<text>11:11</text>
+					</view>
+				</view>
+				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+			</view>
+		</view>
+		
+		
+		<view class="replyListItem">
+			<view class="imgView">
+				
+			</view>
+			<view class="msgListCon">
+				<view class="msgUserName">
+					<text class="currUserName">黄利峰</text>
+				</view>
+				<view class="botFun">
+					<view class="timeView">
+						<text>12-01</text>
+						<text>11:11</text>
+					</view>
+				</view>
+				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+			</view>
+		</view>
+		
+		<view class="replyListItem">
+			<view class="imgView">
+				
+			</view>
+			<view class="msgListCon">
+				<view class="msgUserName">
+					<text class="currUserName">黄利峰</text>
+				</view>
+				<view class="botFun">
+					<view class="timeView">
+						<text>12-01</text>
+						<text>11:11</text>
+					</view>
+				</view>
+				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+			</view>
+		</view>
+		
+		<view class="replyListItem">
+			<view class="imgView">
+				
+			</view>
+			<view class="msgListCon">
+				<view class="msgUserName">
+					<text class="currUserName">黄利峰</text>
+				</view>
+				<view class="botFun">
+					<view class="timeView">
+						<text>12-01</text>
+						<text>11:11</text>
+					</view>
+				</view>
+				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+			</view>
+		</view>
+		
+		<view class="replyListItem">
+			<view class="imgView">
+				
+			</view>
+			<view class="msgListCon">
+				<view class="msgUserName">
+					<text class="currUserName">黄利峰</text>
+				</view>
+				<view class="botFun">
+					<view class="timeView">
+						<text>12-01</text>
+						<text>11:11</text>
+					</view>
+				</view>
+				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,58 @@
+.mysListWrap{
+	padding: 0 30rpx;
+	border-top:1rpx solid #e8e8e8 ;
+	margin-top: 10rpx;
+}
+.mysListItem{
+	padding: 25rpx 0;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.imgView{
+	float: left;
+	width: 88rpx;
+	height: 88rpx;
+	background: pink;
+}
+.imgView image{
+	width: 88rpx;
+	height: 88rpx;
+	border-radius: 6rpx; 
+}
+.mysListCon{
+	margin-left: 15rpx;
+	width: 70%;
+	height: 88rpx;
+	float: left;
+}
+.mysTit{
+	height: 50rpx;
+	line-height: 50rpx;
+	color: #121212;
+	font-size: 28rpx;
+}
+.mysName{
+	height: 40rpx;
+	line-height: 40rpx;
+	color: #606060;
+}
+.mysName .mysNameItem{
+	float: left;
+	margin-right: 40rpx;
+	font-size: 24rpx;
+}
+.mysName .mysNameItem i{
+	color: #c8c8c8;
+	margin-right: 5rpx;
+	font-size: 28rpx;
+}
+.telWrap{
+	width: 13%;
+	height: 88rpx;
+	line-height: 88rpx;
+	float: right;
+	text-align: center;
+}
+.telWrap i{
+	font-size: 45rpx;
+	color: #1cb022;
+}

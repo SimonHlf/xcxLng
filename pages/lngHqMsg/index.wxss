@@ -1,0 +1,76 @@
+.mgsListWrap{
+	padding: 0 30rpx;
+	border-top: 1rpx solid #e8e8e8;
+	margin-top: 10rpx;
+}
+.msgListItem{
+	padding: 20rpx 0;
+}
+.imgView{
+	width:80rpx ;
+	height: 80rpx;
+	border-radius: 50%;
+	background: pink;
+	float: left;
+	margin-right: 15rpx;
+}
+.imgView image{
+	width:80rpx ;
+	height: 80rpx;
+	border-radius: 50%;
+}
+.msgListCon{
+	float: left;
+	width: 86%;
+	min-height: 120rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+	padding-bottom: 10rpx;
+}
+.msgListCon .msgUserName{
+	font-size:28rpx ;
+	color: #a9a9a9; 
+	height: 40rpx;
+	line-height: 40rpx;
+}
+.msgCon{
+	font-size: 28rpx;
+	color: #121212;
+}
+.replyNum{
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 24rpx;
+	color: #3c7de9;
+}
+.replyNum i{
+	font-size: 22rpx;
+	margin-left: 10rpx;
+}
+.botFun{
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 26rpx;
+}
+.timeView{
+	float: left;
+	color: #a9a9a9;
+}
+.timeView text:last-child{
+	margin-left: 15rpx;
+}
+.editMsg,
+.zanView{
+	float: right;
+	color: #a9a9a9;
+}
+.zanView{
+	margin-left: 65rpx;
+}
+.zanView text{
+	font-size: 26rpx;
+	margin-left: 5rpx;
+}
+.editMsg i,
+.zanView i{
+	font-size: 28rpx;
+}

@@ -2,7 +2,7 @@
 const app = getApp();
 const util = require('../../utils/util');
 var date = new Date();
-var currDate = date.getFullYear() + "-" + util.appendZero( (date.getMonth() + 1) ) + "-" + util.appendZero( date.getDate() );
+var currDate = date.getFullYear() + "-" + util.appendZero( (date.getMonth() + 1) ) + "-" + util.appendZero( date.getDate() ); 
 Page({
 	data : {
 		nowDate : currDate,
@@ -84,5 +84,8 @@ Page({
 		this.data.selectDate == '' ? this.data.selectDate = currDate : this.data.selectDate;
 		var currField = JSON.stringify({gfId:id,specTjDate:this.data.selectDate});
 		util.navigateTo('/pages/lngHqDet/index?currField='+currField);
+	},
+	goLngHqMsgPage : function(){
+		
 	}
 })

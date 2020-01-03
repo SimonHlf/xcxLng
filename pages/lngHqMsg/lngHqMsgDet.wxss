@@ -1,0 +1,77 @@
+page{
+	background: #efefef;
+}
+.msgDetTitWrap{
+	padding: 20rpx 30rpx;
+	background: #fff;
+}
+.imgView{
+	width:80rpx ;
+	height: 80rpx;
+	border-radius: 50%;
+	background: pink;
+	float: left;
+	margin-right: 15rpx;
+}
+.imgView image{
+	width:80rpx ;
+	height: 80rpx;
+	border-radius: 50%;
+}
+.msgListCon{
+	float: left;
+	width: 86%;
+	min-height: 120rpx;
+	padding-bottom: 10rpx;
+}
+.msgListCon .msgUserName{
+	font-size:28rpx ;
+	color: #121212; 
+	height: 40rpx;
+	line-height: 40rpx;
+	font-weight: 620;
+}
+.msgListCon .msgUserName text.currUserName{
+	float: left;
+}
+.msgListCon .msgUserName .dianzan{
+	float: right;
+	margin-left: 40rpx;
+	font-size: 24rpx;
+	font-weight: normal;
+}
+.msgListCon .msgUserName .dianzan i{
+	font-size: 26rpx;
+}
+.msgListCon .msgUserName .dianzan text{
+	margin-left: 5rpx;
+}
+.msgCon{
+	font-size: 28rpx;
+	color: #121212;
+}
+.botFun{
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 26rpx;
+	margin-bottom: 5rpx;
+}
+.timeView{
+	float: left;
+	color: #a9a9a9;
+}
+.timeView text:last-child{
+	margin-left: 15rpx;
+}
+/* replyList */
+.replyListItem{
+	padding: 20rpx 0;
+}
+.replyListItem .msgUserName{
+	font-weight: normal;
+}
+.replyListItem .msgListCon{
+	border-bottom: 1rpx solid #e0e0e0;
+	padding-bottom: 15rpx;
+	margin-bottom: 20rpx;
+}

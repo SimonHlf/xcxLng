@@ -1,9 +1,65 @@
+<!-- filter -->
+<view class="filter padd">
+	<view class="filterType" bindtap="showFilterType">
+		<text>{{filterType}}</text>
+		<i class="iconfont icon-zhijiao"></i>
+	</view>
+	<!-- 月份选择器 -->
+	<view class="filterDate" hidden="{{isShowMonthFlag}}">
+		<picker mode="date" fields="month" bindchange="bindMonthChange">
+			<view class="picker">
+				<text>{{nowDate}}</text>
+				<i class="iconfont icon-zhijiao"></i>
+			</view>
+		</picker> 
+	</view>
+	<!-- 年份选择器 -->
+	<view class="filterDate" hidden="{{isShowYearFlag}}">
+		<picker mode="date" fields="year" bindchange="bindYearChange">
+			<view class="picker">
+				<text>{{yearTxt}}年</text>
+				<i class="iconfont icon-zhijiao"></i>
+			</view>
+		</picker>
+	</view>
+	<!-- 日期选择器 --> 
+	<view class="filterDate" hidden="{{isShowDateFlag}}">
+		<picker mode="date" bindchange="bindDateChange">
+			<view class="picker">
+				<text>{{specTjDate}}</text>
+				<i class="iconfont icon-zhijiao"></i>
+			</view>
+		</picker>
+	</view>
+</view>
 <!-- echart -->
 <view class="echartWrap">
-	
+	<ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
 </view>
 <view class="gfDetItemWrap">
 	<view class="gfDetItem">
-		
-	</view>
+		<i class="iconfont icon-gongsi"></i>
+		<text class="itemTit">{{gfname}}</text>
+		<text class="subTxt">今日价格¥{{priceNum}}元/吨</text>
+	</view> 
+	<view class="gfDetItem">
+		<i class="iconfont icon-dizhi"></i> 
+		<text class="itemTit">{{province}}</text>
+	</view> 
+	<view class="gfDetItem">
+		<i class="iconfont icon-qibg"></i>
+		<text class="itemTit">{{gasName}}</text>
+	</view> 
+	<view class="gfDetItem" bindtap="checkYzBgImg">
+		<i class="iconfont icon-yzbg"></i> 
+		<text class="itemTit">液质报告</text>
+		<text class="yzNum">{{yzNum}}</text>
+		<view class="moreBtn"><i class="iconfont icon-gengduo"></i></view>
+	</view> 
+	<view class="gfDetItem">
+		<i class="iconfont icon-maoyishang"></i>
+		<text class="itemTit">贸易商</text>
+		<text class="yzNum">{{mysNum}}</text>
+		<view class="moreBtn"><i class="iconfont icon-gengduo"></i></view>
+	</view>  
 </view>

@@ -1,0 +1,27 @@
+.leaveMsgWrap{
+	margin-top: 10rpx;
+	border-top: 1rpx solid #e8e8e8;
+}
+.leaveMsgTxt {
+	margin-top: 20rpx;
+}
+.leaveMsgTxt textarea{
+	width: 96%;
+	height: 270rpx;
+	background:#f5f5f5 ;
+	font-size: 28rpx;
+	padding: 15rpx 2%;
+	color: #121212;
+	border-radius: 6rpx;
+}
+.leaveMsgBtn{
+	width: 360rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	background: #3c7de9;
+	text-align: center;
+	margin:60rpx auto 0;
+	color: #fff;
+	font-size: 30rpx;
+	border-radius: 6rpx;
+}
