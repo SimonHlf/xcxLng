@@ -1,5 +1,5 @@
 <!-- 未登录情况下拉起授权登录按钮 -->
-<button class='author_btn' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" withCredentials="{{true}}" lang='zh_CN' wx:if="{{!isAuthor}}"></button>
+<button class='author_btn' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" withCredentials="{{true}}" lang='zh_CN' wx:if="{{!isAuthor}}">{{isAuthor}}</button>
 <!-- 已登陆继续执行 -->
 <button class='author_btn' bindtap='goOn' wx:else></button>
 

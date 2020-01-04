@@ -43,8 +43,35 @@
 	right: 0;
 	top: 0;
 	bottom: 0; 
-	background:rgba(0,0,0,.2);
+	background:transparent;
 	z-index: 100;
+}
+.noDataList{
+	width: 300rpx;
+	margin:180rpx auto 0;
+	text-align: center;
+}
+.noDataList image{
+	width: 300rpx;
+}
+.noDataTxt{
+	color: #acacac;
+	font-size: 28rpx;
+}
+.loadingIcon{
+	text-align: center;
+}
+.loadingIcon image{
+	width: 80rpx;
+}
+.noDataTxt{
+	height: 90rpx;
+	line-height: 90rpx;
+	color: #a9a9a9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26rpx;
 }
 /* .lngAnim{
 	-webkit-animation-duration:.3s;

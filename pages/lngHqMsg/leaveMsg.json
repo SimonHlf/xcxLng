@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+  	 "isAuthor" : "../../components/author/author"
+  },
+  "navigationBarTitleText" : "LNG行情留言详情"
 }

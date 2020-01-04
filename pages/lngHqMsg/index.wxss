@@ -1,3 +1,7 @@
+page{
+	margin-bottom: 86rpx;
+	background: #fff;
+}
 .mgsListWrap{
 	padding: 0 30rpx;
 	border-top: 1rpx solid #e8e8e8;
@@ -9,15 +13,13 @@
 .imgView{
 	width:80rpx ;
 	height: 80rpx;
-	border-radius: 50%;
-	background: pink;
 	float: left;
 	margin-right: 15rpx;
 }
 .imgView image{
 	width:80rpx ;
 	height: 80rpx;
-	border-radius: 50%;
+	border-radius: 6rpx;
 }
 .msgListCon{
 	float: left;
@@ -43,7 +45,7 @@
 	color: #3c7de9;
 }
 .replyNum i{
-	font-size: 22rpx;
+	font-size: 20rpx;
 	margin-left: 10rpx;
 }
 .botFun{
@@ -55,13 +57,12 @@
 	float: left;
 	color: #a9a9a9;
 }
-.timeView text:last-child{
-	margin-left: 15rpx;
-}
 .editMsg,
 .zanView{
+	min-width: 15%;
 	float: right;
 	color: #a9a9a9;
+	text-align: right;
 }
 .zanView{
 	margin-left: 65rpx;
@@ -73,4 +74,17 @@
 .editMsg i,
 .zanView i{
 	font-size: 28rpx;
+}
+.addMsgBtn{
+	width: 100%;
+	height: 86rpx;
+	line-height: 86rpx;
+	background: #3c7de9;
+	color: #fff;
+	text-align: center;
+	font-size: 30rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
 }

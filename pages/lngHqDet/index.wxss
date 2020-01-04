@@ -56,8 +56,12 @@ page{
 }
 .gfDetItem .moreBtn{
 	float: right;
-}
+}  
 .gfDetItem .moreBtn i{
 	color: #606060;
 	font-size: 24rpx;
+}
+.yzNum{
+	color: #d32f2f;
+	font-size: 25rpx;
 }

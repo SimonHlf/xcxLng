@@ -1,73 +1,50 @@
-<view class="mgsListWrap">
-	<view class="msgListItem clearfix">
-		<view class="imgView">
-			
-		</view>
-		<view class="msgListCon">
-			<view class="msgUserName">黄利峰</view>
-			<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
-			<view class="replyNum">共5条回复<i class="iconfont icon-gengduo"></i></view>
-			<view class="botFun">
-				<view class="timeView">
-					<text>12-01</text>
-					<text>11:11</text>
+	<block wx:if="{{isHasDataFlag}}">
+		<view class="mgsListWrap">
+			<view class="msgListItem clearfix"
+				wx:for="{{lngMsgData}}"
+				wx:key="{{item.id}}"
+			>
+				<view class="imgView">
+					<image src="{{item.headImg}}"></image>
 				</view>
-				<view class="zanView">
-					<i class="iconfont icon-dianzan"></i>
-					<text>1</text>
-				</view>
-				<view class="editMsg">
-					<i class="iconfont icon-bianji"></i>
-				</view>
-			</view>
-		</view>
-	</view>
-	
-	<view class="msgListItem clearfix">
-		<view class="imgView">
-			
-		</view>
-		<view class="msgListCon">
-			<view class="msgUserName">黄利峰</view>
-			<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮濮阳的今天濮阳的燃气价格是今天濮阳的濮阳的今天濮阳的燃气价格是今天濮阳的阳的燃气价格是燃气价格是4300，上涨了！</view>
-			<view class="replyNum">共5条回复<i class="iconfont icon-gengduo"></i></view>
-			<view class="botFun">
-				<view class="timeView">
-					<text>12-01</text>
-					<text>11:11</text>
-				</view>
-				<view class="zanView">
-					<i class="iconfont icon-dianzan"></i>
-					<text>赞</text>
-				</view>
-				<view class="editMsg">
-					<i class="iconfont icon-bianji"></i>
+				<view class="msgListCon">
+					<view class="msgUserName">{{item.userName}}</view>
+					<view class="msgCon">{{item.content}}  </view>
+					<block wx:if="{{item.replyNumber > 0}}">
+						<view class="replyNum" data-id="{{item.id}}" bindtap="viewReplyDet">共{{item.replyNumber}}条回复<i class="iconfont icon-gengduo"></i></view>
+					</block>
+					<view class="botFun">
+						<view class="timeView">
+							<text>{{item.addTime}}</text>
+						</view>
+						<view class="zanView" bindtap="dianzan" data-index="{{index}}"  data-id="{{item.id}}">
+							<i class="iconfont icon-dianzan"></i>
+							<text>{{replyLike[index]}}</text>
+						</view>
+						<view class="editMsg" bindtap="addLngMsgDet" data-id="{{item.id}}">
+							<i class="iconfont icon-bianji"></i>
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
-	</view>
-	
-	<view class="msgListItem clearfix">
-		<view class="imgView">
-			
+		<view class="loadingIcon">
+			<block wx:if="{{loading}}">
+				<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+			</block>
+			<block wx:else>
+				<view class="noDataTxt">
+					<text>——————</text>
+					<text>我是有底线的~</text>
+					<text>——————</text>
+				</view>
+			</block>
+		</view> 
+		<view class="addMsgBtn" bindtap="addLngMsg">我要留言</view>
+	</block>
+	<block wx:else>
+		<view class="noDataList">
+			<image mode="widthFix" src="../../images/noData.png"></image>
+			<view class="noDataTxt">暂无留言记录</view>
 		</view>
-		<view class="msgListCon">
-			<view class="msgUserName">黄利峰</view>
-			<view class="msgCon">今天濮阳的今天的阳的燃气价格是燃气价格是4300，上涨了！</view>
-			<!-- <view class="replyNum">共5条回复<i class="iconfont icon-gengduo"></i></view> -->
-			<view class="botFun">
-				<view class="timeView">
-					<text>12-01</text>
-					<text>11:11</text>
-				</view>
-				<view class="zanView">
-					<i class="iconfont icon-dianzan"></i>
-					<text>赞</text>
-				</view>
-				<view class="editMsg">
-					<i class="iconfont icon-bianji"></i>
-				</view>
-			</view>
-		</view>
-	</view>
-</view>
+	</block>

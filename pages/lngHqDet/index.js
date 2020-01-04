@@ -1,8 +1,9 @@
 const app = getApp();
 const util = require('../../utils/util');
 import * as echarts from '../../components/ec-canvas/echarts';
+let chart = null;
 function initChart(canvas, width, height) {
-  const chart = echarts.init(canvas, null, {
+  chart = echarts.init(canvas, null, {
     width: width,
     height: height
   });
@@ -35,7 +36,9 @@ function initChart(canvas, width, height) {
       type: 'value',
 	  nameTextStyle : {fontSize:10}
     },
-    series: [{
+    series: [
+	{
+	  name : 'lng价格',
 	  type: 'line',
 	  label : {
 		  normal : {
@@ -149,15 +152,21 @@ Page({
 			success:function(res){
 				util.hideLoading();
 				console.log(res);
+				priceData.length = 0;
+				dateData.length = 0;
 				for(var attr in res.data.datas){
 					priceData[attr] = res.data.datas[attr].price;
 					dateData[attr] = res.data.datas[attr].priceDate;
 				}
-				_this.setData({
-					ec: {
-					  onInit: initChart
-					}
-				})
+				chart.setOption({
+				  xAxis: {
+					data: dateData  //全局变量
+				  },
+				  series: [{
+					name: 'lng价格',
+					data: priceData //全局变量
+				  }]
+				});
 			}
 		});
 	},
@@ -178,7 +187,7 @@ Page({
 			method: 'get',
 			success:function(res){
 				util.hideLoading();
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					let resObj = res.data.datas[0];
 					_this.setData({
@@ -202,5 +211,8 @@ Page({
 	},
 	checkYzBgImg : function(){
 		util.navigateTo('/pages/lngHqYzbg/index?gfId=' + this.data.gfId);
+	},
+	checkMys : function(){
+		util.navigateTo('/pages/lngHqMysList/index?gfId=' + this.data.gfId);
 	}
 }) 

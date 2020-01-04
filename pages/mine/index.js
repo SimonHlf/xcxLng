@@ -30,7 +30,6 @@ Page({
 		}
 	},
 	goAuthLogin : function(e){
-		console.log(e.detail.isShowFlag)
 		this.setData({
 			isShowFlag_page : e.detail.isShowFlag
 		});

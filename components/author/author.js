@@ -23,8 +23,8 @@ Component({
 				if(!res.authSetting['scope.userInfo']){
 					that.setData({
 					  isAuthor: false
-					})
-					wx.removeStorageSync('userId');
+					}) 
+					wx.removeStorageSync('userId'); 
 					wx.removeStorageSync('userInfo');
 				}
 			}
@@ -40,6 +40,7 @@ Component({
 			  isShowFlag : false
 			}) 
 		}
+		console.log(this.data.isAuthor)
 	} ,    
 	methods : {    
 		goOn(){ 
@@ -67,6 +68,7 @@ Component({
 			let that = this;  
 			wx.login({ 
 				success(res){
+					console.log(res.code)
 					if(res.code){
 						wx.request({ 
 							url: app.globalData.serverUrl + '/wxAuth',
@@ -84,10 +86,10 @@ Component({
 								} 
 							}
 						}) 
-					}
-				} 
-			});
-		},  
+					} 
+				}     
+			});   
+		},    
 		login : function(code,encryptedData,iv,sessionKey,openId){
 			var field =  {code:code,encryptedData:encryptedData,iv:iv,sessionKey:sessionKey,openId:openId};
 			let that = this;
@@ -110,6 +112,8 @@ Component({
 						util.showToast('请求参数不能为空');
 					}else if(res.data.code == 20002){
 						util.showToast('用户不存在');
+					}else if(res.data.code == 20008){
+						util.showToast('登录失败,请重新尝试');
 					}else if(res.data.code == 20003){
 						util.showToast('当前账号已被禁用,请联系管理员');
 					}else if(res.data.code == 40001){

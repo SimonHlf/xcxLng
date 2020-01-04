@@ -6,7 +6,7 @@
 	</view>
 	<!-- 月份选择器 -->
 	<view class="filterDate" hidden="{{isShowMonthFlag}}">
-		<picker mode="date" fields="month" bindchange="bindMonthChange">
+		<picker mode="date" value="{{nowDate}}" fields="month" bindchange="bindMonthChange">
 			<view class="picker">
 				<text>{{nowDate}}</text>
 				<i class="iconfont icon-zhijiao"></i>
@@ -15,7 +15,7 @@
 	</view>
 	<!-- 年份选择器 -->
 	<view class="filterDate" hidden="{{isShowYearFlag}}">
-		<picker mode="date" fields="year" bindchange="bindYearChange">
+		<picker mode="date" value="{{yearTxt}}" fields="year" bindchange="bindYearChange">
 			<view class="picker">
 				<text>{{yearTxt}}年</text>
 				<i class="iconfont icon-zhijiao"></i>
@@ -24,7 +24,7 @@
 	</view>
 	<!-- 日期选择器 --> 
 	<view class="filterDate" hidden="{{isShowDateFlag}}">
-		<picker mode="date" bindchange="bindDateChange">
+		<picker mode="date" value="{{specTjDate}}" bindchange="bindDateChange">
 			<view class="picker">
 				<text>{{specTjDate}}</text>
 				<i class="iconfont icon-zhijiao"></i>
@@ -53,13 +53,13 @@
 	<view class="gfDetItem" bindtap="checkYzBgImg">
 		<i class="iconfont icon-yzbg"></i> 
 		<text class="itemTit">液质报告</text>
-		<text class="yzNum">{{yzNum}}</text>
+		<text class="yzNum">({{yzNum}}张)</text>
 		<view class="moreBtn"><i class="iconfont icon-gengduo"></i></view>
 	</view> 
-	<view class="gfDetItem">
+	<view class="gfDetItem" bindtap="checkMys">
 		<i class="iconfont icon-maoyishang"></i>
 		<text class="itemTit">贸易商</text>
-		<text class="yzNum">{{mysNum}}</text>
+		<text class="yzNum">({{mysNum}})家</text>
 		<view class="moreBtn"><i class="iconfont icon-gengduo"></i></view>
 	</view>  
 </view>

@@ -97,13 +97,13 @@ page{
 	float: left;
 }
 .listItem{
-	min-height: 86rpx;
+	padding: 5rpx 0;
 }
 .listItem:nth-of-type(2n){
 	background: #e9f5ff;
 }
 .listItem view{
-	min-height: 86rpx;
+	min-height: 76rpx;
 	display: flex;
 	align-items: center;
 	font-size: 26rpx;
@@ -112,18 +112,12 @@ page{
 	text-align: center;
 	color: #121212;
 }
-.loadingIcon{
-	text-align: center;
-}
-.loadingIcon image{
-	width: 100rpx;
-}
-.noDataTxt{
-	height: 90rpx;
-	line-height: 90rpx;
-	color: #a9a9a9;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 26rpx;
+.maskLayer{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 100;
 }

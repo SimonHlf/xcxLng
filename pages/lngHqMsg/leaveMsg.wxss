@@ -24,4 +24,6 @@
 	color: #fff;
 	font-size: 30rpx;
 	border-radius: 6rpx;
+	position: relative;
+	padding: 0;
 }

@@ -1,6 +1,11 @@
 <view class="leaveMsgWrap padd">
-	<view class="leaveMsgTxt">
-		<textarea bindblur="bindTextAreaBlur" placeholder="对于燃气行情价格您有什么异议,可以在此留言哦(100字内)~" maxlength="100"/>
-	</view>
-	<view class="leaveMsgBtn">留言</view>
+	<form bindsubmit="formSubmit">
+		<view class="leaveMsgTxt">
+			<textarea name="msgTxtarea" placeholder="对于燃气行情价格您有什么异议,可以在此留言哦(100字内)~" maxlength="100"/>
+		</view>
+		<button class="leaveMsgBtn" formType="submit">
+			留言 
+			<isAuthor bind:flagEvent="submit"></isAuthor>
+		</button>
+	</form>
 </view>

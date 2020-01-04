@@ -1,66 +1,70 @@
-// pages/lngHqMsg/leaveMsg.js
+const app = getApp();
+const util = require('../../utils/util');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+	data : {
+		msgVal : '',
+		currPosPage : '',
+		msgId : ''
+	},
+	onLoad : function(options){
+		console.log(options)
+		this.setData({
+			currPosPage : options.currBackPage
+		});
+		if(this.data.currPosPage == 'msgDetList'){
+			this.setData({
+				msgId : options.msgId
+			});
+		}
+	},
+	formSubmit : function(e){
+		var _this = this,url = '',field = null;
+		this.setData({
+			msgVal : e.detail.value.msgTxtarea
+		}); 
+		console.log(wx.getStorageSync('userId'))
+		if(wx.getStorageSync('userId')){
+			if(this.data.msgVal == ''){
+				util.showToast('请输入要留言的内容');
+				return;
+			}
+			if(this.data.currPosPage == 'mainMsgList'){
+				field = {content:this.data.msgVal,userId:wx.getStorageSync('userId')};
+				url = app.globalData.serverUrl + '/lngMsg/addLngMsg';
+			}else if(this.data.currPosPage == 'msgDetList'){
+				field = {msgId:this.data.msgId,content:this.data.msgVal,userId:wx.getStorageSync('userId')};
+				url = app.globalData.serverUrl + '/lngMsg/addLngMsgRep';
+			}
+			console.log(field)
+			wx.request({  
+				url : url,
+				method:'post',
+				data :field,
+				header: {
+				  'content-type': 'application/x-www-form-urlencoded',
+				},
+				success : function(res){
+					if(res.data.code == 200){
+						util.showToastSuc('留言成功');
+						setTimeout(function(){
+							let pages = getCurrentPages();
+							let prevPage = pages[pages.length - 2];
+							prevPage.setData({
+								currBackPage: _this.data.currPosPage
+							})
+							if(_this.data.currPosPage == 'mainMsgList'){
+								wx.navigateBack({
+									delta:1
+								})
+							}else if(_this.data.currPosPage == 'msgDetList'){
+								util.redirectTo('/pages/lngHqMsg/lngHqMsgDet?msgId=' + _this.data.msgId);
+							}
+						},1200); 
+					}else if(res.data.code == 1000){
+						util.showToast('服务器错误');
+					}
+				}
+			});
+		}
+	}
 })

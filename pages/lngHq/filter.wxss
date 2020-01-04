@@ -1,0 +1,73 @@
+page{
+	background: #fff;
+	margin-bottom: 98rpx;
+}
+.filterMod{
+	margin-bottom: 20rpx;
+}
+.filterMod:last-child{
+	margin-bottom: 0;
+}
+.modTit{
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 30rpx;
+	color: #121212;
+	margin-bottom: 10rpx;
+}
+.modTit.otherCol{
+	color: #a9a9a9;
+}
+.inpView{
+	height: 80rpx;
+	line-height:80rpx;
+	border-bottom: 1rpx solid #efefef;
+}
+.inpView input{
+	width: 100%;
+	height: 100%;
+	font-size: 28rpx;
+	color: #121212;
+}
+.areaList .areaItem{
+	float: left;
+	height: 66rpx;
+	line-height: 66rpx;
+	padding: 0 25rpx;
+	background: #efefef;
+	color: #121212;
+	font-size: 26rpx;
+	margin-right: 20rpx;
+	border-radius: 100rpx;
+	margin-bottom: 24rpx;
+	border:1rpx solid #efefef;
+}
+.areaList .areaItem.active{
+	border:1rpx solid #3c7de9;
+	color: #3c7de9;
+	background:#f4faff ;
+}
+.filterBtnWrap{
+	width:100%;
+	height:96rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #e8e8e8;
+	color:#121212 ;
+}
+.filterBtnWrap button{
+	width: 50%;
+	line-height: 96rpx;
+	height: 100%;
+	float: left;
+	padding: 0;
+	border:none;
+	border-radius: 0;
+	font-weight: normal;
+	font-size: 30rpx;
+}
+.filterBtnWrap button.sureBtn{
+	background:#3c7de9 ;
+	color: #fff;
+}

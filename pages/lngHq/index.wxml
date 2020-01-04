@@ -1,5 +1,5 @@
 <view class="filterItem">
-	<navigator class="leaveMsgBtn" hover-class="none" bindtap="goLngHqMsgPage">行情留言</navigator>
+	<view class="leaveMsgBtn" bindtap="goLngHqMsgPage">行情留言</view>
 	<view class="pickerDateView">
 		<picker mode="date" value="{{nowDate}}" bindchange="bindDateChange">
 			<view class="picker">
@@ -8,7 +8,7 @@
 			</view>
 		</picker>
 	</view>
-	<view class="filterBtn">
+	<view class="filterBtn" bindtap="goFilter">
 		<text>筛选</text>
 		<i class="iconfont icon-shaixuan"></i>
 	</view>
@@ -25,7 +25,7 @@
 <!-- listCon --> 
 <view class="listCon">
 	<block wx:if="{{priceList.length > 0}}">
-		<view class="listItem"
+		<view class="listItem clearfix"
 			wx:for="{{priceList}}"
 			wx:key="*this"
 			data-id="{{item.gfId}}"
@@ -55,34 +55,6 @@
 			</block>
 		</view>
 	</block>
-	<!-- <view class="listItem">
-		<view class="nameView">正泰易达</view>
-		<view class="areaView">内蒙古自治区</view>
-		<view class="lqName">煤层气</view>
-		<view class="priceView">4200</view>
-		<view class="priceView">4300</view>
-		<view class="priceView">--</view>
-	</view>
-	<view class="listItem">
-		<view class="nameView">正泰易达</view>
-		<view class="areaView">内蒙古自治区</view>
-		<view class="lqName">煤层气</view>
-		<view class="priceView">4200</view>
-		<view class="priceView">4300</view>
-		<view class="priceView upPrice">4350<i class="iconfont icon-shangsheng"></i></view>
-	</view>
-	<view class="listItem">
-		<view class="nameView">正泰易达</view>
-		<view class="areaView">内蒙古自治区</view>
-		<view class="lqName">煤层气</view>
-		<view class="priceView">4200</view>
-		<view class="priceView">4300</view>
-		<view class="priceView downPrice">4050<i class="iconfont icon-xiajiang"></i></view>
-	</view> -->
-	<!-- <scroll-view scroll-y="true" bindscrolltolower="getMoreData" lower-threshold="20">
-		
-	</scroll-view> -->
-	
 </view>
 <view class="loadingIcon">
 	<block wx:if="{{loading}}">

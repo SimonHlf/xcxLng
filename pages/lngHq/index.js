@@ -13,7 +13,9 @@ Page({
 		yesterday:  '',
 		tomorrow : '',
 		nowPage : 1,
-		loading : false 
+		loading : false ,
+		provPy : '',
+		gtId : ''
 	},
 	onLoad(){ 
 		this.loadLngData();
@@ -29,15 +31,15 @@ Page({
 		this.setData({
 			loading : true
 		}); 
-		let field = {priceDate:_this.data.selectDate,page:_this.data.nowPage,limit:50};
-		console.log(field)
+		let field = {provPy:this.data.provPy,gtId:this.data.gtId,priceDate:_this.data.selectDate,page:_this.data.nowPage,limit:50};
+		//console.log(field)
 		wx.request({
 			url : app.globalData.serverUrl + '/lng/getPageLngPriceData',
 			method: 'get',
 			data:field,
 			success : function(res){
 				if(res.data.code == 200){
-					console.log(res)
+					//console.log(res)
 					if(res.data.datas[0].lngPriceList.length > 0){
 						nowPage += 1;
 						priceList.push( ...res.data.datas[0].lngPriceList );
@@ -86,6 +88,9 @@ Page({
 		util.navigateTo('/pages/lngHqDet/index?currField='+currField);
 	},
 	goLngHqMsgPage : function(){
-		
+		util.navigateTo('/pages/lngHqMsg/index');
+	},
+	goFilter : function(){
+		util.navigateTo('/pages/lngHq/filter')
 	}
 })

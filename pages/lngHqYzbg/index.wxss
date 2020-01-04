@@ -2,7 +2,7 @@
 	width: 325rpx;
 	height: 220rpx;
 	float: left;
-	background: pink;
+	background: #fff;
 	margin-right: 40rpx;
 	margin-bottom: 40rpx;
 }

@@ -8,15 +8,13 @@ page{
 .imgView{
 	width:80rpx ;
 	height: 80rpx;
-	border-radius: 50%;
-	background: pink;
 	float: left;
 	margin-right: 15rpx;
 }
 .imgView image{
 	width:80rpx ;
 	height: 80rpx;
-	border-radius: 50%;
+	border-radius: 6rpx;
 }
 .msgListCon{
 	float: left;

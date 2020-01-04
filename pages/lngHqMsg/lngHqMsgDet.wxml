@@ -1,158 +1,61 @@
 <view class="msgDetWrap">
 	<view class="msgDetTitWrap clearfix">
 		<view class="imgView"> 
-			
+			<image src="{{mainList.headImg}}"></image>
 		</view>
 		<view class="msgListCon">
 			<view class="msgUserName">
-				<text class="currUserName">黄利峰</text>
+				<text class="currUserName">{{mainList.userName}}</text>
 				<view class="dianzan">
 					<i class="iconfont icon-wodexiaoxi"></i>
-					<text>10</text>
+					<text>{{mainList.replyNumber}}</text>
 				</view>
 				<view class="dianzan">
 					<i class="iconfont icon-dianzan"></i>
-					<text>20</text>
+					<text>{{mainList.zcTimes}}</text>
 				</view>
 			</view>
 			<view class="botFun">
 				<view class="timeView">
-					<text>12-01</text>
-					<text>11:11</text>
+					<text>{{mainList.addTime}}</text>
 				</view>
 			</view>
-			<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+			<view class="msgCon">{{mainList.content}}</view>
 		</view>
 	</view>
 	
 	<!-- 回复list -->
 	<view class="replyList padd">
-		<view class="replyListItem">
+		<view class="replyListItem clearfix"
+				wx:for="{{msgDetList}}"
+				wx:key="*this"
+		>
 			<view class="imgView">
-				
+				<image src="{{item.headImg}}"></image>
 			</view>
 			<view class="msgListCon">
 				<view class="msgUserName">
-					<text class="currUserName">黄利峰</text>
+					<text class="currUserName">{{item.userName}}</text>
 				</view>
 				<view class="botFun">
 					<view class="timeView">
-						<text>12-01</text>
-						<text>11:11</text>
+						<text>{{item.addTime}}</text>
 					</view>
 				</view>
-				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
-			</view>
-		</view>
-		
-		<view class="replyListItem">
-			<view class="imgView">
-				
-			</view>
-			<view class="msgListCon">
-				<view class="msgUserName">
-					<text class="currUserName">黄利峰</text>
-				</view>
-				<view class="botFun">
-					<view class="timeView">
-						<text>12-01</text>
-						<text>11:11</text>
-					</view>
-				</view>
-				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格阳的燃气价格是燃气价格是4300，上涨了！</view>
-			</view>
-		</view>
-		
-		
-		<view class="replyListItem">
-			<view class="imgView">
-				
-			</view>
-			<view class="msgListCon">
-				<view class="msgUserName">
-					<text class="currUserName">黄利峰</text>
-				</view>
-				<view class="botFun">
-					<view class="timeView">
-						<text>12-01</text>
-						<text>11:11</text>
-					</view>
-				</view>
-				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
-			</view>
-		</view>
-		
-		
-		<view class="replyListItem">
-			<view class="imgView">
-				
-			</view>
-			<view class="msgListCon">
-				<view class="msgUserName">
-					<text class="currUserName">黄利峰</text>
-				</view>
-				<view class="botFun">
-					<view class="timeView">
-						<text>12-01</text>
-						<text>11:11</text>
-					</view>
-				</view>
-				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
-			</view>
-		</view>
-		
-		<view class="replyListItem">
-			<view class="imgView">
-				
-			</view>
-			<view class="msgListCon">
-				<view class="msgUserName">
-					<text class="currUserName">黄利峰</text>
-				</view>
-				<view class="botFun">
-					<view class="timeView">
-						<text>12-01</text>
-						<text>11:11</text>
-					</view>
-				</view>
-				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
-			</view>
-		</view>
-		
-		<view class="replyListItem">
-			<view class="imgView">
-				
-			</view>
-			<view class="msgListCon">
-				<view class="msgUserName">
-					<text class="currUserName">黄利峰</text>
-				</view>
-				<view class="botFun">
-					<view class="timeView">
-						<text>12-01</text>
-						<text>11:11</text>
-					</view>
-				</view>
-				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
-			</view>
-		</view>
-		
-		<view class="replyListItem">
-			<view class="imgView">
-				
-			</view>
-			<view class="msgListCon">
-				<view class="msgUserName">
-					<text class="currUserName">黄利峰</text>
-				</view>
-				<view class="botFun">
-					<view class="timeView">
-						<text>12-01</text>
-						<text>11:11</text>
-					</view>
-				</view>
-				<view class="msgCon">今天濮阳的今天濮阳的燃气价格是今天濮阳的燃气价格是燃气价格是4300，上涨了！</view>
+				<view class="msgCon">{{item.content}}</view>
 			</view>
 		</view>
 	</view>
 </view>
+<view class="loadingIcon">
+		<block wx:if="{{loading}}">
+			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+		</block>
+		<block wx:else>
+			<view class="noDataTxt">
+				<text>——————</text>
+				<text>我是有底线的~</text>
+				<text>——————</text>
+			</view>
+		</block>
+	</view> 

@@ -1,0 +1,34 @@
+<view class="filterMod padd">
+	<view class="modTit">液厂名称首字母</view>
+	<view class="inpView">
+		<input type="text" placeholder="请输入液厂名称首字母" maxlength="20"/>
+	</view>
+</view>
+<view class="filterMod padd">
+	<view class="modTit otherCol">地域选择</view>
+	<view class="areaList clearfix">
+		<view class="areaItem active">河南省</view>
+		<view class="areaItem">北京市</view>
+		<view class="areaItem">湖北省</view>
+		<view class="areaItem">河南省</view>
+		<view class="areaItem">内蒙古自治区</view>
+		<view class="areaItem">新疆为伍二组自治区</view>
+	</view>
+</view>
+
+<view class="filterMod padd">
+	<view class="modTit otherCol">液质选择</view>
+	<view class="areaList clearfix">
+		<view class="areaItem">管道也</view>
+		<view class="areaItem">北京市</view>
+		<view class="areaItem">湖北省</view>
+		<view class="areaItem">河南省</view>
+		<view class="areaItem">内蒙古自治区</view>
+		<view class="areaItem">新疆为伍二组自治区</view>
+	</view>
+</view>
+
+<view class="filterBtnWrap">
+	<button>重置</button>
+	<button class="sureBtn">确定</button>
+</view>

@@ -1,66 +1,60 @@
-// pages/lngHqMsg/lngHqMsgDet.js
+const app = getApp();
+const util = require('../../utils/util');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+	data : {
+		msgId : '',
+		nowPage : 1,
+		mainList : [],
+		msgDetList : [],
+		loading:false
+	}, 
+	onLoad : function(options){
+		this.setData({
+			msgId : options.msgId
+		});
+		this.loadMsgDetList();
+	},
+	onReachBottom : function(){
+		if( !this.data.loading ){
+			this.loadMsgDetList();
+		}
+	},
+	loadMsgDetList : function(){
+		let _this = this,
+			field = {msgId:this.data.msgId,page:this.data.nowPage,limit:15};
+		let { nowPage,msgDetList } = this.data;
+		this.setData({
+			loading : true
+		}); 
+		wx.request({
+			url : app.globalData.serverUrl + '/lngMsg/getLngMsgRepPageList',
+			method:'get',
+			data :field,
+			success : function(res){
+				console.log(res) 
+				if(res.data.code == 200){
+					_this.setData({
+						mainList : res.data.datas[0].mainList[0],
+					});
+					if(res.data.datas[0].replyList.length > 0){
+						nowPage += 1;
+						msgDetList.push( ...res.data.datas[0].replyList );
+						_this.setData({
+							msgDetList,
+							nowPage,
+							loading : false
+						});
+					}else{
+						_this.setData({
+							loading : false
+						});
+					}
+				}else if(res.data.code == 1000){
+					util.showToast('服务器错误');
+				}else if(res.data.code == 50001){
+					//util.showToast('当前液厂液质报告图不存在');
+				}
+			}
+		});
+	}
 })
