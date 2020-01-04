@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/msg/index",
 	  "pages/lngHq/filter",
     "pages/lngHq/index",
     "pages/lngHqDet/index",
@@ -12,8 +13,8 @@
     "pages/rqDev/index",
     "pages/potTrade/index",
     "pages/rqMaoyi/index",
-    "pages/mine/index",
-    "pages/msg/index"
+    "pages/mine/index"
+    
     
   ],
   "window": {

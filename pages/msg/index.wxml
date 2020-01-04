@@ -1,3 +1,8 @@
-<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <input value='{{time}}' placeholder='选择时间'/>
-  </picker> 
+<view class='appointent-date'>
+ <view  class="appointent-date-div {{item.state==1?'active-tag':''}}" bindtap="select_date" data-num="0" wx:for="{{dates}}" data-key='{{index}}'>
+   <view class="flex-item" >
+	 <rich-text class='data_name'>{{item.data_name}}</rich-text>
+	 <rich-text>{{item.name}}</rich-text>
+   </view>
+ </view>  
+</view>
