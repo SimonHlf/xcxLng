@@ -1,5 +1,7 @@
 {
   "pages": [
+	 
+	"pages/rqDev/rqDevDet",
     "pages/pubRqTrade/index",
     "pages/rqDevSellerDet/index",
     "pages/rqMySellerDet/index",

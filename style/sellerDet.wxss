@@ -6,6 +6,10 @@ page{
 	height: 400rpx;
 	background: pink;
 }
+.mainHeadImg imgage{
+	width: 100%;
+	height: 100%;
+}
 .sellerInfo{
 	background: #fff;
 	margin-bottom: 20rpx;

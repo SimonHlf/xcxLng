@@ -1,5 +1,5 @@
 <view class="pubWrap">
-	<form>
+	<form bindsubmit="formSubmit">
 		<view class="pubModTit padd">
 			<view><i class="iconfont icon-editInfo"></i></view>
 			<view>请填写以下信息</view>
@@ -90,15 +90,19 @@
 				<input type="number" name="yyyPhoneName" placeholder="请输入押运员手机号码" maxlength="11"/>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">铅封信息</view>
+				<view class="pubTit"><text>*</text>铅封信息</view>
 				<input type="text" name="qfName" placeholder="请输入铅封信息" maxlength="30"/>
 			</view>
-			
-			<button>确认发布</button>
-		</view>
-		
-		
-		
-		
+			<view class="pubItem_spec clearfix">
+				<view class="pubTit"><text>*</text>磅单图片</view>
+				<view class="upBdImgWrap">
+					<!-- <image src="{{bgImg}}"></image> -->
+					<view class="uploadBdImg" bindtap='upLoadBdImg'>
+						<i class="iconfont icon-xiangji"></i>
+					</view>
+				</view>
+			</view>
+		</view> 
+		<button class="sureBtn" formType="submit">确认发布</button>
 	</form>
 </view>

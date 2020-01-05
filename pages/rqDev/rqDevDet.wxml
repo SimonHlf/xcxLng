@@ -1,0 +1,40 @@
+<view class="mainHeadImg">
+ 	<image></image>
+</view>
+<view class="sellerInfo padd">
+	<view class="topSellerInfo">
+		<view class="compName ellip">濮阳浩泰能濮阳浩泰能</view>
+	</view>
+	<view class="priceItem clearfix">
+		<view class="priceNum">
+			<text class="rmb">￥</text>
+			<text class="price">4200</text>
+		</view>
+		<view class="cd">产地：闪动潍坊</view>
+	</view>
+</view>
+<view class="sellerTel clearfix">
+	<view class="sellerImg">
+		<image></image>
+	</view>
+	<view class="rqDevCompName">
+		<view class="lxrNameTel">
+			<text>左经理</text>
+			<text>189828378374</text>
+		</view>
+		<view class="rqDevName ellip">南宫市卓创气南宫械制造有限公司 </view>
+	</view>
+	<view class="phoneCall">
+		<i class="iconfont icon-tel"></i>
+	</view>
+</view>
+<view class="proBasicInfo padd">
+	<view class="proTit">
+		<view class="lineView"></view>
+		<view>产品基本信息</view>
+	</view>
+	<view class="basicInfoItem">
+		<text>品牌名称</text>
+		<text>亚和制氮机</text>
+	</view>
+</view>
