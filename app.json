@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/msg/index",
-	  "pages/lngHq/filter",
+    "pages/pubRqTrade/index",
+    "pages/rqDevSellerDet/index",
+    "pages/rqMySellerDet/index",
     "pages/lngHq/index",
+    "pages/lngHq/filter",
+    "pages/msg/index",
     "pages/lngHqDet/index",
     "pages/lngHqYzbg/index",
     "pages/lngHqMsg/leaveMsg",
@@ -13,9 +16,8 @@
     "pages/rqDev/index",
     "pages/potTrade/index",
     "pages/rqMaoyi/index",
-    "pages/mine/index"
-    
-    
+    "pages/mine/index",
+    "pages/rqMaoyi/filter"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -73,6 +73,15 @@
 	align-items: center;
 	font-size: 26rpx;
 }
+.maskLayer{
+	position: absolute;
+	left:0;
+	right: 0;
+	top: 0;
+	bottom: 0; 
+	background:rgba(0,0,0,.5);
+	z-index: 100;
+}
 /* .lngAnim{
 	-webkit-animation-duration:.3s;
 	animation-duration:.3s;

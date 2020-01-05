@@ -1,0 +1,40 @@
+<view class="filterMod padd">
+	<view class="modTit otherCol">液质选择<text class="subTxt">(单选)</text></view>
+	<view class="areaList clearfix">
+		<view class="areaItem">管道也</view>
+		<view class="areaItem">北京市</view>
+		<view class="areaItem">湖北省</view>
+		<view class="areaItem">河南省</view>
+		<view class="areaItem">内蒙古自治区</view>
+		<view class="areaItem">新疆为伍二组自治区</view>
+	</view>
+</view> 
+<!-- 价格区间 -->
+<view class="filterMod padd">
+	<view class="modTit otherCol">价格区间<text class="subTxt">(元)</text></view>
+	<view class="priceRangeWrap">
+		<view class="priceRange">
+			<input type="number" placeholder="最低价" maxlength="6" />
+		</view>
+		<view>——</view>
+		<view class="priceRange">
+			<input type="number" placeholder="最高价" maxlength="6"/>
+		</view>
+	</view>
+</view> 
+<view class="filterMod padd">
+	<view class="modTit otherCol">配送区域<text class="subTxt">(多选)</text></view>
+	<view class="areaList clearfix">
+		<view class="areaItem active">河南省</view>
+		<view class="areaItem">北京市</view>
+		<view class="areaItem">湖北省</view>
+		<view class="areaItem">河南省</view>
+		<view class="areaItem">内蒙古自治区</view>
+		<view class="areaItem">新疆为伍二组自治区</view>
+	</view>
+</view>
+
+<view class="filterBtnWrap">
+	<button>重置</button>
+	<button class="sureBtn">确定</button>
+</view>

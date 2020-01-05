@@ -1,0 +1,96 @@
+<view class="mainHeadImg">
+	<image></image>
+</view>
+<view class="sellerInfo padd">
+	<view class="topSellerInfo">
+		<view class="compName ellip">濮阳浩泰能源有限公司</view>
+		<view class="hpNum">好评度98%</view>
+	</view>
+	<view class="psArea">
+		<view>配送区域：</view>
+		<text>北京市/河北省/北京市/河北省</text>
+	</view>
+	<view class="lqyyd clearfix">
+		<view>液质:深冷管道热气</view>
+		<view>液源地:濮阳</view>
+	</view>
+	<view class="priceItem clearfix">
+		<view class="priceNum">
+			<text class="rmb">￥</text>
+			<text class="price">4200</text>
+			<text>/m³</text>
+		</view>
+		<view class="zzl">装载量1020m³</view>
+		<view class="zzl">装车时间：2019-12-04</view>
+	</view>
+</view>
+<view class="sellerTel clearfix">
+	<view class="sellerImg">
+		<image></image>
+	</view>
+	<view class="telInfo">
+		<text>王杰</text>
+		<text>13311089766</text>
+	</view>
+	<view class="phoneCall">
+		<i class="iconfont icon-tel"></i>
+	</view>
+</view>
+<view class="botFun">
+	<view class="focusView">
+		<view class="iconView">
+			<i class="iconfont icon-guanzhu"></i>
+			<!-- <i class="iconfont icon-guanzhu1"></i> -->
+		</view>
+		<view class="iconTxt">关注</view>
+	</view>
+	<view class="focusView">
+		<view class="iconView">
+			<i class="iconfont icon-wodexiaoxi"></i>
+		</view>
+		<view class="iconTxt">咨询</view>
+	</view>
+	<block wx:if="{{canByGasFlag}}">
+		<view class="buyGasBtn">我要买设备</view>
+	</block>
+	<block wx:else>
+		<view class="notBuyGasBtn">我要买设备</view>
+	</block>
+</view>
+<!-- 买气弹窗 -->
+<view class="maskLayer" hidden="{{isShowLayerFlag}}"></view>
+<view class="buyGasView" hidden="{{isShowLayerFlag}}">
+	<view class="buyGasTit">请填写信息</view>
+	<view class="buyGasForm">
+		<form bindsubmit="formSubmit">
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-xingming"></i>
+				</view>
+				<input type="text" name="buyUserName" placeholder="请输入您的姓名" maxlength="6"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-shouji"></i>
+				</view>
+				<input type="number" name="phoneNum" placeholder="请输入您的手机号码" maxlength="11"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-psDizhi"></i>
+				</view>
+				<input type="text" name="psArea" placeholder="请输入您的配送地址(如实填写)" maxlength="50"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-baojia"></i>
+				</view>
+				<input type="number" name="buyPrice" placeholder="请输入您的报价" maxlength="7"/>
+			</view>
+			<button class="subBtn" formType="submit">提交信息</button>
+		</form>
+	</view>
+	<view class="closeView">
+		<i class="iconfont icon-guanbi"></i>
+	</view>
+</view>

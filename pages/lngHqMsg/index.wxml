@@ -2,7 +2,7 @@
 		<view class="mgsListWrap">
 			<view class="msgListItem clearfix"
 				wx:for="{{lngMsgData}}"
-				wx:key="{{item.id}}"
+				wx:key="index"
 			>
 				<view class="imgView">
 					<image src="{{item.headImg}}"></image>

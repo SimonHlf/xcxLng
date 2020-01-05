@@ -1,0 +1,104 @@
+<view class="pubWrap">
+	<form>
+		<view class="pubModTit padd">
+			<view><i class="iconfont icon-editInfo"></i></view>
+			<view>请填写以下信息</view>
+		</view>
+		<view class="pubForm padd">
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司名称</view>
+				<input type="text" name="compName" placeholder="请输入公司名称" maxlength="30"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>液质</view>
+				<view class="selItem">
+					<!-- noSel -->
+					<input name="lqName" placeholder="请选择液质" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>液源地</view>
+				<input type="text" name="yydName" placeholder="请输入液源地" maxlength="40"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>装载量/m³</view>
+				<input type="number" name="zzlName" placeholder="请输入装载量" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>单价/元</view>
+				<input type="number" name="djName" placeholder="请输入单价" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit">装车日期</view>
+				<view class="selItem">
+					<picker mode="date" value="{{zcriq}}" bindchange="bindDateChange">
+						<view class="picker">
+							<text class="noSel">{{zcriq}}</text>
+							<i class="iconfont icon-gengduo"></i>
+						</view>
+					</picker>
+				</view>
+			</view>
+			
+			<view class="pubItem">
+				<view class="pubTit">配送区域</view>
+				<view class="selItem">
+					<!-- noSel -->
+					<text class="noSel ellip">请选择配送区域</text>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系人</view>
+				<input type="text" name="lxrName" placeholder="请输入联系人姓名" maxlength="8"/>
+			</view>
+			<view class="pubItem noBor">
+				<view class="pubTit"><text>*</text>联系方式</view>
+				<input type="number" name="lxrTel" placeholder="请输入手机号码" maxlength="11"/>
+			</view>
+		</view>
+		<view class="pubModTit padd">
+			<view><i class="iconfont icon-psxinxi"></i></view>
+			<view>配送信息<text class="subTxt">(此信息当双方达成交易，买方方可显示)</text></view>
+		</view>
+		
+		<view class="pubForm padd">
+			<view class="pubItem">
+				<view class="pubTit">车牌号</view>
+				<input type="text" name="cphName" placeholder="请输入车牌号" maxlength="5"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit">挂车牌号</view>
+				<input type="text" name="gcphName" placeholder="请输入挂车牌号" maxlength="5"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit">司机姓名</view>
+				<input type="text" name="sjName" placeholder="请输入司机姓名" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit">司机联系方式</view>
+				<input type="number" name="sjPhoneName" placeholder="请输入司机手机号码" maxlength="11"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit">押运员姓名</view>
+				<input type="text" name="yyyName" placeholder="请输入押运员姓名" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit">押运员联系方式</view>
+				<input type="number" name="yyyPhoneName" placeholder="请输入押运员手机号码" maxlength="11"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit">铅封信息</view>
+				<input type="text" name="qfName" placeholder="请输入铅封信息" maxlength="30"/>
+			</view>
+			
+			<button>确认发布</button>
+		</view>
+		
+		
+		
+		
+	</form>
+</view>

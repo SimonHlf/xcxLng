@@ -1,0 +1,69 @@
+.pubModTit{
+	height: 80rpx;
+	line-height: 80rpx;
+	background: #efefef;
+	font-size: 28rpx;
+	color: #121212;
+}
+.pubModTit view{
+	float: left;
+}
+.subTxt{
+	font-size: 22rpx;
+	color:#a9a9a9 ;
+	font-weight: 620;
+	margin-left: 10rpx;
+}
+.pubModTit i{
+	color: #3c7de9;
+	font-size: 30rpx;
+}
+.pubModTit view:last-child{
+	margin-left: 10rpx;
+}
+.pubItem{
+	height: 90rpx;
+	line-height: 90rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.pubTit{
+	width: 220rpx;
+	height: 100%;
+	font-size: 28rpx;
+	color:#606060 ;
+	float: left;
+}
+.pubTit text{
+	color:#d32f2f;
+	margin-right: 5rpx;
+}
+.pubItem.noBor{
+	border-bottom: none;
+}
+.pubItem input,
+.selItem{
+	width: 420rpx;
+	float: right;
+	height: 100%;
+	text-align: right;
+	font-size: 28rpx;
+	color: #121212;
+	padding-right: 10rpx;
+}
+.selItem i{
+	font-size: 24rpx;
+	color: #808080;
+	float: right;
+}
+.selItem input{
+	width: 380rpx;
+	float: left;
+}
+.selItem text.noSel{
+	color: #808080;
+}
+.selItem text{
+	display: inline-block;
+	width: 380rpx;
+	margin-right: 15rpx;
+}

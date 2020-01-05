@@ -56,6 +56,10 @@
 		</view>
 	</block>
 </view>
+<view class="noDataList" hidden="{{isHasDataFlag}}" style="margin-top: 400rpx;">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view>
 <view class="loadingIcon">
 	<block wx:if="{{loading}}">
 		<image src="../../images/loading-bars.svg" mode="widthFix"></image>

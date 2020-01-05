@@ -48,14 +48,14 @@
 	</view>
 </view>
 <view class="loadingIcon">
-		<block wx:if="{{loading}}">
-			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
-		</block>
-		<block wx:else>
-			<view class="noDataTxt">
-				<text>——————</text>
-				<text>我是有底线的~</text>
-				<text>——————</text>
-			</view>
-		</block>
-	</view> 
+	<block wx:if="{{loading}}">
+		<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+	</block>
+	<block wx:else>
+		<view class="noDataTxt">
+			<text>——————</text>
+			<text>我是有底线的~</text>
+			<text>——————</text>
+		</view>
+	</block>
+</view> 

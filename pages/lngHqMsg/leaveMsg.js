@@ -35,7 +35,7 @@ Page({
 				field = {msgId:this.data.msgId,content:this.data.msgVal,userId:wx.getStorageSync('userId')};
 				url = app.globalData.serverUrl + '/lngMsg/addLngMsgRep';
 			}
-			console.log(field)
+			//console.log(field)
 			wx.request({  
 				url : url,
 				method:'post',
