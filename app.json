@@ -1,9 +1,9 @@
 {
   "pages": [
+	  "pages/rqDev/rqDevDet",
     "pages/pubRqTrade/index",
     "pages/rqMaoyi/index",
     "pages/lngHq/index",
-    "pages/rqDev/rqDevDet",
     "pages/rqDevSellerDet/index",
     "pages/rqMySellerDet/index",
     "pages/msg/index",
