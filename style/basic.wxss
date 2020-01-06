@@ -1,0 +1,43 @@
+pages{
+	background: #fff;
+}
+.modTit{
+	height: 80rpx;
+	line-height: 80rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+	position: relative;
+	margin-bottom: 30rpx;
+	background: #efefef;
+}
+.modTit view.lineView{
+	width: 8rpx;
+	height: 36rpx;
+	position: absolute;
+	left: 30rpx;
+	top: 22rpx;
+	background: #3c7de9;
+}
+.modTit view:last-child{
+	margin-left: 20rpx;
+	float: left;
+	font-size: 28rpx;
+	color: #121212;
+}
+.modListItem{
+	float: left;
+	height: 66rpx;
+	line-height: 66rpx;
+	padding: 0 25rpx;
+	background: #efefef;
+	color: #121212;
+	font-size: 26rpx;
+	margin-right: 20rpx;
+	border-radius: 100rpx;
+	margin-bottom: 24rpx;
+	border:1rpx solid #efefef;
+}
+.modListItem.active{
+	border:1rpx solid #3c7de9;
+	color: #3c7de9;
+	background:#f4faff ;
+}

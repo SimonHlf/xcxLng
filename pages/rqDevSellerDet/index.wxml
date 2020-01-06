@@ -44,12 +44,12 @@
 		</view>
 		<view class="iconTxt">关注</view>
 	</view>
-	<view class="focusView">
+	<!-- <view class="focusView">
 		<view class="iconView">
 			<i class="iconfont icon-wodexiaoxi"></i>
 		</view>
 		<view class="iconTxt">咨询</view>
-	</view>
+	</view> -->
 	<block wx:if="{{canByGasFlag}}">
 		<view class="buyGasBtn">我要买设备</view>
 	</block>

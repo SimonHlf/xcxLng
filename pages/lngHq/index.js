@@ -22,10 +22,7 @@ Page({
 		isAllEmptyFlag : false
 	},
 	onShow(){
-		//console.log(this.data.ycName)
-		//console.log(this.data.provPy)
-		//console.log(this.data.isAllEmptyFlag)
-		if(this.data.ycName != '' || this.data.provPy != '' || this.data.isAllEmptyFlag){
+		if(this.data.ycName != '' || this.data.provPy != '' || this.data.gtId != '' || this.data.isAllEmptyFlag){
 			this.setData({
 				nowPage :1,
 				loading : false,
@@ -44,7 +41,6 @@ Page({
 		});
 	},
 	onLoad(){ 
-		console.log("haha")
 		this.loadLngData();
 	},
 	onReachBottom : function(){
@@ -58,8 +54,8 @@ Page({
 		this.setData({
 			loading : true
 		}); 
-		let field = {provPy:this.data.provPy,gtId:this.data.gtId,gsNamePy:this.data.ycName,priceDate:_this.data.selectDate,page:_this.data.nowPage,limit:50};
-		console.log(field)
+		let field = {provName:this.data.provPy,gtId:this.data.gtId,gsNamePy:this.data.ycName,priceDate:_this.data.selectDate,page:_this.data.nowPage,limit:50};
+		//console.log(field)
 		wx.request({
 			url : app.globalData.serverUrl + '/lng/getPageLngPriceData',
 			method: 'get',
@@ -129,6 +125,6 @@ Page({
 		util.navigateTo('/pages/lngHqMsg/index');
 	},
 	goFilter : function(){
-		util.navigateTo('/pages/lngHq/filter?provOrderNo=' + this.data.provOrderNo)
+		util.navigateTo('/pages/lngHq/filter?provOrderNo=' + this.data.provOrderNo + '&gtId=' + this.data.gtId)
 	}
 })

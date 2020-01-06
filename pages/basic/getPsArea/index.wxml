@@ -1,0 +1,17 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>选择配送区域<text class="subTxt">(最多可选5个)</text></view>
+</view>
+<view class="modList padd clearfix">
+	<view class="modListItem {{item.state==1 ? 'active':''}}"
+		wx:for="{{provData}}"
+		wx:key="index"
+		data-index="{{index}}"
+		bindtap="selectProv"
+	>{{item.province}}</view>
+</view> 
+<view class="addPsAreaBtn" bindtap="savePsArea">保存配送区域</view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../../images/noData.png"></image>
+	<view class="noDataTxt">暂无配送区域</view>
+</view>

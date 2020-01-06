@@ -27,11 +27,11 @@ Component({
 					wx.removeStorageSync('userId'); 
 					wx.removeStorageSync('userInfo');
 				}
-			}
-		}); 
+			}  
+		});    
 		if(wx.getStorageSync("userId")){
 			this.setData({
-			  isAuthor: true,
+			  isAuthor: true, 
 			  isShowFlag : true
 			}) 
 		}else{ 
@@ -68,7 +68,6 @@ Component({
 			let that = this;  
 			wx.login({ 
 				success(res){
-					console.log(res.code)
 					if(res.code){
 						wx.request({ 
 							url: app.globalData.serverUrl + '/wxAuth',
@@ -100,7 +99,7 @@ Component({
 				data :field,
 				success: function(res){ 
 					util.hideLoading();
-					console.log(res)
+					//console.log(res)
 					if(res.data.code == 200){  
 						that.setData({  
 							isAuthor : true,

@@ -1,0 +1,21 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>选择液厂</view>
+</view>
+<view class="modList padd clearfix">
+	<view class="modListItem {{state == index ?'active' : ''}}"
+		wx:for="{{lqTypeData}}"
+		wx:key="index"
+		data-key="{{index}}"
+		data-name="{{item.gfName}}"
+		data-id="{{item.gfId}}"
+		data-lqtypeid="{{item.gasTypeId}}"
+		data-lqtypename="{{item.gasTypeName}}"
+		data-headimg="{{item.headImg}}"
+		bindtap="selectLqType" 
+	>{{item.gfName}}</view> 
+</view>  
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../../images/noData.png"></image>
+	<view class="noDataTxt">暂无液厂记录</view>
+</view>

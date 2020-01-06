@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText" : "燃气买卖"
+  "usingComponents": {
+  	 "isAuthor" : "../../components/author/author"
+  },
+  "navigationBarTitleText" : "燃气贸易"
 }

@@ -54,24 +54,20 @@
 .noDataList image{
 	width: 300rpx;
 }
-.noDataTxt{
-	color: #acacac;
-	font-size: 28rpx;
-}
 .loadingIcon{
 	text-align: center;
+	padding: 15rpx 0 20rpx;
 }
 .loadingIcon image{
 	width: 80rpx;
 }
 .noDataTxt{
-	height: 90rpx;
-	line-height: 90rpx;
 	color: #a9a9a9;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 26rpx;
+	margin-top: -36rpx;
 }
 .maskLayer{
 	position: absolute;
