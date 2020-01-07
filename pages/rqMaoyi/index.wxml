@@ -4,7 +4,7 @@
 		<text>发布燃气贸易</text>
 		<isAuthor bind:flagEvent="pubRqMy"></isAuthor>
 	</view>
-	<view class="filterBtn">
+	<view class="filterBtn" bindtap="goFilter">
 		<text>筛选</text>
 		<i class="iconfont icon-shaixuan"></i>
 	</view>

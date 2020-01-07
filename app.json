@@ -1,11 +1,14 @@
 {
   "pages": [
+	"pages/pubTrucksTrade/index",
+    "pages/pubRqDev/index",
+    "pages/pubPotTrade/index",
     "pages/rqMaoyi/index",
+    "pages/rqMySellerDet/index",
     "pages/rqDev/rqDevDet",
-	"pages/pubRqTrade/index",
+    "pages/pubRqTrade/index",
     "pages/lngHq/index",
     "pages/rqDevSellerDet/index",
-    "pages/rqMySellerDet/index",
     "pages/msg/index",
     "pages/lngHqDet/index",
     "pages/lngHqYzbg/index",

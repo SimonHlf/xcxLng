@@ -159,7 +159,7 @@ Page({
 			provOrderNo : '',
 			isAllEmptyFlag : true,
 			gtId : ''
-		})
+		}) 
 		wx.navigateBack({
 			delta:1
 		})

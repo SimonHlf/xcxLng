@@ -1,5 +1,6 @@
 page{
 	background: #efefef;
+	margin-bottom: 120rpx;
 }
 .mainHeadImg{
 	width: 100%;
@@ -172,6 +173,22 @@ page{
 }
 .buyGasBtn{
 	background:#ffc107 ;
+}
+.tradeDetView{
+	background: #fff;
+	margin-top: 20rpx;
+}
+.imgItemTit{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.imgItem{
+	width: 100%;
+}
+.imgItem image{
+	width: 100%;
 }
 .notBuyGasBtn{
 	background: #a9a9a9;

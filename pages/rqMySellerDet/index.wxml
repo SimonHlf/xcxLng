@@ -36,6 +36,13 @@
 		<i class="iconfont icon-tel"></i>
 	</view>
 </view>
+<!-- 存在车辆信息以及燃气贸易详情 -->
+<view class="tradeDetView padd">
+	<view class="imgItemTit">车辆信息</view>
+	<view class="imgItem">
+		<image mode="aspectFill"></image>
+	</view>
+</view>
 <view class="botFun">
 	<view class="focusView">
 		<view class="iconView">

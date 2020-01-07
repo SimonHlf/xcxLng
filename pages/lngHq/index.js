@@ -125,6 +125,6 @@ Page({
 		util.navigateTo('/pages/lngHqMsg/index');
 	},
 	goFilter : function(){
-		util.navigateTo('/pages/lngHq/filter?provOrderNo=' + this.data.provOrderNo + '&gtId=' + this.data.gtId)
+		util.navigateTo('/pages/lngHq/filter?provOrderNo=' + this.data.provOrderNo + '&gtId=' + this.data.gtId);
 	}
 })

@@ -1,0 +1,134 @@
+<view class="pubWrap">
+	<form bindsubmit="formSubmit">
+<!-- 		<view class="pubModTit padd">
+			<view><i class="iconfont icon-editInfo"></i></view>
+			<view>请填写以下信息</view>
+		</view> -->
+		<view class="pubForm padd">
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>贸易类型</view>
+				<view class="selItem" bindtap="getTradeType">
+					<input placeholder="请选择贸易类型" value="{{tradeTypeName}}" disabled/>
+					<input type="text" name="tradeTypeId" value="{{tradeTypeId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view> 
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司名称</view>
+				<view class="selItem" bindtap="getCpyList">
+					<input placeholder="请选择公司" value="{{cpyName}}" disabled/>
+					<input type="text" name="cpyName" value="{{cpyId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem_spec clearfix"> 
+				<view class="pubTit">储罐主图<text>*</text></view>
+				<view class="uploadMainImg" bindtap='uploadMainImg'>
+					<image class="mainHeadImg" src="{{headImg}}" hidden="{{notUpLoadHeadImg}}" mode="aspectFill"></image>
+					<i class="iconfont icon-xiangji"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>储罐品牌</view>
+				<view class="selItem" bindtap="getPotBand">
+					<input placeholder="请选择储罐品牌" value="{{potBandName}}" disabled/>
+					<input type="text" name="potBandId" value="{{potBandId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>储罐容积/m³</view>
+				<input type="number" name="volume" value="{{volume}}" placeholder="请输入储罐容积" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>有无手续</view>
+				<view class="selItem" bindtap="selIsHasSx">
+					<input placeholder="请选择是否有手续" value="{{sxName}}" disabled/>
+					<input type="text" name="sxId" value="{{sxId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view> 
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>购置年份</view>
+				<view class="selItem">
+					<picker mode="year" value="{{gznf}}" bindchange="bindDateChange">
+						<view class="picker">
+							<text class="{{isSelDate ? '' : 'noSel'}}">{{gznf}}</text>
+							<i class="iconfont icon-gengduo"></i>
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>装载介质</view>
+				<view class="selItem" bindtap="getZzjz">
+					<input placeholder="请选择装载介质" value="{{zzjzName}}" disabled/>
+					<input type="text" name="zzjzId" value="{{zzjzId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>储罐所在地区</view>
+				<!-- <view class="selItem" bindtap="getPotBand">
+					<input placeholder="请选择装载介质" value="{{zzjzName}}" disabled/>
+					<input type="text" name="zzjzId" value="{{zzjzId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view> -->
+			</view>
+			
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>租卖价格</view>
+				<view class="selItem">
+					<input type="number" name="zmjg" value="{{zmjg}}" placeholder="请输入租卖价格" maxlength="8"/>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>销售价格</view>
+				<view class="selItem">
+					<input type="number" name="xsjg" value="{{xsjg}}" placeholder="请输入销售价格" maxlength="8"/>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系人</view>
+				<input type="text" name="lxrName" value="{{lxrName}}" placeholder="请输入联系人姓名" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系方式</view>
+				<input type="number" name="lxrTel" value="{{lxrTel}}" placeholder="请输入手机号码" maxlength="11"/>
+			</view>
+		</view>		
+		<view class="pubForm padd">
+			<view class="pubItem_spec clearfix">
+				<view class="pubTit">储罐详情图<text class="subTxt">(最多可上传9张)</text></view>
+				<view class="upBdImgWrap clearfix">
+					<view class="multiImg"
+						 wx:for="{{upload_picture_list}}"
+						 wx:key="index"
+					> 
+						<image src="{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
+						<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+							<i class="iconfont icon-shanchu"></i>
+						</view>
+					</view>
+					<view class="uploadImg uploadDetImg" bindtap='uploadDetImg' hidden="{{isHasUpLenFlag}}">
+						<i class="iconfont icon-xiangji"></i>
+					</view>
+				</view>
+			</view>
+			<view class="pubItem_spec clearfix"> 
+				<view class="pubTit">产品描述</view>
+				<view class="remark">
+					<textarea name="remark" value="{{remark}}" placeholder="请输入产品描述(200字以内)" maxlength="200"></textarea>
+				</view>
+			</view>
+
+			
+		</view> 
+		<button class="sureBtn" formType="submit">
+			确认发布
+			<isAuthor bind:flagEvent="submit"></isAuthor>
+		</button>
+	</form>
+</view>
+
+

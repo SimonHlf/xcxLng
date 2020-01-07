@@ -18,7 +18,7 @@
 			</navigator>
 		</view>
 		<view class="listTab">
-			<navigator>
+			<navigator url="/pages/rqMaoyi/index" open-type="switchTab" hover-class="none">
 				<view class="imgView">
 					<image src="../../images/rqmy.jpg"></image>
 				</view>
@@ -37,7 +37,7 @@
 	
 	<view class="tabNavList clearfix">
 		<view class="listTab">
-			<navigator>
+			<navigator url="/pages/rqDev/index" hover-class="none">
 				<view class="imgView">
 					<image src="../../images/rqsb.jpg"></image>
 				</view>

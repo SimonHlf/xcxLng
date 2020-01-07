@@ -1,0 +1,272 @@
+<view class="pubWrap">
+	<form bindsubmit="formSubmit">
+		<view class="pubForm padd">
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>贸易类型</view>
+				<view class="selItem" bindtap="getTradeType">
+					<input placeholder="请选择贸易类型" value="{{tradeTypeName}}" disabled/>
+					<input type="text" name="tradeTypeId" value="{{tradeTypeId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>企业类型</view>
+				<view class="selItem" bindtap="getCompType">
+					<input placeholder="请选择企业类型" value="{{compTypeName}}" disabled/>
+					<input type="text" name="compTypeId" value="{{compTypeId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>槽车类型</view>
+				<view class="selItem" bindtap="getTrucksType">
+					<input placeholder="请选择企业类型" value="{{truckTypeName}}" disabled/>
+					<input type="text" name="truckTypeId" value="{{truckTypeId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>{{carType}}车型</view>
+				<view class="selItem" bindtap="getTrucksType">
+					<input placeholder="请选择{{carType}}车型" value="{{carTypeName}}" disabled/>
+					<input type="text" name="carTypeId" value="{{carTypeId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司名称</view>
+				<view class="selItem" bindtap="getCpyList">
+					<input placeholder="请选择公司" value="{{cpyName}}" disabled/>
+					<input type="text" name="cpyName" value="{{cpyId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem_spec clearfix"> 
+				<view class="pubTit">车辆主图<text>*</text></view>
+				<view class="uploadMainImg" bindtap='uploadMainImg'>
+					<image class="mainHeadImg" src="{{headImg}}" hidden="{{notUpLoadHeadImg}}" mode="aspectFill"></image>
+					<i class="iconfont icon-xiangji"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>车辆注册地</view>
+				<!-- <view class="selItem" bindtap="getPotBand">
+					<input placeholder="请选择装载介质" value="{{zzjzName}}" disabled/>
+					<input type="text" name="zzjzId" value="{{zzjzId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view> -->
+			</view>
+			
+			<!-- 车牌号以及是否需要挂车车牌号 -->
+			
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>购置年份</view>
+				<view class="selItem">
+					<picker mode="year" value="{{gznf}}" bindchange="bindDateChange">
+						<view class="picker">
+							<text class="{{isSelDate ? '' : 'noSel'}}">{{gznf}}</text>
+							<i class="iconfont icon-gengduo"></i>
+						</view>
+					</picker>
+				</view>
+			</view>
+			
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>车头上牌年月</view>
+				<view class="selItem">
+					<picker mode="month" value="{{ctspny}}" bindchange="bindDateChange">
+						<view class="picker">
+							<text class="{{isSelDate ? '' : 'noSel'}}">{{ctspny}}</text>
+							<i class="iconfont icon-gengduo"></i>
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>价格</view>
+				<view class="selItem">
+					<input type="number" name="trucksPrice" value="{{trucksPrice}}" placeholder="请输入槽车价格(0元为面议)" maxlength="8"/>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>车头类型</view>
+				<view class="selItem" bindtap="getTruckHeadType">
+					<input placeholder="请选择车头类型" value="{{ctTypeName}}" disabled/>
+					<input type="text" name="ctTypeId" value="{{ctTypeId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>车头品牌</view>
+				<view class="selItem" bindtap="getTruckHeadBand">
+					<input placeholder="请选择车头品牌" value="{{ctPpName}}" disabled/>
+					<input type="text" name="ctPpId" value="{{ctPpId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>进港资质</view>
+				<view class="selItem" bindtap="getPotBand">
+					<input placeholder="请选择进港资质" value="{{jgzzName}}" disabled/>
+					<input type="text" name="jgzzId" value="{{jgzzId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			
+			
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>储罐品牌</view>
+				<view class="selItem" bindtap="getPotBand">
+					<input placeholder="请选择车头品牌" value="{{cgPpName}}" disabled/>
+					<input type="text" name="cgPpId" value="{{cgPpId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>储罐容积/m³</view>
+				<input type="number" name="volume" value="{{volume}}" placeholder="请输入储罐容积" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>储罐上牌年月</view>
+				<view class="selItem">
+					<picker mode="month" value="{{cgspny}}" bindchange="bindDateChange">
+						<view class="picker">
+							<text class="{{isSelDate ? '' : 'noSel'}}">{{cgspny}}</text>
+							<i class="iconfont icon-gengduo"></i>
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>行驶里程</view>
+				<input type="number" name="distance" value="{{distance}}" placeholder="请输入行驶里程" maxlength="12"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>是否发生事故</view>
+				<view class="selItem" bindtap="selIsHasAccident">
+					<input placeholder="请选择是否有发生事故" value="{{accIdentName}}" disabled/>
+					<input type="text" name="accIdentId" value="{{accIdentId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view> 
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系人</view>
+				<input type="text" name="lxrName" value="{{lxrName}}" placeholder="请输入联系人姓名" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系方式</view>
+				<input type="number" name="lxrTel" value="{{lxrTel}}" placeholder="请输入手机号码" maxlength="11"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>运输范围</view>
+				<view class="selItem" bindtap="selPsArea">
+					<!-- noSel -->
+					<text class="{{isSelPsArea ? '' : 'noSel '}} ellip">{{psAreaName}}</text>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>尾气排放标准</view>
+				<view class="selItem" bindtap="getWqpfbz">
+					<input placeholder="请选择尾气排放标准" value="{{wqpfbzName}}" disabled/>
+					<input type="text" name="wqpfbzId" value="{{wqpfbzId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>气源类型</view>
+				<view class="selItem" bindtap="getLqType">
+					<input placeholder="请选择气源类型" value="{{lqTypeName}}" disabled/>
+					<input type="text" name="lqTypeId" value="{{lqTypeId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			
+			<view class="upImgItemWrap clearfix">
+				<view class="pubItem_spec_1 clearfix">
+					<view class="pubTit" style="text-align: left"><text>*</text>车头行驶证</view>
+					<view class="upBdImgWrap clearfix">
+						<view class="uploadImg uploadBdImg" bindtap='uploadCtxxz'>
+							<image src="{{ctImg}}" mode="aspectFill"></image>
+							<i class="iconfont icon-xiangji"></i>
+						</view>
+					</view>
+				</view>
+				
+				<view class="pubItem_spec_1 clearfix">
+					<view class="pubTit"><text>*</text>罐车行驶证</view>
+					<view class="upBdImgWrap clearfix">
+						<view class="uploadImg uploadWhpImg" bindtap='uploadGcxxz'>
+							<image src="{{gcxxzImg}}" mode="aspectFill"></image>
+							<i class="iconfont icon-xiangji"></i>
+						</view>
+					</view>
+				</view>
+				<view class="pubItem_spec_1 clearfix">
+					<view class="pubTit"><text>*</text>车辆运营证</view>
+					<view class="upBdImgWrap clearfix">
+						<view class="uploadImg uploadClImg" bindtap='uploadClyyz'>
+							<image src="{{clyyzImg}}" mode="aspectFill"></image>
+							<i class="iconfont icon-xiangji"></i>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="upImgItemWrap clearfix">
+				<view class="pubItem_spec_1 clearfix">
+					<view class="pubTit" style="text-align: left"><text>*</text>储罐检验合格证</view>
+					<view class="upBdImgWrap clearfix">
+						<view class="uploadImg uploadBdImg" bindtap='uploadJyhgz'>
+							<image src="{{jyhgzImg}}" mode="aspectFill"></image>
+							<i class="iconfont icon-xiangji"></i>
+						</view>
+					</view>
+				</view>
+				
+				<view class="pubItem_spec_1 clearfix">
+					<view class="pubTit"><text>*</text>安全阀检验报告</view>
+					<view class="upBdImgWrap clearfix">
+						<view class="uploadImg uploadWhpImg" bindtap='uploadAqfbg'>
+							<image src="{{aqfBgImg}}" mode="aspectFill"></image>
+							<i class="iconfont icon-xiangji"></i>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>		
+		<view class="pubForm padd">
+			<view class="pubItem_spec clearfix">
+				<view class="pubTit">槽车详情图<text class="subTxt">(最多可上传9张)</text></view>
+				<view class="upBdImgWrap clearfix">
+					<view class="multiImg"
+						 wx:for="{{upload_picture_list}}"
+						 wx:key="index"
+					> 
+						<image src="{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
+						<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+							<i class="iconfont icon-shanchu"></i>
+						</view>
+					</view>
+					<view class="uploadImg uploadDetImg" bindtap='uploadDetImg' hidden="{{isHasUpLenFlag}}">
+						<i class="iconfont icon-xiangji"></i>
+					</view>
+				</view>
+			</view>
+			<view class="pubItem_spec clearfix"> 
+				<view class="pubTit">设备描述</view>
+				<view class="remark">
+					<textarea name="remark" value="{{remark}}" placeholder="请输入设备描述(200字以内)" maxlength="200"></textarea>
+				</view>
+			</view>
+
+			
+		</view> 
+		<button class="sureBtn" formType="submit">
+			确认发布
+			<isAuthor bind:flagEvent="submit"></isAuthor>
+		</button>
+	</form>
+</view>
+
+

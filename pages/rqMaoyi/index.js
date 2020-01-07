@@ -81,5 +81,8 @@ Page({
 		if(wx.getStorageSync('userId')){
 			util.navigateTo('/pages/pubRqTrade/index?currPageType=addPub');
 		}
+	},
+	goFilter : function(){
+		util.navigateTo('/pages/rqMaoyi/filter?provOrderNo=' + this.data.provOrderNo + '&gtId=' + this.data.gtId);
 	}
 })

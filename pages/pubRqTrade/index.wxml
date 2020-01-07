@@ -42,7 +42,7 @@
 				<input type="number" name="djName" value="{{djName}}" placeholder="请输入单价" maxlength="8"/>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">装车日期</view>
+				<view class="pubTit"><text>*</text>装车日期</view>
 				<view class="selItem">
 					<picker mode="date" value="{{zcriq}}" bindchange="bindDateChange">
 						<view class="picker">
@@ -54,7 +54,7 @@
 			</view>
 			
 			<view class="pubItem">
-				<view class="pubTit">配送区域</view>
+				<view class="pubTit"><text>*</text>配送区域</view>
 				<view class="selItem" bindtap="selPsArea">
 					<!-- noSel -->
 					<text class="{{isSelPsArea ? '' : 'noSel '}} ellip">{{psAreaName}}</text>
@@ -78,39 +78,39 @@
 		
 		<view class="pubForm padd">
 			<view class="pubItem">
-				<view class="pubTit">车牌号</view>
+				<view class="pubTit"><text>*</text>车牌号</view>
 				<view class="selItem" bindtap="getCarCardNum">
 					<input name="cphName" value="{{carCardNum}}" placeholder="请选择车牌号" disabled/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">挂车车牌号</view>
+				<view class="pubTit"><text>*</text>挂车车牌号</view>
 				<view class="selItem" bindtap="getGcCardNum">
 					<input name="gcphName" value="{{gcCardNum}}" placeholder="请选择挂车车牌号" disabled/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">司机姓名</view>
+				<view class="pubTit"><text>*</text>司机姓名</view>
 				<view class="selItem" bindtap="getDriver">
 					<input name="sjName" value="{{driver}}" placeholder="请选择司机" disabled/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">司机联系方式</view>
+				<view class="pubTit"><text>*</text>司机联系方式</view>
 				<input type="number" name="sjPhoneName" value="{{driverTel}}" placeholder="请先选择司机" maxlength="11" disabled/>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">押运员姓名</view>
+				<view class="pubTit"><text>*</text>押运员姓名</view>
 				<view class="selItem" bindtap="getYyy">
 					<input name="yyyName" value="{{yyyName}}" placeholder="请选择押运员" disabled maxlength="8"/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">押运员联系方式</view>
+				<view class="pubTit"><text>*</text>押运员联系方式</view>
 				<input type="number" name="yyyPhoneName" value="{{yyyTel}}" placeholder="请先选择押运员" maxlength="11"/>
 			</view>
 			<view class="pubItem hasQfTit">
