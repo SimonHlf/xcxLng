@@ -1,0 +1,18 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>{{currTitName}}</view>
+</view>
+<view class="modList padd clearfix">
+	<view class="modListItem {{state == index ?'active' : ''}}"
+		wx:for="{{driverYyyData}}"
+		wx:key="index"
+		data-key="{{index}}"
+		data-psrname="{{item.psrName}}"
+		data-tel="{{item.psrMobile}}"
+		bindtap="selectCp" 
+	>{{item.psrName}}</view> 
+</view>  
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view>

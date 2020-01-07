@@ -3,6 +3,7 @@ page{
 }
 .pubForm{
 	background: #fff;
+	padding-bottom: 20rpx;
 }
 .pubModTit{
 	height: 80rpx;
@@ -69,6 +70,9 @@ page{
 	color:#606060 ;
 	float: left;
 }
+.pubTit.specWid{
+	width: 100%;
+}
 .pubTit text{
 	color:#d32f2f;
 	margin-right: 5rpx;
@@ -97,13 +101,13 @@ page{
 }
 .selItem text.noSel{
 	color: #808080;
-}
+} 
 .selItem text{
 	display: inline-block;
 	width: 380rpx;
 	margin-right: 15rpx;
 }
-.sureBtn{
+.sureBtn{ 
 	width: 100% !important;
 	height: 90rpx;
 	line-height: 90rpx;
@@ -115,6 +119,7 @@ page{
 	border-radius:0 !important;
 	margin-top: 20rpx;
 	font-weight: normal;
+	position: relative;
 }
 .pubItem_spec,
 .pubItem_spec_1{
@@ -138,6 +143,40 @@ page{
 	border-radius: 6rpx;
 	float: left;
 	text-align: center;
+	position: relative;
+}
+.multiImg{
+	width: 182rpx;
+	height: 182rpx;
+	border-radius: 6rpx;
+	float: left;
+	margin-right: 70rpx;
+	margin-bottom: 30rpx;
+	position: relative;
+}
+.multiImg:nth-of-type(3n){
+	margin-right: 0;
+}
+.delView{
+	width: 60rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 5;
+	text-align: center;
+	border-radius: 0 6rpx 0 0;
+}
+.delView i{
+	font-size: 36rpx;
+	color: #fff;
+}
+.multiImg image{
+	width: 182rpx;
+	height: 182rpx;
+	border-radius: 6rpx;
 }
 .uploadImg i{
 	font-size: 70rpx;
@@ -147,6 +186,17 @@ page{
 	height: 180rpx;
 	margin-right: 72rpx;
 	float: left;
+	position: relative;
+}
+.upImgItem image,
+.uploadImg image{
+	width: 182rpx;
+	height: 182rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 6rpx;
+	z-index: 5;
 }
 .pubItem_spec_1{
 	float: left;

@@ -20,7 +20,7 @@
 		<view class="priceRange">
 			<input type="number" placeholder="最高价" maxlength="6"/>
 		</view>
-	</view>
+	</view> 
 </view> 
 <view class="filterMod padd">
 	<view class="modTit otherCol">配送区域<text class="subTxt">(多选)</text></view>

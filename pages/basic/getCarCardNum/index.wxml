@@ -1,0 +1,17 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>{{currTitName}}</view>
+</view>
+<view class="modList padd clearfix">
+	<view class="modListItem {{state == index ?'active' : ''}}"
+		wx:for="{{cardNum}}"
+		wx:key="index"
+		data-key="{{index}}"
+		data-cph="{{item.cph}}"
+		bindtap="selectCp" 
+	>{{item.cph}}</view> 
+</view>  
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../../images/noData.png"></image>
+	<view class="noDataTxt">暂无车牌号</view>
+</view>

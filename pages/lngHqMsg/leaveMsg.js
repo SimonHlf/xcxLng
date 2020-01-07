@@ -22,7 +22,6 @@ Page({
 		this.setData({
 			msgVal : e.detail.value.msgTxtarea
 		}); 
-		console.log(wx.getStorageSync('userId'))
 		if(wx.getStorageSync('userId')){
 			if(this.data.msgVal == ''){
 				util.showToast('请输入要留言的内容');

@@ -1,5 +1,5 @@
 .filterWrap{
-	height: 100rpx;
+	height: 80rpx;
 	display: flex;
 	justify-content: space-between;
 	padding: 0 30rpx;
@@ -7,27 +7,19 @@
 	background: #fff;
 	position: relative;
 	z-index: 3;
+	border-bottom: 1rpx solid #e8e8e8;
 }
-.inputView{
-	width: 80%;
+.pubMod{
+	float: left;
 	height: 70rpx;
-	background: #efefef;
-	border-radius: 40rpx;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	color: #606060;
 	position: relative;
 }
-.inputView i{
-	position: absolute;
-	left: 4%;
-	top: 22rpx;
-	color: #606060;
-	font-size: 32rpx;
-}
-.inputView input{
-	width: 70%;
-	font-size: 28rpx;
-	height: 100%;
-	padding: 0 15%;
-	color: #606060;
+.pubMod i{
+	margin-right: 10rpx;
+	font-size: 30rpx;
 }
 .filterBtn text{
 	font-size: 28rpx;
@@ -49,7 +41,6 @@
 	width: 160rpx;
 	height: 160rpx;
 	float: left;
-	background: pink;
 	margin-right: 15rpx;
 }
 .imgView image{
@@ -112,4 +103,7 @@
 	position: absolute;
 	left: 0;
 	bottom: -5rpx;
+}
+.judgeTxt.noData{
+	color: #a9a9a9;
 }

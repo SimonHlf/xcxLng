@@ -1,7 +1,8 @@
 <view class="filterWrap">
-	<view class="inputView">
-		<i class="iconfont icon-sousuo"></i>
-		<input type="text" placeholder="请输入关键字" confirm-type="search" />
+	<view class="pubMod">
+		<i class="iconfont icon-bianji"></i>
+		<text>发布燃气贸易</text>
+		<isAuthor bind:flagEvent="pubRqMy"></isAuthor>
 	</view>
 	<view class="filterBtn">
 		<text>筛选</text>
@@ -11,33 +12,41 @@
 <!-- list -->
 <view class="rqList">
 	<block wx:if="{{rqTradeData.length > 0}}">
-		<view class="listItem clearfix">
+		<view class="listItem clearfix"
+			wx:for="{{rqTradeData}}"
+			wx:key="*this"
+		>
 			<view class="imgView">
-				
+				<image src="{{serverUrl}}/{{item.headImg}}" mode="aspectFill"></image>
 			</view>
 			<view class="listItemCon">
-				<view class="psArea ellip">配送区域：北京/天津/河北/安徽</view>
+				<view class="psArea ellip">配送区域：{{item.psArea}}</view>
 				<view class="yzyyd ellip">
-					<text>液质：煤制气</text>
-					<text>液源地：河南濮河南濮阳河南濮阳阳</text>
+					<text>液质：{{item.gasTypeName}}</text>
+					<text>液源地：{{item.gfName}}</text>
 				</view>
-				<view class="priceView">
+				<view class="priceView"> 
 					<view class="detPrice">
 						<text class="rmb">¥</text>
 						<text class="priceNum">3200</text>
 						<text class="unitTxt">/m³</text>
 					</view>
-					<view class="zzl">装载量2000m³</view>
+					<view class="zzl">装载量{{item.volume}}m³</view>
 				</view>
-				<view class="judgeTxt">公司好评度98%</view>
+				<block wx:if="{{item.hpRate == '暂无'}}">
+					<view class="judgeTxt noData">暂无公司好评度</view>
+				</block>
+				<block wx:else>
+					<view class="judgeTxt">{{item.hpRate}}</view>
+				</block>
 			</view>
 		</view>
-	</block>
-</view>
+	</block> 
+</view>   
 <view class="noDataList" hidden="{{isHasDataFlag}}">
 	<image mode="widthFix" src="../../images/noData.png"></image>
 	<view class="noDataTxt">暂无记录</view>
-</view>
+</view> 
 <block wx:if="{{isHasDataFlag}}">
 	<view class="loadingIcon">
 		<block wx:if="{{loading}}">
@@ -52,8 +61,3 @@
 		</block>
 	</view> 
 </block>
-<!-- 发布 -->
-<view class="pubBtnWrap">
-	<image src="../../images/pub.png"></image>
-	<isAuthor bind:flagEvent="pubRqMy"></isAuthor>
-</view>

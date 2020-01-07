@@ -1,8 +1,8 @@
 {
   "pages": [
-	  "pages/rqDev/rqDevDet",
-    "pages/pubRqTrade/index",
     "pages/rqMaoyi/index",
+    "pages/rqDev/rqDevDet",
+	"pages/pubRqTrade/index",
     "pages/lngHq/index",
     "pages/rqDevSellerDet/index",
     "pages/rqMySellerDet/index",
@@ -20,7 +20,9 @@
     "pages/rqMaoyi/filter",
     "pages/basic/getCpyList/index",
     "pages/basic/getLqFactory/index",
-    "pages/basic/getPsArea/index"
+    "pages/basic/getPsArea/index",
+    "pages/basic/getCarCardNum/index",
+    "pages/basic/getDriverYyy/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

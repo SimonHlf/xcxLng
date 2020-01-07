@@ -29,17 +29,17 @@
 			<view class="pubItem_spec clearfix"> 
 				<view class="pubTit">燃气贸易主图<text>*</text></view>
 				<view class="uploadMainImg" bindtap='uploadMainImg'>
-					<image class="mainHeadImg" src="{{headImg}}" hidden="{{notUpLoadHeadImg}}"></image>
+					<image class="mainHeadImg" src="{{headImg}}" hidden="{{notUpLoadHeadImg}}" mode="aspectFill"></image>
 					<i class="iconfont icon-xiangji"></i>
 				</view>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>装载量/m³</view>
-				<input type="number" name="zzlName" placeholder="请输入装载量" maxlength="8"/>
+				<input type="number" name="zzlName" value="{{zzlName}}" placeholder="请输入装载量" maxlength="8"/>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>单价/元</view>
-				<input type="number" name="djName" placeholder="请输入单价" maxlength="8"/>
+				<input type="number" name="djName" value="{{djName}}" placeholder="请输入单价" maxlength="8"/>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit">装车日期</view>
@@ -64,11 +64,11 @@
 			
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>联系人</view>
-				<input type="text" name="lxrName" placeholder="请输入联系人姓名" maxlength="8"/>
+				<input type="text" name="lxrName" value="{{lxrName}}" placeholder="请输入联系人姓名" maxlength="8"/>
 			</view>
 			<view class="pubItem noBor">
 				<view class="pubTit"><text>*</text>联系方式</view>
-				<input type="number" name="lxrTel" placeholder="请输入手机号码" maxlength="11"/>
+				<input type="number" name="lxrTel" value="{{lxrTel}}" placeholder="请输入手机号码" maxlength="11"/>
 			</view>
 		</view>
 		<view class="pubModTit padd">
@@ -79,83 +79,82 @@
 		<view class="pubForm padd">
 			<view class="pubItem">
 				<view class="pubTit">车牌号</view>
-				<view class="selItem">
-					<input name="cphName" placeholder="请选择车牌号" disabled/>
+				<view class="selItem" bindtap="getCarCardNum">
+					<input name="cphName" value="{{carCardNum}}" placeholder="请选择车牌号" disabled/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
-				<view class="pubTit">挂车牌号</view>
-				<view class="selItem">
-					<input name="gcphName" placeholder="请输入挂车牌号" disabled/>
+				<view class="pubTit">挂车车牌号</view>
+				<view class="selItem" bindtap="getGcCardNum">
+					<input name="gcphName" value="{{gcCardNum}}" placeholder="请选择挂车车牌号" disabled/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit">司机姓名</view>
-				<view class="selItem">
-					<input name="sjName" placeholder="请输入司机姓名" disabled/>
+				<view class="selItem" bindtap="getDriver">
+					<input name="sjName" value="{{driver}}" placeholder="请选择司机" disabled/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit">司机联系方式</view>
-				<input type="number" name="sjPhoneName" placeholder="请选择司机" maxlength="11" disabled/>
+				<input type="number" name="sjPhoneName" value="{{driverTel}}" placeholder="请先选择司机" maxlength="11" disabled/>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit">押运员姓名</view>
-				<view class="selItem">
-					<input name="yyyName" placeholder="请输入押运员姓名" disabled maxlength="8"/>
+				<view class="selItem" bindtap="getYyy">
+					<input name="yyyName" value="{{yyyName}}" placeholder="请选择押运员" disabled maxlength="8"/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit">押运员联系方式</view>
-				<input type="number" name="yyyPhoneName" placeholder="请选择押运员" maxlength="11"/>
+				<input type="number" name="yyyPhoneName" value="{{yyyTel}}" placeholder="请先选择押运员" maxlength="11"/>
 			</view>
 			<view class="pubItem hasQfTit">
-				<view class="pubTit"><text>*</text>铅封信息</view>
+				<view class="pubTit specWid"><text>*</text>铅封信息<text class="subTxt">(最少填写一个铅封信息)</text></view>
 			</view>
 			<view class="pubItem qfInfo">
-				<input type="text" name="qfName1" placeholder="请输入铅封信息" maxlength="30"/>
+				<input type="text" name="qfName1" value="{{qfTxt1}}" placeholder="请输入铅封信息" maxlength="30"/>
 			</view>
 			<view class="pubItem qfInfo">
-				<input type="text" name="qfName2" placeholder="请输入铅封信息" maxlength="30"/>
+				<input type="text" name="qfName2" value="{{qfTxt2}}" placeholder="请输入铅封信息" maxlength="30"/>
 			</view>
 			<view class="pubItem qfInfo">
-				<input type="text" name="qfName3" placeholder="请输入铅封信息" maxlength="30"/>
+				<input type="text" name="qfName3" value="{{qfTxt3}}" placeholder="请输入铅封信息" maxlength="30"/>
 			</view>
 			<view class="pubItem_spec clearfix">
-				<view class="pubTit"><text>*</text>铅封图片</view>
+				<view class="pubTit"><text>*</text>铅封图片<text class="subTxt">(最少上传一张铅封图片)</text></view>
 				<view class="upBdImgWrap clearfix">
-					<view class="upImgItem">
-						<!-- <image src="{{qfImg1}}"></image> -->
-						<view class="uploadImg uploadQfimg" bindtap='upLoadQfImg1'>
+					<view class="upImgItem" bindtap='upLoadQfImg1'>
+						<image src="{{qfImg1}}" mode="aspectFill"></image>
+						<view class="uploadImg uploadQfimg">
 							<i class="iconfont icon-xiangji"></i>
 						</view>
 					</view>
-					<view class="upImgItem">
-						<!-- <image src="{{qfImg2}}"></image> -->
-						<view class="uploadImg uploadQfimg" bindtap='upLoadQfImg2'>
+					<view class="upImgItem" bindtap='upLoadQfImg2'>
+						<image src="{{qfImg2}}" mode="aspectFill"></image>
+						<view class="uploadImg uploadQfimg">
 							<i class="iconfont icon-xiangji"></i>
 						</view>
 					</view>
-					<view class="upImgItem">
-						<!-- <image src="{{qfImg3}}"></image> -->
-						<view class="uploadImg uploadQfimg" bindtap='upLoadQfImg3'>
+					<view class="upImgItem" bindtap='upLoadQfImg3'>
+						<image src="{{qfImg3}}" mode="aspectFill"></image>
+						<view class="uploadImg uploadQfimg">
 							<i class="iconfont icon-xiangji"></i>
 						</view>
 					</view>
 				</view>
 			</view>
 			
-			
 			<view class="upImgItemWrap clearfix">
 				<view class="pubItem_spec_1 clearfix">
 					<view class="pubTit" style="text-align: left"><text>*</text>磅单图片</view>
 					<view class="upBdImgWrap clearfix">
-						<!-- <image src="{{bgImg}}"></image> -->
 						<view class="uploadImg uploadBdImg" bindtap='upLoadBdImg'>
+							<image src="{{bdImg}}" mode="aspectFill"></image>
 							<i class="iconfont icon-xiangji"></i>
 						</view>
 					</view>
@@ -164,8 +163,8 @@
 				<view class="pubItem_spec_1 clearfix">
 					<view class="pubTit"><text>*</text>危化品许可证</view>
 					<view class="upBdImgWrap clearfix">
-						<!-- <image src="{{whpImg}}"></image> -->
 						<view class="uploadImg uploadWhpImg" bindtap='uploadWhpImg'>
+							<image src="{{whpImg}}" mode="aspectFill"></image>
 							<i class="iconfont icon-xiangji"></i>
 						</view>
 					</view>
@@ -174,8 +173,8 @@
 				<view class="pubItem_spec_1 clearfix">
 					<view class="pubTit"><text>*</text>车辆照片</view>
 					<view class="upBdImgWrap clearfix">
-						<!-- <image src="{{clImg}}"></image> -->
 						<view class="uploadImg uploadClImg" bindtap='uploadClImg'>
+							<image src="{{clImg}}" mode="aspectFill"></image>
 							<i class="iconfont icon-xiangji"></i>
 						</view>
 					</view>
@@ -185,22 +184,33 @@
 			<view class="pubItem_spec clearfix">
 				<view class="pubTit">燃气贸易详情图<text class="subTxt">(最多可上传9张)</text></view>
 				<view class="upBdImgWrap clearfix">
-					
-					<view class="uploadImg uploadDetImg" bindtap='uploadDetImg'>
+					<view class="multiImg"
+						 wx:for="{{upload_picture_list}}"
+						 wx:key="index"
+					> 
+						<image src="{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
+						<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+							<i class="iconfont icon-shanchu"></i>
+						</view>
+					</view>
+					<view class="uploadImg uploadDetImg" bindtap='uploadDetImg' hidden="{{isHasUpLenFlag}}">
 						<i class="iconfont icon-xiangji"></i>
 					</view>
 				</view>
 			</view>
-			<view class="pubItem_spec clearfix">
+			<view class="pubItem_spec clearfix"> 
 				<view class="pubTit">备注</view>
 				<view class="remark">
-					<textarea name="remark" placeholder="请输入备注(200字以内)" maxlength="200"></textarea>
+					<textarea name="remark" value="{{remark}}" placeholder="请输入备注(200字以内)" maxlength="200"></textarea>
 				</view>
 			</view>
 
 			
 		</view> 
-		<button class="sureBtn" formType="submit">确认发布</button>
+		<button class="sureBtn" formType="submit">
+			确认发布
+			<isAuthor bind:flagEvent="submit"></isAuthor>
+		</button>
 	</form>
 </view>
 

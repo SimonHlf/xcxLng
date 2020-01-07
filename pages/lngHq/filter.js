@@ -27,7 +27,7 @@ Page({
 			data : {gsType:0},
 			success : function(res){
 				wx.hideLoading();
-				console.log(res.data.datas)
+				//console.log(res.data.datas)
 				if(res.data.code == 200){
 					_this.setData({
 						provData : res.data.datas
