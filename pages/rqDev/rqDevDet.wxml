@@ -3,14 +3,13 @@
 </view>
 <view class="sellerInfo padd">
 	<view class="topSellerInfo">
-		<view class="compName ellip">濮阳浩泰能濮阳浩泰能</view>
+		<view class="compName ellip">{{devDetData.devName}}</view>
 	</view>
 	<view class="priceItem clearfix">
 		<view class="priceNum">
 			<text class="rmb">￥</text>
-			<text class="price">4200</text>
+			<text class="price">{{devDetData.devPrice}}</text>
 		</view>
-		<view class="cd">产地：闪动潍坊</view>
 	</view>
 </view>
 <view class="sellerTel clearfix">
@@ -19,10 +18,10 @@
 	</view>
 	<view class="rqDevCompName">
 		<view class="lxrNameTel">
-			<text>左经理</text>
-			<text>189828378374</text>
+			<text>{{devDetData.lxName}}</text>
+			<text>{{devDetData.lxTel}}</text>
 		</view>
-		<view class="rqDevName ellip">南宫市卓创气南宫械制造有限公司 </view>
+		<view class="rqDevName ellip">{{devDetData.cpyName}}</view>
 	</view>
 	<view class="phoneCall">
 		<i class="iconfont icon-tel"></i>
@@ -35,15 +34,11 @@
 	</view>
 	<view class="basicInfoItem">
 		<text>品牌名称</text>
-		<text>亚和制氮机</text> 
+		<text>{{devDetData.devPp}}</text> 
 	</view>
 	<view class="basicInfoItem">
-		<text>储罐容积</text>
-		<text>120m³</text> 
-	</view>
-	<view class="basicInfoItem">
-		<text>储罐类型</text>
-		<text>化工储罐</text> 
+		<text>设备型号</text>
+		<text>{{devDetData.devNo}}</text> 
 	</view>
 </view>
 <!-- 产品详情图 -->
@@ -57,13 +52,24 @@
 	</view>
 </view>
 <view class="botFun">
-	<view class="focusView">
-		<view class="iconView">
-			<i class="iconfont icon-guanzhu"></i>
-			<!-- <i class="iconfont icon-guanzhu1"></i> -->
+	<block wx:if="{{ufId != ''}}">
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu1"></i>
+			</view>
+			<view class="iconTxt">已关注</view>
+			<isAuthor bind:flagEvent="cancelFocus"></isAuthor>
 		</view>
-		<view class="iconTxt">关注</view>
-	</view>
+	</block>
+	<block wx:else>
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu"></i>
+			</view>
+			<view class="iconTxt">关注</view>
+			<isAuthor bind:flagEvent="getFocus"></isAuthor>
+		</view>
+	</block>
 	<!-- <view class="focusView">
 		<view class="iconView">
 			<i class="iconfont icon-wodexiaoxi"></i>
@@ -77,3 +83,7 @@
 		<view class="notBuyGasBtn">我要买气</view>
 	</block> -->
 </view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view> 

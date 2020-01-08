@@ -1,0 +1,35 @@
+<form bindsubmit="formSubmit">
+	<view class="filterMod padd">
+		<view class="modTit otherCol">燃气设备类目<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaItem"
+				wx:for="{{devLmData}}"
+				wx:key="index"
+				class="areaItem {{lmState == index ?'active' : ''}}"
+				data-key="{{index}}"
+				data-id="{{item.id}}"
+				bindtap="selectLm"
+			>{{item.name}}</view>
+		</view>
+	</view>
+	<view class="filterMod padd">
+		<view class="modTit otherCol">燃气设备类型<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaList clearfix">
+				<view
+					wx:for="{{devLxData}}"
+					wx:key="index"
+					class="areaItem {{lxState == index ? 'active':''}}"
+					data-key="{{index}}"
+					data-id="{{item.id}}"
+					bindtap="selectLx"
+				>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="filterBtnWrap">
+		<button bindtap="resetFilter">重置</button>
+		<button class="sureBtn" formType="submit">确定</button>
+	</view>
+</form>

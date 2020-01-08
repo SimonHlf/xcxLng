@@ -1,41 +1,52 @@
 <view class="filterWrap">
-	<view class="inputView">
-		<i class="iconfont icon-sousuo"></i>
-		<input type="text" placeholder="请输入商品关键字" confirm-type="search" />
+	<view class="pubMod">
+		<i class="iconfont icon-bianji"></i>
+		<text>发布燃气设备</text>
+		<isAuthor bind:flagEvent="pubRqDev"></isAuthor>
+	</view>
+	<view class="filterBtn" bindtap="goFilter">
+		<text>筛选</text>
+		<i class="iconfont icon-shaixuan"></i>
 	</view>
 </view>
-<view class="rgDevWrap">
-	<view class="leftRqDevLm">
-		<scroll-view scroll-y="true">
-			<view class="lmItem active ellip"><view class="lineView"></view>调压调压设备调压设备设备类</view>
-			<view class="lmItem ellip"><view class="lineView"></view>调压调压设</view>
-		</scroll-view>
-	</view>
-	<view class="rightRqDevCon">
-		<scroll-view scroll-y="true">
-			<view class="rqDevItemCon clearfix">
-				<view class="imgView">
-					
-				</view>
-				<view class="itemCon">
-					<view class="devName ellip">YLA-E01燃气泄漏报警器</view>
-					<view class="tagView clearfix">
-						<text class="volumeItem ellip">产地:河北河北省河北省省</text>
-						<text class="volumeItem ellip">品牌:润润美</text>
-					</view>
-					<view class="priceView">
-						<text>¥</text>
-						<text class="priceNum">8000</text>
-					</view>
-				</view>
+<view class="rgDevWrap padd">
+	<view class="rqDevItemCon clearfix"
+		wx:for="{{rqDevData}}"
+		wx:key="index"
+		data-id="{{item.rdtId}}"
+		bindtap="getRqDevDet"
+	>
+		<view class="imgView">
+			<image src="{{serverUrl}}/{{item.mainImg}}"></image>
+		</view>
+		<view class="itemCon">
+			<view class="devName ellip">{{item.devName}}</view>
+			<view class="tagView clearfix">
+				<text class="volumeItem ellip">产地:{{item.factory}}</text>
+				<text class="volumeItem ellip">型号:{{item.devNo}}</text>
 			</view>
-			
-		</scroll-view>
+			<view class="priceView">
+				<text>¥</text>
+				<text class="priceNum">{{item.devPrice}}</text>
+			</view>
+		</view>
 	</view>
 </view>
- 
- 
- <!-- 发布 -->
- <view class="pubBtnWrap">
- 	<image src="../../images/pub.png"></image>
- </view>
+ <view class="noDataList" hidden="{{isHasDataFlag}}">
+ 	<image mode="widthFix" src="../../images/noData.png"></image>
+ 	<view class="noDataTxt">暂无记录</view>
+ </view> 
+ <block wx:if="{{isHasDataFlag}}">
+ 	<view class="loadingIcon">
+ 		<block wx:if="{{loading}}">
+ 			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+ 		</block>
+ 		<block wx:else>
+ 			<view class="noDataTxt">
+ 				<text>——————</text>
+ 				<text>我是有底线的~</text>
+ 				<text>——————</text>
+ 			</view>
+ 		</block>
+ 	</view> 
+ </block>
