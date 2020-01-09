@@ -1,0 +1,18 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>选择储罐品牌</view>
+</view>
+<view class="modList padd clearfix">
+	<view class="modListItem {{state == index ?'active' : ''}}"
+		wx:for="{{potBandData}}"
+		wx:key="index"
+		data-key="{{index}}"
+		data-id="{{item.id}}"
+		data-name="{{item.name}}"
+		bindtap="selectPot" 
+	>{{item.name}}</view> 
+</view>  
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../../images/noData.png"></image>
+	<view class="noDataTxt">暂无储罐品牌记录</view>
+</view>

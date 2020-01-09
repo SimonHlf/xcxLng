@@ -1,0 +1,50 @@
+<form bindsubmit="formSubmit">
+	<view class="filterMod padd">
+		<view class="modTit otherCol">储罐品牌<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaItem"
+				wx:for="{{potBandData}}"
+				wx:key="index"
+				class="areaItem {{potBandState == index ?'active' : ''}}"
+				data-key="{{index}}"
+				data-id="{{item.id}}"
+				bindtap="selectPotBand"
+			>{{item.name}}</view>
+		</view>
+	</view>
+	<view class="filterMod padd">
+		<view class="modTit otherCol">有无手续<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaList clearfix">
+				<view
+					wx:for="{{sxInfoData}}"
+					wx:key="index"
+					class="areaItem {{sxState == index ? 'active':''}}"
+					data-key="{{index}}"
+					data-id="{{item.id}}"
+					bindtap="selectSx"
+				>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="filterMod padd">
+		<view class="modTit otherCol">装载介质<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaList clearfix">
+				<view
+					wx:for="{{zzjzData}}"
+					wx:key="index"
+					class="areaItem {{zzjzState == index ? 'active':''}}"
+					data-key="{{index}}"
+					data-id="{{item.id}}"
+					bindtap="selectZzjz"
+				>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="filterBtnWrap">
+		<button bindtap="resetFilter">重置</button>
+		<button class="sureBtn" formType="submit">确定</button>
+	</view>
+</form>

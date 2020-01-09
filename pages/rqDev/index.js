@@ -44,7 +44,7 @@ Page({
 	loadRqDevList : function(){
 		var _this = this;
 		var field = {lmId:this.data.lmId,zlId:this.data.lxId,page:this.data.nowPage,limit:50,checkSta:1,showSta:0};
-		console.log(field)
+		//console.log(field)
 		this.setData({
 			loading : true
 		}); 
@@ -56,7 +56,7 @@ Page({
 			data : field,
 			success : function(res){  
 				wx.hideLoading(); 
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					if(res.data.datas.length > 0){
 						nowPage += 1;

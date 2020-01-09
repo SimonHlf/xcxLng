@@ -12,10 +12,10 @@
 			<view class="pubItem_spec clearfix"> 
 				<view class="pubTit">燃气设备主图<text>*</text></view>
 				<view class="uploadMainImg" bindtap='uploadMainImg'>
-					<image class="mainHeadImg" src="{{headImg}}" hidden="{{notUpLoadHeadImg}}" mode="aspectFill"></image>
+					<image class="mainHeadImg" src="{{headImg}}" mode="aspectFill"></image>
 					<i class="iconfont icon-xiangji"></i>
 				</view>
-			</view>
+			</view> 
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>设备名称</view>
 				<input type="text" name="rqDevName" value="{{rqDevName}}" placeholder="请输入燃气设备名称" maxlength="30"/>
@@ -30,9 +30,7 @@
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>设备价格</view>
-				<view class="selItem">
-					<input type="number" name="rqDevPrice" value="{{rqDevPrice}}" placeholder="请输入燃气设备价格" maxlength="8"/>
-				</view>
+				<input type="number" name="rqDevPrice" value="{{rqDevPrice}}" placeholder="请输入燃气设备价格" maxlength="8"/>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>设备类目</view>

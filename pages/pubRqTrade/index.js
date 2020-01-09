@@ -131,8 +131,7 @@ Page({
 					url = app.globalData.serverUrl + '/gasTrade/addGasTrade';
 					type = 'post';
 				}
-				console.log(field)
-				console.log(type)
+				//console.log(field)
 				util.showLoading('发布中...');
 				wx.request({
 					url : url,
@@ -163,6 +162,8 @@ Page({
 							util.showToast('发布燃气贸易参数不能为空');
 						}else if(res.data.code == 70001){
 							util.showToast('抱歉,您暂无权限发布燃气贸易');
+						}else if(json.code == 80001){
+							util.showToast('当前储燃气买卖信息审核已通过，暂不能修改');
 						}
 					}
 				});

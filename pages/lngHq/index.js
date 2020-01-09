@@ -37,7 +37,7 @@ Page({
 	},
 	onHide(){
 		this.setData({
-			isAllEmptyFlag : false,
+			isAllEmptyFlag : false
 		});
 	},
 	onLoad(){ 

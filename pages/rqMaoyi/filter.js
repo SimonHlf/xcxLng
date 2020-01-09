@@ -7,7 +7,9 @@ Page({
 		lqNameData : [],
 		ycName : '',
 		isAllEmptyFlag : false,
-		gtId : ''
+		gtId : '',
+		minPrice : '',
+		maxPrice : ''
 	},
 	onLoad : function(options){
 		//console.log( options.provOrderNo )
@@ -16,7 +18,7 @@ Page({
 			lqIdArr = options.gtId.split(',');
 		}
 		util.showLoading('加载中...');
-		this.getProvList();
+		this.getProvList(); 
 		this.getLqType();
 	},
 	getProvList : function(){
@@ -127,21 +129,37 @@ Page({
 	},
 	formSubmit : function(e){
 		this.setData({
-			ycName : e.detail.value.ycName
+			minPrice : e.detail.value.minPrice,
+			maxPrice : e.detail.value.maxPrice
 		}); 
+		if(this.data.minPrice == '' && this.data.maxPrice != ''){
+			util.showToast('请输入最低价格');
+			return;
+		}
+		if(this.data.minPrice != '' && this.data.maxPrice == ''){
+			util.showToast('请输入最高价格');
+			return;
+		}
+		if(this.data.minPrice != '' && this.data.maxPrice != ''){
+			if(this.data.minPrice > this.data.maxPrice){
+				util.showToast('最低价格不能高于最高价格');
+				return;
+			}
+		}
 		let pages = getCurrentPages();
 		let prevPage = pages[pages.length - 2];
-		if(this.data.ycName == '' && provPyArr.length == 0 && lqIdArr.length == 0){
+		if(this.data.minPrice == '' && this.data.maxPrice == '' && provPyArr.length == 0 && lqIdArr.length == 0){
 			this.setData({
 				isAllEmptyFlag : true
 			});
 		}
 		prevPage.setData({
-			ycName: this.data.ycName,
-			provPy : provPyArr.join(','),
+			psArea : provPyArr.join(','),
 			provOrderNo : provOrderNo.join(','),
 			isAllEmptyFlag : this.data.isAllEmptyFlag,
-			gtId : lqIdArr.join(',')
+			gasTypeId : lqIdArr.join(','),
+			sPrice : this.data.minPrice,
+			ePrice : this.data.maxPrice
 		})
 		wx.navigateBack({
 			delta:1
@@ -154,11 +172,12 @@ Page({
 		provPyArr.length = 0;
 		lqIdArr.length = 0;
 		prevPage.setData({
-			ycName: '',
-			provPy : '',
+			psArea : '',
 			provOrderNo : '',
 			isAllEmptyFlag : true,
-			gtId : ''
+			gasTypeId : '',
+			sPrice : '',
+			ePrice : ''
 		}) 
 		wx.navigateBack({
 			delta:1

@@ -16,8 +16,8 @@ page{
 	float: left;
 }
 .uploadMainImg{
-	width: 100%;
-	height: 400rpx;
+	width: 180rpx;
+	height: 180rpx;
 	float: left;
 	border:1rpx solid #E8E8E8;
 	position:relative;
@@ -26,12 +26,12 @@ page{
 	justify-content: center;
 }
 .uploadMainImg i{
-	font-size: 100rpx;	
+	font-size: 70rpx;	
 	color: #e8e8e8;
 }
 .mainHeadImg{
-	width: 100%;
-	height: 400rpx;
+	width: 182rpx;
+	height: 182rpx;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -90,6 +90,10 @@ page{
 	color: #121212;
 	padding-right: 10rpx;
 }
+.selItem.hasFloat{
+	width: 48%;
+	float: left;
+}
 .selItem i{
 	font-size: 24rpx;
 	color: #808080;
@@ -98,6 +102,9 @@ page{
 .selItem input{
 	width: 380rpx;
 	float: left;
+}
+.selItem.hasFloat input{
+	width: 89%;
 }
 .selItem text.noSel{
 	color: #808080;

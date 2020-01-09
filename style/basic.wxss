@@ -41,3 +41,16 @@ pages{
 	color: #3c7de9;
 	background:#f4faff ;
 }
+.sureBtn{
+	width: 100% !important;
+	height: 90rpx;
+	line-height: 90rpx;
+	background: #3c7de9;
+	color: #fff;
+	text-align: center;
+	font-size: 31rpx;
+	padding: 0;
+	border-radius:0 !important;
+	margin-top: 50rpx;
+	font-weight: normal;
+}

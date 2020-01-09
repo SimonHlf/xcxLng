@@ -3,6 +3,7 @@ const util = require('../../utils/util');
 var sourceType = '',upSuccDetImgArr = [],previewImgArr = [];
 Page({
 	data : {
+		currPageType : '',
 		cpyName : '',
 		cpyId : '',
 		headImg : '',
@@ -19,8 +20,12 @@ Page({
 		lxrTel : '',
 		upload_picture_list : [],
 		remark : '',
-		notUpLoadHeadImg : true,
-		isHasUpLenFlag : false
+		isHasUpLenFlag : false,
+	},
+	onLoad : function(options){
+		this.setData({
+			currPageType : options.currPageType
+		});
 	},
 	getCpyList : function(){
 		util.navigateTo('/pages/basic/getCpyList/index?currPage=addRqDevPage&cpyId=' + this.data.cpyId);
@@ -44,6 +49,102 @@ Page({
 				console.log(res.errMsg)
 			}
 		});
+	},
+	getDevLm : function(){
+		util.navigateTo('/pages/basic/getRqDevLmType/index?devLmId=' + this.data.devLmId + '&currPage=selectDevLm');
+	},
+	getDevLx : function(){
+		util.navigateTo('/pages/basic/getRqDevLmType/index?devLxId=' + this.data.devLxId + '&currPage=selectDevLx');
+	},
+	formSubmit : function(e){
+		let submitField = e.detail.value,
+			regNum = /^\+?[1-9]\d*$/,
+			regPhone = /^1\d{10}$/;
+		this.setData({
+			cpyName : submitField.cpyName,
+			rqDevName : submitField.rqDevName,
+			rqDevNo : submitField.rqDevNo,
+			scFacName : submitField.scFacName, 
+			rqDevPrice : submitField.rqDevPrice,
+			devLmId : submitField.devLmId,
+			devLxId : submitField.devLxId,
+			lxrName : submitField.lxrName,
+			lxrTel : submitField.lxrTel,
+			remark : submitField.remark
+		});
+		if(wx.getStorageSync('userId')){
+			if(this.data.cpyName == ''){
+				util.showToast('请选择公司');
+			}else if(this.data.headImg == ''){
+				util.showToast('请上传燃气设备主图');
+			}else if(this.data.rqDevName == ''){
+				util.showToast('请输入设备名称');
+			}else if(this.data.rqDevNo == ''){
+				util.showToast('请输入设备型号');
+			}else if(this.data.scFacName == ''){
+				util.showToast('请输入生产厂家');
+			}else if(this.data.rqDevPrice == ''){
+				util.showToast('请输入设备价格');
+			}else if(!regNum.test( this.data.rqDevPrice ) ){
+				util.showToast('设备价格应是大于0的正整数');
+			}else if(this.data.devLmId == ''){
+				util.showToast('请选择设备类目');
+			}else if(this.data.devLxId == ''){
+				util.showToast('请选择设备类型');
+			}else if(this.data.lxrName == ''){
+				util.showToast('请输入联系人姓名');
+			}else if(this.data.lxrTel == ''){
+				util.showToast('请输入联系人手机号码');
+			}else if(!regPhone.test( this.data.lxrTel ) && this.data.lxrTel.length != 11){
+				util.showToast('手机号码格式不对，请重新填写');
+			}else{
+				var url = '',type = '',otherImg='',_this = this;
+				if(upSuccDetImgArr.length > 0){ 
+					otherImg = upSuccDetImgArr.join(',');
+				} 
+				var field = {userId:wx.getStorageSync('userId'),compId:this.data.cpyName,mainImg:this.data.succHeadImg,devName:this.data.rqDevName,devNo:this.data.rqDevNo,devPp:this.data.scFacName,
+					devPrice:this.data.rqDevPrice,lmId:this.data.devLmId,zlId:this.data.devLxId,lxName:this.data.lxrName,lxTel:this.data.lxrTel,description:this.data.remark,detailImg:otherImg};
+				if(this.data.currPageType == 'addPub'){
+					url = app.globalData.serverUrl + '/rqDevTrade/addRqDevTrade';
+					type = 'post';
+				}
+				util.showLoading('发布中...');
+				wx.request({
+					url : url,
+					method:type,
+					data:field,
+					header: {
+					  'content-type': 'application/x-www-form-urlencoded',
+					}, 
+					success : function(res){
+						util.hideLoading();
+						if(res.data.code == 200){
+							if(_this.data.currPageType == 'addPub'){
+								util.showToast('发布燃气设备成功,等待后台审核中...');
+								setTimeout(function(){
+									let pages = getCurrentPages();
+									let prevPage = pages[pages.length - 2];
+									prevPage.setData({
+										isCanPubFlag : true
+									});
+									wx.navigateBack({
+										delta:1
+									})
+								},1800);
+							}
+						}else if(res.data.code == 1000){
+							util.showToast('服务器错误');
+						}else if(res.data.code == 10002){
+							util.showToast('发布燃气贸易参数不能为空');
+						}else if(res.data.code == 70001){
+							util.showToast('抱歉,您暂无权限发布燃气设备');
+						}else if(json.code == 80001){
+							util.showToast('当前燃气设备买卖信息审核已通过，暂不能修改');
+						}
+					}
+				});
+			}
+		}
 	},
 	upLoadSingleImg : function(sourceType,upOpt){
 		var that = this,chooseImgSrc='',serverUrl = app.globalData.serverUrl;
@@ -76,6 +177,7 @@ Page({
 								that.setData({
 									succHeadImg: JSON.parse(res1.data).datas
 								});
+								console.log(that.data.succHeadImg)
 							}
 						}else if(JSON.parse(res1.data).code == 1000){
 							util.showToast('服务器错误');

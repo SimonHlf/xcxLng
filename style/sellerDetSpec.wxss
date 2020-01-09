@@ -1,0 +1,221 @@
+page{
+	background: #efefef;
+	margin-bottom: 120rpx;
+}
+.mainHeadImg{
+	width: 100%;
+	height: 400rpx;
+}
+.mainHeadImg image{
+	width: 100%;
+	height: 100%;
+}
+.sellerInfo{
+	background: #fff;
+	margin-bottom: 20rpx;
+}
+.topSellerInfo{
+	height: 80rpx;
+	line-height: 80rpx;
+}
+.topSellerInfo .compName{
+	font-size: 30rpx;
+	color: #121212;
+	width: 100%; 
+}
+.topSellerInfo .compName.potPp{
+	max-width: 73%;
+	float: left;
+}
+.topSellerInfo .potVol{
+	float: right;
+	margin-left: 15rpx;
+	font-size: 26rpx;
+	color: #a9a9a9;
+}
+.priceItem{
+	padding-bottom: 15rpx;
+}
+.priceItem.smPad{
+	padding-bottom: 5rpx;
+}
+.priceNum{
+	float: left;
+	color: #606060;
+	line-height: 40rpx;
+	margin-right: 30rpx;
+}
+.priceNum.potPrice .priceTit{
+	font-size: 24rpx;
+}
+.priceNum text.rmb{
+	color:#d32f2f ;
+	font-size: 24rpx;
+}
+.priceNum text.price{
+	color:#d32f2f ;
+	font-size: 36rpx;
+	font-weight: 620;
+}
+.cd{
+	float: right;
+	color: #a9a9a9;
+	line-height: 40rpx;
+	font-size: 24rpx;
+	margin-right: 30rpx;
+}
+.chandi{
+	line-height: 40rpx;
+	font-size: 24rpx;
+	color: #a9a9a9;
+	padding-bottom: 10rpx;
+}
+.sellerTel{
+	background: #fff; 
+	padding: 15rpx 30rpx;
+}
+.sellerTel .sellerImg{
+	width:80rpx;
+	height: 80rpx;
+	float: left;
+}
+.sellerTel .sellerImg image{
+	width:80rpx;
+	height: 80rpx;
+	border-radius: 6rpx;
+	overflow: hidden;
+}
+.rqDevCompName{
+	width: 75%;
+	height: 80rpx;
+	float: left;
+	margin-left: 15rpx;
+	color: #121212;
+	font-size: 28rpx;
+}
+.phoneCall{
+	float: right;
+	width: 10%;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: right;
+}
+.phoneCall i{
+	color: #1cb022;
+	font-size: 40rpx;
+}
+.lxrNameTel,
+.rqDevName{
+	height: 40rpx;
+	line-height: 40rpx;
+}
+.lxrNameTel{
+	font-size: 28rpx;
+	color: #121212;
+}
+.rqDevName{
+	font-size: 24rpx;
+	color: #606060;
+}
+.lxrNameTel text:last-child{
+	margin-left: 15rpx;
+}
+.proBasicInfo{
+	background: #fff;
+	margin:20rpx 0;
+}
+.proTit{
+	position: relative;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 30rpx;
+	color: #121212;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.proTit view.lineView{
+	width: 8rpx;
+	height: 36rpx;
+	background: #3c7de9;
+	position: absolute;
+	left: 0;
+	top: 22rpx;
+}
+.proTit view:last-child{
+	margin-left:20rpx;
+}
+.basicInfoItem{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 28rpx;
+	color: #121212;
+}
+.basicInfoItem text:first-child{
+	color: #606060;
+	margin-right: 15rpx;
+}
+.proDetImg{
+	background: #fff;
+}
+.detImgWrap image{
+	width: 100%;
+}
+.botFun{
+	width: 100%;
+	height: 100rpx;
+	background: #fff;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+}
+.botFun .focusView{
+	width: 120rpx;
+	height: 100%;
+	float: left;
+	margin-left: 30rpx;
+	text-align: center;
+	position: relative;
+}
+.botFun .focusView:last-child{
+	margin-left: 0;
+}
+.botFun .focusView view{
+	height: 50rpx;
+	line-height: 50rpx;
+}
+.botFun .focusView view i.icon-guanzhu,
+.botFun .focusView view i.icon-wodexiaoxi{
+	font-size: 34rpx;
+	color:#606060 ;
+}
+.botFun .focusView view i.icon-guanzhu1{
+	font-size: 38rpx;
+	color: #d32f2f;
+}
+.botFun .focusView view.iconTxt{
+	color:#606060 ;
+	font-size: 28rpx;
+	margin-top: -10rpx;
+}
+.botFun .focusView view:first-child{
+	margin-top: 10rpx;
+}
+.buyGasBtn,
+.notBuyGasBtn{
+	width: 240rpx;
+	height: 66rpx;
+	line-height: 66rpx;
+	color: #fff;
+	font-size: 28rpx;
+	text-align: center;
+	float: right;
+	margin-right: 30rpx;
+	margin-top: 18rpx;
+	border-radius: 100rpx;
+}
+.buyGasBtn{
+	background:#ffc107 ;
+}
+.notBuyGasBtn{
+	background: #a9a9a9;
+}

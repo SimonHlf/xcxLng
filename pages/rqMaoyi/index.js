@@ -7,13 +7,19 @@ Page({
 		isHasDataFlag : true,
 		loading : false,
 		isCanPubFlag : false,
-		serverUrl: app.globalData.serverUrl
+		isAllEmptyFlag : false,
+		serverUrl: app.globalData.serverUrl,
+		gasTypeId : '',
+		psArea : '',
+		sPrice : '',
+		ePrice : '',
+		provOrderNo : ''
 	},
 	onLoad(){
 		this.getRqTradeList();
 	},
 	onShow(){
-		if(this.data.isCanPubFlag){
+		if(this.data.psArea != '' || this.data.gasTypeId != '' || this.data.isAllEmptyFlag || this.data.sPrice !== '' || this.data.ePrice != '' || this.data.isCanPubFlag){//从最新发布页面返回过来并且已经发布
 			this.setData({
 				nowPage :1,
 				loading : false,
@@ -27,24 +33,25 @@ Page({
 	},  
 	onHide(){ 
 		this.setData({
-			isCanPubFlag : false
+			isCanPubFlag : false,
+			isAllEmptyFlag : false
 		});
 	},
 	getRqTradeList : function(){
 		var _this = this;
-		var field = {page:this.data.nowPage,limit:50,checkStatus:1,showStatus:0};
+		var field = {gasTypeId:this.data.gasTypeId,psArea:this.data.psArea,sPrice:this.data.sPrice,ePrice:this.data.ePrice,page:this.data.nowPage,limit:50,checkStatus:1,showStatus:0};
+		//console.log(field)
 		this.setData({
 			loading : true
 		}); 
 		let { nowPage,rqTradeData } = this.data;
-		console.log(field)
 		util.showLoading('数据加载中...')
 		wx.request({ 
 			url : app.globalData.serverUrl + '/gasTrade/getPageGasTradeList',
 			method:'get',
 			data : field,
 			success : function(res){  
-				wx.hideLoading();
+				wx.hideLoading(); 
 				console.log(res)
 				if(res.data.code == 200){
 					if(res.data.datas.length > 0){
@@ -83,6 +90,10 @@ Page({
 		}
 	},
 	goFilter : function(){
-		util.navigateTo('/pages/rqMaoyi/filter?provOrderNo=' + this.data.provOrderNo + '&gtId=' + this.data.gtId);
+		util.navigateTo('/pages/rqMaoyi/filter?provOrderNo=' + this.data.provOrderNo + '&gtId=' + this.data.gasTypeId);
+	},
+	getMyDet : function(e){
+		let tradeId = e.currentTarget.dataset.id;
+		util.navigateTo('/pages/rqMySellerDet/index?tradeId=' + tradeId);
 	}
 })

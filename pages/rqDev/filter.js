@@ -11,7 +11,6 @@ Page({
 		devLxData : []
 	},
 	onLoad : function(options){
-		console.log(options)
 		if(options.lmId != ''){
 			this.setData({
 				lmId : options.lmId 
@@ -92,11 +91,6 @@ Page({
 			lmState:e.currentTarget.dataset.key,
 			lmId : id
 		});
-		// let pages = getCurrentPages();
-		// let prevPage = pages[pages.length - 2];
-		// prevPage.setData({
-		// 	lmId : id
-		// });
 	}, 
 	selectLx : function(e){
 		var id = e.currentTarget.dataset.id;
@@ -104,11 +98,6 @@ Page({
 			lxState:e.currentTarget.dataset.key,
 			lxId : id
 		});
-		// let pages = getCurrentPages();
-		// let prevPage = pages[pages.length - 2];
-		// prevPage.setData({
-		// 	lxId : id
-		// });
 	},
 	formSubmit : function(e){
 		let pages = getCurrentPages();
@@ -120,7 +109,8 @@ Page({
 		}
 		prevPage.setData({
 			lmId : this.data.lmId,
-			lxId : this.data.lxId
+			lxId : this.data.lxId,
+			isAllEmptyFlag : this.data.isAllEmptyFlag
 		})
 		wx.navigateBack({
 			delta:1

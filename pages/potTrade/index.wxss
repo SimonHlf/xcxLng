@@ -3,37 +3,29 @@ page{
 }
 .filterWrap{
 	width: 100%;
-	height: 100rpx;
+	height: 80rpx;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background: #fff;
-	position: fixed;
 	z-index: 3;
+	border-bottom: 1rpx solid #e8e8e8;
+	position: fixed;
 	left: 0;
 	top: 0;
 }
-.inputView{
-	width: 80%;
+.pubMod{
+	float: left;
 	height: 70rpx;
-	background: #efefef;
-	border-radius: 40rpx;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	color: #606060;
 	position: relative;
 	margin-left: 30rpx;
 }
-.inputView i{
-	position: absolute;
-	left: 4%;
-	top: 22rpx;
-	color: #606060;
-	font-size: 32rpx;
-}
-.inputView input{
-	width: 70%;
-	font-size: 28rpx;
-	height: 100%;
-	padding: 0 15%;
-	color: #606060;
+.pubMod i{
+	margin-right: 10rpx;
+	font-size: 30rpx;
 }
 .filterBtn {
 	margin-right: 30rpx;
@@ -97,18 +89,22 @@ page{
 	width: 180rpx;
 	height: 180rpx;
 	float: left;
-	background: pink;
 	margin-right: 15rpx;
 }
+.imgView image{
+	width: 100%;
+	height: 100%;
+	border-radius: 6rpx;
+}
 .listItemCon{
-	width: 72%;
+	width: 71%;
 	height: 180rpx;
 	float: left;
 	position: relative;
 }
 .psArea{
-	height: 50rpx;
-	line-height: 50rpx;
+	height: 40rpx;
+	line-height: 40rpx;
 	font-size: 30rpx;
 	color: #121212;
 }
@@ -139,13 +135,17 @@ page{
 	font-size: 24rpx;
 	margin-top: 10rpx;
 }
-.proDate text:last-child{
+.sxTxt{
 	margin-left: 15rpx;
+	margin-top: 5rpx;
 	padding: 0 10rpx;
 	height: 36rpx;
 	display: inline-block;
 	background: #ffc107;
 	color: #fff;
+	float: left;
+	font-size: 24rpx;
+	border-radius: 6rpx;
 }
 .priceView{
 	height: 40rpx;
@@ -154,7 +154,17 @@ page{
 .priceView text{
 	color: #d32f2f;
 }
-.priceView text:first-child{
+.priceView .hasFloat{
+	float: left;
+}
+.priceView .hasFloat.hasMargL{
+	margin-left: 15rpx;
+}
+.priceView text.priceTit{
+	color: #a9a9a9;
+}
+.priceView text:first-child,
+.unit{
 	font-size: 24rpx;
 	margin-right: 5rpx;
 }

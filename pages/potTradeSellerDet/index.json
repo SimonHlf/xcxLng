@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+  	 "isAuthor" : "../../components/author/author"
+  },
+  "navigationBarTitleText" : "储罐租卖详情"
+}

@@ -1,0 +1,19 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>选择进港资质<text class="subTxt">(最多可选5个)</text></view>
+</view>
+<view class="modList padd clearfix">
+	<view class="modListItem {{item.state==1 ? 'active':''}}"
+		wx:for="{{carTypeData}}"
+		wx:key="index"
+		data-index="{{index}}"
+		data-id="{{item.id}}"
+		data-name="{{item.name}}"
+		bindtap="selectCarType" 
+	>{{item.name}}</view> 
+</view>  
+<view class="sureBtn" bindtap="selJgzz">确定</view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../../images/noData.png"></image>
+	<view class="noDataTxt">暂无进港资质</view>
+</view>

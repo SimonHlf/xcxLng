@@ -1,0 +1,18 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>选择{{currTitle}}</view>
+</view>
+<view class="modList padd clearfix">
+	<view class="modListItem {{state == index ?'active' : ''}}"
+		wx:for="{{carTypeData}}"
+		wx:key="index"
+		data-key="{{index}}"
+		data-id="{{item.id}}"
+		data-name="{{item.name}}"
+		bindtap="selectCarType" 
+	>{{item.name}}</view> 
+</view>  
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../../images/noData.png"></image>
+	<view class="noDataTxt">暂无{{currTitle}}记录</view>
+</view>

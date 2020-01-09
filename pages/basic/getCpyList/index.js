@@ -12,10 +12,10 @@ Page({
 		cpyId = options.cpyId;
 		this.getCpyList();
 	},
-	getCpyList : function(){
+	getCpyList : function(){ 
 		var _this = this,
 			field = null;
-		currPage == 'addRqTradePage' ? field = {typeName:'LNG贸易商'} : {};
+		currPage == 'addRqTradePage' ? field = {typeName:'LNG贸易商',checkStatus:1,opt:1,userId:wx.getStorageSync('userId')} : {checkStatus:1,opt:1,userId:wx.getStorageSync('userId')};
 		util.showLoading('加载中...');
 		wx.request({
 			url : app.globalData.serverUrl + '/company/getCompanyList',

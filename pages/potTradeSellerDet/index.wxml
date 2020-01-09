@@ -1,0 +1,105 @@
+<view class="mainHeadImg">
+ 	<image src="{{serverUrl}}/{{devDetData.mainImg}}" data-src="{{serverUrl}}/{{originHeadImg}}" mode="aspectFill" bindtap="previewHeadImg"></image>
+</view>
+<view class="sellerInfo padd">
+	<view class="topSellerInfo">
+		<view class="compName potPp ellip">{{devDetData.potPpName}}</view>
+		<view class="potVol">容积:{{devDetData.potVolume}}/m³</view>
+	</view>
+	<view class="priceItem smPad clearfix">
+		<view class="priceNum potPrice">
+			<text class="priceTit">租卖价格：</text>
+			<text class="rmb">￥</text>
+			<text class="price">{{devDetData.leasePrice}}</text>
+		</view>
+		<block wx:if="{{devDetData.tradeStatus == 0}}">
+			<view class="priceNum potPrice">
+				<text class="priceTit">销售价格：</text>
+				<text class="rmb">￥</text>
+				<text class="price">{{devDetData.sellPrice}}</text>
+			</view>
+		</block>
+	</view>
+	<view class="chandi">
+		产地：{{devDetData.province}}-{{devDetData.city}}
+	</view>
+</view>
+<view class="sellerTel clearfix">
+	<view class="sellerImg">
+		<image src="{{devDetData.userHead}}"></image>
+	</view>
+	<view class="rqDevCompName">
+		<view class="lxrNameTel">
+			<text>{{devDetData.lxName}}</text>
+			<text>{{devDetData.lxTel}}</text>
+		</view>
+		<view class="rqDevName ellip">{{devDetData.cpyName}}</view>
+	</view>
+	<view class="phoneCall" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">
+		<i class="iconfont icon-tel"></i>
+	</view>
+</view>
+<view class="proBasicInfo padd">
+	<view class="proTit">
+		<view class="lineView"></view>
+		<view>产品基本信息</view>
+	</view>
+	<view class="basicInfoItem">
+		<text>储罐品牌</text>
+		<text>{{devDetData.potPpName}}</text> 
+	</view>
+	<view class="basicInfoItem">
+		<text>储罐容积</text>
+		<text>{{devDetData.potVolume}}/m³</text> 
+	</view>
+	<view class="basicInfoItem">
+		<text>装载介质</text>
+		<text>{{devDetData.zzJzTypeName}}</text> 
+	</view>
+</view>
+<!-- 产品详情图 --> 
+<block wx:if="{{devDetData.detailImg.length > 0}}">
+	<view class="proDetImg padd">
+		<view class="proTit">
+			<view class="lineView"></view>
+			<view>产品详情图</view>
+		</view>
+		<view class="detImgWrap"
+			wx:for="{{devDetData.detailImg}}"
+			wx:key="*this"
+		>
+			<image mode="aspectFill" src="{{serverUrl}}/{{item.pdiImg}}" bindtap="previewDetImg" data-index="{{index}}"></image>
+		</view>
+	</view>
+</block>
+<view class="botFun">
+	<block wx:if="{{ufId != ''}}">
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu1"></i>
+			</view>
+			<view class="iconTxt">已关注</view>
+			<isAuthor bind:flagEvent="cancelFocus"></isAuthor>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu"></i>
+			</view>
+			<view class="iconTxt">关注</view>
+			<isAuthor bind:flagEvent="getFocus"></isAuthor>
+		</view>
+	</block>
+	<!-- <view class="focusView">
+		<view class="iconView">
+			<i class="iconfont icon-wodexiaoxi"></i>
+		</view>
+		<view class="iconTxt">咨询</view>
+	</view> -->
+	<view class="buyGasBtn" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">电话咨询</view>
+</view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view>  

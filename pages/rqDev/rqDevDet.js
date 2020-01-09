@@ -30,14 +30,6 @@ Page({
 		let src = e.currentTarget.dataset.src;
 		this.previewFun(src);
 	},
-	previewClImg : function(e){
-		let src = e.currentTarget.dataset.src;
-		this.previewFun(src);
-	},
-	previewWhpImg : function(e){
-		let src = e.currentTarget.dataset.src;
-		this.previewFun(src);
-	},
 	previewDetImg : function(e){
 		let index = e.currentTarget.dataset.index;
 		wx.previewImage({
@@ -64,20 +56,12 @@ Page({
 						originHeadImg : res.data.datas[0].mainImg.replace('_small',''),
 						ufId : res.data.datas[0].ufId
 					});
-					// for(var i=0;i<_this.data.tradeDetData.psArea.length;i++){
-					// 	if(_this.data.tradeDetData.psArea[i].selFlag){
-					// 		psAreaData.push(_this.data.tradeDetData.psArea[i].provName);
-					// 	}
-					// }
-					// if(_this.data.tradeDetData.otherImgList.length > 0){
-					// 	var otherImgList = _this.data.tradeDetData.otherImgList;
-					// 	for(let i in otherImgList) {
-					// 		previewImgArr.push(app.globalData.serverUrl + '/' + otherImgList[i].gtiImg.replace('_small',''));
-					// 	}
-					// }
-					// _this.setData({
-					// 	psArea:psAreaData.join('/')
-					// });
+					if(_this.data.devDetData.detailImg.length > 0){
+						var otherImgList = _this.data.devDetData.detailImg;
+						for(let i in otherImgList) {
+							previewImgArr.push(app.globalData.serverUrl + '/' + otherImgList[i].pdiImg.replace('_small',''));
+						}
+					}
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');
 					_this.setData({
@@ -106,7 +90,7 @@ Page({
 		var _this = this; 
 		if(wx.getStorageSync('userId')){
 			util.showLoading('关注中...');
-			var field = {userId:wx.getStorageSync('userId'),focusId:this.data.tradeId,focusType:'rqmm'};
+			var field = {userId:wx.getStorageSync('userId'),focusId:this.data.rqDevId,focusType:'rqsb'};
 			console.log(field)
 			wx.request({
 				url : app.globalData.serverUrl + '/userCompany/addUserFocus',
@@ -123,7 +107,6 @@ Page({
 							userFocus : true ,
 							ufId : res.data.datas
 						});
-						console.log(_this.data.ufId )
 					}else if(res.data.code == 1000){
 						util.showToast('服务器错误');
 					}else if(res.data.code == 50003){
@@ -138,7 +121,6 @@ Page({
 		if(wx.getStorageSync('userId')){
 			util.showLoading('取消关注中...');
 			var field = {ufId:this.data.ufId};
-			console.log(field)
 			wx.request({
 				url : app.globalData.serverUrl + '/userCompany/delUserFocusById',
 				method: 'delete',

@@ -1,5 +1,5 @@
 <view class="mainHeadImg">
- 	<image></image>
+ 	<image src="{{serverUrl}}/{{devDetData.mainImg}}" data-src="{{serverUrl}}/{{originHeadImg}}" mode="aspectFill" bindtap="previewHeadImg"></image>
 </view>
 <view class="sellerInfo padd">
 	<view class="topSellerInfo">
@@ -14,7 +14,7 @@
 </view>
 <view class="sellerTel clearfix">
 	<view class="sellerImg">
-		<image></image>
+		<image src="{{devDetData.userHead}}"></image>
 	</view>
 	<view class="rqDevCompName">
 		<view class="lxrNameTel">
@@ -23,7 +23,7 @@
 		</view>
 		<view class="rqDevName ellip">{{devDetData.cpyName}}</view>
 	</view>
-	<view class="phoneCall">
+	<view class="phoneCall" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">
 		<i class="iconfont icon-tel"></i>
 	</view>
 </view>
@@ -41,16 +41,21 @@
 		<text>{{devDetData.devNo}}</text> 
 	</view>
 </view>
-<!-- 产品详情图 -->
-<view class="proDetImg padd">
-	<view class="proTit">
-		<view class="lineView"></view>
-		<view>产品详情图</view>
+<!-- 产品详情图 --> 
+<block wx:if="{{devDetData.detailImg.length > 0}}">
+	<view class="proDetImg padd">
+		<view class="proTit">
+			<view class="lineView"></view>
+			<view>产品详情图</view>
+		</view>
+		<view class="detImgWrap"
+			wx:for="{{devDetData.detailImg}}"
+			wx:key="*this"
+		>
+			<image mode="aspectFill" src="{{serverUrl}}/{{item.pdiImg}}" bindtap="previewDetImg" data-index="{{index}}"></image>
+		</view>
 	</view>
-	<view class="detImgWrap">
-		<!-- <image mode="widthFix"></image> -->
-	</view>
-</view>
+</block>
 <view class="botFun">
 	<block wx:if="{{ufId != ''}}">
 		<view class="focusView">
@@ -76,12 +81,7 @@
 		</view>
 		<view class="iconTxt">咨询</view>
 	</view> -->
-	<block wx:if="{{true}}">
-		<view class="buyGasBtn">电话咨询</view>
-	</block>
-	<!-- <block wx:else>
-		<view class="notBuyGasBtn">我要买气</view>
-	</block> -->
+	<view class="buyGasBtn" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">电话咨询</view>
 </view>
 <view class="noDataList" hidden="{{isHasDataFlag}}">
 	<image mode="widthFix" src="../../images/noData.png"></image>
