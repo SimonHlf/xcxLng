@@ -1,0 +1,2 @@
+@import '../../style/sellerDetSpec.wxss';
+@import '../../style/popWin.wxss';

@@ -14,6 +14,10 @@ page{
 	background: #fff;
 	margin-bottom: 20rpx;
 }
+.hasBorBot{
+	border-bottom: 1rpx solid #e8e8e8;
+	padding-bottom: 10rpx;
+}
 .topSellerInfo{
 	height: 80rpx;
 	line-height: 80rpx;
@@ -26,6 +30,31 @@ page{
 .topSellerInfo .compName.potPp{
 	max-width: 73%;
 	float: left;
+}
+.topSellerInfo .compName.trucks{
+	max-width: 88%;
+	float: left;
+}
+.topSellerInfo .compName.trucks view.truckName{
+	max-width:78%;
+	float: left;
+}
+.topSellerInfo .compName.trucks view:last-child{
+	float:left;
+	margin-left: 10rpx;
+}
+.topSellerInfo .compType{
+	flaot:right;
+	margin-left: 15rpx;
+	margin-top: 5rpx;
+	padding: 0 10rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	display: inline-block;
+	background: #eef4ff;
+	color: #3c7de9;
+	font-size: 24rpx;
+	border-radius: 6rpx;
 }
 .topSellerInfo .potVol{
 	float: right;
@@ -56,6 +85,13 @@ page{
 	color:#d32f2f ;
 	font-size: 36rpx;
 	font-weight: 620;
+}
+.distance{
+	float: right;
+	color: #a9a9a9;
+	font-size: 24rpx;
+	height: 40rpx;
+	line-height: 40rpx;
 }
 .cd{
 	float: right;
@@ -131,6 +167,9 @@ page{
 	font-size: 30rpx;
 	color: #121212;
 	border-bottom: 1rpx solid #e8e8e8;
+}
+.proTit.noBor{
+	border-bottom: none;
 }
 .proTit view.lineView{
 	width: 8rpx;
@@ -218,4 +257,33 @@ page{
 }
 .notBuyGasBtn{
 	background: #a9a9a9;
+}
+.trucksInfoItem{
+	padding:10rpx 0;
+}
+.trucksInfoItem .infoItem{
+	width: 33%;
+	float: left;
+}
+.trucksInfoItem .infoItem.spec{
+	width: 100%;
+	float: none;
+}
+.trucksInfoItem .infoItem .infoItemTit{
+	font-size: 26rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	color: #606060;
+}
+.trucksInfoItem .infoItem .infoItemCon{
+	font-size: 30rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	color: #121212;
+	font-weight: 620;
+}
+.trucksInfoItem .infoItem.spec .infoItemCon{
+	height: auto;
+	line-height: auto;
+	font-weight: normal;
 }

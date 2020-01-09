@@ -1,0 +1,75 @@
+<view class="filterWrap">
+	<view class="pubMod">
+		<i class="iconfont icon-bianji"></i>
+		<text>发布槽车租卖</text>
+		<isAuthor bind:flagEvent="pubPotTrade"></isAuthor>
+	</view>
+	<view class="filterBtn" bindtap="goFilter">
+		<text>筛选</text>
+		<i class="iconfont icon-shaixuan"></i>
+	</view>
+</view>
+<view class="tabFilter">
+	<view 
+		wx:for="{{navTab}}"
+		wx:key="index"
+		data-index="{{index}}"
+		class="tabItem {{currentTab == index ? 'active' : ''}}"
+		bindtap="getCurrentTabCon"
+	><view class="lineView"></view>{{item}}</view>
+</view>
+<view class="potList">
+	<view class="listItem clearfix">
+		<view class="imgView">
+			<image mode="aspectFill"></image>
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">陕汽德龙30吨供液车</view>
+			<!-- 租车 运输范围 -->
+			<view class="psArea">
+				<view class="hasFloat ellip">运输范围：河南/北京/天津/河河南/北京/天津/河河南/北京/天津/河</view>
+				<view class="compType">个人</view>
+			</view>
+			<view class="regArea">
+				<text>车辆注册地：河南省-濮阳市</text>
+			</view>
+			<view class="priceView clearfix">
+				<view class="hasFloat">
+					<text class="priceTit">租金</text>
+					<text class="unit">¥</text>
+					<text class="priceNum">4</text>
+					<text class="unitTxt">万起/辆</text>
+				</view>
+				<i class="iconfont icon-gengduo"></i>
+			</view>
+		</view>
+	</view>
+	
+	<view class="listItem clearfix">
+		<view class="imgView">
+			<image mode="aspectFill"></image>
+		</view>
+		<view class="listItemCon">
+			<view class="psArea ellip">陕汽德龙30吨供液车</view>
+			<!-- 租车 运输范围 -->
+			<view class="psArea">
+				<view class="hasFloat">
+					<text class="gznf">2018年</text>
+					<text class="line">|</text>
+					<text>已行驶4156万公里</text>
+				</view>
+				<view class="compType">公司</view>
+			</view>
+			<view class="regArea">车辆注册地：河南省-濮阳市</view>
+			<view class="priceView clearfix">
+				<view class="hasFloat">
+					<text class="unit">¥</text>
+					<text class="priceNum">40</text>
+					<text class="unitTxt">万</text>
+				</view>
+				<i class="iconfont icon-gengduo"></i>
+			</view>
+		</view>
+	</view>
+	
+</view>

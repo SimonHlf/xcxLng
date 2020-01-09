@@ -1,5 +1,8 @@
 {
   "pages": [
+	"pages/driverQz/index",
+    "pages/trucksSellDet/index",
+    "pages/trucksTrade/index",
     "pages/pubTrucksTrade/index",
     "pages/potTrade/index",
     "pages/pubPotTrade/index",

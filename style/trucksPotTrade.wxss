@@ -1,0 +1,205 @@
+page{
+	margin-top: 190rpx;
+}
+.filterWrap{
+	width: 100%;
+	height: 80rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #fff;
+	z-index: 3;
+	border-bottom: 1rpx solid #e8e8e8;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.pubMod{
+	float: left;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	color: #606060;
+	position: relative;
+	margin-left: 30rpx;
+}
+.pubMod i{
+	margin-right: 10rpx;
+	font-size: 30rpx;
+}
+.filterBtn {
+	margin-right: 30rpx;
+}
+.filterBtn text{
+	font-size: 28rpx;
+	color:#606060 ;
+	margin-right:12rpx ;
+}
+.filterBtn i{
+	color:#606060 ;
+	font-size: 26rpx;
+}
+.tabFilter{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+	background: #fff;
+	z-index: 5;
+	position: fixed;
+	left: 0;
+	top: 100rpx;
+}
+.tabItem{
+	float: left;
+	height: 100%;
+	margin-right: 40rpx;
+	position: relative;
+	padding: 0 20rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.tabItem:first-child{
+	margin-left: 30rpx;
+}
+.tabItem.active{
+	color: #3c7de9;
+}
+.tabItem .lineView{
+	width: 100%;
+	height: 8rpx;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background:#3c7de9;
+	border-radius: 26rpx;
+	display: none;
+}
+.tabItem.active .lineView{
+	display: block;
+}
+.potList{
+	padding: 0 30rpx;
+}
+.listItem{
+	border-bottom: 1rpx solid #e8e8e8;
+	padding: 20rpx 0;
+}
+.imgView{
+	width: 180rpx;
+	height: 180rpx;
+	float: left;
+	margin-right: 15rpx;
+}
+.imgView image{
+	width: 100%;
+	height: 100%;
+	border-radius: 6rpx;
+}
+.listItemCon{
+	width: 71%;
+	height: 180rpx;
+	float: left;
+	position: relative;
+}
+.psArea{
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.psArea text.line{
+	margin:0 5rpx;
+}
+.psArea view.hasFloat,
+.psArea .compType{
+	float: left;
+}
+.psArea view.hasFloat{
+	max-width: 82%;
+}
+.volume{
+	margin-top: 10rpx;
+}
+.volumeItem{
+	float: left;
+	padding: 0 15rpx;
+	height: 38rpx;
+	line-height: 38rpx;
+	border:1rpx solid #3c7de9;
+	color: #3c7de9;
+	font-size: 24rpx;
+	border-radius: 6rpx;
+}
+.volumeItem:first-child{
+	margin-right: 15rpx;
+}
+.volumeItem:last-child{
+	max-width: 55%;
+	display: block;
+}
+.psArea{
+	font-size: 26rpx;
+	color: #606060;
+}
+.proDate,
+.regArea{
+	height: 36rpx;
+	line-height: 36rpx;
+	font-size: 24rpx;
+	margin-top: 10rpx;
+}
+.proDate{
+	color: #606060;
+}
+.regArea{
+	color: #a9a9a9;
+}
+.sxTxt,
+.compType{
+	margin-left: 15rpx;
+	margin-top: 5rpx;
+	padding: 0 10rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	display: inline-block;
+	background: #ffc107;
+	color: #fff;
+	float: left;
+	font-size: 24rpx;
+	border-radius: 6rpx;
+}
+.priceView{
+	height: 40rpx;
+	line-height: 40rpx;
+}
+.priceView text{
+	color: #d32f2f;
+}
+.priceView .hasFloat{
+	float: left;
+}
+.priceView .hasFloat.hasMargL{
+	margin-left: 15rpx;
+}
+.priceView text.priceTit{ 
+	color: #a9a9a9;
+}
+.priceView text:first-child,
+.unit{
+	font-size: 24rpx;
+	margin-right: 5rpx;
+}
+.priceView text.priceNum{
+	font-size: 32rpx;
+	font-weight: 620;
+}
+.priceView text.unitTxt{
+	font-size: 24rpx;
+}
+.priceView i{
+	color: #acacac;
+	font-size: 24rpx;
+	float: right;
+	margin-top: 3rpx;
+}

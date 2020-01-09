@@ -1,0 +1,154 @@
+<view class="mainHeadImg">
+ 	<image src="{{serverUrl}}/{{devDetData.mainImg}}" data-src="{{serverUrl}}/{{originHeadImg}}" mode="aspectFill" bindtap="previewHeadImg"></image>
+</view>
+<view class="sellerInfo padd">
+	<view class="hasBorBot">
+		<view class="topSellerInfo">
+			<view class="compName trucks ellip">
+				<view class="truckName ellip">陕汽德龙F300陕汽德龙F3000重卡陕汽德龙F3000重卡0重卡</view>
+				<view>豫J12345</view>
+			</view>
+			<view class="compType">公司</view>
+		</view>
+		<view class="priceItem smPad clearfix">
+			<view class="priceNum potPrice">
+				<text class="rmb">￥</text>
+				<text class="price">36</text>
+				<text class="rmb">万</text>
+			</view>
+			<view class="distance">行驶42686万公里</view>
+		</view>
+	</view>
+</view>
+<view class="sellerTel clearfix">
+	<view class="sellerImg">
+		<image src="{{devDetData.userHead}}"></image>
+	</view>
+	<view class="rqDevCompName">
+		<view class="lxrNameTel">
+			<text>王经理</text>
+			<text>13311089766</text>
+		</view>
+		<view class="rqDevName ellip">放松放松的疯狂家里看电视</view>
+	</view>
+	<view class="phoneCall" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">
+		<i class="iconfont icon-tel"></i>
+	</view>
+</view>
+<view class="proBasicInfo padd">
+	<view class="proTit noBor">
+		<view class="lineView"></view>
+		<view>车辆信息</view>
+	</view>
+	<view class="trucksInfoItem clearfix">
+		<view class="infoItem">
+			<view class="infoItemTit">车头上牌年份</view>
+			<view class="infoItemCon ellip">2018-08</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">品牌型号</view>
+			<view class="infoItemCon ellip">陕汽德龙F300</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">排放标准</view>
+			<view class="infoItemCon ellip">国五</view>
+		</view>
+	</view>
+	<view class="trucksInfoItem clearfix">
+		<view class="infoItem">
+			<view class="infoItemTit">车头动力</view>
+			<view class="infoItemCon ellip">柴油动力</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">车辆注册地</view>
+			<view class="infoItemCon ellip">河南省濮阳市河南省濮阳市</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">重大事故</view>
+			<view class="infoItemCon ellip">无</view>
+		</view>
+	</view>
+	<view class="trucksInfoItem clearfix">
+		<view class="infoItem">
+			<view class="infoItemTit">储罐上牌日期</view>
+			<view class="infoItemCon ellip">2019-08</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">储罐容积</view>
+			<view class="infoItemCon ellip">300m³</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">储罐品牌</view>
+			<view class="infoItemCon ellip">国五</view>
+		</view>
+	</view>
+	<view class="trucksInfoItem clearfix">
+		<view class="infoItem spec">
+			<view class="infoItemTit">备注</view>
+			<view class="infoItemCon">发生颠覆第三方的身份双方是否是地方十分的舒服的事的方式十分的舒服的事的方式舒服的沙发上</view>
+		</view>
+	</view>
+	
+</view>
+<!-- 车辆相关证件照片 --> 
+<view class="proDetImg padd">
+	<view class="proTit noBor">
+		<view class="lineView"></view>
+		<view>车辆相关证件照片</view>
+	</view>
+	<view class="detImgWrap">
+		<image mode="aspectFill"></image>
+	</view>
+</view>
+<view class="botFun">
+	<block wx:if="{{ufId != ''}}">
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu1"></i>
+			</view>
+			<view class="iconTxt">已关注</view>
+			<isAuthor bind:flagEvent="cancelFocus"></isAuthor>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu"></i>
+			</view>
+			<view class="iconTxt">关注</view>
+			<isAuthor bind:flagEvent="getFocus"></isAuthor>
+		</view>
+	</block>
+	<view class="buyGasBtn">预约看车</view>
+</view>
+<!-- 买气弹窗 -->
+<view class="maskLayer" hidden="{{isShowLayerFlag}}"></view>
+<view class="buyGasView" hidden="{{isShowLayerFlag}}">
+	<view class="buyGasTit">请填写信息</view>
+	<view class="buyGasForm">
+		<form bindsubmit="formSubmit">
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-xingming"></i>
+				</view>
+				<input type="text" name="buyUserName" placeholder="请输入您的姓名" maxlength="6"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-shouji"></i>
+				</view>
+				<input type="number" name="phoneNum" placeholder="请输入您的手机号码" maxlength="11"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-baojia"></i>
+				</view>
+				<input type="text" name="remark" placeholder="请输入备注信息(20字内)" maxlength="20"/>
+			</view>
+			<button class="subBtn" formType="submit">提交信息</button>
+		</form>
+	</view>
+	<view class="closeView">
+		<i class="iconfont icon-guanbi"></i>
+	</view>
+</view>

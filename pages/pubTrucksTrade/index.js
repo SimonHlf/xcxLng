@@ -233,8 +233,6 @@ Page({
 			compTypeId : submitField.compTypeId,
 			truckTypeId : submitField.truckTypeId,
 			carTypeId : submitField.carTypeId,
-			gznf : submitField.gznf,
-			ctspny : submitField.ctspny,
 			trucksPrice : submitField.trucksPrice,
 			ctTypeId :submitField.ctTypeId,
 			ctPpId : submitField.ctPpId,
@@ -260,7 +258,6 @@ Page({
 			this.setData({
 				potBandId : submitField.potBandId,
 				volume : submitField.volume,
-				cgspny : submitField.cgspny,
 				gasTypeId : submitField.gasTypeId
 			});
 		}
@@ -281,9 +278,9 @@ Page({
 				util.showToast('请上传车辆主图');
 			}else if(this.data.provName == ''){
 				util.showToast('请选择车辆注册地');
-			}else if(gznf == '请选择购置年份'){
+			}else if(this.data.gznf == '请选择购置年份'){
 				util.showToast('请选择购置年份');
-			}else if(ctspny == '请选择车头上牌年月'){
+			}else if(this.data.ctspny == '请选择车头上牌年月'){
 				util.showToast('请选择车头上牌年月');
 			}else if(this.data.trucksPrice == '' && this.data.tradeTypeId == 1){
 				util.showToast('请输入租赁价格');
@@ -303,7 +300,7 @@ Page({
 				util.showToast('请选择储罐品牌');
 			}else if(this.data.truckTypeId == 2 && this.data.volume == ''){
 				util.showToast('请输入储罐容积');
-			}else if(this.data.truckTypeId == 2 && cgspny == '请选择储罐上牌年月'){
+			}else if(this.data.truckTypeId == 2 && this.data.cgspny == '请选择储罐上牌年月'){
 				util.showToast('请选择储罐上牌年月');
 			}else if(this.data.distance == ''){
 				util.showToast('请输入行驶里程(公里)');
