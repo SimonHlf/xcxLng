@@ -1,2 +1,95 @@
-<!--pages/driverQz/index.wxml-->
-<text>pages/driverQz/index.wxml</text>
+<view class="filterWrap">
+ 	<view class="pubMod">
+ 		<i class="iconfont icon-bianji"></i>
+		<text>发布求职信息</text>
+		<isAuthor bind:flagEvent="pubRqDev"></isAuthor>
+	</view>
+	<view class="filterBtn" bindtap="goFilter">
+		<text>筛选</text>
+		<i class="iconfont icon-shaixuan"></i>
+	</view>
+</view>
+<!-- qzList -->
+<view class="qzListWrap padd">
+	<view class="qzListItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="qzListCon">
+			<view class="qzTit">
+				<view class="name">李娜娜</view>
+				<view class="renzheng"><i class="iconfont icon-renzheng"></i></view>
+				<view class="weizhi">
+					<i class="iconfont icon-weizhi"></i>
+					<text>濮阳</text>
+				</view>
+			</view>
+			<view class="qzInfo">
+				<view>男</view>
+				<view>30岁</view>
+				<view>大专</view>
+			</view>
+			<view class="basicInfo">
+				<view>B2驾照</view>
+				<view>|</view>
+				<view>驾龄1-3年</view>
+				<view>|</view>
+				<view>电话15890978765</view>
+			</view>
+		</view>
+	</view>
+	<view class="qzListItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="qzListCon">
+			<view class="qzTit">
+				<view class="name">李娜娜</view>
+				<view class="renzheng"><i class="iconfont icon-renzheng"></i></view>
+				<view class="weizhi">
+					<i class="iconfont icon-weizhi"></i>
+					<text>濮阳</text>
+				</view>
+			</view>
+			<view class="qzInfo">
+				<view>男</view>
+				<view>30岁</view>
+				<view>大专</view>
+			</view>
+			<view class="basicInfo">
+				<view>B2驾照</view>
+				<view>|</view>
+				<view>驾龄1-3年</view>
+				<view>|</view>
+				<view>电话15890978765</view>
+			</view>
+		</view>
+	</view>
+	<view class="qzListItem clearfix">
+		<view class="imgView">
+			
+		</view>
+		<view class="qzListCon">
+			<view class="qzTit">
+				<view class="name">李娜娜</view>
+				<view class="renzheng"><i class="iconfont icon-renzheng"></i></view>
+				<view class="weizhi">
+					<i class="iconfont icon-weizhi"></i>
+					<text>濮阳</text>
+				</view>
+			</view>
+			<view class="qzInfo">
+				<view>男</view>
+				<view>30岁</view>
+				<view>大专</view>
+			</view>
+			<view class="basicInfo">
+				<view>B2驾照</view>
+				<view>|</view>
+				<view>驾龄1-3年</view>
+				<view>|</view>
+				<view>电话15890978765</view>
+			</view>
+		</view>
+	</view>
+</view>

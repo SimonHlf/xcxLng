@@ -1,9 +1,11 @@
 {
   "pages": [
+	"pages/pubDriverQz/index",
+    "pages/driverQz/index",
+    "pages/index/index",
     "pages/trucksTrade/index",
     "pages/pubTrucksTrade/index",
     "pages/basic/addCpGcpNum/index",
-    "pages/driverQz/index",
     "pages/trucksSellDet/index",
     "pages/potTrade/index",
     "pages/pubPotTrade/index",
@@ -21,7 +23,6 @@
     "pages/lngHqMsg/lngHqMsgDet",
     "pages/lngHqMsg/index",
     "pages/lngHqMysList/index",
-    "pages/index/index",
     "pages/mine/index",
     "pages/rqMaoyi/filter",
     "pages/basic/getCpyList/index",

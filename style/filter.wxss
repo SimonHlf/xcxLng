@@ -1,9 +1,10 @@
 page{
-	background: #fff;
+	background: #efefef;
 	margin-bottom: 98rpx;
 }
 .filterMod{
 	margin-bottom: 20rpx;
+	background: #fff;
 }
 .filterMod:last-child{
 	margin-bottom: 0;

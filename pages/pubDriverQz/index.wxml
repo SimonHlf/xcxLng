@@ -1,0 +1,123 @@
+<view class="modItem padd">
+	<view class="modTit">
+		<i class="iconfont icon-ziliao"></i>
+		<view class="modTitTxt">基本资料</view>
+		<view class="modTag">必填</view>
+	</view>
+	<view class="modCon">
+		<!-- <view class="modConItem_one">
+			<view class="modConTit">头像</view>
+			<view class="modDetCon">
+				<image src="{{headImg}}" mode="aspectFill"></image>
+			</view>
+		</view> -->
+		<view class="modConWrap clearfix">
+			<view class="modConItem long">
+				<view class="modTit">真实姓名</view>
+				<view class="modCon">
+					<input type="text" name="realName" value="{{realName}}" placeholder="请输入真实姓名" maxlength="8"/>
+				</view>
+			</view>
+			<view class="modConItem short">
+				<view class="modTit">性别</view>
+				<view class="modCon">
+					<input name="sex" value="{{sex}}" placeholder="请选择性别" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem long">
+				<view class="modTit">出生年月</view>
+				<view class="modCon">
+					<input name="birth" value="{{birth}}" placeholder="请选择出生年月" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="modConItem short">
+				<view class="modTit">婚否</view>
+				<view class="modCon">
+					<input name="isMarried" value="{{isMarried}}" placeholder="是否已婚" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem long">
+				<view class="modTit">驾照类型</view>
+				<view class="modCon">
+					<input name="jzType" value="{{jzType}}" placeholder="请选择驾照类型" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="modConItem short">
+				<view class="modTit">驾龄</view>
+				<view class="modCon">
+					<input type="number" name="driveYear" value="{{driveYear}}" placeholder="请输入驾龄" placeholder-class="numberHolder" maxlength="3"/>
+					<text class="unit">年</text>
+				</view>
+			</view>
+		</view>
+		
+		
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">手机号码</view>
+				<view class="modCon wholeWid">
+					<input type="number" name="phoneNum" value="{{phoneNum}}" placeholder-class="numberHolder" placeholder="请输入手机号码"maxlength="11"/>
+				</view>
+			</view>
+		</view>
+		
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">通信地址</view>
+				<view class="modCon wholeWid">
+					<input type="text" name="address" value="{{address}}" placeholder-class="numberHolder" placeholder="请输入通信地址"maxlength="40"/>
+				</view>
+			</view>
+		</view>
+		
+	</view>
+</view>
+<view class="modItem padd">
+	<view class="modTit">
+		<i class="iconfont icon-qiuzhi"></i>
+		<view class="modTitTxt">求职意向</view>
+		<view class="modTag">必填</view>
+	</view>
+	<view class="modConWrap clearfix">
+		<view class="modConItem">
+			<view class="modTit">求职意向</view>
+			<view class="modCon smPadd">
+				<input type="text" name="qzyx" value="{{qzyx}}" placeholder="请选择求职意向" disabled/>
+				<i class="iconfont icon-gengduo"></i>
+			</view>
+		</view>
+	</view>
+	<view class="modConWrap clearfix">
+		<view class="modConItem">
+			<view class="modTit">希望工作地点</view>
+			<view class="modCon smPadd">
+				<input type="text" name="workPlace" value="{{workPlace}}" placeholder="请选择工作城市" disabled/>
+				<i class="iconfont icon-gengduo"></i>
+			</view>
+		</view>
+	</view>
+	<view class="modConWrap clearfix">
+		<view class="modConItem">
+			<view class="modTit">期望月薪</view>
+			<view class="modCon smPadd">
+				<input type="number" name="qwyx" value="{{qwyx}}" placeholder-class="numberHolder" placeholder="请输入您的期望月薪(0为面议)"/>
+				<text class="unit">元</text>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="modItem padd">
+	<view class="modTit">
+		<i class="iconfont icon-qiuzhi"></i>
+		<view class="modTitTxt">工作经验</view>
+		<view class="modTag">必填</view>
+	</view>
+</view>
