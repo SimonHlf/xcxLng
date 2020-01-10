@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+  	 "isAuthor" : "../../../components/author/author"
+  },
+  "navigationBarTitleText" : "添加车头车牌/挂车车牌号"
+}

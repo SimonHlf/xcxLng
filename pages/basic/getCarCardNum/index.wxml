@@ -15,3 +15,7 @@
 	<image mode="widthFix" src="../../../images/noData.png"></image>
 	<view class="noDataTxt">暂无车牌号</view>
 </view>
+<view class="pubBtnWrap" bindtap="addCpNum">
+	<image src="../../../images/pub.png"></image>
+	<i class="iconfont icon-tianjia"></i>
+</view>

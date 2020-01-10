@@ -10,7 +10,7 @@ Page({
 		psArea : '',
 		serverUrl: app.globalData.serverUrl,
 		originHeadImg : '',
-		clOriginImg : '',
+		clOriginImg : '', 
 		whpOriginImg : '',
 		userFocus : false,
 		ufId : '',

@@ -19,6 +19,8 @@ Page({
 		succHeadImg : '',
 		provName : '',
 		cityName : '',
+		carCardNum : '',
+		gcCardNum : '',
 		gznf : '请选择购置年份',
 		ctspny : '请选择车头上牌年月',
 		trucksPrice : '',
@@ -36,7 +38,7 @@ Page({
 		accIdentName : '',
 		accIdentId : '',
 		lxrName : '',
-		lxrTel : '',
+		lxrTel : '', 
 		psAreaName : '',
 		provOrderNo : '',
 		wqpfbzName : '',
@@ -63,6 +65,158 @@ Page({
 		isSelDate_month_pt : false,
 		isZlFlag : false,
 		isDangerFlag : false,
+		provView : '',
+		provView_gc : '',
+		wordsView : '',
+		wordsView_gc : '',
+		cardNum : '',
+		cardTitle : ["京", "沪", "津", "渝", "冀", "豫", "云", "辽", "黑", "湘", "鲁", "新", "苏",  "浙", "赣", "鄂", "桂", "甘", "晋", "蒙", "陕", "吉", "闽", "贵", "粤", "川", "青", "藏", "琼", "宁"],
+		cardWords : ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+		maskLayerFlag : true,
+		isShow_prov : false,
+		isShow_words : false,
+		currOpenType : '',
+		value_prov : [0],
+		value_prov_gc : [0],
+		value_words : [0],
+		value_words_gc : [0],
+		currPageType : ''
+	},
+	onLoad(options){
+		this.setData({
+			currPageType : options.currPageType,
+			provView : this.data.cardTitle[0],
+			wordsView : this.data.cardWords[0],
+			provView_gc : this.data.cardTitle[0],
+			wordsView_gc : this.data.cardWords[0]
+		});
+	},
+	selProv : function(e){
+		//console.log(e.currentTarget.dataset.opt)
+		let opt = e.currentTarget.dataset.opt;
+		this.setData({
+			maskLayerFlag : false,
+			isShow_prov : true,
+		});
+		if(opt == 'prov_ct'){
+			this.setData({
+				currOpenType : 'selProv_ct'
+			});
+		}else if(opt == 'prov_gc'){
+			this.setData({
+				currOpenType : 'selProv_gc'
+			});
+		}
+	},
+	selWords : function(e){
+		let opt = e.currentTarget.dataset.opt;
+		this.setData({
+			maskLayerFlag : false,
+			isShow_words : true
+		});
+		if(opt == 'words_ct'){
+			this.setData({
+				currOpenType : 'selWrods_ct'
+			});
+		}else if(opt == 'words_gc'){
+			this.setData({
+				currOpenType : 'selWrods_gc'
+			});
+		}
+	},
+	closeMask : function(){
+		if(this.data.currOpenType == 'selProv_ct' || this.data.currOpenType == 'selProv_gc'){
+			this.close('prov');
+		}
+		if(this.data.currOpenType == 'selWrods_ct' ||this.data.currOpenType == 'selWrods_gc'){
+			this.close('words');
+		}
+	},
+	close : function(opt){
+		if(opt == 'prov'){
+			this.setData({
+				maskLayerFlag : true,
+				isShow_prov : false
+			});
+		}else if(opt == 'words'){
+			this.setData({
+				maskLayerFlag : true,
+				isShow_words : false
+			});
+		}
+	},
+	bindChange_prov : function(e){
+		const val = e.detail.value;
+		if(this.data.currOpenType == 'selProv_ct'){
+			this.setData({
+				value_prov: val
+			})
+		}else{
+			this.setData({
+				value_prov_gc: val
+			})
+		}
+	},
+	bindChange_words : function(e){
+		const val = e.detail.value;
+		if(this.data.currOpenType == 'selWrods_ct'){
+			this.setData({
+				value_words: val
+			})
+		}else{
+			this.setData({
+				value_words_gc: val
+			})
+		}
+	},
+	selCurr : function(e){
+		if(this.data.currOpenType == 'selProv_ct'){
+			const val = this.data.value_prov;
+			this.setData({
+				provView : this.data.cardTitle[val],
+			});
+			this.close('prov');
+		}else if(this.data.currOpenType == 'selProv_gc'){
+			const val = this.data.value_prov_gc;
+			this.setData({
+				provView_gc : this.data.cardTitle[val],
+			});
+			this.close('prov');
+		}else if(this.data.currOpenType == 'selWrods_ct'){
+			const val = this.data.value_words;
+			console.log(this.data.cardWords[val])
+			this.setData({
+				wordsView : this.data.cardWords[val],
+			});
+			this.close('words');
+		}else if(this.data.currOpenType == 'selWrods_gc'){
+			const val = this.data.value_words_gc;
+			this.setData({
+				wordsView_gc : this.data.cardWords[val],
+			});
+			this.close('words');
+		}
+	},
+	cancel : function(){
+		if(this.data.currOpenType == 'selProv_ct' || this.data.currOpenType == 'selProv_gc'){
+			this.close('prov');
+		}else if(this.data.currOpenType == 'selWrods_ct' || this.data.currOpenType == 'selWrods_gc'){
+			this.close('words');
+		}
+	},
+	upperCase : function(e){
+		if(e.detail.value != ''){
+			this.setData({
+				carCardNum : e.detail.value.toUpperCase()
+			});
+		}
+	},
+	upperCase_gc : function(e){
+		if(e.detail.value != ''){
+			this.setData({
+				gcCardNum : e.detail.value.toUpperCase()
+			});
+		}
 	},
 	getCpyList : function(){
 		util.navigateTo('/pages/basic/getCpyList/index?currPage=addRqDevPage&cpyId=' + this.data.cpyId);
@@ -227,12 +381,15 @@ Page({
 	formSubmit : function(e){
 		let submitField = e.detail.value,
 			regNum = /^(0|[1-9][0-9]*)$/,
-			regPhone = /^1\d{10}$/;
+			regPhone = /^1\d{10}$/,
+			regCardNum =  /^[0-9a-zA-Z]+$/;
 		this.setData({  
 			tradeTypeId : submitField.tradeTypeId,
 			compTypeId : submitField.compTypeId,
 			truckTypeId : submitField.truckTypeId,
 			carTypeId : submitField.carTypeId,
+			carCardNum : submitField.cphName,
+			gcCardNum : submitField.gcphName,
 			trucksPrice : submitField.trucksPrice,
 			ctTypeId :submitField.ctTypeId,
 			ctPpId : submitField.ctPpId,
@@ -250,8 +407,7 @@ Page({
 		}
 		if(this.data.isZlFlag){
 			this.setData({
-				jgzzId : submitField.jgzzId,
-				psAreaName : submitField.psAreaName
+				jgzzId : submitField.jgzzId
 			});
 		}
 		if(this.data.isDangerFlag){
@@ -278,10 +434,22 @@ Page({
 				util.showToast('请上传车辆主图');
 			}else if(this.data.provName == ''){
 				util.showToast('请选择车辆注册地');
-			}else if(this.data.gznf == '请选择购置年份'){
-				util.showToast('请选择购置年份');
+			}else if(this.data.ctTypeId == ''){
+				util.showToast('请选择车头类型');
+			}else if(this.data.ctPpId == ''){
+				util.showToast('请选择车头品牌');
+			}else if(this.data.carCardNum == '' && this.data.compTypeId == 2){
+				util.showToast('请选择车头车牌');
+			}else if(this.data.carCardNum == '' && this.data.compTypeId == 1){
+				util.showToast('请输入车头车牌');
 			}else if(this.data.ctspny == '请选择车头上牌年月'){
 				util.showToast('请选择车头上牌年月');
+			}else if(this.data.carCardNum.length < 5 && this.data.compTypeId == 1){
+				util.showToast('车头车牌长度须是5位');
+			}else if(!regCardNum.test(this.data.carCardNum) && this.data.compTypeId == 1){
+				util.showToast('车头车牌应由数字或字母构成，不能含有其他特殊字符');
+			}else if(this.data.gznf == '请选择购置年份'){
+				util.showToast('请选择购置年份');
 			}else if(this.data.trucksPrice == '' && this.data.tradeTypeId == 1){
 				util.showToast('请输入租赁价格');
 			}else if(this.data.trucksPrice == '' && this.data.tradeTypeId == 2){
@@ -290,10 +458,6 @@ Page({
 				util.showToast('租赁价格应是大于等于0的正整数');
 			}else if(this.data.tradeTypeId == 2 && !regNum.test( this.data.trucksPrice ) ){
 				util.showToast('买卖价格应是大于等于0的正整数');
-			}else if(this.data.ctTypeId == ''){
-				util.showToast('请选择车头类型');
-			}else if(this.data.ctPpId == ''){
-				util.showToast('请选择车头品牌');
 			}else if(this.data.tradeTypeId == 1 && this.data.jgzzId == ''){
 				util.showToast('请选择进港资质');
 			}else if(this.data.truckTypeId == 2 && this.data.potBandId == ''){
@@ -329,7 +493,79 @@ Page({
 			}else if(this.data.truckTypeId == 2 && this.data.aqfBgImg == ''){
 				util.showToast('请上传安全阀检验报告');
 			}else{
-				
+				var flag = true;
+				if(this.data.gcCardNum != '' && this.data.compTypeId == 1){
+					if(this.data.gcCardNum.length < 5){
+						util.showToast('挂车车牌长度须是5位');
+						flag = false;
+					}else if(!regCardNum.test(this.data.gcCardNum)){
+						util.showToast('挂车车牌应由数字和字母构成，不能含有其他特殊字符');
+						flag = false;
+					}else{
+						flag = true;
+					}
+				}
+				if(this.data.truckTypeId == 1){//普货 重置储罐上牌年月值
+					this.setData({
+						cgspny : ''
+					});
+				}
+				if(flag && wx.getStorageSync('userId')){
+					var url = '',type = '',otherImg='',_this = this;
+					if(upSuccDetImgArr.length > 0){ 
+						otherImg = upSuccDetImgArr.join(',');
+					} 
+					var signPlace = this.data.provName + '-' + this.data.cityName;
+					var cardNum_ct = this.data.provView + this.data.wordsView + this.data.carCardNum;
+					var cardNum_gc = '';
+					if(this.data.gcCardNum != ''){
+						cardNum_gc = this.data.provView_gc + this.data.wordsView_gc + this.data.gcCardNum;
+					}
+					var field = {userId:wx.getStorageSync('userId'),tradeType:this.data.tradeTypeId,compId:this.data.cpyName,trucksTypeId:this.data.carTypeId,mainImg:this.data.succHeadImg,trucksNo:cardNum_ct,
+								trucksGcNo:cardNum_gc,spYear:this.data.ctspny,buyYear:this.data.gznf,headTypeId:this.data.ctTypeId ,headPpId:this.data.ctPpId,
+								xsDistance:this.data.distance,wqpfbzId:this.data.wqpfbzId,potPpId:this.data.potBandId,potVol:this.data.volume,spYearPot:this.data.cgspny,
+								lxName:this.data.lxrName,lxTel:this.data.lxrTel,area:this.data.psAreaName,qyTypeId:this.data.gasTypeId,remark:this.data.remark,accidentFlag:this.data.accIdentId,
+								tructsHeadxsz:this.data.ctImgSucc,gcXsz:this.data.gcxxzImgSucc,tructsYyz:this.data.clyyzImgSucc,potJyz:this.data.jyhgzImgSucc,aqfbg:this.data.aqfBgImgSucc,qualId:this.data.jgzzId,regPlace:signPlace,ttImg:otherImg,price:this.data.trucksPrice};
+					if(this.data.currPageType == 'addPub'){
+						url = app.globalData.serverUrl + '/trucksTrade/addTrucksTrade';
+						type = 'post';
+					}
+					util.showLoading('发布中...');
+					wx.request({
+						url : url,
+						method:type,
+						data:field,
+						header: {
+						  'content-type': 'application/x-www-form-urlencoded',
+						}, 
+						success : function(res){
+							util.hideLoading();
+							if(res.data.code == 200){
+								if(_this.data.currPageType == 'addPub'){
+									util.showToast('发布槽车买卖成功,等待后台审核中...');
+									setTimeout(function(){
+										let pages = getCurrentPages();
+										let prevPage = pages[pages.length - 2];
+										prevPage.setData({
+											isCanPubFlag : true
+										});
+										wx.navigateBack({
+											delta:1
+										})
+									},1800);
+								}
+							}else if(res.data.code == 1000){
+								util.showToast('服务器错误');
+							}else if(res.data.code == 10002){
+								util.showToast('发布槽车买卖参数不能为空');
+							}else if(res.data.code == 70001){
+								util.showToast('抱歉,您暂无权限发布槽车买卖');
+							}else if(json.code == 80001){
+								util.showToast('当前燃气槽车买卖信息审核已通过，暂不能修改');
+							}
+						}
+					});
+				}
 			}
 			
 			
@@ -344,6 +580,20 @@ Page({
 			return;
 		}
 		util.navigateTo('/pages/basic/getTrucksType/index?carTypeId=' + this.data.carTypeId + '&truckTypeId=' + this.data.truckTypeId);
+	},
+	getCarCardNum : function(){
+		if(this.data.cpyId == ''){
+			util.showToast('请先选择公司');
+			return;
+		}
+		util.navigateTo('/pages/basic/getCarCardNum/index?cpyId=' + this.data.cpyId + '&carCardNum=' + this.data.carCardNum + '&currJump=cpJump');
+	},
+	getGcCardNum : function(){
+		if(this.data.cpyId == ''){
+			util.showToast('请先选择公司');
+			return;
+		}
+		util.navigateTo('/pages/basic/getCarCardNum/index?cpyId=' + this.data.cpyId + '&gcCardNum=' + this.data.gcCardNum + '&currJump=gccpJump');
 	},
 	getTruckHeadType : function(){
 		util.navigateTo('/pages/basic/getTruckHeadType/index?ctTypeId=' + this.data.ctTypeId);

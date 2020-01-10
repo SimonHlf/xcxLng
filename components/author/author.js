@@ -95,11 +95,11 @@ Component({
 			util.showLoading('登录中...');
 			wx.request({
 				url :　app.globalData.serverUrl + '/wxUserLogin',
-				method: 'get', 
+				method: 'get',  
 				data :field,
 				success: function(res){ 
 					util.hideLoading();
-					//console.log(res)
+					console.log(res) 
 					if(res.data.code == 200){  
 						that.setData({  
 							isAuthor : true,

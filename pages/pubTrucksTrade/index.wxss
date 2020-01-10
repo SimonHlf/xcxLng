@@ -1,1 +1,26 @@
 @import '../../style/pubTrade.wxss';
+@import '../../style/cardNumPicker.wxss';
+.provView,
+.wordsView{
+	width: 20%;
+	float: left;
+	height: 65rpx;
+	line-height: 65rpx;
+	border:1rpx solid #e8e8e8;
+	margin-top: 12rpx;
+	border-radius: 6rpx;
+	text-align: center;
+	color: #121212;
+}
+.wordsView{
+	margin-left: 15rpx;
+}
+.cardNumInp{
+	width: 50%;
+	height: 100%;
+	float: left;
+	margin-left: 15rpx;
+}
+.cardNumInp input{
+	width: 100% !important;
+}

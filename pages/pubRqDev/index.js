@@ -58,7 +58,7 @@ Page({
 	},
 	formSubmit : function(e){
 		let submitField = e.detail.value,
-			regNum = /^\+?[1-9]\d*$/,
+			regNum = /^(0|[1-9][0-9]*)$/,
 			regPhone = /^1\d{10}$/;
 		this.setData({
 			cpyName : submitField.cpyName,
@@ -86,7 +86,7 @@ Page({
 			}else if(this.data.rqDevPrice == ''){
 				util.showToast('请输入设备价格');
 			}else if(!regNum.test( this.data.rqDevPrice ) ){
-				util.showToast('设备价格应是大于0的正整数');
+				util.showToast('设备价格应是大于等于0的正整数');
 			}else if(this.data.devLmId == ''){
 				util.showToast('请选择设备类目');
 			}else if(this.data.devLxId == ''){

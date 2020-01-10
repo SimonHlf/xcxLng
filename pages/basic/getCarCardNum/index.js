@@ -6,7 +6,18 @@ Page({
 		state:-1,
 		cardNum:[],
 		isHasDataFlag : true,
-		currTitName : ''
+		currTitName : '',
+		addNewFlag : false
+	},
+	onShow(){
+		if(this.data.addNewFlag){
+			this.getCphList();
+		}
+	},
+	onHide(){
+		this.setData({
+			addNewFlag : false
+		});
 	},
 	onLoad : function(options){
 		cpyId = options.cpyId;
@@ -23,6 +34,9 @@ Page({
 			});
 		}
 		this.getCphList();
+	},
+	addCpNum : function(){
+		util.navigateTo('/pages/basic/addCpGcpNum/index?currJump=' + currJump + '&cpyId=' + cpyId);
 	},
 	getCphList : function(){
 		var _this = this,

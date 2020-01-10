@@ -1,0 +1,56 @@
+.comPicker{
+	width: 100%;
+	height: 400rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #fff;
+	z-index: 1001;
+	transition: ease .3s;
+	transform: translateY(100%);
+}
+.provPicker.active,
+.wordsPicker.active{
+  transform: translateY(0);
+}
+.pickerTit{
+	height: 86rpx;
+	line-height: 86rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.pickerTit view{
+	width: 50%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	font-size: 28rpx;
+	position: relative;
+}
+.pickerTit view text.lineView{
+	width: 2rpx;
+	height: 40rpx;
+	background: #e8e8e8;
+	position: absolute;
+	right: 0;
+	top: 23rpx;
+}
+.pickerTit view:first-child{
+	color: #a9a9a9;
+}
+.pickerTit view:last-child{
+	color: #3c7de9;
+	font-weight: 620;
+}
+.pickerCon{
+	width: 100%;
+	height: 313rpx;
+}
+.pickerCon picker-view{
+	width: 100%;
+	height: 100%;
+}
+.pickerItemCon{
+	width: 100%;
+	line-height: 50px;
+	text-align: center;
+}

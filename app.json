@@ -1,9 +1,10 @@
 {
   "pages": [
-	"pages/driverQz/index",
-    "pages/trucksSellDet/index",
     "pages/trucksTrade/index",
     "pages/pubTrucksTrade/index",
+    "pages/basic/addCpGcpNum/index",
+    "pages/driverQz/index",
+    "pages/trucksSellDet/index",
     "pages/potTrade/index",
     "pages/pubPotTrade/index",
     "pages/rqDev/index",
@@ -39,7 +40,8 @@
     "pages/basic/getTruckHeadBrand/index",
     "pages/basic/getJgzz/index",
     "pages/basic/getWqpfbz/index",
-    "pages/basic/getGasType/index"
+    "pages/basic/getGasType/index",
+    "pages/trucksTrade/filter"
   ],
   "window": {
     "backgroundTextStyle": "light",

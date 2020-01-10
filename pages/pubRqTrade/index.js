@@ -57,6 +57,7 @@ Page({
 	formSubmit : function(e){
 		let submitField = e.detail.value,
 			regNum = /^\+?[1-9]\d*$/,
+			regPriceNum = /^(0|[1-9][0-9]*)$/,
 			regPhone = /^1\d{10}$/;
 		this.setData({  
 			cpyName : submitField.cpyName,
@@ -88,8 +89,8 @@ Page({
 				util.showToast('装载量应是大于0的正整数');
 			}else if(this.data.djName == ''){
 				util.showToast('请输入单价');
-			}else if(!regNum.test( this.data.djName ) ){
-				util.showToast('单价应是大于0的正整数');
+			}else if(!regPriceNum.test( this.data.djName ) ){
+				util.showToast('单价应是大于等于0的正整数');
 			}else if(this.data.zcriq == '请选择装车日期'){
 				util.showToast('请选择装车日期');
 			}else if(this.data.psAreaName == ''){

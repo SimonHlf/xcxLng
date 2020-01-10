@@ -8,39 +8,46 @@ Page({
 		isHasDataFlag : true,
 		loading : false,
 		isCanPubFlag : false,
-		isAllEmptyFlag : false,
-		navTab : ['租车','卖车'],
+		isAllEmptyFlag : false, 
+		navTab : [{
+			id:1,
+			name:'租车'
+		},{
+			id:2,
+			name:'卖车'
+		}],
 		currentTab : 0,
-		sxInfo : '',
+		currentTradeType : 1,
+		spYear : '',
 		potPpId : '',
-		zzjzTypeId : '',
-		potVol : -1
+		headPpId : ''
 	},
 	onLoad : function(){
-		this.loadPotTradeList();
+		this.loadTruksTradeList();
 	},
 	getCurrentTabCon : function(e){
-		var index = e.currentTarget.dataset.index;
+		var index = e.currentTarget.dataset.index,
+			id = e.currentTarget.dataset.id;
 		if(this.data.currentTab == index){
 			return;
 		}
 		this.setData({ 
 			currentTab : index,
+			currentTradeType : id,
 			nowPage :1,
 			loading : false,
 			potTradeData : [],
-			sxInfo : '',
+			spYear : '',
 			potPpId : '',
-			zzjzTypeId : '',
-			potVol : -1
+			headPpId : ''
 		});
 		wx.pageScrollTo({
 		  scrollTop: 0
 		})
-		this.loadPotTradeList();
+		this.loadTruksTradeList();
 	},
 	onShow(){
-		if(this.data.sxInfo != '' || this.data.potPpId != '' || this.data.zzjzTypeId != '' || this.data.isAllEmptyFlag){//从最新发布页面返回过来并且已经发布
+		if(this.data.spYear != '' || this.data.potPpId != '' || this.data.headPpId != '' || this.data.isAllEmptyFlag){//从最新发布页面返回过来并且已经发布
 			this.setData({
 				nowPage :1,
 				loading : false,
@@ -49,7 +56,7 @@ Page({
 			wx.pageScrollTo({
 			  scrollTop: 0
 			})
-			this.loadPotTradeList(); 
+			this.loadTruksTradeList(); 
 		}
 	},
 	onHide(){
@@ -58,29 +65,29 @@ Page({
 			isAllEmptyFlag : false
 		});
 	},
-	goPotTradeDet : function(e){
-		let ptId = e.currentTarget.dataset.id;
-		util.navigateTo('/pages/potTradeSellerDet/index?ptId=' + ptId);
+	getTrucksDet : function(e){
+		let ttId = e.currentTarget.dataset.id;
+		util.navigateTo('/pages/trucksSellDet/index?ttId=' + ttId);
 	},
 	goFilter : function(){
-		util.navigateTo('/pages/potTrade/filter?sxInfo=' + this.data.sxInfo + '&potPpId=' + this.data.potPpId + '&zzjzTypeId=' + this.data.zzjzTypeId);
+		util.navigateTo('/pages/trucksTrade/filter?spYear=' + this.data.spYear + '&potPpId=' + this.data.potPpId + '&headPpId=' + this.data.headPpId);
 	},
-	loadPotTradeList : function(){
+	loadTruksTradeList : function(){
 		var _this = this;
-		var field = {tradeStatus:this.data.currentTab,potPpId:this.data.potPpId,potVol:this.data.potVol,sxInfo:this.data.sxInfo,zzjzTypeId:this.data.zzjzTypeId,page:this.data.nowPage,limit:50,checkSta:1,showSta:0};
-		console.log(field)
+		var field = {tradeType:this.data.currentTradeType,potPpId:this.data.potPpId,spYear:this.data.spYear,headPpId:this.data.headPpId,page:this.data.nowPage,limit:50,checkSta:1,showSta:0};
+		//console.log(field)
 		this.setData({
 			loading : true
 		}); 
 		let { nowPage,potTradeData } = this.data;
 		util.showLoading('数据加载中...')
 		wx.request({ 
-			url : app.globalData.serverUrl + '/potTrade/queryPotTrade',
+			url : app.globalData.serverUrl + '/trucksTrade/queryTrucksTrade',
 			method:'get',
 			data : field,
 			success : function(res){  
 				wx.hideLoading(); 
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					if(res.data.datas.length > 0){
 						nowPage += 1;
@@ -107,9 +114,9 @@ Page({
 			}
 		});
 	},
-	pubPotTrade : function(){
+	pubTrucksTrade : function(){
 		if(wx.getStorageSync('userId')){
-			util.navigateTo('/pages/pubPotTrade/index?currPageType=addPub');
+			util.navigateTo('/pages/pubTrucksTrade/index?currPageType=addPub');
 		}
 	}
 })

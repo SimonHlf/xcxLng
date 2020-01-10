@@ -5,19 +5,23 @@ Page({
 	data:{
 		canByGasFlag : true,
 		isShowLayerFlag : true,
-		ptId : '',
+		ttId : '',
 		devDetData : [],
 		psArea : '',
 		serverUrl: app.globalData.serverUrl,
 		originHeadImg : '',
+		originCtXszImg : '',
+		originGcXszImg : '',
+		originClyyzImg : '',
+		originCghgImg : '',
+		originAqfbgImg : '',
 		userFocus : false,
 		isHasDataFlag : true,
 		ufId : ''
 	},
 	onLoad(options){
-		console.log(options.ptId)
 		this.setData({
-			ptId : options.ptId
+			ttId : options.ttId
 		});
 		this.loadMyTradeDet();
 	},
@@ -26,6 +30,26 @@ Page({
 			current : src,
 			urls : [src]
 		});
+	},
+	previewCtImg : function(e){
+		let src = e.currentTarget.dataset.src;
+		this.previewFun(src);
+	},
+	previewGcImg : function(e){
+		let src = e.currentTarget.dataset.src;
+		this.previewFun(src);
+	},
+	previewClyyzImg : function(e){
+		let src = e.currentTarget.dataset.src;
+		this.previewFun(src);
+	},
+	previewCghgImg : function(e){
+		let src = e.currentTarget.dataset.src;
+		this.previewFun(src);
+	},
+	previewAqfImg : function(e){
+		let src = e.currentTarget.dataset.src;
+		this.previewFun(src);
 	},
 	previewHeadImg : function(e){
 		let src = e.currentTarget.dataset.src;
@@ -40,11 +64,11 @@ Page({
 	},
 	loadMyTradeDet : function(){
 		var _this = this;
-		var field = {id:this.data.ptId,userId:wx.getStorageSync('userId')};
+		var field = {id:this.data.ttId,userId:wx.getStorageSync('userId')};
 		console.log(field) 
 		util.showLoading('加载中...');
 		wx.request({
-			url : app.globalData.serverUrl + '/potTrade/getPotTradeById',
+			url : app.globalData.serverUrl + '/trucksTrade/getSpecTrucksTrade',
 			method: 'get',
 			data:field,
 			success : function(res){
@@ -57,10 +81,19 @@ Page({
 						originHeadImg : res.data.datas[0].mainImg.replace('_small',''),
 						ufId : res.data.datas[0].ufId
 					});
-					if(_this.data.devDetData.detailImg.length > 0){
-						var otherImgList = _this.data.devDetData.detailImg;
+					if(res.data.datas[0].trucksTypes == 2){//危货
+						_this.setData({
+							originCtXszImg : res.data.datas[0].tructsHeadxsz.replace('_small',''),
+							originGcXszImg : res.data.datas[0].gcXsz.replace('_small',''),
+							originClyyzImg : res.data.datas[0].tructsYyz.replace('_small',''),
+							originCghgImg : res.data.datas[0].potjyz.replace('_small',''),
+							originAqfbgImg : res.data.datas[0].aqfBg.replace('_small','')
+						})
+					}
+					if(_this.data.devDetData.zzlist.length > 0){
+						var otherImgList = _this.data.devDetData.zzlist;
 						for(let i in otherImgList) {
-							previewImgArr.push(app.globalData.serverUrl + '/' + otherImgList[i].pdiImg.replace('_small',''));
+							previewImgArr.push(app.globalData.serverUrl + '/' + otherImgList[i].ttImg.replace('_small',''));
 						}
 					}
 				}else if(res.data.code == 1000){
@@ -91,7 +124,7 @@ Page({
 		var _this = this; 
 		if(wx.getStorageSync('userId')){
 			util.showLoading('关注中...');
-			var field = {userId:wx.getStorageSync('userId'),focusId:this.data.ptId,focusType:'cgzm'};
+			var field = {userId:wx.getStorageSync('userId'),focusId:this.data.ttId,focusType:'cczm'};
 			wx.request({
 				url : app.globalData.serverUrl + '/userCompany/addUserFocus',
 				method: 'post',
@@ -101,6 +134,7 @@ Page({
 				data : field, 
 				success:function(res){
 					util.hideLoading(); 
+					console.log(res)
 					if(res.data.code == 200){
 						util.showToastSuc('关注成功');
 						_this.setData({
@@ -130,6 +164,7 @@ Page({
 				data : field,
 				success:function(res){
 					util.hideLoading();
+					console.log(res)
 					if(res.data.code == 200){
 						util.showToastSuc('取消关注成功');
 						_this.setData({

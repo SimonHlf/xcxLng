@@ -1,0 +1,22 @@
+@import '../../style/filter.wxss';
+.selItem{
+	height: 90rpx;
+	line-height: 90rpx;
+	border-bottom: 1rpx solid #e6e6e6;
+	font-size: 28rpx;
+}
+.selItem i{
+	float: right;
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+.selItem text{
+	color: #121212;
+	float: left;
+}
+.selItem text.noSel{
+	color: #a9a9a9;
+}
+.selItem text.unitTxt{
+	margin-left:15rpx;
+}

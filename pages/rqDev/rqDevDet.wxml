@@ -75,12 +75,6 @@
 			<isAuthor bind:flagEvent="getFocus"></isAuthor>
 		</view>
 	</block>
-	<!-- <view class="focusView">
-		<view class="iconView">
-			<i class="iconfont icon-wodexiaoxi"></i>
-		</view>
-		<view class="iconTxt">咨询</view>
-	</view> -->
 	<view class="buyGasBtn" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">电话咨询</view>
 </view>
 <view class="noDataList" hidden="{{isHasDataFlag}}">

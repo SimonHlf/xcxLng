@@ -1,0 +1,20 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>添加{{currTit}}号</view>
+</view>
+<form bindsubmit="formSubmit">
+	<view class="cardNumWrap padd">
+		<view class="provView" bindtap="selProv">{{provView}}</view>
+		<view class="wordsView" bindtap="selWords">{{wordsView}}</view>
+		<view class="cardNumInp">
+			<input type="text" name="cardNum" maxlength="5" value="{{cardNum}}" bindblur="upperCase" placeholder="请输入{{currTit}}号" />
+		</view>
+	</view>
+	<button class="saveBtn" formType="submit">
+		保存
+		<isAuthor bind:flagEvent="submit"></isAuthor>
+	</button>
+</form>
+<view class="maskLayer" hidden="{{maskLayerFlag}}" bindtap="closeMask"></view>
+<import src="./cardNumPicker.wxml"/>
+<template is="cardNumPicker" data="{{isShow_prov,isShow_words,cardTitle,cardWords}}"></template>

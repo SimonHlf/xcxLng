@@ -195,6 +195,9 @@ page{
 .proDetImg{
 	background: #fff;
 }
+.proDetImg.hasMargBot{
+	margin-bottom: 20rpx;
+}
 .detImgWrap image{
 	width: 100%;
 }
@@ -286,4 +289,26 @@ page{
 	height: auto;
 	line-height: auto;
 	font-weight: normal;
+	font-size: 26rpx;
+}
+.jgzz{
+	padding-bottom: 15rpx;
+}
+.jgzzItem{
+	height: 45rpx;
+	line-height: 45rpx;
+	padding: 0 15rpx;
+	border-radius: 6rpx;
+	float: left;
+	color: #3c7de9;
+	background: #eef4ff;
+	font-size: 24rpx;
+	margin-right: 20rpx;
+}
+.zhengView{
+	height: 90rpx;
+	line-height: 90rpx;
+	color: #121212;
+	text-align: center;
+	font-size: 30rpx;
 }

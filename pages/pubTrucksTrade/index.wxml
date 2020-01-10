@@ -17,7 +17,7 @@
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view> 
-			<view class="pubItem">
+			<view class="pubItem"> 
 				<view class="pubTit"><text>*</text>槽车类型</view>
 				<view class="selItem" bindtap="getTrucksType">
 					<input placeholder="" value="{{truckTypeName}}" disabled/>
@@ -57,36 +57,6 @@
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
-			<!-- 车牌号以及是否需要挂车车牌号 -->
-			<view class="pubItem">
-				<view class="pubTit"><text>*</text>购置年份</view>
-				<view class="selItem">
-					<picker mode="date" fields="year" value="{{gznf}}" bindchange="bindDateChange">
-						<view class="picker">
-							<text class="{{isSelDate_year ? '' : 'noSel'}}">{{gznf}}</text>
-							<i class="iconfont icon-gengduo"></i>
-						</view>
-					</picker>
-				</view>
-			</view>
-			
-			<view class="pubItem">
-				<view class="pubTit"><text>*</text>车头上牌年月</view>
-				<view class="selItem">
-					<picker mode="date" fields="month" value="{{ctspny}}" bindchange="bindDateChange_ct">
-						<view class="picker">
-							<text class="{{isSelDate_month_ct ? '' : 'noSel'}}">{{ctspny}}</text>
-							<i class="iconfont icon-gengduo"></i>
-						</view>
-					</picker>
-				</view>
-			</view>
-			<view class="pubItem">
-				<view class="pubTit"><text>*</text>{{priceTit}}价格</view>
-				<view class="selItem">
-					<input type="number" name="trucksPrice" value="{{trucksPrice}}" placeholder="请输入{{priceTit}}价格(0元为面议)" maxlength="8"/>
-				</view>
-			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>车头类型</view>
 				<view class="selItem" bindtap="getTruckHeadType">
@@ -102,6 +72,71 @@
 					<input type="text" name="ctPpId" value="{{ctPpId}}" hidden="{{true}}" diasbled/>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>车头上牌年月</view>
+				<view class="selItem">
+					<picker mode="date" fields="month" value="{{ctspny}}" bindchange="bindDateChange_ct">
+						<view class="picker">
+							<text class="{{isSelDate_month_ct ? '' : 'noSel'}}">{{ctspny}}</text>
+							<i class="iconfont icon-gengduo"></i>
+						</view>
+					</picker>
+				</view>
+			</view>
+			<block wx:if="{{compTypeId == 1}}">
+				<view class="pubItem">
+					<view class="pubTit"><text>*</text>车头车牌</view>
+					<view class="selItem">
+						<view class="provView" bindtap="selProv" data-opt="prov_ct">{{provView}}</view>
+						<view class="wordsView" bindtap="selWords" data-opt="words_ct">{{wordsView}}</view>
+						<view class="cardNumInp">
+							<input type="text" name="cphName" maxlength="5" value="{{carCardNum}}" bindblur="upperCase" placeholder="请输入车头车牌" />
+						</view>
+					</view>
+				</view>
+				<view class="pubItem">
+					<view class="pubTit">挂车车牌</view>
+					<view class="selItem">
+						<view class="provView" bindtap="selProv" data-opt="prov_gc">{{provView_gc}}</view>
+						<view class="wordsView" bindtap="selWords" data-opt="words_gc">{{wordsView_gc}}</view>
+						<view class="cardNumInp">
+							<input type="text" name="gcphName" maxlength="5" value="{{gcCardNum}}" bindblur="upperCase_gc" placeholder="请输入挂车车牌" />
+						</view>
+					</view>
+				</view>
+			</block>
+			<block wx:elif="{{compTypeId == 2}}">
+				<view class="pubItem">
+					<view class="pubTit"><text>*</text>车头车牌</view>
+					<view class="selItem" bindtap="getCarCardNum">
+						<input name="cphName" value="{{carCardNum}}" placeholder="请选择车头车牌" disabled/>
+						<i class="iconfont icon-gengduo"></i>
+					</view>
+				</view>
+				<view class="pubItem">
+					<view class="pubTit">挂车车牌</view>
+					<view class="selItem" bindtap="getGcCardNum">
+						<input name="gcphName" value="{{gcCardNum}}" placeholder="请选择挂车车牌" disabled/>
+						<i class="iconfont icon-gengduo"></i>
+					</view>
+				</view>
+			</block>
+			<!-- 车牌号以及是否需要挂车车牌号 -->
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>购置年份</view>
+				<view class="selItem">
+					<picker mode="date" fields="year" value="{{gznf}}" bindchange="bindDateChange">
+						<view class="picker">
+							<text class="{{isSelDate_year ? '' : 'noSel'}}">{{gznf}}</text>
+							<i class="iconfont icon-gengduo"></i>
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>{{priceTit}}价格</view>
+				<input type="number" name="trucksPrice" value="{{trucksPrice}}" placeholder="请输入{{priceTit}}价格(0元为面议)" maxlength="8"/>
 			</view>
 			<block wx:if="{{isZlFlag}}">
 				<view class="pubItem">
@@ -152,7 +187,7 @@
 			</view> 
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>联系人</view>
-				<input type="text" name="lxrName" value="{{lxrName}}" placeholder="请输入联系人姓名" maxlength="8"/>
+				<input type="text" name="lxrName" value="{{lxrName}}" placeholder="请输入联系人姓名" maxlength="6"/>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>联系方式</view>
@@ -270,5 +305,7 @@
 		</button>
 	</form>
 </view>
-
+<view class="maskLayer" hidden="{{maskLayerFlag}}" bindtap="closeMask"></view>
+<import src="../basic/addCpGcpNum/cardNumPicker.wxml"/>
+<template is="cardNumPicker" data="{{isShow_prov,isShow_words,cardTitle,cardWords}}"></template>
 

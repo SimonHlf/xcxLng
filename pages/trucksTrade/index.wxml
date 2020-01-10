@@ -2,7 +2,7 @@
 	<view class="pubMod">
 		<i class="iconfont icon-bianji"></i>
 		<text>发布槽车租卖</text>
-		<isAuthor bind:flagEvent="pubPotTrade"></isAuthor>
+		<isAuthor bind:flagEvent="pubTrucksTrade"></isAuthor>
 	</view>
 	<view class="filterBtn" bindtap="goFilter">
 		<text>筛选</text>
@@ -15,61 +15,84 @@
 		wx:key="index"
 		data-index="{{index}}"
 		class="tabItem {{currentTab == index ? 'active' : ''}}"
+		data-id="{{item.id}}"
 		bindtap="getCurrentTabCon"
-	><view class="lineView"></view>{{item}}</view>
+	><view class="lineView"></view>{{item.name}}</view>
 </view>
 <view class="potList">
-	<view class="listItem clearfix">
+	<view class="listItem clearfix"
+		wx:for="{{potTradeData}}"
+		wx:key="index"
+		data-id="{{item.ttId}}"
+		bindtap="getTrucksDet"
+	>
 		<view class="imgView">
-			<image mode="aspectFill"></image>
+			<image src="{{serverUrl}}/{{item.mainImg}}" mode="aspectFill"></image>
 		</view>
 		<view class="listItemCon">
-			<view class="psArea ellip">陕汽德龙30吨供液车</view>
+			<view class="itemTit ellip">{{item.title}}</view>
 			<!-- 租车 运输范围 -->
 			<view class="psArea">
-				<view class="hasFloat ellip">运输范围：河南/北京/天津/河河南/北京/天津/河河南/北京/天津/河</view>
-				<view class="compType">个人</view>
+				<block wx:if="{{currentTradeType == 1}}">
+					<!-- 租车 -->
+					<view class="hasFloat ellip">运输范围：{{item.area}}</view>
+				</block>
+				<block wx:else>
+					<view class="hasFloat ellip">
+						<text class="gznf">{{item.spYear}}月</text>
+						<text class="line">|</text>
+						<text>已行驶{{item.xsDistance}}公里</text>
+					</view>
+				</block>
+				<block wx:if="{{item.CompanyName == '个人'}}">
+					<view class="compType">个人</view>
+				</block>
+				<block wx:else>
+					<view class="compType">公司</view>
+				</block>
 			</view>
 			<view class="regArea">
-				<text>车辆注册地：河南省-濮阳市</text>
+				<text>车辆注册地：{{item.regPlace}}</text>
 			</view>
 			<view class="priceView clearfix">
 				<view class="hasFloat">
-					<text class="priceTit">租金</text>
-					<text class="unit">¥</text>
-					<text class="priceNum">4</text>
-					<text class="unitTxt">万起/辆</text>
+					<block wx:if="{{currentTradeType == 1}}">
+						<text class="priceTit">租金</text>
+						<block wx:if="{{item.price == '面议'}}">
+							<text class="mianyi">面议</text>
+						</block>
+						<block wx:else>
+							<text class="unit">¥</text>
+							<text class="priceNum">{{item.price}}</text>
+							<text class="unitTxt">元/辆</text>
+						</block>
+					</block>
+					<block wx:else>
+						<text class="unit">¥</text>
+						<text class="priceNum">{{item.price}}</text>
+						<text class="unitTxt">万</text>
+					</block>
 				</view>
 				<i class="iconfont icon-gengduo"></i>
 			</view>
 		</view>
 	</view>
-	
-	<view class="listItem clearfix">
-		<view class="imgView">
-			<image mode="aspectFill"></image>
-		</view>
-		<view class="listItemCon">
-			<view class="psArea ellip">陕汽德龙30吨供液车</view>
-			<!-- 租车 运输范围 -->
-			<view class="psArea">
-				<view class="hasFloat">
-					<text class="gznf">2018年</text>
-					<text class="line">|</text>
-					<text>已行驶4156万公里</text>
-				</view>
-				<view class="compType">公司</view>
-			</view>
-			<view class="regArea">车辆注册地：河南省-濮阳市</view>
-			<view class="priceView clearfix">
-				<view class="hasFloat">
-					<text class="unit">¥</text>
-					<text class="priceNum">40</text>
-					<text class="unitTxt">万</text>
-				</view>
-				<i class="iconfont icon-gengduo"></i>
-			</view>
-		</view>
-	</view>
-	
 </view>
+<view class="noDataList" style="margin-top: 320rpx;" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view> 
+<block wx:if="{{isHasDataFlag}}">
+	<view class="loadingIcon">
+		<block wx:if="{{loading}}">
+			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+		</block>
+		<block wx:else>
+			<view class="noDataTxt">
+				<text>——————</text>
+				<text>我是有底线的~</text>
+				<text>——————</text>
+			</view>
+		</block>
+	</view> 
+</block>

@@ -1,5 +1,5 @@
 page{
-	margin-top: 190rpx;
+	margin-top: 183rpx;
 }
 .filterWrap{
 	width: 100%;
@@ -48,7 +48,7 @@ page{
 	z-index: 5;
 	position: fixed;
 	left: 0;
-	top: 100rpx;
+	top: 83rpx;
 }
 .tabItem{
 	float: left;
@@ -114,6 +114,7 @@ page{
 .psArea view.hasFloat,
 .psArea .compType{
 	float: left;
+	margin-top: 8rpx;
 }
 .psArea view.hasFloat{
 	max-width: 82%;
@@ -148,6 +149,9 @@ page{
 	line-height: 36rpx;
 	font-size: 24rpx;
 	margin-top: 10rpx;
+}
+.regArea{
+	margin-bottom: 8rpx;
 }
 .proDate{
 	color: #606060;
@@ -202,4 +206,8 @@ page{
 	font-size: 24rpx;
 	float: right;
 	margin-top: 3rpx;
+}
+.itemTit{
+	font-size: 30rpx;
+	color: #121212;
 }

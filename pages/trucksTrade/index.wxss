@@ -1,1 +1,5 @@
 @import '../../style/trucksPotTrade.wxss';
+.mianyi{
+	font-size: 26rpx;
+	margin-left: 15rpx;
+}

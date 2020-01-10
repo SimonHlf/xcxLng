@@ -172,8 +172,7 @@ Page({
 					url = app.globalData.serverUrl + '/potTrade/addPotTrade';
 					type = 'post';
 				}
-				console.log(this.data.currPageType)
-				console.log(field)
+				//console.log(field)
 				util.showLoading('发布中...');
 				wx.request({
 					url : url,

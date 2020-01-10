@@ -21,7 +21,7 @@
 	</view>
 	<view class="priceItem clearfix">
 		<view class="priceNum">
-			<text class="rmb">￥</text>
+			<text class="rmb">￥</text> 
 			<text class="price">{{tradeDetData.gasPrice}}</text>
 			<text>/m³</text>
 		</view>
