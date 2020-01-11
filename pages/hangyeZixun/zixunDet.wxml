@@ -1,0 +1,3 @@
+<!--pages/hangyeZixun/zixunDet.wxml-->
+<text>pages/hangyeZixun/zixunDet.wxml</text>
+<!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->

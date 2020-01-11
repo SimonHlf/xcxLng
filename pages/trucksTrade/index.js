@@ -25,6 +25,11 @@ Page({
 	onLoad : function(){
 		this.loadTruksTradeList();
 	},
+	onReachBottom : function(){
+		if( !this.data.loading ){
+			this.loadTruksTradeList();
+		}
+	},
 	getCurrentTabCon : function(e){
 		var index = e.currentTarget.dataset.index,
 			id = e.currentTarget.dataset.id;

@@ -3,6 +3,18 @@ const util = require('../../utils/util');
 var welfareNameArr = [];
 Page({
 	data : {
+		jzTypeArr : ["A1","A2","A3","B1","B2","C1","C2","C3","C4","D","E","F","M","N","P"],
+		degreeArr : ['不限','初中','中专/中技','高中','大专','本科','硕士','博士'],
+		workXingzhiArr : ['兼职','全职'],
+		workExpArr : ['不限','1年以下','1-3年','3-5年','5-10年','10年以上'],
+		jzType : '请选择驾照类型',
+		degree : '请选择学历',
+		gzxz : '请选择工作性质',
+		gznx : '请选择工作年限',
+		isSelJzType : false,
+		isSelDegree : false,
+		isSelWorkXz : false,
+		isSelNx : false,
 		welfare : [
 			{"name" : "保险","state" : 0},
 			{"name" : "年终奖","state" : 0},
@@ -10,13 +22,41 @@ Page({
 			{"name" : "带薪年假","state" : 0},
 			{"name" : "餐补","state" : 0},
 			{"name" : "通讯补助","state" : 0},
-			{"name" : "住房补贴","state" : 0},
+			{"name" : "住房补贴","state" : 0}, 
 			{"name" : "公费旅游","state" : 0},
 			{"name" : "提供住宿","state" : 0},
 			{"name" : "交通补贴","state" : 0},
 			{"name" : "公费培训","state" : 0},
 			{"name" : "双休","state" : 0}
 		]
+	},
+	bindJzTypePicker : function(e){
+		var _this = this;
+		this.setData({
+			jzType : _this.data.jzTypeArr[e.detail.value],
+			isSelJzType : true
+		});
+	},
+	bindDegreePicker : function(e){
+		var _this = this;
+		this.setData({
+			degree : _this.data.degreeArr[e.detail.value],
+			isSelDegree : true
+		});
+	},
+	bindWorkXzPicker : function(e){
+		var _this = this;
+		this.setData({
+			gzxz : _this.data.workXingzhiArr[e.detail.value],
+			isSelWorkXz : true
+		});
+	},
+	bindWorkExpPicker : function(e){
+		var _this = this;
+		this.setData({
+			gznx : _this.data.workExpArr[e.detail.value],
+			isSelNx : true
+		});
 	},
 	selWelfare : function(e){
 		var index = e.currentTarget.dataset.key,

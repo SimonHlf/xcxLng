@@ -61,7 +61,7 @@
 			</navigator>
 		</view>
 		<view class="listTab">
-			<navigator>
+			<navigator url="/pages/driverZp/index" hover-class="none">
 				<view class="imgView">
 					<image src="../../images/pysj.jpg"></image>
 				</view>

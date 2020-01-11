@@ -1,11 +1,15 @@
 {
   "pages": [
-    "pages/driverQzDet/index",
-    "pages/pubDriverZp/index",
+	"pages/rqMaoyi/index",
+    "pages/hangyeZixun/index",
     "pages/index/index",
+    "pages/pubDriverQz/index",
+    "pages/pubDriverZp/index",
+    "pages/driverZpDet/index",
+    "pages/driverZp/index",
+    "pages/driverQzDet/index",
     "pages/pubRqTrade/index",
     "pages/basic/addDriverYyy/index",
-    "pages/pubDriverQz/index",
     "pages/driverQz/index",
     "pages/trucksTrade/index",
     "pages/pubTrucksTrade/index",
@@ -15,7 +19,6 @@
     "pages/pubPotTrade/index",
     "pages/rqDev/index",
     "pages/pubRqDev/index",
-    "pages/rqMaoyi/index",
     "pages/rqMySellerDet/index",
     "pages/rqDev/rqDevDet",
     "pages/lngHq/index",
@@ -46,8 +49,7 @@
     "pages/basic/getWqpfbz/index",
     "pages/basic/getGasType/index",
     "pages/trucksTrade/filter",
-    "pages/driverZp/index",
-    "pages/driverZpDet/index"
+    "pages/hangyeZixun/zixunDet"
   ],
   "window": {
     "backgroundTextStyle": "light",

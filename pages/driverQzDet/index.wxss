@@ -1,5 +1,6 @@
 page{
 	background: #efefef;
+	margin-bottom: 120rpx;
 }
 .userHead{
 	width: 750rpx;

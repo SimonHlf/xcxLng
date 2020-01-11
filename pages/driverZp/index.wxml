@@ -1,2 +1,53 @@
-<!--pages/driverZp/index.wxml-->
-<text>pages/driverZp/index.wxml</text>
+<view class="filterWrap">
+ 	<view class="pubMod">
+ 		<i class="iconfont icon-bianji"></i>
+		<text>发布招聘信息</text>
+		<isAuthor bind:flagEvent="pubZpInfo"></isAuthor>
+	</view>
+	<view class="filterBtn" bindtap="goFilter">
+		<text>筛选</text>
+		<i class="iconfont icon-shaixuan"></i>
+	</view>
+</view>
+<view class="zpList padd">
+	<view class="zpListItem">
+		<view class="compName">
+			<view class="compNameTxt ellip">京东物流有限公司</view>
+			<view class="price">6千/月</view>
+		</view>
+		<view class="tiaojian clearfix">
+			<view>濮阳</view>
+			<view>|</view>
+			<view>C1驾照</view>
+			<view>|</view>
+			<view>驾龄1-3年</view>
+			<view>|</view>
+			<view>初中</view>
+		</view>
+		<view class="welfare clearfix">
+			<view class="welfareItem">五险一金</view>
+			<view class="welfareItem">包食宿</view>
+		</view>
+	</view>
+	
+	<view class="zpListItem">
+		<view class="compName">
+			<view class="compNameTxt ellip">京东物流有限公司</view>
+			<view class="price">6千/月</view>
+		</view>
+		<view class="tiaojian clearfix">
+			<view>濮阳</view>
+			<view>|</view>
+			<view>C1驾照</view>
+			<view>|</view>
+			<view>驾龄1-3年</view>
+			<view>|</view>
+			<view>初中</view>
+		</view>
+		<view class="welfare clearfix">
+			<view class="welfareItem">五险一金</view>
+			<view class="welfareItem">包食宿</view>
+			<view class="welfareItem">话费补助</view>
+		</view>
+	</view>
+</view>

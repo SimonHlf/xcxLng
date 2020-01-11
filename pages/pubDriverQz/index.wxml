@@ -8,12 +8,12 @@
 		<view class="modCon">
 			<view class="modConItem_one">
 				<view class="modConTit">头像</view>
-				<view class="modDetCon">
+				<view class="modDetCon" bindtap='uploadMainImg'>
 					<i class="iconfont icon-gengduo"></i>
 					<view class="userHead">
 						<i class="iconfont icon-defaultHead"></i>
 						<image src="{{headImg}}" mode="aspectFill"></image>
-					</view> 
+					</view>  
 				</view>
 			</view>
 			<view class="modConWrap clearfix">
@@ -26,7 +26,9 @@
 				<view class="modConItem short">
 					<view class="modTit">性别</view>
 					<view class="modCon">
-						<input name="sex" value="{{sex}}" placeholder="请选择性别" disabled/>
+						<picker bindchange="bindSexPicker" range="{{sexArr}}">
+						   <view class="{{isSelSex ? '' : 'noSel'}}">{{sex}}</view>
+						</picker>
 						<i class="iconfont icon-gengduo"></i>
 					</view>
 				</view>
@@ -47,7 +49,9 @@
 				<view class="modConItem short">
 					<view class="modTit">婚否</view>
 					<view class="modCon">
-						<input name="isMarried" value="{{isMarried}}" placeholder="是否已婚" disabled/>
+						<picker bindchange="bindMarrayPicker" range="{{marrayArr}}">
+						   <view class="{{isSelMarray ? '' : 'noSel'}}">{{isMarried}}</view>
+						</picker>
 						<i class="iconfont icon-gengduo"></i>
 					</view>
 				</view>
@@ -56,7 +60,9 @@
 				<view class="modConItem long">
 					<view class="modTit">驾照类型</view>
 					<view class="modCon">
-						<input name="jzType" value="{{jzType}}" placeholder="请选择驾照类型" disabled/>
+						<picker bindchange="bindJzTypePicker" range="{{jzTypeArr}}">
+						   <view class="{{isSelJzType ? '' : 'noSel'}}">{{jzType}}</view>
+						</picker>
 						<i class="iconfont icon-gengduo"></i>
 					</view>
 				</view>
@@ -100,7 +106,9 @@
 			<view class="modConItem">
 				<view class="modTit">求职意向</view>
 				<view class="modCon smPadd">
-					<input type="text" name="qzyx" value="{{qzyx}}" placeholder="请选择求职意向" disabled/>
+					<picker bindchange="bindWorkXzPicker" range="{{workXingzhiArr}}">
+					   <view class="{{isSelWorkXz ? '' : 'noSel'}}">{{gzxz}}</view>
+					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
@@ -109,7 +117,7 @@
 			<view class="modConItem">
 				<view class="modTit">希望工作地点</view>
 				<view class="modCon smPadd">
-					<input type="text" name="workPlace" value="{{workPlace}}" placeholder="请选择工作地点 " disabled/>
+					<city-picker bind:selected="selectCity"></city-picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
@@ -172,7 +180,9 @@
 			<view class="modConItem">
 				<view class="modTit">教育程度</view>
 				<view class="modCon smPadd">
-					<input type="text" name="education" value="{{education}}" placeholder="请选择教育程度 " disabled/>
+					<picker bindchange="bindDegreePicker" range="{{degreeArr}}">
+					   <view class="{{isSelDegree ? '' : 'noSel'}}">{{degree}}</view>
+					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>

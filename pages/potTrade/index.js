@@ -19,6 +19,11 @@ Page({
 	onLoad : function(){
 		this.loadPotTradeList();
 	},
+	onReachBottom : function(){
+		if( !this.data.loading ){
+			this.loadPotTradeList();
+		}
+	},
 	getCurrentTabCon : function(e){
 		var index = e.currentTarget.dataset.index;
 		if(this.data.currentTab == index){

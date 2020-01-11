@@ -2,5 +2,7 @@
   "usingComponents": {
   	 "isAuthor" : "../../components/author/author"
   },
-  "navigationBarTitleText" : "燃气贸易"
+  "navigationBarTitleText" : "燃气贸易",
+  "enablePullDownRefresh" : true,
+  "backgroundTextStyle" : "dark"
 }

@@ -38,61 +38,6 @@
 					</view>
 				</view>
 			</view>
-			
-			
-			
-			<!-- <view class="modConWrap clearfix">
-				<view class="modConItem long">
-					<view class="modTit">真实姓名</view>
-					<view class="modCon">
-						<input type="text" name="realName" value="{{realName}}" placeholder="请输入真实姓名" maxlength="8"/>
-					</view>
-				</view>
-				<view class="modConItem short">
-					<view class="modTit">性别</view>
-					<view class="modCon">
-						<input name="sex" value="{{sex}}" placeholder="请选择性别" disabled/>
-						<i class="iconfont icon-gengduo"></i>
-					</view>
-				</view>
-			</view>
-			<view class="modConWrap clearfix">
-				<view class="modConItem long">
-					<view class="modTit">出生日期</view>
-					<view class="modCon">
-						<picker mode="date" value="{{birth}}" bindchange="bindDateChange_birth">
-							<view class="picker">
-								<text>{{birth}}</text>
-								<i class="iconfont icon-gengduo"></i>
-							</view>
-						</picker> 
-						<i class="iconfont icon-gengduo"></i>
-					</view>
-				</view>
-				<view class="modConItem short">
-					<view class="modTit">婚否</view>
-					<view class="modCon">
-						<input name="isMarried" value="{{isMarried}}" placeholder="是否已婚" disabled/>
-						<i class="iconfont icon-gengduo"></i>
-					</view>
-				</view>
-			</view>
-			<view class="modConWrap clearfix">
-				<view class="modConItem long">
-					<view class="modTit">驾照类型</view>
-					<view class="modCon">
-						<input name="jzType" value="{{jzType}}" placeholder="请选择驾照类型" disabled/>
-						<i class="iconfont icon-gengduo"></i>
-					</view>
-				</view>
-				<view class="modConItem short">
-					<view class="modTit">驾龄</view>
-					<view class="modCon">
-						<input type="number" name="driveYear" value="{{driveYear}}" placeholder="请输入驾龄" placeholder-class="numberHolder" maxlength="3"/>
-						<text class="unit">年</text>
-					</view>
-				</view>
-			</view> -->
 		</view>
 	</view>
 	<view class="modItem padd">
@@ -113,7 +58,9 @@
 			<view class="modConItem long">
 				<view class="modTit">驾照类型</view>
 				<view class="modCon">
-					<input name="jzType" value="{{jzType}}" placeholder="请选择驾照类型" disabled/>
+					<picker bindchange="bindJzTypePicker" range="{{jzTypeArr}}">
+					   <view class="{{isSelJzType ? '' : 'noSel'}}">{{jzType}}</view>
+					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
@@ -135,7 +82,9 @@
 			<view class="modConItem short">
 				<view class="modTit">学历</view>
 				<view class="modCon">
-					<input name="degree" value="{{degree}}" placeholder="请选择学历" disabled/>
+					<picker bindchange="bindDegreePicker" range="{{degreeArr}}">
+					   <view class="{{isSelDegree ? '' : 'noSel'}}">{{degree}}</view>
+					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
@@ -144,7 +93,9 @@
 			<view class="modConItem">
 				<view class="modTit">工作性质</view>
 				<view class="modCon smPadd">
-					<input type="text" name="gzxz" value="{{gzxz}}" placeholder="请选择要求工作性质" disabled/>
+					<picker bindchange="bindWorkXzPicker" range="{{workXingzhiArr}}">
+					   <view class="{{isSelWorkXz ? '' : 'noSel'}}">{{gzxz}}</view>
+					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
@@ -161,7 +112,9 @@
 			<view class="modConItem">
 				<view class="modTit">工作年限</view>
 				<view class="modCon smPadd">
-					<input type="text" name="gzxz" value="{{gzxz}}" placeholder="请选择要求工作年限" disabled/>
+					<picker bindchange="bindWorkExpPicker" range="{{workExpArr}}">
+					   <view class="{{isSelNx ? '' : 'noSel'}}">{{gznx}}</view>
+					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>

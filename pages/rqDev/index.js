@@ -15,6 +15,11 @@ Page({
 	onLoad : function(){
 		this.loadRqDevList();
 	},
+	onReachBottom : function(){
+		if( !this.data.loading ){
+			this.loadRqDevList();
+		}
+	},
 	onShow(){
 		if(this.data.lmId != '' || this.data.lxId != '' || this.data.isAllEmptyFlag){//从最新发布页面返回过来并且已经发布
 			this.setData({

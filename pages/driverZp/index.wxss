@@ -1,1 +1,87 @@
-/* pages/driverZp/index.wxss */
+page{
+	margin-top: 81rpx;
+}
+.filterWrap{
+	width: 100%;
+	height: 80rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #fff;
+	z-index: 3;
+	border-bottom: 1rpx solid #e8e8e8;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.pubMod{
+	float: left;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	color: #606060;
+	position: relative;
+	margin-left: 30rpx;
+}
+.pubMod i{
+	margin-right: 10rpx;
+	font-size: 30rpx;
+}
+.filterBtn {
+	margin-right: 30rpx;
+}
+.filterBtn text{
+	font-size: 28rpx;
+	color:#606060 ;
+	margin-right:12rpx ;
+}
+.filterBtn i{
+	color:#606060 ;
+	font-size: 26rpx;
+}
+.zpList .zpListItem{
+	padding:20rpx 0;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.compName{
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 30rpx;
+	color: #121212;
+	font-weight: 620;
+}
+.compNameTxt{
+	float: left;
+	width: 80%;
+}
+.price{
+	width: 20%;
+	float: right;
+	text-align: right;
+	color: #d32f2f;
+	font-size: ;
+}
+.tiaojian{
+	height: 40rpx;
+	line-height: 40rpx;
+}
+.tiaojian view{
+	float: left;
+	margin-right: 15rpx;
+	color: #a9a9a9;
+	font-size: 26rpx;
+}
+.welfare{
+	margin-top: 10rpx;
+}
+.welfareItem{
+	float: left;
+	border:1rpx solid #3c7de9;
+	border-radius: 6rpx;
+	height: 38rpx;
+	line-height: 38rpx;
+	font-size: 24rpx;
+	color: #3c7de9;
+	padding: 0 15rpx;
+	margin-right: 20rpx;
+}

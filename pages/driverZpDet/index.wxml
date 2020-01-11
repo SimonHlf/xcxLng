@@ -1,2 +1,78 @@
-<!--pages/driverZpDet/index.wxml-->
-<text>pages/driverZpDet/index.wxml</text>
+<view class="compNameInfo">
+	<view class="compName">京东物流有限公司</view>
+	<view class="xinzi clearfix">
+		<view class="zpTit">招聘司机</view>
+		<view class="price">6千/月</view>
+	</view>
+	<view class="welfare clearfix">
+		<view class="welfareItem">五险一金</view>
+		<view class="welfareItem">包食宿</view>
+		<view class="welfareItem">话费补助</view>
+	</view>
+</view>
+<view class="zhiweiDetInfo">
+	<view class="zhiweiTit">职位描述</view>
+	<view class="yqWrap">
+		<view class="yqTit">要求</view>
+		<view class="detYq">
+			<text>招2人</text>
+			<text>|</text>
+			<text>C1</text>
+			<text>|</text>
+			<text>3年经验</text>
+			<text>|</text>
+			<text>高中</text>
+			<text>|</text>
+			<text>20-30周岁</text>
+		</view>
+	</view>
+	<view class="gwzzTit">岗位职责</view>
+	<view class="gwzzCon">
+		<view>1.驾驶公司车辆（有通行证）市区内配送货物； </view>
+		<view>2.无不良嗜好，无不良驾驶记录无重大事故，具有较强 的安全意识；</view>
+	</view>
+</view>
+<view class="pubUser padd">
+	<view class="pubTit">职位发布人</view>
+	<view class="sellerTel clearfix">
+		<view class="sellerImg">
+			<image></image>
+		</view>
+		<view class="rqDevCompName">
+			<view class="lxrNameTel">李鑫</view>
+			<view class="rqDevName ellip">187909849489</view>
+		</view>
+		<view class="phoneCall" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">
+			<i class="iconfont icon-tel"></i>
+		</view>
+	</view>
+</view>
+<view class="compAdd padd">
+	<view class="pubTit">公司地址</view>
+	<view class="address clearfix">
+		<i class="iconfont icon-weizhi"></i>
+		<view class="ellip">濮阳市华龙区濮东街道黄河路与安凯路交叉口南100米</view>
+	</view>
+</view>
+<view class="botFun">
+	<view class="focusView">
+		<view class="iconView">
+			<i class="iconfont icon-guanzhu"></i>
+		</view>
+		<view class="iconTxt">关注</view>
+		<isAuthor bind:flagEvent="getFocus"></isAuthor>
+	</view>
+	<!-- <block wx:if="{{userFocus}}">
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu1"></i>
+			</view>
+			<view class="iconTxt">已关注</view>
+			<isAuthor bind:flagEvent="cancelFocus"></isAuthor>
+		</view>
+	</block>
+	<block wx:else>
+		
+	</block> -->
+	<view class="buyGasBtn">申请职位</view>
+</view>

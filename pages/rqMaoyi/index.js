@@ -18,6 +18,18 @@ Page({
 	onLoad(){
 		this.getRqTradeList();
 	},
+	onReachBottom : function(){
+		if( !this.data.loading ){
+			this.getRqTradeList();
+		}
+	},
+	onPullDownRefresh : function(){
+		this.setData({
+			nowPaeg : 1
+		});
+		wx.showNavigationBarLoading();
+		this.getRqTradeList();
+	},
 	onShow(){
 		if(this.data.psArea != '' || this.data.gasTypeId != '' || this.data.isAllEmptyFlag || this.data.sPrice !== '' || this.data.ePrice != '' || this.data.isCanPubFlag){//从最新发布页面返回过来并且已经发布
 			this.setData({
@@ -40,12 +52,13 @@ Page({
 	getRqTradeList : function(){
 		var _this = this;
 		var field = {gasTypeId:this.data.gasTypeId,psArea:this.data.psArea,sPrice:this.data.sPrice,ePrice:this.data.ePrice,page:this.data.nowPage,limit:50,checkStatus:1,showStatus:0};
-		//console.log(field)
+		console.log(field)
 		this.setData({
 			loading : true
 		}); 
 		let { nowPage,rqTradeData } = this.data;
-		util.showLoading('数据加载中...')
+		wx.showNac
+		util.showLoading('数据加载中...');
 		wx.request({ 
 			url : app.globalData.serverUrl + '/gasTrade/getPageGasTradeList',
 			method:'get',
@@ -68,6 +81,9 @@ Page({
 							loading : false
 						}); 
 					} 
+					wx.hideNavigationBarLoading();
+				  //停止下拉事件
+					wx.stopPullDownRefresh();
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');
 				}else if(res.data.code == 10002){

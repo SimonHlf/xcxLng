@@ -1,0 +1,31 @@
+.listNews{
+	border-bottom: 1rpx solid #e8e8e8;
+	padding: 20rpx 0;
+}
+.listNewsImg{
+	float: left;
+	width: 145rpx;
+	height: 108rpx;
+	background: pink;
+}
+.listNewsCon{
+	float: left;
+	margin-left: 20rpx;
+	width: 76%;
+	height: 108rpx;
+}
+.newsTit{
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.from{
+	margin-top: 20rpx;
+	font-size: 26rpx;
+	color: #a9a9a9;
+}
+.from text:last-child{
+	float: right;
+	color: #3c7de9;
+}
