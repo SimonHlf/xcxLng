@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+  	  "isAuthor" : "../../components/author/author"
+  },
+  "navigationBarTitleText" : "招聘信息发布"
+}

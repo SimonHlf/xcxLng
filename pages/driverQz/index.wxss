@@ -55,7 +55,7 @@ page{
 .qzListItem .qzListCon{
 	float: left;
 	margin-left: 15rpx;
-	width: 80%;
+	width: 78%;
 	height: 126rpx;
 }
 .qzTit{

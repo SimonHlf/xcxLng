@@ -1,0 +1,22 @@
+<view class="modTit padd">
+	<view class="lineView"></view>
+	<view>添加{{currTit}}</view>
+</view>
+<form bindsubmit="formSubmit">
+	<view class="driverMod padd">
+		<view class="driverModTit">姓名：</view>
+		<view class="driverInp">
+			<input type="text" name="driverName" value="{{driverName}}" placeholder="请输入姓名" maxlength="8" />
+		</view>
+	</view>
+	<view class="driverMod padd">
+		<view class="driverModTit">手机号：</view>
+		<view class="driverInp">
+			<input type="number" maxlength="11" name="driverPhone" value="{{driverPhone}}" placeholder="请输入手机号" />
+		</view>
+	</view>
+	<button class="saveBtn" formType="submit">
+		保存
+		<isAuthor bind:flagEvent="submit"></isAuthor>
+	</button>
+</form>

@@ -256,7 +256,7 @@ page{
 }
 .zpQzItem{
 	width:304rpx;
-	height: 140rpx;
+	height: 156rpx;
 	border-radius: 6rpx;
 	float: left;
 	position: relative;
@@ -300,4 +300,27 @@ page{
 }
 .typeItem.qzItem{
 	background: #81d4fa;
+}
+.noZixun{
+	width: 358rpx;
+	margin: 20rpx auto 0;
+}
+.noZixun image{
+	width: 358rpx;
+	height: 188rpx;
+	margin-bottom: 5rpx;
+}
+.noZp{
+	text-align: center;
+}
+.noZp image{
+	width: 188rpx;
+	height: 88rpx;
+	display: inline-block;
+	margin-top: 14rpx;
+}
+.noZp view,
+.noZixun view{
+	font-size: 24rpx;
+	color: #a9a9a9;
 }

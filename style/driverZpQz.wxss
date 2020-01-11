@@ -1,0 +1,243 @@
+page{
+	background: #efefef;
+}
+.modConWrap.hasPadd{
+	padding-bottom: 20rpx;
+}
+.modItem{
+	background: #fff;
+	margin-bottom: 20rpx;
+}
+.modItem.noMargBot{
+	margin-bottom: 0;
+}
+.modTit{
+	height: 90rpx;
+	line-height: 90rpx;
+}
+.modTit i,
+.modTit view{
+	float: left;
+	margin-right: 15rpx;
+}
+.modTit i{
+	font-size: 36rpx;
+	color: #a9a9a9;
+}
+.modTit view.modTitTxt{
+	font-size: 30rpx;
+	font-weight: 620;
+	color: #121212;
+} 
+.modTit view.modTag{
+	width: 66rpx;
+	height: 34rpx;
+	line-height: 30rpx;
+	border:1rpx solid #ffc107;
+	text-align: center;
+	font-size: 24rpx;
+	margin-top: 29rpx;
+	color: #ffc107;
+}
+.modTit view.modTag.selWrite{
+	border:1rpx solid #a9a9a9;
+	color:#a9a9a9 ;
+	line-height: 32rpx;
+}
+.modConItem_one{
+	widows: 100%;
+	height: 80rpx;
+	padding: 10rpx 0 30rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+	background: #fff;
+}
+.modConTit{
+	float: left;
+	width: 200rpx;
+	line-height: 90rpx;
+	height: 100%;
+	font-size: 28rpx;
+	color: #a9a9a9;
+}
+.modDetCon{
+	width: 71%;
+	height: 90rpx;
+	float: left;
+}
+.modDetCon .userHead{
+	width: 90rpx;
+	height: 90rpx;
+	float: right;
+	border-radius: 50%;
+	background: #efefef;
+	text-align: center;
+	line-height: 90rpx;
+}
+.modDetCon .userHead i{
+	font-size: 38rpx;
+	color:#dddddd ;
+}
+.modDetCon image{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.modDetCon i.icon-gengduo{
+	float: right;
+	font-size: 28rpx;
+	color: #a9a9a9;
+	margin:35rpx 15rpx 0;
+}
+.modConItem{
+	height: 90rpx;
+	line-height: 90rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+	margin-right: 2%;
+}
+.modConItem.noBor{
+	border-bottom: none;
+}
+.modConItem.long{
+	width: 56%;
+	float: left;
+}
+.modConItem.short{
+	width: 40%;
+	float: right;
+}
+.modConItem .modTit{
+	width: 200rpx;
+	height: 100%;
+	font-size: 28rpx;
+	color: #a9a9a9;
+	float: left;
+}
+.modConItem.long .modTit{
+	width: 140rpx;
+}
+.modConItem.short .modTit{
+	width: 100rpx;
+}
+.modConItem .modCon{
+	width: 70%;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+.modConItem.long .modCon{
+	width: 63%;
+}
+.modConItem.short .modCon{
+	width: 63%;
+}
+.modConItem .modCon input{
+	width: 80%;
+	height: 100%;
+	font-size: 28rpx;
+	color: #121212;
+	float: left;
+	padding-right: 20%;
+	text-align: right;
+}
+.modConItem .modCon.wholeWid input{
+	width: 100%;
+	padding-right: 0;
+}
+.modConItem .modCon.smPadd input,
+.modConItem .modCon.smPadd picker view{
+	width: 92%;
+	padding-right: 8%;
+}
+.modConItem .modCon input[type='number']{
+	font-size: 34rpx;
+}
+.numberHolder{
+	font-size: 28rpx;
+}
+.modConItem .modCon i{
+	height: 100%;
+	font-size: 28rpx;
+	color: #a9a9a9;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.modConItem .modCon text.unit{
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 28rpx;
+	color: #121212;
+}
+.modConItem .modCon picker,
+.modConItem .modCon picker view{
+	width: 100%;
+	height: 90rpx;
+	font-size: 28rpx;
+	color: #121212;
+	text-align: right;
+}
+.modConItem .modCon picker view{
+	width: 80%;
+	padding-right: 20%;
+}
+.workExp{
+	height: 320rpx;
+	background: #f3f3f3;
+}
+.workExp textarea{
+	width: 96%;
+	height: 300rpx;
+	padding: 20rpx 2%;
+	font-size: 28rpx;
+	color: #121212;
+}
+.sureBtn{ 
+	width: 100% !important;
+	height: 90rpx;
+	line-height: 90rpx;
+	background: #3c7de9;
+	color: #fff;
+	text-align: center;
+	font-size: 31rpx;
+	padding: 0;
+	border-radius:0 !important;
+	margin-top: 20rpx;
+	font-weight: normal;
+	position: relative;
+}
+.areaCol{
+	color: #a9a9a9;
+}
+.fuliItem{
+	width: 156rpx;
+	height: 58rpx;
+	line-height: 58rpx;
+	border:1rpx solid #a9a9a9;
+	text-align: center;
+	font-size: 28rpx;
+	color: #121212 ;
+	position: relative;
+	float: left;
+	margin-right: 19rpx;
+	margin-bottom: 19rpx;
+}
+.fuliItem:nth-of-type(4n){
+	margin-right: 0;
+}
+.fuliItem image{
+	width: 24rpx;
+	height: 22rpx;
+	position: absolute;
+	right: -1rpx;
+	top: -1rpx;
+	display: none;
+}
+.fuliItem.active{
+	color: #3c7de9;
+	border:1rpx solid #3c7de9;
+}
+.fuliItem.active image{
+	display: block;
+}

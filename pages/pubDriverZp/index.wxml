@@ -1,0 +1,194 @@
+<form bindsubmit="formSubmit">
+	<view class="modItem padd">
+		<view class="modTit">
+			<i class="iconfont icon-gongsixinxi"></i>
+			<view class="modTitTxt">公司信息</view>
+			<view class="modTag">必填</view>
+		</view>
+		<view class="modCon">
+			<view class="modConWrap clearfix">
+				<view class="modConItem">
+					<view class="modTit">公司名称</view>
+					<view class="modCon wholeWid">
+						<input type="text" name="compName" value="{{compName}}" placeholder-class="numberHolder" placeholder="请输入公司名称(30字内)"maxlength="30"/>
+					</view>
+				</view>
+			</view>
+			<view class="modConWrap clearfix">
+				<view class="modConItem">
+					<view class="modTit">公司地址</view>
+					<view class="modCon wholeWid">
+						<input type="text" name="address" value="{{address}}" placeholder="请输入公司地址(40字内)"maxlength="40"/>
+					</view>
+				</view>
+			</view>
+			<view class="modConWrap clearfix">
+				<view class="modConItem">
+					<view class="modTit">联系人</view>
+					<view class="modCon wholeWid">
+						<input type="text" name="lxName" value="{{lxName}}" placeholder="请输入联系人姓名"maxlength="8"/>
+					</view>
+				</view>
+			</view>
+			<view class="modConWrap clearfix">
+				<view class="modConItem">
+					<view class="modTit">手机号码</view>
+					<view class="modCon wholeWid">
+						<input type="text" name="lxTel" value="{{lxTel}}" placeholder="请输入联系人手机号码"maxlength="11"/>
+					</view>
+				</view>
+			</view>
+			
+			
+			
+			<!-- <view class="modConWrap clearfix">
+				<view class="modConItem long">
+					<view class="modTit">真实姓名</view>
+					<view class="modCon">
+						<input type="text" name="realName" value="{{realName}}" placeholder="请输入真实姓名" maxlength="8"/>
+					</view>
+				</view>
+				<view class="modConItem short">
+					<view class="modTit">性别</view>
+					<view class="modCon">
+						<input name="sex" value="{{sex}}" placeholder="请选择性别" disabled/>
+						<i class="iconfont icon-gengduo"></i>
+					</view>
+				</view>
+			</view>
+			<view class="modConWrap clearfix">
+				<view class="modConItem long">
+					<view class="modTit">出生日期</view>
+					<view class="modCon">
+						<picker mode="date" value="{{birth}}" bindchange="bindDateChange_birth">
+							<view class="picker">
+								<text>{{birth}}</text>
+								<i class="iconfont icon-gengduo"></i>
+							</view>
+						</picker> 
+						<i class="iconfont icon-gengduo"></i>
+					</view>
+				</view>
+				<view class="modConItem short">
+					<view class="modTit">婚否</view>
+					<view class="modCon">
+						<input name="isMarried" value="{{isMarried}}" placeholder="是否已婚" disabled/>
+						<i class="iconfont icon-gengduo"></i>
+					</view>
+				</view>
+			</view>
+			<view class="modConWrap clearfix">
+				<view class="modConItem long">
+					<view class="modTit">驾照类型</view>
+					<view class="modCon">
+						<input name="jzType" value="{{jzType}}" placeholder="请选择驾照类型" disabled/>
+						<i class="iconfont icon-gengduo"></i>
+					</view>
+				</view>
+				<view class="modConItem short">
+					<view class="modTit">驾龄</view>
+					<view class="modCon">
+						<input type="number" name="driveYear" value="{{driveYear}}" placeholder="请输入驾龄" placeholder-class="numberHolder" maxlength="3"/>
+						<text class="unit">年</text>
+					</view>
+				</view>
+			</view> -->
+		</view>
+	</view>
+	<view class="modItem padd">
+		<view class="modTit">
+			<i class="iconfont icon-zhaopinxuqiu"></i>
+			<view class="modTitTxt">招聘要求</view>
+			<view class="modTag">必填</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">薪资/月</view>
+				<view class="modCon wholeWid">
+					<input type="number" name="xinzi" value="{{xinzi}}"  placeholder-class="numberHolder" placeholder="请输入招聘薪资待遇(0为面议)"maxlength="6"/>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem long">
+				<view class="modTit">驾照类型</view>
+				<view class="modCon">
+					<input name="jzType" value="{{jzType}}" placeholder="请选择驾照类型" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="modConItem short">
+				<view class="modTit">驾龄</view>
+				<view class="modCon">
+					<input type="number" name="driveYear" value="{{driveYear}}" placeholder="请输入驾龄" placeholder-class="numberHolder" maxlength="3"/>
+					<text class="unit">年</text>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem long">
+				<view class="modTit">年龄要求</view>
+				<view class="modCon">
+					<input type="number" name="age" value="{{age}}" placeholder="请输入年龄要求" placeholder-class="numberHolder" maxlength="2"/>
+				</view>
+			</view>
+			<view class="modConItem short">
+				<view class="modTit">学历</view>
+				<view class="modCon">
+					<input name="degree" value="{{degree}}" placeholder="请选择学历" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">工作性质</view>
+				<view class="modCon smPadd">
+					<input type="text" name="gzxz" value="{{gzxz}}" placeholder="请选择要求工作性质" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">招聘人数</view>
+				<view class="modCon wholeWid">
+					<input type="number" name="zprs" value="{{zprs}}" placeholder-class="numberHolder" placeholder="请输入招聘人数" maxlength="6"/>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">工作年限</view>
+				<view class="modCon smPadd">
+					<input type="text" name="gzxz" value="{{gzxz}}" placeholder="请选择要求工作年限" disabled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="modItem padd">
+		<view class="modTit">
+			<i class="iconfont icon-fulidaiyu"></i>
+			<view class="modTitTxt">福利待遇</view>
+			<view class="modTag selWrite">选填</view>
+		</view>
+		<view class="modConWrap clearfix hasPadd">
+			<view class="fuliItem {{item.state == 1 ? 'active' : ''}}"
+				wx:for="{{welfare}}"
+				wx:key="index"
+				data-key="{{index}}"
+				data-name="{{item.name}}"
+				bindtap="selWelfare"
+			><image src="../../images/hasSel.png"></image>{{item.name}}</view>
+		</view>
+		
+	</view> 
+	
+	<view class="modItem noMargBot">
+		<button class="sureBtn" formType="submit">
+			发布求职信息
+			<isAuthor bind:flagEvent="submit"></isAuthor>
+		</button>
+	</view>
+</form>

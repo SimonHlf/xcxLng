@@ -6,7 +6,18 @@ Page({
 		state:-1,
 		driverYyyData:[],
 		isHasDataFlag : true,
-		currTitName : ''
+		currTitName : '',
+		addNewFlag : false
+	},
+	onShow(){
+		if(this.data.addNewFlag){
+			this.getDriverYyyList();
+		}
+	},
+	onHide(){
+		this.setData({
+			addNewFlag : false
+		});
 	},
 	onLoad : function(options){
 		cpyId = options.cpyId;
@@ -24,9 +35,12 @@ Page({
 		}
 		this.getDriverYyyList();
 	},
+	addDriverYyy : function(){
+		util.navigateTo('/pages/basic/addDriverYyy/index?currJump=' + currJump + '&cpyId=' + cpyId);
+	},
 	getDriverYyyList : function(){
 		var _this = this,
-			field = {cpyId:cpyId},url = app.globalData.serverUrl + '/company/queryCompanyPsr';
+			field = {compId:cpyId},url = app.globalData.serverUrl + '/company/queryCompanyPsr';
 		util.showLoading('加载中...');
 		wx.request({
 			url :url,
@@ -37,7 +51,6 @@ Page({
 				console.log(res)
 				if(res.data.code == 200){
 					if(currJump == 'driverJump'){
-						
 						if(driver != ''){//之前已经选择对应公司 进行匹配
 							for(var i=0;i<res.data.datas.length;i++){
 								if(res.data.datas[i].psrName == driver){

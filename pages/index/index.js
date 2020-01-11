@@ -13,8 +13,7 @@ Page({
 		wx.request({
 			url : app.globalData.serverUrl + '/common/getWelcomeData',
 			method : 'get',
-			success: function(res){
-				//console.log(res)
+			success: function(res){ 
 				util.hideLoading();
 				if(res.data.code == 200){
 					_this.setData({

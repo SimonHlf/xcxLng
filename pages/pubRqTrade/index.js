@@ -5,7 +5,7 @@ Page({
 	data:{
 		currPageType : '',
 		cpyName : '',
-		cpyId:'',
+		cpyId:'44883d93-1ec3-4701-bd02-85d01a520fa0',
 		lqFacName : '',
 		lqFacId : '',
 		lqTypeName : '',
@@ -172,6 +172,7 @@ Page({
 		}
 	},
 	getCpyList : function(){
+		console.log(this.data.cpyId )
 		util.navigateTo('/pages/basic/getCpyList/index?currPage=addRqTradePage&cpyId=' + this.data.cpyId);
 	},
 	getLqFac : function(){

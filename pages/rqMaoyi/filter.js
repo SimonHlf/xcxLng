@@ -145,7 +145,7 @@ Page({
 				util.showToast('最低价格不能高于最高价格');
 				return;
 			}
-		}
+		} 
 		let pages = getCurrentPages();
 		let prevPage = pages[pages.length - 2];
 		if(this.data.minPrice == '' && this.data.maxPrice == '' && provPyArr.length == 0 && lqIdArr.length == 0){

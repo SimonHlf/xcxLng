@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+  	  "city-picker": "../../components/selectArea/selectArea",
+  	  "isAuthor" : "../../components/author/author"
+  },
   "navigationBarTitleText" : "发布求职信息"
 }

@@ -80,6 +80,7 @@ page{
 	display: flex;
 	justify-content: space-between;
 	color:#bfbfbf ;
+	padding-bottom: 20rpx;
 }
 .priceRange{
 	width: 260rpx;

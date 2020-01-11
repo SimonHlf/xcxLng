@@ -147,8 +147,8 @@ Page({
 		//console.log(field)
 		wx.request({
 			url : app.globalData.serverUrl + '/lng/getReportLngPriceDate',
-			method: 'get',
-			data : field,
+			method: 'get',  
+			data : field,  
 			success:function(res){
 				util.hideLoading();
 				console.log(res);
@@ -177,7 +177,7 @@ Page({
 			yearTxt : JSON.parse(options.currField).specTjDate.substring(0,4)
 		});
 		this.loadLngHqDet();
-	},
+	}, 
 	loadLngHqDet : function(){
 		var _this = this; 
 		util.showLoading('拼命加载中...');
@@ -187,7 +187,7 @@ Page({
 			method: 'get',
 			success:function(res){
 				util.hideLoading();
-				//console.log(res)
+				console.log(res)
 				if(res.data.code == 200){
 					let resObj = res.data.datas[0];
 					_this.setData({
@@ -201,9 +201,14 @@ Page({
 						mysNum : resObj.cpyLenth,
 						lngHq : resObj.tjList
 					});
-					for(var attr in _this.data.lngHq){
-						priceData[attr] = _this.data.lngHq[attr].price;
-						dateData[attr] = _this.data.lngHq[attr].priceDate;
+					if(_this.data.lngHq.length > 0){
+						for(var attr in _this.data.lngHq){
+							priceData[attr] = _this.data.lngHq[attr].price;
+							dateData[attr] = _this.data.lngHq[attr].priceDate;
+						}
+					}else{
+						priceData.length = 0;
+						dateData.length = 0;
 					}
 				}
 			}

@@ -1,0 +1,96 @@
+<view class="userHead">
+	<image class="qzBg" src="../../images/qzBg.jpg"></image>
+	<view class="headImg">
+		<image src="../../images/rqsb.jpg"></image>
+	</view>
+</view>
+<view class="userInfo">
+	<view class="topUserInfo">
+		<view class="userName">王明</view>
+		<view class="renzheng">
+			<i class="iconfont icon-renzheng"></i>
+			<text>已认证手机</text>
+		</view>
+	</view>
+	<view class="basicInfo">
+		<view>男</view>
+		<view>30岁</view>
+		<view>未婚</view>
+		<view>大专</view>
+	</view>
+	<view class="infoItemWrap clearfix">
+		<view class="infoItem">
+			<view class="infoTit">求职性质</view>
+			<view class="infoCon ellip">全职</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoTit">驾驶年限</view>
+			<view class="infoCon ellip">5年</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoTit">期望薪资</view>
+			<view class="infoCon ellip">5000-7000元</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoTit">驾照类型</view>
+			<view class="infoCon ellip">B2</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoTit">期望区域</view>
+			<view class="infoCon ellip">河南省-濮阳市</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoTit">联系电话</view>
+			<view class="infoCon ellip">18790958171</view>
+		</view>
+	</view>
+</view>
+<view class="detInfo padd">
+	<view class="allInfoTit">全部信息</view>
+	<view class="detInfoItem">
+		<view class="detInfoTit">工作年限</view>
+		<view class="detInfoCon">8年</view>
+	</view>
+	<view class="detInfoItem">
+		<view class="detInfoTit">教育程度</view>
+		<view class="detInfoCon">大专</view>
+	</view>
+	<view class="detInfoItem">
+		<view class="detInfoTit">毕业院校</view>
+		<view class="detInfoCon">蓝翔技校</view>
+	</view>
+	<view class="detInfoItem">
+		<view class="detInfoTit">所学专业</view>
+		<view class="detInfoCon">蓝翔技校</view>
+	</view>
+	<view class="detInfoItem_spec">
+		<view class="detInfoTit">工作经验</view>
+		<view class="detInfoCon">2009.06-2011.12  惠州德赛集团有限公司 担任大货车司机担团有限公司 担任大货车司机担任大货车司机 团有限公司 担任大货车司机担任大货车司机 任大货车司机 2009.06-2011.12  惠州德</view>
+	</view>
+	<view class="detInfoItem_spec">
+		<view class="detInfoTit">自我简介</view>
+		<view class="detInfoCon">大货车司机 任大货车司机 2009.06-2011.12  惠州德</view>
+	</view>
+</view>
+<view class="botFun">
+	<view class="focusView">
+		<view class="iconView">
+			<i class="iconfont icon-guanzhu"></i>
+		</view>
+		<view class="iconTxt">关注</view>
+		<isAuthor bind:flagEvent="getFocus"></isAuthor>
+	</view>
+	<!-- <block wx:if="{{userFocus}}">
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu1"></i>
+			</view>
+			<view class="iconTxt">已关注</view>
+			<isAuthor bind:flagEvent="cancelFocus"></isAuthor>
+		</view>
+	</block>
+	<block wx:else>
+		
+	</block> -->
+	<view class="buyGasBtn">电话约面试</view>
+</view>

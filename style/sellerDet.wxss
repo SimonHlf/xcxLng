@@ -187,7 +187,7 @@ page{
 }
 .buyGasBtn,
 .notBuyGasBtn{
-	width: 240rpx;
+	width: 400rpx;
 	height: 66rpx;
 	line-height: 66rpx;
 	color: #fff;
