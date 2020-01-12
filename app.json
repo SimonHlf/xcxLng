@@ -1,16 +1,16 @@
 {
   "pages": [
-	"pages/rqMaoyi/index",
+	  "pages/pubDriverZp/index",
+    "pages/driverQz/index",
+    "pages/pubDriverQz/index",
+    "pages/rqMaoyi/index",
     "pages/hangyeZixun/index",
     "pages/index/index",
-    "pages/pubDriverQz/index",
-    "pages/pubDriverZp/index",
     "pages/driverZpDet/index",
     "pages/driverZp/index",
     "pages/driverQzDet/index",
     "pages/pubRqTrade/index",
     "pages/basic/addDriverYyy/index",
-    "pages/driverQz/index",
     "pages/trucksTrade/index",
     "pages/pubTrucksTrade/index",
     "pages/basic/addCpGcpNum/index",
@@ -49,7 +49,8 @@
     "pages/basic/getWqpfbz/index",
     "pages/basic/getGasType/index",
     "pages/trucksTrade/filter",
-    "pages/hangyeZixun/zixunDet"
+    "pages/hangyeZixun/zixunDet",
+    "pages/driverQz/filter"
   ],
   "window": {
     "backgroundTextStyle": "light",

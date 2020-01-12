@@ -138,7 +138,7 @@ Page({
 							util.showToast('发布燃气贸易参数不能为空');
 						}else if(res.data.code == 70001){
 							util.showToast('抱歉,您暂无权限发布燃气设备');
-						}else if(json.code == 80001){
+						}else if(res.data.code == 80001){
 							util.showToast('当前燃气设备买卖信息审核已通过，暂不能修改');
 						}
 					}

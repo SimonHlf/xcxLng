@@ -9,8 +9,9 @@
 			<view class="modConWrap clearfix">
 				<view class="modConItem">
 					<view class="modTit">公司名称</view>
-					<view class="modCon wholeWid">
-						<input type="text" name="compName" value="{{compName}}" placeholder-class="numberHolder" placeholder="请输入公司名称(30字内)"maxlength="30"/>
+					<view class="modCon smPadd">
+						<input type="text" value="{{compName}}" placeholder="请选择公司" disabled/>
+						<i class="iconfont icon-gengduo"></i>
 					</view>
 				</view>
 			</view>
@@ -77,6 +78,7 @@
 				<view class="modTit">年龄要求</view>
 				<view class="modCon">
 					<input type="number" name="age" value="{{age}}" placeholder="请输入年龄要求" placeholder-class="numberHolder" maxlength="2"/>
+					<text class="unit">岁</text>
 				</view>
 			</view>
 			<view class="modConItem short">
@@ -84,17 +86,6 @@
 				<view class="modCon">
 					<picker bindchange="bindDegreePicker" range="{{degreeArr}}">
 					   <view class="{{isSelDegree ? '' : 'noSel'}}">{{degree}}</view>
-					</picker>
-					<i class="iconfont icon-gengduo"></i>
-				</view>
-			</view>
-		</view>
-		<view class="modConWrap clearfix">
-			<view class="modConItem">
-				<view class="modTit">工作性质</view>
-				<view class="modCon smPadd">
-					<picker bindchange="bindWorkXzPicker" range="{{workXingzhiArr}}">
-					   <view class="{{isSelWorkXz ? '' : 'noSel'}}">{{gzxz}}</view>
 					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
@@ -117,6 +108,23 @@
 					</picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
+			</view>
+		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">工作地址</view>
+				<view class="modCon smPadd">
+					<city-picker bind:selected="selectCity"></city-picker>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+		</view>
+		<view class="modConWrap hasPadd clearfix">
+			<view class="modConItem noBor">
+				<view class="modTit">岗位职责</view>
+			</view>
+			<view class="workExp">
+				<textarea name="gwzz" value="{{gwzz}}" placeholder-class="areaCol" placeholder="请输入岗位职责(300字内)" maxlength="300" />
 			</view>
 		</view>
 	</view>

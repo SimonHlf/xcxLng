@@ -119,7 +119,7 @@ Page({
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');
 				}else if(res.data.code == 50003){
-					util.showToast('您已点过赞,不能重复点赞');
+					util.showToast('您当天已点过赞,不能重复点赞');
 				}
 			}
 		});

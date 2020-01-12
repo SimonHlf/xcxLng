@@ -560,7 +560,7 @@ Page({
 								util.showToast('发布槽车买卖参数不能为空');
 							}else if(res.data.code == 70001){
 								util.showToast('抱歉,您暂无权限发布槽车买卖');
-							}else if(json.code == 80001){
+							}else if(res.data.code == 80001){
 								util.showToast('当前燃气槽车买卖信息审核已通过，暂不能修改');
 							}
 						}

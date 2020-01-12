@@ -52,6 +52,12 @@ page{
 	float: left;
 	background: pink;
 }
+.qzListItem .imgView image{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
 .qzListItem .qzListCon{
 	float: left;
 	margin-left: 15rpx;

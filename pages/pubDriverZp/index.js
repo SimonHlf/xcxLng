@@ -5,11 +5,8 @@ Page({
 	data : {
 		jzTypeArr : ["A1","A2","A3","B1","B2","C1","C2","C3","C4","D","E","F","M","N","P"],
 		degreeArr : ['不限','初中','中专/中技','高中','大专','本科','硕士','博士'],
-		workXingzhiArr : ['兼职','全职'],
-		workExpArr : ['不限','1年以下','1-3年','3-5年','5-10年','10年以上'],
-		jzType : '请选择驾照类型',
-		degree : '请选择学历',
-		gzxz : '请选择工作性质',
+		jzType : '选择驾照类型',
+		degree : '选择学历',
 		gznx : '请选择工作年限',
 		isSelJzType : false,
 		isSelDegree : false,
@@ -30,6 +27,7 @@ Page({
 			{"name" : "双休","state" : 0}
 		]
 	},
+	
 	bindJzTypePicker : function(e){
 		var _this = this;
 		this.setData({
@@ -42,13 +40,6 @@ Page({
 		this.setData({
 			degree : _this.data.degreeArr[e.detail.value],
 			isSelDegree : true
-		});
-	},
-	bindWorkXzPicker : function(e){
-		var _this = this;
-		this.setData({
-			gzxz : _this.data.workXingzhiArr[e.detail.value],
-			isSelWorkXz : true
 		});
 	},
 	bindWorkExpPicker : function(e){

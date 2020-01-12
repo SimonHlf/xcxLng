@@ -23,13 +23,13 @@ Page({
 			this.getRqTradeList();
 		}
 	},
-	onPullDownRefresh : function(){
-		this.setData({
-			nowPaeg : 1
-		});
-		wx.showNavigationBarLoading();
-		this.getRqTradeList();
-	},
+	// onPullDownRefresh : function(){
+	// 	this.setData({
+	// 		isPullDownFlag : true
+	// 	});
+	// 	wx.showNavigationBarLoading();
+	// 	//this.getRqTradeList();
+	// },
 	onShow(){
 		if(this.data.psArea != '' || this.data.gasTypeId != '' || this.data.isAllEmptyFlag || this.data.sPrice !== '' || this.data.ePrice != '' || this.data.isCanPubFlag){//从最新发布页面返回过来并且已经发布
 			this.setData({
@@ -81,9 +81,6 @@ Page({
 							loading : false
 						}); 
 					} 
-					wx.hideNavigationBarLoading();
-				  //停止下拉事件
-					wx.stopPullDownRefresh();
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');
 				}else if(res.data.code == 10002){

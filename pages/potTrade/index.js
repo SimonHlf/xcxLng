@@ -13,7 +13,7 @@ Page({
 		currentTab : 0,
 		sxInfo : '',
 		potPpId : '',
-		zzjzTypeId : '',
+		zzjzTypeId : '', 
 		potVol : -1
 	},
 	onLoad : function(){
@@ -78,7 +78,7 @@ Page({
 			loading : true
 		}); 
 		let { nowPage,potTradeData } = this.data;
-		util.showLoading('数据加载中...')
+		util.showLoading('数据加载中...');
 		wx.request({ 
 			url : app.globalData.serverUrl + '/potTrade/queryPotTrade',
 			method:'get',

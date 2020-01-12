@@ -1,0 +1,50 @@
+<form bindsubmit="formSubmit">
+	<view class="filterMod padd">
+		<view class="modTit otherCol">驾照类型<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaItem"
+				wx:for="{{jzTypeArr}}"
+				wx:key="index"
+				class="areaItem {{jzTypeState == index ?'active' : ''}}"
+				data-key="{{index}}"
+				data-id="{{item}}"
+				bindtap="selectJzType"
+			>{{item}}</view>
+		</view>
+	</view>
+	<view class="filterMod padd">
+		<view class="modTit otherCol">驾龄<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaList clearfix">
+				<view
+					wx:for="{{jlYear}}"
+					wx:key="index"
+					class="areaItem {{jzYearState == index ? 'active':''}}"
+					data-key="{{index}}"
+					data-id="{{item.id}}"
+					bindtap="selectJl"
+				>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="filterMod padd">
+		<view class="modTit otherCol">薪资范围<text class="subTxt">(单选)</text></view>
+		<view class="areaList clearfix">
+			<view class="areaList clearfix">
+				<view
+					wx:for="{{wageArr}}"
+					wx:key="index"
+					class="areaItem {{wageState == index ? 'active':''}}"
+					data-key="{{index}}"
+					data-id="{{item.id}}"
+					bindtap="selectWage"
+				>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="filterBtnWrap">
+		<button bindtap="resetFilter">重置</button>
+		<button class="sureBtn" formType="submit">确定</button>
+	</view>
+</form>

@@ -2,7 +2,7 @@
  	<view class="pubMod">
  		<i class="iconfont icon-bianji"></i>
 		<text>发布求职信息</text>
-		<isAuthor bind:flagEvent="pubRqDev"></isAuthor>
+		<isAuthor bind:flagEvent="pubDriverQz"></isAuthor>
 	</view>
 	<view class="filterBtn" bindtap="goFilter">
 		<text>筛选</text>
@@ -11,85 +11,51 @@
 </view>
 <!-- qzList -->
 <view class="qzListWrap padd">
-	<view class="qzListItem clearfix">
+	<view class="qzListItem clearfix"
+		wx:for="{{qzListData}}"
+		wx:key="index"
+		data-id="{{item.qzId}}"
+	>
 		<view class="imgView">
-			
+			<image src="{{serverUrl}}/{{item.userHead}}" mode="aspectFill"></image>
 		</view>
 		<view class="qzListCon">
 			<view class="qzTit">
-				<view class="name">李娜娜</view>
+				<view class="name">{{item.userName}}</view>
 				<view class="renzheng"><i class="iconfont icon-renzheng"></i></view>
 				<view class="weizhi">
 					<i class="iconfont icon-weizhi"></i>
-					<text>濮阳</text>
+					<text>{{item.prov}}-{{item.city}}</text>
 				</view>
 			</view>
 			<view class="qzInfo">
-				<view>男</view>
-				<view>30岁</view>
-				<view>大专</view>
+				<view>{{item.sex}}</view>
+				<view>{{item.age}}岁</view>
+				<view>{{item.education}}</view>
 			</view>
 			<view class="basicInfo">
-				<view>B2驾照</view>
+				<view>{{item.jzType}}驾照</view>
 				<view>|</view>
-				<view>驾龄1-3年</view>
-				<view>|</view>
-				<view>电话15890978765</view>
-			</view>
-		</view>
-	</view>
-	<view class="qzListItem clearfix">
-		<view class="imgView">
-			
-		</view>
-		<view class="qzListCon">
-			<view class="qzTit">
-				<view class="name">李娜娜</view>
-				<view class="renzheng"><i class="iconfont icon-renzheng"></i></view>
-				<view class="weizhi">
-					<i class="iconfont icon-weizhi"></i>
-					<text>濮阳</text>
-				</view>
-			</view>
-			<view class="qzInfo">
-				<view>男</view>
-				<view>30岁</view>
-				<view>大专</view>
-			</view>
-			<view class="basicInfo">
-				<view>B2驾照</view>
-				<view>|</view>
-				<view>驾龄1-3年</view>
-				<view>|</view>
-				<view>电话15890978765</view>
-			</view>
-		</view>
-	</view>
-	<view class="qzListItem clearfix">
-		<view class="imgView">
-			
-		</view>
-		<view class="qzListCon">
-			<view class="qzTit">
-				<view class="name">李娜娜</view>
-				<view class="renzheng"><i class="iconfont icon-renzheng"></i></view>
-				<view class="weizhi">
-					<i class="iconfont icon-weizhi"></i>
-					<text>濮阳</text>
-				</view>
-			</view>
-			<view class="qzInfo">
-				<view>男</view>
-				<view>30岁</view>
-				<view>大专</view>
-			</view>
-			<view class="basicInfo">
-				<view>B2驾照</view>
-				<view>|</view>
-				<view>驾龄1-3年</view>
-				<view>|</view>
-				<view>电话15890978765</view>
+				<view>驾龄{{item.jzYear}}年</view>
 			</view>
 		</view>
 	</view>
 </view>
+<view class="noDataList" style="margin-top: 320rpx;" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view> 
+<block wx:if="{{isHasDataFlag}}">
+	<view class="loadingIcon">
+		<block wx:if="{{loading}}">
+			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+		</block>
+		<block wx:else>
+			<view class="noDataTxt">
+				<text>——————</text>
+				<text>我是有底线的~</text>
+				<text>——————</text>
+			</view>
+		</block>
+	</view> 
+</block>

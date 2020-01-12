@@ -5,7 +5,7 @@ Page({
 	data:{
 		currPageType : '',
 		cpyName : '',
-		cpyId:'44883d93-1ec3-4701-bd02-85d01a520fa0',
+		cpyId:'',
 		lqFacName : '',
 		lqFacId : '',
 		lqTypeName : '',
@@ -163,7 +163,7 @@ Page({
 							util.showToast('发布燃气贸易参数不能为空');
 						}else if(res.data.code == 70001){
 							util.showToast('抱歉,您暂无权限发布燃气贸易');
-						}else if(json.code == 80001){
+						}else if(res.data.code == 80001){
 							util.showToast('当前储燃气买卖信息审核已通过，暂不能修改');
 						}
 					}

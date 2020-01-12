@@ -35,15 +35,9 @@
 			</view>
 			<view class="modConWrap clearfix">
 				<view class="modConItem long">
-					<view class="modTit">出生日期</view>
+					<view class="modTit">年龄</view>
 					<view class="modCon">
-						<picker mode="date" value="{{birth}}" bindchange="bindDateChange_birth">
-							<view class="picker">
-								<text>{{birth}}</text>
-								<i class="iconfont icon-gengduo"></i>
-							</view>
-						</picker> 
-						<i class="iconfont icon-gengduo"></i>
+						<input type="number" name="age" value="{{age}}" placeholder-class="numberHolder" placeholder="请输入年龄" maxlength="2"/>
 					</view>
 				</view>
 				<view class="modConItem short">
@@ -104,17 +98,6 @@
 		</view>
 		<view class="modConWrap clearfix">
 			<view class="modConItem">
-				<view class="modTit">求职意向</view>
-				<view class="modCon smPadd">
-					<picker bindchange="bindWorkXzPicker" range="{{workXingzhiArr}}">
-					   <view class="{{isSelWorkXz ? '' : 'noSel'}}">{{gzxz}}</view>
-					</picker>
-					<i class="iconfont icon-gengduo"></i>
-				</view>
-			</view>
-		</view>
-		<view class="modConWrap clearfix">
-			<view class="modConItem">
 				<view class="modTit">希望工作地点</view>
 				<view class="modCon smPadd">
 					<city-picker bind:selected="selectCity"></city-picker>
@@ -157,7 +140,7 @@
 				<view class="modTit">工作经历</view>
 			</view>
 			<view class="workExp">
-				<textarea bindblur="bindTextAreaBlur" name="workExp" value="{{workExp}}" placeholder-class="areaCol" placeholder="请输入您的工作经历(300字内)" maxlength="300" />
+				<textarea name="workExp" value="{{workExp}}" placeholder-class="areaCol" placeholder="请输入您的工作经历(300字内)" maxlength="300" />
 			</view>
 		</view>
 		<view class="modConWrap hasPadd clearfix">
@@ -165,7 +148,7 @@
 				<view class="modTit">自我评价</view>
 			</view>
 			<view class="workExp">
-				<textarea bindblur="bindTextAreaBlur" name="judgeSelf" value="{{judgeSelf}}" placeholder-class="areaCol" placeholder="请输入自我评价(200字以内)" maxlength="200" />
+				<textarea name="judgeSelf" value="{{judgeSelf}}" placeholder-class="areaCol" placeholder="请输入自我评价(200字以内)" maxlength="200" />
 			</view>
 		</view>
 	</view> 
@@ -186,7 +169,7 @@
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
-		</view>
+		</view> 
 		<view class="modConWrap clearfix">
 			<view class="modConItem">
 				<view class="modTit">毕业院校</view>
