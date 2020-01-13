@@ -7,7 +7,7 @@
 				<image src="{{userImg == '' ? 'aaa' : userImg}}"></image>
 			</view>  
 			<!-- 存在登录状态u -->
-			 <view class="userInfoTxt">
+			 <view class="userInfoTxt" bindtap="editMyInfo">
 				<view class="userName">{{userName}}</view>
 				<navigator class="editInfoBtn" hover-class="none">
 					<i class="iconfont icon-edit"></i>
@@ -30,9 +30,9 @@
 <!-- mineCon --> 
 <view class="mineNav">
 	<view class="innerMineNav">
-		<view class="mineNavItem">
+		<view class="mineNavItem" bindtap="goMyCompany">
 			<image src="../../images/mine/myComp.png"></image>
-			<text>我的发布</text>
+			<text>我的公司</text>
 			<view class="lineView"></view>
 		</view>
 		<view class="mineNavItem">

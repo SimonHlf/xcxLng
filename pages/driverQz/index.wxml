@@ -15,6 +15,7 @@
 		wx:for="{{qzListData}}"
 		wx:key="index"
 		data-id="{{item.qzId}}"
+		bindtap="getQzDet"
 	>
 		<view class="imgView">
 			<image src="{{serverUrl}}/{{item.userHead}}" mode="aspectFill"></image>

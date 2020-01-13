@@ -1,22 +1,17 @@
 <view class="newsListWrap padd">
-	<view class="listNews clearfix">
+	<view class="listNews clearfix"
+		wx:for="{{zxListData}}"
+		wx:key="index"
+		data-id="{{item.id}}"
+		bindtap="getNewsDet"
+	>
 		<view class="listNewsImg">
+			<image src="{{serverUrl}}/{{item.mainImg}}" mode="aspectFill"></image>
 		</view>
 		<view class="listNewsCon">
-			<view class="newsTit ellip">如何确保天然气迎峰度冬？发改委从如何确保天然气迎峰度冬？发改委从</view>
+			<view class="newsTit ellip">{{item.title}}</view>
 			<view class="from">
-				<text>2019-09-20</text>
-				<text>阅读全文</text>
-			</view>
-		</view>
-	</view>
-	<view class="listNews clearfix">
-		<view class="listNewsImg">
-		</view>
-		<view class="listNewsCon">
-			<view class="newsTit ellip">如何确保天然气迎峰度冬？发改委从</view>
-			<view class="from">
-				<text>2019-09-20</text>
+				<text>{{item.addTime}}</text>
 				<text>阅读全文</text>
 			</view>
 		</view>

@@ -4,13 +4,13 @@ Page({
 	data:{
 		isCanPubFlag : false,
 		isAllEmptyFlag : false,
-		serverUrl: app.globalData.serverUrl,
 		nowPage : 1,
 		isHasDataFlag : true,
 		loading : false,
 		qzListData : [],
 		jzType : '',
 		jzYear : '',
+		serverUrl: app.globalData.serverUrl,
 		wage : ''
 	},
 	onLoad : function(){
@@ -30,7 +30,6 @@ Page({
 	loadQzList : function(){
 		var _this = this;
 		var field = {jzYear:this.data.jzYear,jzType:this.data.jzType,wage:this.data.wage,page:this.data.nowPage,limit:50,checkSta:1,showSta:0};
-		console.log(field)
 		this.setData({
 			loading : true
 		}); 
@@ -91,7 +90,6 @@ Page({
 				}
 			}
 		});
-		
 	},
 	onShow(){
 		if(this.data.jzType != '' || this.data.jzYear != '' || this.data.wage != '' || this.data.isAllEmptyFlag){//从最新发布页面返回过来并且已经发布
@@ -109,4 +107,8 @@ Page({
 	goFilter : function(){
 		util.navigateTo('/pages/driverQz/filter?jzType=' + this.data.jzType + '&jzYear=' + this.data.jzYear + '&wage=' + this.data.wage);
 	},
+	getQzDet : function(e){
+		var id = e.currentTarget.dataset.id;
+		util.navigateTo('/pages/driverQzDet/index?id=' + id);
+	}
 })

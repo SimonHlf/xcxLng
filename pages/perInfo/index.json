@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+  	  "isAuthor" : "../../components/author/author"
+  },
+  "navigationBarTitleText" : "个人资料设置"
+}

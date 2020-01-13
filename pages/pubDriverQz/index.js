@@ -12,15 +12,24 @@ Page({
 		marrayArr : ['未婚','已婚'],
 		jzTypeArr : ["A1","A2","A3","B1","B2","C1","C2","C3","C4","D","E","F","M","N","P"],
 		degreeArr : ['初中','中专/中技','高中','大专','本科','硕士','博士'],
+		jlYear : [
+			{"id" : "1-3","name" : "1-3年"},
+			{"id" : "3-5","name" : "3-5年"},
+			{"id" : "5-10","name" : "5-10年"},
+			{"id" : "10-100","name" : "10年以上"}
+		],
 		isMarried : '是否已婚',
 		sex : '选择性别',
 		jzType : '选择驾照类型', 
 		degree : '请选择学历',
+		workYearName : '请选择工作年限',
+		workYear : '',
 		isSelMarray : false,
 		isSelSex : false,
 		isSelJzType : false,
 		isSelDegree : false,
 		isSelWorkXz : false,
+		isSelWorkYear : false,
 		provName : '',
 		cityName : '',
 		driveYear : '',
@@ -83,6 +92,8 @@ Page({
 				util.showToast('期望月薪应为大于等于0的正整数');
 			}else if(this.data.workTime == ''){
 				util.showToast('请选择您参加工作时间');
+			}else if(this.data.workYearName == '请选择工作年限'){
+				util.showToast('请选择工作年限');
 			}else if(this.data.workExp == ''){
 				util.showToast('请输入您的工作经历');
 			}else if(this.data.judgeSelf == ''){
@@ -96,7 +107,7 @@ Page({
 				}
 				var field = {userId:wx.getStorageSync('userId'),userName:this.data.realName,userMobile:this.data.phoneNum,jzYear:this.data.driveYear,jzType:this.data.jzType,
 							wage:this.data.qwyx,province:this.data.provName,city:this.data.cityName,userType:2,userHead:this.data.headImgSucc,education:this.data.degree,age:this.data.age,
-							sex:this.data.sex,workExp:this.data.workExp,colleges:this.data.graduate,marriage:this.data.isMarried,hot:0,remark:this.data.judgeSelf};
+							sex:this.data.sex,workYear:this.data.workYear,workExp:this.data.workExp,colleges:this.data.graduate,marriage:this.data.isMarried,hot:0,remark:this.data.judgeSelf};
 				if(this.data.currPageType == 'addPub'){
 					url = app.globalData.serverUrl + '/driverZp/addDriverQz';
 					type = 'post';
@@ -141,11 +152,14 @@ Page({
 			cityName :e.detail.city
 		}); 
 	},
-	// bindDateChange_birth : function(e){
-	// 	this.setData({
-	// 		birth : e.detail.value
-	// 	});
-	// },
+	bindWorkExpPicker : function(e){
+		var _this = this;
+		this.setData({
+			workYearName : _this.data.jlYear[e.detail.value].name,
+			workYear : _this.data.jlYear[e.detail.value].id,
+			isSelWorkYear : true
+		});
+	},
 	bindDateChange_work : function(e){
 		this.setData({
 			workTime : e.detail.value

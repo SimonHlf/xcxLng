@@ -1,1 +1,20 @@
-/* pages/hangyeZixun/zixunDet.wxss */
+@import '../../wxParse/wxParse.wxss';
+.newsDetWrap{
+	border-top: 1rpx solid #e8e8e8;
+	margin-top: 20rpx;
+	padding-top: 20rpx;
+}
+.newsTit{
+	font-size: 34rpx;
+	font-weight: 620;
+	color: #121212;
+	-webkit-line-clamp:3;
+}
+.pubTime{
+	font-size: 26rpx;
+	color: #a9a9a9;
+	margin:15rpx 0;
+}
+.newCon image{
+	width: 100%;
+}

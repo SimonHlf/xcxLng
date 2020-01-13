@@ -248,3 +248,10 @@ page{
 .modConItem .modCon picker view.noSel{
 	color: #808080;
 }
+.warnInfop,
+.beizhu{
+	height: 60rpx;
+	line-height: 60rpx;
+	color: #d32f2f;
+	font-size: 26rpx;
+}

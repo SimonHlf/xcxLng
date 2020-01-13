@@ -1,13 +1,14 @@
 <view class="compNameInfo">
-	<view class="compName">京东物流有限公司</view>
+	<view class="compName">{{zpDetData.companyName}}</view>
 	<view class="xinzi clearfix">
 		<view class="zpTit">招聘司机</view>
-		<view class="price">6千/月</view>
+		<view class="price">{{zpDetData.wage}}千/月</view>
 	</view>
 	<view class="welfare clearfix">
-		<view class="welfareItem">五险一金</view>
-		<view class="welfareItem">包食宿</view>
-		<view class="welfareItem">话费补助</view>
+		<view class="welfareItem"
+			wx:for="{{zpDetData.welftare}}"
+			wx:key="*this"
+		>{{item}}</view>
 	</view>
 </view>
 <view class="zhiweiDetInfo">
@@ -15,34 +16,33 @@
 	<view class="yqWrap">
 		<view class="yqTit">要求</view>
 		<view class="detYq">
-			<text>招2人</text>
+			<text>招{{zpDetData.num}}人</text>
 			<text>|</text>
-			<text>C1</text>
+			<text>{{zpDetData.jzType}}</text>
 			<text>|</text>
-			<text>3年经验</text>
+			<text>{{zpDetData.jlYear}}年经验</text>
 			<text>|</text>
-			<text>高中</text>
+			<text>{{zpDetData.education}}</text>
 			<text>|</text>
-			<text>20-30周岁</text>
+			<text>{{zpDetData.sjAge}}岁</text>
 		</view>
 	</view>
 	<view class="gwzzTit">岗位职责</view>
 	<view class="gwzzCon">
-		<view>1.驾驶公司车辆（有通行证）市区内配送货物； </view>
-		<view>2.无不良嗜好，无不良驾驶记录无重大事故，具有较强 的安全意识；</view>
+		<view>{{zpDetData.remark}}</view>
 	</view>
 </view>
 <view class="pubUser padd">
 	<view class="pubTit">职位发布人</view>
 	<view class="sellerTel clearfix">
 		<view class="sellerImg">
-			<image></image>
+			<image src="{{zpDetData.userHead}}"></image>
 		</view>
 		<view class="rqDevCompName">
-			<view class="lxrNameTel">李鑫</view>
-			<view class="rqDevName ellip">187909849489</view>
+			<view class="lxrNameTel">{{zpDetData.lxName}}</view>
+			<view class="rqDevName ellip">{{zpDetData.lxTel}}</view>
 		</view>
-		<view class="phoneCall" data-phone="{{devDetData.lxTel}}" bindtap="getPhoneCall">
+		<view class="phoneCall" data-phone="{{zpDetData.lxTel}}" bindtap="getPhoneCall">
 			<i class="iconfont icon-tel"></i>
 		</view>
 	</view>
@@ -51,18 +51,11 @@
 	<view class="pubTit">公司地址</view>
 	<view class="address clearfix">
 		<i class="iconfont icon-weizhi"></i>
-		<view class="ellip">濮阳市华龙区濮东街道黄河路与安凯路交叉口南100米</view>
+		<view class="ellip">{{zpDetData.address}}</view>
 	</view>
 </view>
 <view class="botFun">
-	<view class="focusView">
-		<view class="iconView">
-			<i class="iconfont icon-guanzhu"></i>
-		</view>
-		<view class="iconTxt">关注</view>
-		<isAuthor bind:flagEvent="getFocus"></isAuthor>
-	</view>
-	<!-- <block wx:if="{{userFocus}}">
+	<block wx:if="{{ufId != ''}}">
 		<view class="focusView">
 			<view class="iconView">
 				<i class="iconfont icon-guanzhu1"></i>
@@ -72,7 +65,17 @@
 		</view>
 	</block>
 	<block wx:else>
-		
-	</block> -->
-	<view class="buyGasBtn">申请职位</view>
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu"></i>
+			</view>
+			<view class="iconTxt">关注</view>
+			<isAuthor bind:flagEvent="getFocus"></isAuthor>
+		</view>
+	</block>
+	<view class="buyGasBtn" data-phone="{{zpDetData.lxTel}}" bindtap="getPhoneCall">电话联系</view>
 </view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view> 

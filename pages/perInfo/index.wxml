@@ -1,0 +1,45 @@
+<form bindsubmit="formSubmit">
+	<view class="perInfoWrap padd">
+		<view class="perInfoItem">
+			<view class="perInfoTit">头像</view>
+			<view class="perInfoCon">
+				<image src="{{userHead}}" mode="aspectFill"></image>
+			</view>
+		</view>
+		<view class="perInfoItem">
+			<view class="perInfoTit">性别</view>
+			<view class="perInfoCon">
+				<picker bindchange="bindSexPicker" range="{{sexArr}}">
+				   <view>{{sex}}</view>
+				</picker>
+				<i class="iconfont icon-gengduo"></i>
+			</view>
+		</view>
+		<view class="perInfoItem">
+			<view class="perInfoTit">真实姓名</view>
+			<view class="perInfoCon">
+				<input type="text" name="realName" value="{{realName}}" placeholder="请输入您的真实姓名" maxlength="8"/>
+			</view>
+		</view>
+		<view class="perInfoItem">
+			<view class="perInfoTit">出生年月</view>
+			<view class="perInfoCon">
+				<picker bindchange="bindDatePicker" mode="date">
+				   <view class="{{isSelBirth ? '' : 'noSel'}}">{{birth}}</view>
+				</picker>
+				<i class="iconfont icon-gengduo"></i>
+			</view>
+		</view>
+		<view class="perInfoItem">
+			<view class="perInfoTit">手机号码</view>
+			<view class="perInfoCon">
+				<input type="number" name="phoneNum" value="{{phoneNum}}" placeholder="请输入您的手机号码" maxlength="11"/>
+			</view>
+		</view>
+	</view>
+	<button class="sureBtn" formType="submit">保存<isAuthor bind:flagEvent="submit"></isAuthor></button>
+</form>
+<view class="noDataList" style="margin-top: 320rpx;" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/empty.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view>

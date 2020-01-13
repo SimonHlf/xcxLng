@@ -2,7 +2,8 @@ const app = getApp();
 const util = require('../../utils/util');
 Page({
 	data : {
-		wholeIndexData : []
+		wholeIndexData : [],
+		serverUrl : app.globalData.serverUrl
 	},
 	onLoad(){
 		this.loadIndexData()
@@ -26,5 +27,13 @@ Page({
 				}
 			}
 		});
+	},
+	getNewsDet : function(e){
+		var newsId = e.currentTarget.dataset.id;
+		util.navigateTo('/pages/hangyeZixun/zixunDet?newsId=' + newsId);
+	},
+	getRqMyDet : function(e){
+		let tradeId = e.currentTarget.dataset.id;
+		util.navigateTo('/pages/rqMySellerDet/index?tradeId=' + tradeId);
 	}
 })

@@ -1,0 +1,72 @@
+page{
+	background: #efefef;
+}
+.perInfoWrap{
+	background: #fff;
+}
+.perInfoItem{
+	height: 100rpx;
+	line-height: 100rpx;
+}
+.perInfoTit{
+	width: 120rpx;
+	height: 100%;
+	float: left;
+	font-size: 28rpx;
+	color:#121212 ;
+}
+.perInfoCon{
+	width: 82%;
+	height: 100%;
+	float: left;
+}
+.perInfoCon image{
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+	overflow: hidden;
+	float: right;
+}
+.perInfoCon input{
+	width: 95%;
+	height: 100%;
+	text-align: right;
+	padding-right: 5%;
+	font-size: 28rpx;
+	color: #121212;
+}
+.perInfoCon picker{
+	width: 88%;
+	float: left;
+}
+.perInfoCon picker view{
+	width: 100%;
+	height: 100%;
+	text-align: right;
+	font-size: 28rpx;
+	color: #121212;
+}
+.perInfoCon picker view.noSel{
+	color: #808080;
+}
+.perInfoCon i{
+	width: 10%;
+	float: right;
+	color: #a9a9a9;
+	font-size: 26rpx;
+	margin-left: 2%;
+}
+.sureBtn{
+	width: 90% !important;
+	height: 90rpx;
+	line-height: 90rpx;
+	background: #3c7de9;
+	color: #fff;
+	text-align: center;
+	font-size: 31rpx;
+	padding: 0;
+	border-radius:8rpx !important;
+	margin-top: 100rpx;
+	font-weight: normal;
+	position: relative;
+}

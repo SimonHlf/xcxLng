@@ -158,6 +158,7 @@ page{
 	float: left;
 	margin-left: 30rpx;
 	text-align: center;
+	position: relative;
 }
 .botFun .focusView:last-child{
 	margin-left: 0;

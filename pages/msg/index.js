@@ -1,36 +1,69 @@
+const app = getApp();
+const util = require('../../utils/util');
 Page({
- /**
-   * 页面的初始数据
- */    
-	data: {
-     dates: [
-      { "data_name": "30", "name": "十三", "state": 0 },
-      { "data_name": "1", "name": "十四", "state": 0 },
-      { "data_name": "2", "name": "十五", "state": 0 },
-      { "data_name": "3", "name": "十六", "state": 0 },
-      { "data_name": "4", "name": "十七", "state": 0 },
-       { "data_name": "5", "name": "十八", "state": 0 },
-       { "data_name": "6", "name": "十九", "state": 0 },
-       { "data_name": "7", "name": "二十", "state": 0 },
-      { "data_name": "8", "name": "廿一", "state": 0 },
-      { "data_name": "9", "name": "廿二", "state": 0 },
-      { "data_name": "10", "name": "廿三", "state": 0 },
-       { "data_name": "11", "name": "廿四", "state": 0 },
-       { "data_name": "12", "name": "廿五", "state": 0 },
-      { "data_name": "13", "name": "廿六", "state": 0 },
-       { "data_name": "14", "name": "廿七", "state": 0 }
-     ]
-   },
-	//选择日期后加样式    
-	select_date: function (e) {
-		var index = e.currentTarget.dataset.key;
-		if (this.data.dates[index].state == 1) {
-			this.data.dates[index].state = 0;
-		}else if (this.data.dates[index].state == 0) {
-			this.data.dates[index].state = 1;
+	data : {
+		nowPage : 1,
+		isHasDataFlag : true,
+		loading : false,
+		msgListData : []
+	},
+	onLoad : function(){
+		this.loadMsgList();
+	},
+	onReachBottom : function(){
+		if( !this.data.loading ){
+			this.loadMsgList();
 		}
-		 this.setData({
-			dates: this.data.dates,
+	},
+	loadMsgList : function(){
+		var _this = this;
+		var field = {toUserId:wx.getStorageSync('userId'),msgTypeId:2,showStatus:0,readSta:-1,page:this.data.nowPage,limit:50};
+		this.setData({
+			loading : true
+		}); 
+		let { nowPage,msgListData } = this.data;
+		util.showLoading('数据加载中...');
+		wx.request({
+			url : app.globalData.serverUrl + '/MsgCenter/getMsgCenterPageList',
+			method:'get',
+			data : field,
+			success : function(res){  
+				wx.hideLoading(); 
+				console.log(res)
+				if(res.data.code == 200){
+					if(res.data.datas.length > 0){
+						nowPage += 1;
+						msgListData.push( ...res.data.datas );
+						_this.setData({ 
+							msgListData,
+							nowPage,
+							loading : false,
+							isHasDataFlag : true
+						});
+					}else{
+						_this.setData({
+							loading : false
+						}); 
+					} 
+				}else if(res.data.code == 1000){
+					util.showToast('服务器错误');
+				}else if(res.data.code == 50001){
+					_this.setData({
+						isHasDataFlag : false,
+						loading : false
+					});
+				}
+			}
 		});
-	 },
+	},
+	goPrimaryPage : function(e){
+		var goPageFlag = e.currentTarget.dataset.flag,
+			type=e.currentTarget.dataset.type;
+		if(goPageFlag){
+			//util.navigateTo('/pages/pubDriverZp/index?currPageType=addPub');
+			//gasTradeOrder  ->燃气买卖订单管理 我的发布已卖出的气
+			//joinCpy->审核人员加入公司
+		}
+		
+	}
 })

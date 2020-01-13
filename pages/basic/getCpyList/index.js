@@ -5,7 +5,8 @@ Page({
 	data : {
 		state:-1,
 		cpyData:[],
-		isHasDataFlag : true
+		isHasDataFlag : true,
+		address : ''
 	},
 	onLoad : function(options){
 		currPage = options.currPage;
@@ -51,7 +52,8 @@ Page({
 	},
 	selectCpy : function(e){
 		var cpyName = e.currentTarget.dataset.cpyname,
-			cpyId = e.currentTarget.dataset.cpyid;
+			cpyId = e.currentTarget.dataset.cpyid,
+			dz = e.currentTarget.dataset.dz;
 		this.setData({
 			state:e.currentTarget.dataset.key
 		});
@@ -61,6 +63,12 @@ Page({
 			cpyName : cpyName,
 			cpyId : cpyId
 		});
+		if(currPage == 'addDriverZpPage'){
+			prevPage.setData({
+				address : dz,
+				isBackBySelComp : true
+			});
+		}
 		wx.navigateBack({
 			delta:1
 		})

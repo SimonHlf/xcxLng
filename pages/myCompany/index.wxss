@@ -1,0 +1,9 @@
+.joinItem{
+	width:686rpx;
+	height: 256rpx;
+	margin:20rpx auto 0;
+}
+.joinItem image{
+	width: 100%;
+	height: 100%;
+}

@@ -44,6 +44,7 @@ page{
 	color: #3c7de9;
 	padding: 0 15rpx;
 	margin-right: 20rpx;
+	margin-bottom: 15rpx;
 }
 .zhiweiDetInfo{
 	background: #fff;
@@ -108,7 +109,6 @@ page{
 	width:80rpx;
 	height: 80rpx;
 	border-radius: 50%;
-	background: pink;
 	float: left;
 }
 .sellerTel .sellerImg image{
@@ -182,6 +182,7 @@ page{
 	float: left;
 	margin-left: 30rpx;
 	text-align: center;
+	position: relative;
 }
 .botFun .focusView:last-child{
 	margin-left: 0;

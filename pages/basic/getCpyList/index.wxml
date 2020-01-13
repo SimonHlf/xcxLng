@@ -9,6 +9,7 @@
 		data-key="{{index}}"
 		data-cpyname="{{item.cpyName}}"
 		data-cpyid="{{item.cpyId}}"
+		data-dz="{{item.address}}"
 		bindtap="selectCpy" 
 	>{{item.cpyName}}</view>
 </view> 

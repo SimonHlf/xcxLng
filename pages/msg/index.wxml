@@ -1,8 +1,39 @@
-<view class='appointent-date'>
- <view  class="appointent-date-div {{item.state==1?'active-tag':''}}" bindtap="select_date" data-num="0" wx:for="{{dates}}" data-key='{{index}}'>
-   <view class="flex-item" >
-	 <rich-text class='data_name'>{{item.data_name}}</rich-text>
-	 <rich-text>{{item.name}}</rich-text>
-   </view>
- </view>  
+<view class="msgListWrap padd">
+	<view class="msgListItem"
+		wx:for="{{msgListData}}"
+		wx:key="index"
+		data-id="{{item.primaryId}}"
+		data-flag="{{item.goPageFlag}}"
+		data-type="{{item.primaryType}}"
+		bindtap="goPrimaryPage"
+	>
+		<view class="pubTime">{{item.addTime}}</view>
+		<view class="msgListCon clearfix">
+			<block wx:if="{{item.goPageFlag}}">
+				<view class="innerCon hasMore">{{item.title}}</view>
+				<view class="moreBtn"><i class="iconfont icon-gengduo"></i></view>
+			</block>
+			<block wx:else>
+				<view class="innerCon">{{item.title}}</view>
+			</block>
+		</view>
+	</view>
 </view>
+<view class="noDataList" style="margin-top: 320rpx;" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/empty.png"></image>
+	<view class="noDataTxt">暂无消息记录</view>
+</view>
+<block wx:if="{{isHasDataFlag}}">
+	<view class="loadingIcon">
+		<block wx:if="{{loading}}">
+			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+		</block>
+		<block wx:else>
+			<view class="noDataTxt">
+				<text>——————</text>
+				<text>我是有底线的~</text>
+				<text>——————</text>
+			</view>
+		</block>
+	</view> 
+</block>

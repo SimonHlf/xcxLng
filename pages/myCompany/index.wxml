@@ -1,0 +1,10 @@
+<view class="myComp padd">
+	<view class="noCompData">
+		<view class="joinItem">
+			<image src="../../images/join.png"></image>
+		</view>
+		<view class="joinItem">
+			<image src="../../images/newCreate.png"></image>
+		</view>
+	</view>
+</view>

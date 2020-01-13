@@ -98,9 +98,12 @@
 		<text>燃气贸易</text>
 		<navigator url="/pages/rqMaoyi/index" open-type="switchTab" hover-class="none">更多</navigator>
 	</view>
-	<view class="rqMyList clearfix">
+	<view class="rqMyList clearfix"
+		data-id="{{wholeIndexData.gasTradeList[0].gasTradeId}}"
+		bindtap="getRqMyDet"
+	>
 		<view class="myImg">
-			<image src="{{wholeIndexData.gasTradeList.headImg}}"></image>
+			<image src="{{serverUrl}}/{{wholeIndexData.gasTradeList[0].headImg}}" mode="aspectFill"></image>
 		</view>
 		<view class="rqMyListCon">
 			<view class="rqMyListTit ellip">{{wholeIndexData.gasTradeList[0].title}}</view>
@@ -149,19 +152,19 @@
 			<view class="listNews clearfix"
 				wx:for="{{wholeIndexData.newsList}}"
 				wx:key="*this"
+				data-id="{{item.newId}}"
+				bindtap="getNewsDet"
 			>
-				<navigator>
-					<view class="listNewsImg">
-						
+				<view class="listNewsImg">
+					<image src="{{serverUrl}}/{{item.mainImg}}" mode="aspectFill"></image>
+				</view>
+				<view class="listNewsCon">
+					<view class="newsTit ellip">{{item.newTitle}}</view>
+					<view class="from">
+						<text>{{item.addTime}}</text>
+						<text>阅读全文</text>
 					</view>
-					<view class="listNewsCon">
-						<view class="newsTit ellip">{{item.newTitle}}</view>
-						<view class="from">
-							<text>{{item.addTime}}</text>
-							<text>阅读全文</text>
-						</view>
-					</view>
-				</navigator>
+				</view>
 			</view>
 		</block>
 		<block wx:else>

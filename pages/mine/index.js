@@ -43,5 +43,11 @@ Page({
 				userName : wx.getStorageSync('userInfo').nickName
 			});
 		}
+	},
+	editMyInfo : function(){
+		util.navigateTo('/pages/perInfo/index');
+	},
+	goMyCompany : function(){
+		util.navigateTo('/pages/myCompany/index');
 	}
-})
+}) 

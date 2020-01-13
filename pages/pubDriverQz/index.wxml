@@ -135,6 +135,17 @@
 				</view>
 			</view>
 		</view>
+		<view class="modConWrap clearfix">
+			<view class="modConItem">
+				<view class="modTit">工作年限</view>
+				<view class="modCon smPadd">
+					<picker bindchange="bindWorkExpPicker" range="{{jlYear}}" range-key="{{'name'}}">
+					   <view class="{{workYear ? '' : 'noSel'}}">{{workYearName}}</view>
+					</picker>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+		</view>
 		<view class="modConWrap hasPadd clearfix">
 			<view class="modConItem noBor">
 				<view class="modTit">工作经历</view>

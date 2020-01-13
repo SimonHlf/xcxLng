@@ -1,3 +1,12 @@
-<!--pages/hangyeZixun/zixunDet.wxml-->
-<text>pages/hangyeZixun/zixunDet.wxml</text>
-<!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="newsDetWrap padd">
+	<view class="newsTit multiEllip">{{newsData.title}}</view>
+	<view class="pubTime">{{newsData.addTime}}</view>
+	<view class="newCon">
+		<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+	</view>
+</view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view> 

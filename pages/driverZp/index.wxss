@@ -40,7 +40,7 @@ page{
 	font-size: 26rpx;
 }
 .zpList .zpListItem{
-	padding:20rpx 0;
+	padding:20rpx 0 5rpx;
 	border-bottom: 1rpx solid #e8e8e8;
 }
 .compName{
@@ -52,10 +52,10 @@ page{
 }
 .compNameTxt{
 	float: left;
-	width: 80%;
+	width: 70%;
 }
 .price{
-	width: 20%;
+	width: 30%;
 	float: right;
 	text-align: right;
 	color: #d32f2f;
@@ -84,4 +84,5 @@ page{
 	color: #3c7de9;
 	padding: 0 15rpx;
 	margin-right: 20rpx;
+	margin-bottom: 15rpx;
 }
