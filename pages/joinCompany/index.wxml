@@ -1,0 +1,94 @@
+<view class="navTab">
+	<view class="tabItem active"><view class="lineView"></view>贸易商</view>
+	<view class="tabItem"><view class="lineView"></view>设备厂商</view>
+	<view class="tabItem"><view class="lineView"></view>物流公司</view>
+	<view class="tabItem"><view class="lineView"></view>液厂</view>
+</view>
+<view class="compListWrap padd">
+	<view class="listItem">
+		<view class="itemTit ellip">濮阳亮宇实业有限濮阳亮宇实业有限公司濮阳亮宇实业有限公司濮阳亮宇实业有限公司公司</view>
+		<view class="location clearfix">
+			<i class="iconfont icon-weizhi"></i>
+			<view class="ellip">濮阳市经开大道黄河路交叉道黄河路交叉口路西海斯口路西海斯顿公园</view>
+		</view>
+		<view class="applyBtn">申请加入</view>
+	</view>
+	<view class="listItem">
+		<view class="itemTit ellip">濮阳亮宇实业有限濮阳亮宇实业有限公司濮阳亮宇实业有限公司濮阳亮宇实业有限公司公司</view>
+		<view class="location clearfix">
+			<i class="iconfont icon-weizhi"></i>
+			<view class="ellip">濮阳市经开大道黄河路交叉道黄河路交叉口路西海斯口路西海斯顿公园</view>
+		</view>
+		<view class="applyBtn notJoin">申请加入</view>
+	</view>
+</view>
+<view class="maskLayer"></view>
+<view class="buyGasView">
+	<view class="buyGasTit joinComp">选择已有贸易公司(多选)</view>
+	<view class="buyGasForm">
+		<form bindsubmit="formSubmit">
+			<scroll-view scroll-y="true">
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实濮阳亮宇实业有限公司濮阳亮宇实业有限公司业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实濮阳亮宇实业有限公司濮阳亮宇实业有限公司业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实濮阳亮宇实业有限公司濮阳亮宇实业有限公司业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+				<view class="myListItem">
+					<view class="myTit ellip">濮阳亮宇实濮阳亮宇实业有限公司濮阳亮宇实业有限公司业有限公司</view>
+					<view class="checkView"></view>
+				</view>
+			</scroll-view>
+			<!-- <view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-xingming"></i>
+				</view>
+				<input type="text" name="buyUserName" placeholder="请输入您的姓名" maxlength="6"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-shouji"></i>
+				</view>
+				<input type="number" name="phoneNum" placeholder="请输入您的手机号码" maxlength="11"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-psDizhi"></i>
+				</view>
+				<input type="text" name="psArea" placeholder="请输入您的配送地址(如实填写)" maxlength="50"/>
+			</view>
+			<view class="buyGasItem">
+				<view class="buyGasIcon">
+					<i class="iconfont icon-baojia"></i>
+				</view>
+				<input type="number" name="buyPrice" placeholder="请输入您的报价" maxlength="7"/>
+			</view> -->
+			<button class="subBtn spec" formType="submit">提交信息</button>
+		</form>
+	</view>
+	<view class="closeView">
+		<i class="iconfont icon-guanbi"></i>
+	</view>
+</view>

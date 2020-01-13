@@ -1,6 +1,9 @@
 {
   "pages": [
-	  "pages/mine/index",
+	 "pages/myCompany/companyDet",
+    "pages/joinCompany/index",
+    "pages/myCompany/index",
+    "pages/mine/index",
     "pages/perInfo/index",
     "pages/msg/index",
     "pages/index/index",
@@ -51,8 +54,7 @@
     "pages/basic/getWqpfbz/index",
     "pages/basic/getGasType/index",
     "pages/trucksTrade/filter",
-    "pages/driverQz/filter",
-    "pages/myCompany/index"
+    "pages/driverQz/filter"
   ],
   "window": {
     "backgroundTextStyle": "light",

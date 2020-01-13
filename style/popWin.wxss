@@ -17,12 +17,22 @@
 	color: #fff;
 	border-radius: 8rpx 8rpx 0 0;
 }
+.buyGasTit.joinComp{
+	text-align: left;
+	line-height: 120rpx;
+	text-indent: 30rpx;
+}
 .buyGasForm{
 	width: 544rpx;
 	height: 510rpx;
 	background: #fff;
 	border-radius: 0 0 8rpx 8rpx;
 	padding: 30rpx;
+	background: pink;
+}
+.buyGasForm scroll-view{
+	height: 400rpx;
+	background: green;
 }
 .buyGasItem{
 	height: 80rpx;
@@ -59,6 +69,12 @@
 	border-radius: 100rpx;
 	font-weight: normal;
 }
+.subBtn.spec{
+	margin:30rpx auto 0;
+}
+.buyGasForm scroll-view {
+	height: 390rpx;
+}
 .closeView{
 	height:88rpx;
 	line-height: 88rpx;
@@ -67,4 +83,23 @@
 .closeView i{
 	font-size: 52rpx;
 	color: #fff;
+}
+.myListItem{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 28rpx;
+	color: #121212;
+	background: red;
+}
+.myListItem .myTit{
+	width: 80%;
+	height: 100%;
+	float: left;
+	background: yellow;
+}
+.myListItem .checkView{
+	width: 20%;
+	height: 100%;
+	float: left;
+	background: #ccc;
 }

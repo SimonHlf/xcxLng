@@ -1,0 +1,83 @@
+@import '../../style/popWin.wxss';
+page{
+	background: #fff;
+	margin-top: 91rpx;
+}
+.navTab{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.tabItem{
+	float: left;
+	height: 100%;
+	width: 25%;
+	font-size: 30rpx;
+	color: #121212;
+	text-align: center;
+	position: relative;
+}
+.lineView{
+	width: 120rpx;
+	height: 8rpx;
+	background: #3c7de9;
+	border-radius: 10rpx;
+	position: absolute;
+	left: 50%;
+	margin-left: -58rpx;
+	bottom: 0;
+	display: none;
+}
+.tabItem.active{
+	color: #3c7de9;
+}
+.tabItem.active .lineView{
+	display: block;
+}
+.listItem{
+	padding: 15rpx 0;
+	border-bottom: 1rpx solid #e8e8e8;
+	position: relative;
+}
+.itemTit{
+	max-width: 78%;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.location{
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+.location view,
+.location i{
+	float: left;
+}
+.location view{
+	max-width: 76%;
+}
+.location i{
+	font-size: 28rpx;
+	margin:1px 10rpx 0 0;
+}
+.applyBtn{
+	width: 135rpx;
+	height:56rpx;
+	line-height: 56rpx;
+	border:1rpx solid #3c7de9;
+	text-align: center;
+	font-size: 28rpx;
+	color: #3c7de9;
+	position: absolute;
+	right: 0;
+	top: 35rpx;
+}
+.applyBtn.notJoin{
+	border:1rpx solid #a9a9a9;
+	color: #a9a9a9;
+}

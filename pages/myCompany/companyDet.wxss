@@ -1,0 +1,59 @@
+page{
+	background: #efefef;
+}
+.waitDeal{
+	background: #fff;
+}
+.dealTit{
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.dealListItem{
+	padding: 20rpx 0;
+}
+.dealListItem .imageView{
+	width: 90rpx;
+	height: 90rpx;
+	background: pink;
+	border-radius: 50%;
+	float: left;
+}
+.dealListCon{
+	float: left;
+	margin-left: 15rpx;
+	width: 85%;
+	min-height: 90rpx;
+}
+.listConTit{
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	color: #121212;
+}
+.applyDate{
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+.dealBtnWrap{
+	width: 100%;
+	float: left;
+	height: 60rpx;
+}
+.dealBtn{
+	width: 100rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	border:1rpx solid #3c7de9;
+	float: right;
+	text-align: center;
+	font-size: 26rpx;
+	color: #3c7de9;
+	border-radius: 8rpx;
+}
+.dealBtn:first-child{
+	background: #3c7de9;
+	color: #fff;
+	margin-left: 40rpx;
+}

@@ -1,10 +1,43 @@
 <view class="myComp padd">
-	<view class="noCompData">
+	<!-- <view class="noCompData">
 		<view class="joinItem">
 			<image src="../../images/join.png"></image>
 		</view>
 		<view class="joinItem">
 			<image src="../../images/newCreate.png"></image>
 		</view>
+	</view> -->
+	<view class="hasCompImg">
+		
 	</view>
 </view>
+<view class="navTab">
+	<view class="innerTab padd">
+		<view class="tabNavItem active"><view class="lineView"></view>已有公司</view>
+		<view class="tabNavItem"><view class="lineView"></view>待审核</view>
+		<view class="tabNavItem"><view class="lineView"></view>未通过</view>
+	</view>
+</view>
+<view class="compList padd">
+	<view class="listItem">
+		<view class="itemTit">
+			<view class="titCon ellip">濮阳亮宇实业有限公司</view>
+		</view>
+		<view class="applyDate">申请日期：2019-02-10 14:30</view>
+	</view>
+	<view class="listItem">
+		<view class="itemTit waitCheck">
+			<view class="titCon ellip">濮阳亮宇实业有限公司</view>
+			<view class="waitCheckNum">2条申请待处理</view>
+		</view>
+		<view class="applyDate">申请日期：2019-02-10 14:30</view>
+	</view>
+	<view class="listItem">
+		<view class="itemTit waitCheck">
+			<view class="titCon ellip">濮阳亮宇实濮阳亮宇实业有限公司濮阳亮宇实业有限公司业有限公司</view>
+			<view class="waitCheckNum">2条申请待处理</view>
+		</view>
+		<view class="applyDate">申请日期：2019-02-10 14:30</view>
+	</view>
+</view>
+<view class="applyBtn">申请创建公司</view>

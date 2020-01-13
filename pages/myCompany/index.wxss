@@ -1,3 +1,7 @@
+page{
+	background: #fff;
+	margin-bottom: 95rpx;
+}
 .joinItem{
 	width:686rpx;
 	height: 256rpx;
@@ -6,4 +10,101 @@
 .joinItem image{
 	width: 100%;
 	height: 100%;
+}
+.hasCompImg{
+	width: 686rpx;
+	height: 180rpx;
+	background: pink;
+	margin:0rpx auto 0;
+}
+.navTab{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.tabNavItem{
+	width: 33%;
+	height: 100%;
+	float: left;
+	font-size: 30rpx;
+	color: #121212;
+	position: relative;
+}
+.tabNavItem:nth-of-type(3n){
+	width: 30%;
+	text-align: right;
+	padding-right: 3%;
+}
+.tabNavItem:nth-of-type(3n-1){
+	text-align: center;
+}
+.tabNavItem view.lineView{
+	width: 116rpx;
+	height: 8rpx;
+	background: #3c7de9;
+	border-radius: 10rpx;
+	position: absolute;
+	left: 50%;
+	margin-left: -58rpx;
+	bottom: 0;
+	display: none;
+}
+.tabNavItem:first-child .lineView{
+	left: 0;
+	margin-left: 0;
+}
+.tabNavItem:last-child .lineView{
+	margin-left: 0;
+	right: 0;
+}
+.tabNavItem.active{
+	color: #3c7de9;
+}
+.tabNavItem.active .lineView{
+	display: block;
+}
+.listItem{
+	padding: 15rpx 0;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.listItem .titCon{
+	width: 100%;
+}
+.itemTit{
+	width: 100%;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.applyDate{
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+.itemTit.waitCheck .titCon{
+	max-width: 72%;
+	float: left;
+}
+.itemTit.waitCheck .waitCheckNum{
+	float: left;
+	height: 38rpx;
+	line-height: 38rpx;
+	padding: 0 15rpx;
+	background: #fff8e5;
+	color: #ffc107;
+	font-size: 24rpx;
+	margin-top: 10rpx;
+}
+.applyBtn{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	font-size: 32rpx;
+	color: #fff;
+	text-align: center;
+	background: #3c7de9;
 }

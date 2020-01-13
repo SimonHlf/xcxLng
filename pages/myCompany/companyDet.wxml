@@ -1,0 +1,30 @@
+<view class="waitDeal padd">
+	<view class="dealTit">待处理</view>
+	<view class="dealListItem clearfix">
+		<view class="imageView">
+			
+		</view>
+		<view class="dealListCon">
+			<view class="listConTit ellip">王明申请加入公司</view>
+			<view class="applyDate">申请日期：2019-12-20 12:30</view>
+		</view>
+		<view class="dealBtnWrap">
+			<view class="dealBtn">同意</view>
+			<view class="dealBtn">拒绝</view>
+		</view>
+	</view>
+	
+	<view class="dealListItem clearfix">
+		<view class="imageView">
+			
+		</view>
+		<view class="dealListCon">
+			<view class="listConTit ellip">王明申请加入公司</view>
+			<view class="applyDate">申请日期：2019-12-20 12:30</view>
+		</view>
+		<view class="dealBtnWrap">
+			<view class="dealBtn">同意</view>
+			<view class="dealBtn">拒绝</view>
+		</view>
+	</view>
+</view>
