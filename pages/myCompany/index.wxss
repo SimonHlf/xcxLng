@@ -7,14 +7,14 @@ page{
 	height: 256rpx;
 	margin:20rpx auto 0;
 }
-.joinItem image{
+.joinItem image,
+.hasCompImg image{
 	width: 100%;
 	height: 100%;
 }
 .hasCompImg{
 	width: 686rpx;
 	height: 180rpx;
-	background: pink;
 	margin:0rpx auto 0;
 }
 .navTab{
@@ -67,6 +67,7 @@ page{
 .listItem{
 	padding: 15rpx 0;
 	border-bottom: 1rpx solid #e8e8e8;
+	position: relative;
 }
 .listItem .titCon{
 	width: 100%;
@@ -86,6 +87,9 @@ page{
 	max-width: 72%;
 	float: left;
 }
+.itemTit.waitCheck .titCon.specWid{
+	max-width: 78%;
+}
 .itemTit.waitCheck .waitCheckNum{
 	float: left;
 	height: 38rpx;
@@ -95,6 +99,47 @@ page{
 	color: #ffc107;
 	font-size: 24rpx;
 	margin-top: 10rpx;
+}
+.btnWrap{
+	width: 30%;
+	height: 100%;
+	position: absolute; 
+	right: 0;
+	top: 0;
+}
+.viewDet{
+	width: 50%;
+	height: 100%;
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.viewDet.specWid{
+	width:60%;
+	justify-content: flex-end;
+	float: right;
+}
+.viewDet.specWid i{
+	
+}
+.viewDet i{
+	color: #3c7de9;
+	font-size: 42rpx;
+}
+.waitNum{
+	width: 32rpx;
+	height: 32rpx;
+	line-height: 30rpx;
+	background: #d32f2f;
+	color: #fff;
+	font-size: 22rpx;
+	text-align: center;
+	position: absolute;
+	right: 16rpx;
+	top: 24rpx;
+	border-radius: 50%;
 }
 .applyBtn{
 	width: 100%;

@@ -1,4 +1,4 @@
-<view class="waitDeal padd">
+<!-- <view class="waitDeal padd">
 	<view class="dealTit">待处理</view>
 	<view class="dealListItem clearfix">
 		<view class="imageView">
@@ -27,4 +27,190 @@
 			<view class="dealBtn">拒绝</view>
 		</view>
 	</view>
+	<view class="goMore"><text>更多</text><i class="iconfont icon-gengduo"></i></view>
+</view> -->
+<view class="compDetWrap">
+	<view class="compDetTabNav">
+		<view class="tabItem active">公司信息</view>
+		<view class="tabItem">公司员工</view>
+		<view class="tabItem">司机/押运人</view>
+		<view class="tabItem">车头车牌</view>
+		<view class="tabItem">挂车车牌</view>
+	</view>
+	<view class="tabCon">
+		
+		<!-- 公司信息 -->
+		<view class="compInfo comTabCon padd" style="display: block;">
+			<view class="infoWrap">
+				<view class="infoItem">
+					<view class="iconView"><i class="iconfont icon-company"></i></view>
+					<view class="infoCon ellip">濮阳梁宇事业有限公司</view>
+				</view>
+				<view class="infoItem">
+					<view class="iconView"><i class="iconfont icon-leixing"></i></view>
+					<view class="infoCon ellip">LNG贸易商</view>
+				</view>
+				<view class="infoItem">
+					<view class="iconView"><i class="iconfont icon-weizhi1"></i></view>
+					<view class="infoCon ellip">河南省濮阳市华龙区科技创业园</view>
+				</view>
+				<view class="infoItem">
+					<view class="iconView"><i class="iconfont icon-yyzz"></i></view>
+					<view class="infoCon ellip">公司营业执照</view>
+				</view>
+				<view class="infoItem_spec">
+					<image></image>
+				</view>
+				<view class="infoItem">
+					<view class="iconView"><i class="iconfont icon-yyzz"></i></view>
+					<view class="infoCon ellip">公司资质</view>
+				</view>
+				<view class="infoItem_spec">
+					<image></image>
+				</view>
+				
+			</view>
+		</view>
+		<!-- 公司员工 -->
+		<view class="staffList comTabCon padd">
+			<view class="staffItem clearfix">
+				<view class="headImgView">
+					
+				</view>
+				<view class="staffInfo">
+					<view class="staffName">
+						<text>李大力</text>
+						<text>18790952312</text>
+					</view>
+					<view class="applyDate">申请日期：2019-12-20 14:30</view>
+					<view class="delBtn"><i class="iconfont icon-delete"></i></view>
+				</view>
+			</view>
+			<view class="staffItem clearfix">
+				<view class="headImgView">
+					
+				</view>
+				<view class="staffInfo">
+					<view class="staffName">
+						<text>李大力</text>
+						<text>18790952312</text>
+					</view>
+					<view class="applyDate">申请日期：2019-12-20 14:30</view>
+					<view class="delBtn"><i class="iconfont icon-delete"></i></view>
+				</view>
+			</view>
+			
+			<view class="staffItem clearfix">
+				<view class="headImgView">
+					
+				</view>
+				<view class="staffInfo">
+					<view class="staffName">
+						<text>李大力</text>
+						<text>18790952312</text>
+					</view>
+					<view class="applyDate">申请日期：2019-12-20 14:30</view>
+					<view class="delBtn"><i class="iconfont icon-delete"></i></view>
+				</view>
+			</view>
+			
+		</view>	
+			
+			
+		<!-- 司机/押运人 -->
+		<view class="driverYyy comTabCon padd">
+			<view class="yyyItem clearfix">
+				<view class="nameItem">
+					<text class="yyyTit">姓名</text>
+					<text class="yyyName">黄利峰</text>
+				</view>
+				<view class="telItem">
+					<text class="yyyTit">电话</text>
+					<text class="yyyName">18790951323</text>
+				</view>
+				<view class="edit"><i class="iconfont icon-bianji"></i></view>
+			</view>
+			<view class="yyyItem clearfix">
+				<view class="nameItem">
+					<text class="yyyTit">姓名</text>
+					<text class="yyyName">黄利峰1</text>
+				</view>
+				<view class="telItem">
+					<text class="yyyTit">电话</text>
+					<text class="yyyName">18790951323</text>
+				</view>
+				<view class="edit"><i class="iconfont icon-bianji"></i></view>
+			</view>
+		</view>
+		
+		<!-- 车头车牌 -->
+		<view class="driverYyy comTabCon padd">
+			<view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫JWWWWW</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+		</view>
+		
+		<!-- 挂车车牌 -->
+		<view class="driverYyy comTabCon padd">
+			<view class="noDataWrap">
+				<view class="noDataAdd">
+					<i class="iconfont icon-add"></i>
+					<text>添加挂车车牌信息</text>
+				</view>
+				<view class="tipInfo">暂无信息，点击添加</view>
+			</view>
+			<!-- <view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫J6Z283</text>
+				<i class="iconfont icon-bianji"></i>
+			</view>
+			<view class="cpList">
+				<text>豫JWWWWW</text>
+				<i class="iconfont icon-bianji"></i>
+			</view> -->
+		</view>
+			
+			
+	</view>
 </view>
+
+<view class="maskLayer" hidden="{{removeFlag}}"></view>
+<view class="confirmWrap" hidden="{{removeFlag}}">
+	<view class="confirmCon">确认要移除此员工吗？</view>
+	<view class="btnWrap">
+		<view class="confirmBtn sureBtn">确定</view>
+		<view class="confirmBtn cancelBtn">取消</view>
+	</view>
+</view>
+<!-- <view class="pubBtnWrap" bindtap="addCpNum">
+	<image src="../../images/pub.png"></image>
+	<i class="iconfont icon-tianjia"></i>
+</view> -->

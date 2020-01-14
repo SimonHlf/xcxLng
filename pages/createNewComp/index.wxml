@@ -1,0 +1,70 @@
+<view class="pubWrap">
+	<form bindsubmit="formSubmit">
+		<view class="pubForm padd">
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司名称</view>
+				<input type="text" name="compName" value="{{compName}}" placeholder="请输入公司名称(30字以内)" maxlength="30"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司类型</view>
+				<view class="selItem">
+					<picker bindchange="bindCompTypePicker" range="{{compTypeArr}}" range-key="{{'name'}}">
+					   <view class="{{compTypeFlag ? '' : 'noSel'}}">{{compTypeName}}</view>
+					</picker>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司所在省市</view>
+				<view class="selItem">
+					<city-picker bind:selected="selectCity"></city-picker>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司地址</view>
+				<input type="text" name="address" value="{{address}}" placeholder="请输入公司地址(40字内)" maxlength="40"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系人</view>
+				<input type="text" name="lxrName" value="{{lxrName}}" placeholder="请输入联系人姓名" maxlength="8"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系方式</view>
+				<input type="number" name="lxrTel" value="{{lxrTel}}" placeholder="请输入手机号码" maxlength="11"/>
+			</view>
+			<view class="pubItem_spec clearfix">
+				<view class="pubTit"><text>*</text>营业执照</view>
+				<view class="uploadMainImg dashedBor" bindtap='uploadMainImg'>
+					<image class="mainHeadImg" src="{{headImg}}" mode="aspectFill"></image>
+					<i class="iconfont icon-xiangji"></i>
+				</view>
+				<view class="tipInfoWrap">
+					<view class="tipInfo">请上传公司营业执照照片</view>
+					<view class="smTipInfo">上传营业执照增加信誉度</view>
+				</view>
+			</view>
+			<view class="pubItem_spec clearfix">
+				<view class="pubTit"><text>*</text>公司资质<text class="subTxt">(最多上传5张)</text></view>
+				<view class="upBdImgWrap clearfix">
+					<view class="multiImg"
+						 wx:for="{{upload_picture_list}}"
+						 wx:key="index"
+					> 
+						<image src="{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
+						<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+							<i class="iconfont icon-shanchu"></i>
+						</view>
+					</view>
+					<view class="uploadImg uploadDetImg" bindtap='uploadDetImg' hidden="{{isHasUpLenFlag}}">
+						<i class="iconfont icon-xiangji"></i>
+					</view>
+				</view>
+			</view>
+		</view>
+		<button class="sureBtn" formType="submit">
+			提交审核
+			<isAuthor bind:flagEvent="submit"></isAuthor>
+		</button>
+	</form>
+</view>

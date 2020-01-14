@@ -1,0 +1,24 @@
+@import '../../style/pubTrade.wxss';
+.tipInfoWrap{
+	float: left;
+	margin-left: 15rpx;
+}
+.tipInfoWrap .tipInfo{
+	font-size: 28rpx;
+	color: #121212;
+	margin:50rpx 0 10rpx 0;
+}
+.smTipInfo{
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+.uploadMainImg.dashedBor{
+	border:1rpx dashed #e8e8e8;
+}
+.selItem picker{
+	width: 94%;
+	float: left;
+}
+.selItem view.noSel{
+	color: #808080;
+}

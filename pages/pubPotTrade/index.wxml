@@ -10,7 +10,7 @@
 				</view>
 			</view>  
 			<view class="pubItem">
-				<view class="pubTit"><text>*</text>公司名称</view>
+				<view class="pubTit"><text>*</text>公司名称</view> 
 				<view class="selItem" bindtap="getCpyList">
 					<input placeholder="请选择公司" value="{{cpyName}}" disabled/>
 					<input type="text" name="cpyName" value="{{cpyId}}" hidden="{{true}}" diasbled/>

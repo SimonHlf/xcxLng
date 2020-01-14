@@ -157,7 +157,7 @@ Page({
 					util.showToast('服务器错误');
 				}else if(res.data.code == 50003){
 					util.showToast('当前' + _this.data.currTit + '已存在,不能重复添加');
-				}else if(res.data.code == 50003){
+				}else if(res.data.code == 70001){
 					util.showToast('您暂无增加' + _this.data.currTit + '的权限');
 				}
 			}

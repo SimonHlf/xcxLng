@@ -1,0 +1,70 @@
+page{
+	background:#efefef ;
+}
+.waitDeal{
+	background: #fff;
+	margin-bottom: 20rpx;
+}
+.dealListItem{
+	padding: 20rpx 0;
+	border-bottom: 1rpx solid #e8e8e8;
+}
+.dealListItem .imageView{
+	width: 86rpx;
+	height: 86rpx;
+	background: pink;
+	border-radius: 50%;
+	float: left;
+}
+.dealListCon{
+	float: left;
+	margin-left: 15rpx;
+	width: 84%;
+	min-height: 80rpx;
+}
+.listConTit{
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	color: #121212;
+}
+.applyDate{
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+.dealBtnWrap{
+	width: 100%;
+	float: left;
+	height: 60rpx;
+}
+.dealBtn{
+	width: 100rpx;
+	height: 55rpx;
+	line-height: 55rpx;
+	border:1rpx solid #3c7de9;
+	float: right;
+	text-align: center;
+	font-size: 26rpx;
+	color: #3c7de9;
+	border-radius: 8rpx;
+}
+.dealBtn:first-child{
+	background: #3c7de9;
+	color: #fff;
+	margin-left: 40rpx;
+}
+.goMore{
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	padding-bottom: 20rpx;
+	font-size: 28rpx;
+	color: #a9a9a9;
+	display: flex;
+	justify-content: center;
+}
+.goMore text{float: left;}
+.goMore i{
+	font-size: 22rpx;
+	float: left;
+}
