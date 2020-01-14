@@ -121,12 +121,12 @@ page{
 	justify-content: flex-end;
 	float: right;
 }
-.viewDet.specWid i{
-	
-}
 .viewDet i{
 	color: #3c7de9;
 	font-size: 42rpx;
+}
+.viewDet i.icon-bianji{
+	font-size: 36rpx;
 }
 .waitNum{
 	width: 32rpx;

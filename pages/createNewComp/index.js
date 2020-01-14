@@ -16,9 +16,16 @@ Page({
 		provName : '',
 		cityName : '',
 		lxrName :'',
-		lxrTel : ''
+		lxrTel : '',
+		currSta : 1
 	},
 	onLoad : function(options){
+		upSuccDetImgArr.length = 0;
+		this.setData({
+			currPageType : options.currPageType,
+			currSta : options.currSta
+		});
+		console.log(this.data.currSta)
 		this.getCompType();
 	},
 	bindCompTypePicker : function(e){
@@ -85,6 +92,8 @@ Page({
 			}else if(upSuccDetImgArr.length == 0){
 				util.showToast('请上传公司资质');
 			}else if(upSuccDetImgArr.length > 5){
+				console.log(upSuccDetImgArr)
+				console.log('buduiLen=' + upSuccDetImgArr)
 				util.showToast('公司资质图片最多上传5张');
 			}else{
 				var url = '',type = '',otherImg=upSuccDetImgArr.join(','),_this = this;
@@ -110,11 +119,12 @@ Page({
 							if(_this.data.currPageType == 'addPub'){
 								util.showToast('创建新公司成功,等待后台审核中...');
 								setTimeout(function(){
-									// let pages = getCurrentPages();
-									// let prevPage = pages[pages.length - 2];
-									// prevPage.setData({
-									// 	isCanPubFlag : true
-									// });
+									let pages = getCurrentPages();
+									let prevPage = pages[pages.length - 2];
+									prevPage.setData({
+										isCanPubFlag : true,
+										currSta : _this.data.currSta
+									});
 									wx.navigateBack({
 										delta:1
 									})
@@ -296,5 +306,6 @@ Page({
 				isHasUpLenFlag : false
 			});
 		}
+		console.log('upSuccDetImgArrLen=' + upSuccDetImgArr.length )
 	}
 })

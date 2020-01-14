@@ -22,45 +22,41 @@
 		><view class="lineView"></view>{{item}}</view>
 	</view>
 </view>
-<view class="compList padd">
-	<!-- <view class="listItem">
-		<view class="itemTit">
-			<view class="titCon ellip">濮阳亮宇实业有限公司</view>
-		</view>
-		<view class="applyDate">申请日期：2019-02-10 14:30</view>
-	</view>
-	<view class="listItem">
-		<view class="itemTit waitCheck">
-			<view class="titCon ellip">濮阳亮宇实业有限公司</view>
-		</view>
-		<view class="applyDate">申请日期：2019-02-10 14:30</view>
-		<view></view>
-	</view> -->
-	<view class="listItem"
-		wx:for="{{compList}}"
-		wx:key="index"
-		data-id="{{item.cpyId}}"
-	>
-		<view class="itemTit waitCheck"> 
-			<view class="titCon {{isPassFlag ? '' : 'specWid'}} ellip">{{item.cpyName}}</view>
-		</view>
-		<view class="applyDate">申请日期：2019-02-10 14:30</view>
-		<view class="btnWrap">
-			<block wx:if="{{isPassFlag}}">
-				<view class="viewDet">
-					<i class="iconfont icon-viewDet"></i>
-				</view>
-				<view class="viewDet">
-					<i class="iconfont icon-daichuli"></i>
-					<view class="waitNum">{{item.dealNum}}</view>
-				</view>
-			</block>
-			<block wx:else>
-				<view class="viewDet specWid">
-					<i class="iconfont icon-bianji"></i>
-				</view>
-			</block>
+<block wx:if="{{compList.length > 0}}">
+	<view class="compList padd">
+		<view class="listItem"
+			wx:for="{{compList}}"
+			wx:key="index"
+			data-id="{{item.cpyId}}"
+		>
+			<view class="itemTit waitCheck"> 
+				<view class="titCon {{isPassFlag ? '' : 'specWid'}} ellip">{{item.cpyName}}</view>
+			</view>
+			<view class="applyDate">申请日期：{{item.addTime}}</view>
+			<view class="btnWrap">
+				<block wx:if="{{isPassFlag}}">
+					<view class="viewDet">
+						<i class="iconfont icon-viewDet"></i>
+					</view>
+					<view class="viewDet">
+						<i class="iconfont icon-daichuli"></i>
+						<view class="waitNum">{{item.dealNum}}</view>
+					</view>
+				</block>
+				<block wx:else>
+					<view class="viewDet specWid">
+						<i class="iconfont icon-bianji"></i>
+					</view>
+				</block>
+			</view>
 		</view>
 	</view>
-</view>
+</block>
+<block wx:else>
+	<view class="noDataList">
+		<image mode="widthFix" src="../../images/noData.png"></image>
+		<view class="noDataTxt">暂无记录</view>
+	</view> 
+</block>
+
 <view class="applyBtn" bindtap="createNewComp">申请创建公司<isAuthor bind:flagEvent="pubPotTrade"></isAuthor></view>
