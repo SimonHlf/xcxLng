@@ -1,4 +1,4 @@
-// pages/joinCompany/index.js
+// pages/myResume/index.js
 Page({
 
   /**

@@ -30,7 +30,25 @@
 <!-- mineCon --> 
 <view class="mineNav">
 	<view class="innerMineNav">
-		<view class="mineNavItem" bindtap="goMyCompany">
+		<view class="mineItemWrap">
+			<view class="listItem" bindtap="goMyCompany">
+				<image src="../../images/mine/myComp.png"></image>
+				<text>我的公司</text>
+			</view>
+			<view class="listItem" bindtap="goMyJoinCompany">
+				<image src="../../images/mine/joinComp.png"></image>
+				<text>加入公司</text>
+			</view>
+			<view class="listItem">
+				<image src="../../images/mine/ycImg.png"></image>
+				<text>液厂管理</text>
+			</view>
+			<view class="listItem">
+				<image src="../../images/mine/myFocus.png"></image>
+				<text>我的关注</text>
+			</view>
+		</view>
+		<!-- <view class="mineNavItem" bindtap="goMyCompany">
 			<image src="../../images/mine/myComp.png"></image>
 			<text>我的公司</text>
 			<view class="lineView"></view>
@@ -38,7 +56,7 @@
 		<view class="mineNavItem">
 			<image src="../../images/mine/myFocus.png"></image>
 			<text>我的关注</text>
-		</view>
+		</view> -->
 	</view>
 </view>
 <!-- mineItem -->
@@ -76,7 +94,7 @@
 	<view class="innerMineItem">
 		<view class="mineItemTit">其他工具</view>
 		<view class="mineItemWrap">
-			<view class="listItem">
+			<view class="listItem" bindtap="goFeedBack">
 				<image src="../../images/mine/feedBack.png"></image>
 				<text>意见反馈</text>
 			</view>

@@ -1,13 +1,16 @@
 {
   "pages": [
+	  "pages/index/index",    
 	"pages/myCompany/index",
-	"pages/createNewComp/index",
+	  
+	"pages/myZp/index",
+    "pages/myResume/index",
+    "pages/mine/index",
+    "pages/feedBack/index",
+    "pages/createNewComp/index",
     "pages/dealWithCompApply/index",
     "pages/myCompany/companyDet",
-    "pages/index/index",
     "pages/basic/addDriverYyy/index",
-    "pages/mine/index",
-    "pages/joinCompany/index",
     "pages/perInfo/index",
     "pages/msg/index",
     "pages/hangyeZixun/index",

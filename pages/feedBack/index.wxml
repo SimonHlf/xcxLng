@@ -1,0 +1,57 @@
+<form bindsubmit="formSubmit">
+	<view class="feedBackWrap padd">
+		<view class="tit">问题反馈类型</view>
+		<view class="typeItemBox clearfix">
+			<view class="typeItem active">功能异常</view>
+			<view class="typeItem">体验问题</view>
+			<view class="typeItem">新功能建议</view> 
+			<view class="typeItem">其他</view>
+		</view>
+		<view class="feeBackCon">
+			<view class="editCon">
+				<textarea name="editCon" placeholder="操作时不能愉快使用现有功能？文字或者上传相关页面截图能方便我们快速解决问题噢~(300字以内)"  placeholder-class="holderCol" maxlength="300"/>
+			</view>
+			<view class="upImgWrap clearfix">
+				<!-- <view class="upImgItem">
+					<image src="../../images/cgmmBig.png" mode="aspectFill"></image>
+					<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+						<i class="iconfont icon-shanchu"></i>
+					</view>
+				</view>
+				<view class="upImgItem">
+					<image src="../../images/cgmmBig.png" mode="aspectFill"></image>
+					<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+						<i class="iconfont icon-shanchu"></i>
+					</view>
+				</view>
+				<view class="upImgItem">
+					<image src="../../images/cgmmBig.png" mode="aspectFill"></image>
+					<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+						<i class="iconfont icon-shanchu"></i>
+					</view>
+				</view>
+				<view class="upImgItem">
+					<image src="../../images/cgmmBig.png" mode="aspectFill"></image>
+					<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+						<i class="iconfont icon-shanchu"></i>
+					</view>
+				</view>
+				<view class="upImgItem">
+					<image src="../../images/cgmmBig.png" mode="aspectFill"></image>
+					<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
+						<i class="iconfont icon-shanchu"></i>
+					</view>
+				</view> -->
+				
+				<view class="uploadImg" bindtap='uploadDetImg' hidden="{{isHasUpLenFlag}}">
+					<i class="iconfont icon-xiangji"></i>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="phoneNum padd">
+		<view class="phoneTit">手机号码</view>
+		<input type="number" placeholder="请输入您的手机号码" maxlength="11"/>
+	</view>
+	<button class="sureBtn" formType="submit">提交反馈</button>
+</form>

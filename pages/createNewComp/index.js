@@ -13,20 +13,77 @@ Page({
 		succHeadImg : '',
 		upload_picture_list : [],
 		isHasUpLenFlag : false,
-		provName : '',
-		cityName : '',
-		lxrName :'',
+		provName : '请选择省',
+		cityName : '市',
+		lxrName :'', 
 		lxrTel : '',
-		currSta : 1
+		currSta : 1, 
+		cpyId : '',
+		serverUrl : app.globalData.serverUrl,
+		isHasSelFlag : false
 	},
 	onLoad : function(options){
 		upSuccDetImgArr.length = 0;
+		previewImgArr.length = 0;
 		this.setData({
+			upload_picture_list : [],
 			currPageType : options.currPageType,
 			currSta : options.currSta
-		});
-		console.log(this.data.currSta)
+		}); 
 		this.getCompType();
+		if(options.currPageType == 'editPub'){
+			this.setData({
+				cpyId : options.cpyId
+			});
+			this.getEditData();
+			wx.setNavigationBarTitle({
+				title : '编辑公司信息'
+			})
+		}else{
+			wx.setNavigationBarTitle({
+				title : '创建新公司'
+			})
+		}
+	},
+	getEditData : function(){
+		var _this = this,tmpZzImg = [];
+		wx.request({
+			url :app.globalData.serverUrl + '/company/getSpecCompanyDetail',
+			method:'get',
+			data :{compId:_this.data.cpyId},
+			success : function(res){
+				console.log(res)
+				if(res.data.code == 200){
+					var res = res.data.datas[0];
+					for(var i=0;i<res.zzImageList.length;i++){
+						var item = {};
+						item['path'] = app.globalData.serverUrl + '/' + res.zzImageList[i].czImage;
+						upSuccDetImgArr.push(res.zzImageList[i].czImage.replace('_small',''));
+						previewImgArr.push(app.globalData.serverUrl + '/' + res.zzImageList[i].czImage.replace('_small',''));
+						tmpZzImg.push(item);
+					}
+					_this.setData({
+						compName : res.cpyName,
+						compTypeName : res.cptTypeName,
+						comTypeId : res.cpyTypeId,
+						compTypeFlag : true,
+						isHasSelFlag : true,
+						provName : res.provName,
+						cityName : res.city,
+						lxrName : res.lxName,
+						address : res.address,
+						lxrTel : res.lxTel,
+						headImg : app.globalData.serverUrl + '/' + res.yyzzImg,
+						succHeadImg : res.yyzzImg.replace('_small',''),
+						upload_picture_list : tmpZzImg
+					});
+				}else if(res.data.code == 1000){
+					util.showToast('服务器错误');
+				}else if(res.data.code == 50001){
+					util.showToast('暂无当前公司信息');
+				}
+			}
+		});
 	},
 	bindCompTypePicker : function(e){
 		var _this = this;
@@ -45,7 +102,6 @@ Page({
 			data :{id:''},
 			success : function(res){
 				wx.hideLoading();
-				console.log(res)
 				if(res.data.code == 200){
 					_this.setData({
 						compTypeArr : res.data.datas
@@ -92,20 +148,25 @@ Page({
 			}else if(upSuccDetImgArr.length == 0){
 				util.showToast('请上传公司资质');
 			}else if(upSuccDetImgArr.length > 5){
-				console.log(upSuccDetImgArr)
-				console.log('buduiLen=' + upSuccDetImgArr)
 				util.showToast('公司资质图片最多上传5张');
 			}else{
-				var url = '',type = '',otherImg=upSuccDetImgArr.join(','),_this = this;
+				var url = '',type = '',otherImg=upSuccDetImgArr.join(','),_this = this,title = '';
 				var field = {owerUserId:wx.getStorageSync('userId'),name:this.data.compName,typeId:this.data.comTypeId,province:this.data.provName,city:this.data.cityName,county:'',address:this.data.address,lxname:this.data.lxrName,
 					lxtel:this.data.lxrTel,yyzzImg:this.data.succHeadImg,bankName:'',bankNo:'',bankAcc:'',zzImg:otherImg};
-				
 				console.log(field)
 				if(this.data.currPageType == 'addPub'){
 					url = app.globalData.serverUrl + '/company/addCompany';
 					type = 'post';
+					util.showLoading('发布中...');
+					title = '创建新公司';
+				}else{
+					url = app.globalData.serverUrl + '/company/updateCompany';
+					type = 'put';
+					util.showLoading('更新中...');
+					title = '编辑公司信息';
+					var fieldSpen = {id:this.data.cpyId};
+					field = Object.assign(field,fieldSpen);
 				}
-				util.showLoading('发布中...');
 				wx.request({
 					url : url,
 					method:type,
@@ -116,26 +177,24 @@ Page({
 					success : function(res){
 						util.hideLoading();
 						if(res.data.code == 200){
-							if(_this.data.currPageType == 'addPub'){
-								util.showToast('创建新公司成功,等待后台审核中...');
-								setTimeout(function(){
-									let pages = getCurrentPages();
-									let prevPage = pages[pages.length - 2];
-									prevPage.setData({
-										isCanPubFlag : true,
-										currSta : _this.data.currSta
-									});
-									wx.navigateBack({
-										delta:1
-									})
-								},1800);
-							}
+							util.showToast(title + '成功,等待后台审核中...');
+							setTimeout(function(){
+								let pages = getCurrentPages();
+								let prevPage = pages[pages.length - 2];
+								prevPage.setData({
+									isCanPubFlag : true,
+									currSta : _this.data.currSta
+								});
+								wx.navigateBack({
+									delta:1
+								})
+							},1800);
 						}else if(res.data.code == 1000){
 							util.showToast('服务器错误');
 						}else if(res.data.code == 20001){
 							util.showToast('用户暂未登录,请先登录');
 						}else if(res.data.code == 70001){
-							util.showToast('抱歉,您暂无权限创建新公司');
+							util.showToast('抱歉,您暂无权限创建/编辑新公司');
 						}else if(res.data.code == 50003){
 							util.showToast('当前公司已被创建,请重新编辑');
 						}
@@ -306,6 +365,5 @@ Page({
 				isHasUpLenFlag : false
 			});
 		}
-		console.log('upSuccDetImgArrLen=' + upSuccDetImgArr.length )
 	}
 })

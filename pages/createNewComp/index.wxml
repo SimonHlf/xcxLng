@@ -17,7 +17,7 @@
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>公司所在省市</view>
 				<view class="selItem">
-					<city-picker bind:selected="selectCity"></city-picker>
+					<city-picker province="{{provName}}" city="{{cityName}}"  isHasSelFlag="{{isHasSelFlag}}" bind:selected="selectCity"></city-picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
@@ -52,6 +52,12 @@
 						 wx:key="index"
 					> 
 						<image src="{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
+						<!-- <block wx:if="{{currPageType == 'addPub'}}">
+							
+						</block>
+						<block wx:else>
+							<image src="{{serverUrl}}/{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
+						</block> -->
 						<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
 							<i class="iconfont icon-shanchu"></i>
 						</view>

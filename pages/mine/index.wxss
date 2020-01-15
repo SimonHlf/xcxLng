@@ -79,7 +79,7 @@ page{
 	line-height: 120rpx;
 	font-size: 30rpx;
 	color:#fff;
-}
+}  
 .mineNav,
 .mineItem{
 	padding: 0 30rpx;
@@ -92,6 +92,7 @@ page{
 	z-index: 2;
 	border-radius: 8rpx;
 	margin-bottom: 20rpx;
+	padding-bottom: 15rpx;
 }
 .innerMineNav .mineNavItem{
 	width: 50%;
@@ -116,13 +117,13 @@ page{
 .innerMineNav .mineNavItem image{
 	width: 60rpx;
 	height: 60rpx;
-	margin-right: 15rpx;
+	margin-right: 15rpx; 
 }
 .innerMineItem{
 	background: #fff;
 	height:180rpx;
 	border-radius: 8rpx;
-	padding: 0 15rpx;
+	padding: 0 15rpx 15rpx;
 }
 .innerMineItem .mineItemTit{
 	height: 60rpx;

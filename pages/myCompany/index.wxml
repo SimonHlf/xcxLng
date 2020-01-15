@@ -1,14 +1,11 @@
 <view class="myComp padd">
-	<!-- <view class="noCompData">
-		<view class="joinItem">
-			<image src="../../images/join.png"></image>
-		</view>
-		<view class="joinItem">
-			<image src="../../images/newCreate.png"></image>
-		</view>
-	</view> -->
 	<view class="hasCompImg">
-		<image src="../../images/joinImg.png"></image>
+		<block wx:if="{{currJump == 'comeByMyComp'}}">
+			<image src="../../images/joinImg.png"></image>
+		</block>
+		<block wx:else>
+			<image src="../../images/create.jpg"></image>
+		</block>
 	</view>
 </view>
 <view class="navTab">
@@ -27,7 +24,6 @@
 		<view class="listItem"
 			wx:for="{{compList}}"
 			wx:key="index"
-			data-id="{{item.cpyId}}"
 		>
 			<view class="itemTit waitCheck"> 
 				<view class="titCon {{isPassFlag ? '' : 'specWid'}} ellip">{{item.cpyName}}</view>
@@ -44,7 +40,7 @@
 					</view>
 				</block>
 				<block wx:else>
-					<view class="viewDet specWid">
+					<view class="viewDet specWid" bindtap="editMyCompany" data-id="{{item.cpyId}}">
 						<i class="iconfont icon-bianji"></i>
 					</view>
 				</block>
@@ -58,5 +54,9 @@
 		<view class="noDataTxt">暂无记录</view>
 	</view> 
 </block>
-
-<view class="applyBtn" bindtap="createNewComp">申请创建公司<isAuthor bind:flagEvent="pubPotTrade"></isAuthor></view>
+<block wx:if="{{currJump == 'comeByMyComp'}}">
+	<view class="applyBtn" bindtap="createNewComp">申请创建公司<isAuthor bind:flagEvent="pubPotTrade"></isAuthor></view>
+</block>
+<block wx:else>
+	<view class="applyBtn" bindtap="joinHotComp">加入热门公司<isAuthor bind:flagEvent="pubPotTrade"></isAuthor></view>
+</block>

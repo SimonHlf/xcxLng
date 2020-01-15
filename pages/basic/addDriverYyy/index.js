@@ -38,7 +38,7 @@ Page({
 			driverName : e.detail.value.driverName,
 			driverPhone : e.detail.value.driverPhone
 		});
-		field = {compId:this.data.cpyId,name:this.data.driverName,mobile:this.data.driverPhone,sex:''};
+		field = {compId:this.data.cpyId,name:this.data.driverName,mobile:this.data.driverPhone,sex:'',userId:wx.getStorageSync('userId')};
 		url = app.globalData.serverUrl + '/company/addCompanyPsr';
 		wx.request({
 			url : url,

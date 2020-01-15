@@ -55,7 +55,7 @@ page{
 	margin:16rpx 10rpx 0 0;
 }
 .swiper{
-	width: 76%;
+	width: 86%;
 	height: 88rpx;
 	line-height: 88rpx;
 	font-size: 28rpx;

@@ -40,7 +40,7 @@ Page({
 	},
 	getCphList : function(){
 		var _this = this,
-			field = {cpyId:cpyId},url = '';
+			field = {compId:cpyId},url = '';
 		if(currJump == 'cpJump'){
 			url =  app.globalData.serverUrl + '/company/queryHeadCP';
 		}else if(currJump == 'gccpJump'){

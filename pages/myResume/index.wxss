@@ -1,0 +1,190 @@
+page{
+	background: #efefef ;
+}
+.basicInfo {
+	height: 280rpx;
+	position: relative;
+	margin-bottom: 20rpx;
+}
+.basicInfo image{
+	width: 100%;
+	height: 280rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+.infoWrap{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 280rpx;
+	z-index: 2;
+}
+.userHead{
+	width: 140rpx;
+	height: 140rpx;
+	background: yellow;
+	border-radius: 50%;
+	float: left;
+	margin-top: 70rpx;
+}
+.userInfo{
+	width: 75%;
+	min-height: 140rpx;
+	float: left;
+	margin-left: 20rpx;
+	margin-top: 70rpx;
+}
+.userName,
+.jlYear{
+	height: 50rpx;
+	line-height: 50rpx;
+}
+.userName text:first-child{
+	font-size: 32rpx;
+	font-weight: 620;
+	color: #121212;
+}
+.userName text.sex{
+	font-size: 24rpx;
+	color: #a9a9a9;
+	margin:0 15rpx;
+}
+.userName i{
+	color: #3c7de9;
+	font-size: 24rpx;
+}
+.jlYear text{
+	margin-right: 15rpx;
+	font-size: 28rpx;
+	color: #121212;
+}
+.phoneNum{
+	height: 40rpx;
+	line-height: 40rpx;
+	color: #121212;
+	font-size: 30rpx;
+}
+.modItem{
+	background: #fff;
+	margin-bottom: 20rpx;
+}
+.modTit{
+	height: 80rpx;
+	line-height: 80rpx;
+}
+.modTit view.lineView{
+	width:8rpx ;
+	height: 30rpx;
+	float: left;
+	background: #3c7de9;
+	margin-top: 27rpx;
+}
+.modTit .titTxt{
+	float: left;
+	font-size: 30rpx; 
+	font-weight: 620;
+	color: #121212;
+	margin-left: 10rpx;
+}
+.editView{
+	width: 20%;
+	height: 100%;
+	float: right;
+	text-align: right;
+	font-size: 26rpx;
+	color: #3c7de9;
+}
+.editView i{
+	font-size:32rpx ;
+	color:#3c7de9 ;
+}
+.editView i.icon-tianjia{
+	font-size: 26rpx;
+	margin-right: 10rpx;
+}
+.modConItem{
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	color: #121212;
+}
+.modConItem view{
+	float: left;
+}
+.modConItem view.iconView{
+	width: 8%;
+	height: 100%;
+	margin-top: -1rpx;
+}
+.modConItem view.iconView i{
+	font-size: 32rpx;
+	color: #909090;
+}
+.modConItem view.conTxt{
+	font-size: 28rpx;
+}
+.modConItem_spec{
+	margin-bottom: 15rpx;
+}
+.modConItem_spec.hasPadd{
+	padding-bottom: 20rpx;
+}
+.modConItem_spec.hasPadd.single{
+	font-size: 26rpx;
+	color: #606060;
+}
+.modConItem_spec .iconView{
+	width:76rpx ;
+	height: 76rpx;
+	line-height: 76rpx;
+	background: #e3edfe;
+	border-radius: 6rpx;
+	float: left;
+	margin-top: 10rpx;
+	text-align: center;
+}
+.modConItem_spec .iconView i{
+	font-si ze: 36rpx;
+	color: #91baff;
+}
+.modConItem_spec .conView{
+	float: left;
+	margin-left: 15rpx;
+	width: 86%;
+}
+.compName{
+	height: 50rpx;
+	line-height: 50rpx;
+	/* font-weight: 620; */
+	font-size: 30rpx;
+	color: #121212;
+}
+.compName .innerTxt{
+	width: 85%;
+	float: left;
+}
+.compName .editView{
+	width: 15%;
+	float: right;
+	font-weight: normal;
+}
+.compName .editView i{
+	font-size: 28rpx;
+}
+.dateRange{
+	font-size: 26rpx;
+	color: #121212;
+	margin-bottom: 10rpx;
+}
+.detCon{
+	font-size: 26rpx; 
+	color: #606060;
+	padding-bottom: 15rpx;
+}
+.detCon view{
+	float: left;
+	margin-right: 15rpx;
+}

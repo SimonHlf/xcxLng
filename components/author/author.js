@@ -45,7 +45,7 @@ Component({
 	methods : {    
 		goOn(){ 
 			this.triggerEvent('flagEvent', {isShowFlag:this.data.isShowFlag});
-		}, 
+		},  
 		//授权  
 		bindGetUserInfo(e){
 			let that = this; 

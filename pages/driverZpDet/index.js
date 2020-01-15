@@ -5,17 +5,21 @@ Page({
 		id : '',
 		zpDetData : [],
 		isHasDataFlag : true,
-		ufId : ''
+		ufId : '',
+		currJump : ''
 	},
 	onLoad : function(options){
+		console.log("hahhahahah-------")
 		this.setData({
 			id : options.id
 		});
 		this.loadZpDet();
 	},
 	loadZpDet : function(){
+		console.log("hahhahahah")
 		var _this = this;
 		var field = {id:this.data.id,userId:wx.getStorageSync('userId')};
+		console.log(field)
 		util.showLoading('加载中...');
 		wx.request({
 			url : app.globalData.serverUrl + '/driverZp/getDriverZpById',

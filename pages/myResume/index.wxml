@@ -1,0 +1,153 @@
+<view class="basicInfo">
+	<image src="../../images/resumeBg.jpg"></image>
+	<view class="infoWrap padd">
+		<view class="userHead">
+			
+		</view>
+		<view class="userInfo">
+			<view class="userName">
+				<text>黄冉</text>
+				<text class="sex">男</text>
+				<i class="iconfont icon-edit"></i>
+			</view>
+			<view class="jlYear">
+				<text>30岁</text>
+				<text>|</text>
+				<text>驾龄5年</text>
+				<text>|</text>
+				<text>濮阳</text>
+			</view>
+			<view class="phoneNum">1879092256</view>
+		</view>
+	</view>
+</view>
+<!-- 求职意向 -->
+<view class="modItem padd">
+	<view class="modTit">
+		<view class="lineView"></view>
+		<view class="titTxt">求职意向</view>
+		<view class="editView">
+			<i class="iconfont icon-edit"></i>
+		</view>
+	</view>
+	<view class="modCon">
+		<view class="modConItem">
+			<view class="iconView">
+				<i class="iconfont icon-weizhi1"></i>
+			</view>
+			<view class="conTxt">河南省濮阳市</view>
+		</view>
+		<view class="modConItem">
+			<view class="iconView">
+				<i class="iconfont icon-qiandai"></i>
+			</view>
+			<view class="conTxt">8000元</view>
+		</view>
+	</view>
+</view>
+<!-- 工作经历 -->
+<view class="modItem padd">
+	<view class="modTit">
+		<view class="lineView"></view>
+		<view class="titTxt">工作经历</view>
+		<view class="editView addView">
+			<i class="iconfont icon-tianjia"></i>
+			<text>添加</text>
+		</view>
+	</view>
+	<view class="modCon">
+		<view class="modConItem_spec clearfix">
+			<view class="iconView">
+				<i class="iconfont icon-gongwenbao"></i>
+			</view>
+			<view class="conView">
+				<view class="compName">
+					<view class="innerTxt ellip">惠州德赛集团有限惠州德赛集团有限公惠州德赛集团有限公公司</view>
+					<view class="editView">
+						<i class="iconfont icon-edit"></i>
+					</view>
+				</view>
+				<view class="dateRange">2018.1-2019.10</view>
+				<view class="detCon">1.负责给客户送天然气负责给客户送天然气负责给； 2.负责给客户送天然气负责给客户送天然气； 3.负责给客户送天然气负责给客户</view>
+			</view>
+		</view>
+		
+		<view class="modConItem_spec clearfix">
+			<view class="iconView">
+				<i class="iconfont icon-gongwenbao"></i>
+			</view>
+			<view class="conView">
+				<view class="compName">
+					<view class="innerTxt ellip">惠州德赛集团有限惠州德赛集团有限公惠州德赛集团有限公公司</view>
+					<view class="editView">
+						<i class="iconfont icon-edit"></i>
+					</view>
+				</view>
+				<view class="dateRange">2018.1-2019.10</view>
+				<view class="detCon">1.负责给客户送天然气负责给客户送天然气负责给； 2.负责给客户送天然气负责给客户送天然气； 3.负责给客户送天然气负责给客户</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 教育经历 -->
+<view class="modItem padd">
+	<view class="modTit">
+		<view class="lineView"></view>
+		<view class="titTxt">教育经历</view>
+		<view class="editView addView">
+			<i class="iconfont icon-tianjia"></i>
+			<text>添加</text>
+		</view>
+	</view>
+	<view class="modCon">
+		<view class="modConItem_spec hasPadd clearfix">
+			<view class="iconView">
+				<i class="iconfont icon-xueli"></i>
+			</view>
+			<view class="conView">
+				<view class="compName">
+					<view class="innerTxt ellip">山东蓝翔挖掘机大学</view>
+					<view class="editView">
+						<i class="iconfont icon-edit"></i>
+					</view>
+				</view>
+				<view class="detCon">
+					<view>2010.09-2010-11</view>
+					<view>|</view>
+					<view>大专</view>
+				</view>
+			</view>
+		</view>
+		<view class="modConItem_spec hasPadd clearfix">
+			<view class="iconView">
+				<i class="iconfont icon-xueli"></i>
+			</view>
+			<view class="conView">
+				<view class="compName">
+					<view class="innerTxt ellip">山东蓝翔挖掘机大学</view>
+					<view class="editView">
+						<i class="iconfont icon-edit"></i>
+					</view>
+				</view>
+				<view class="detCon">
+					<view>2010.09-2010-11</view>
+					<view>|</view>
+					<view>本科</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 自我评价 -->
+<view class="modItem padd">
+	<view class="modTit">
+		<view class="lineView"></view>
+		<view class="titTxt">自我评价</view>
+		<view class="editView addView">
+			<i class="iconfont icon-eidt"></i>
+		</view>
+	</view>
+	<view class="modCon">
+		<view class="modConItem_spec hasPadd single clearfix">吃苦耐劳，有责任心，耐心细致，同事相处融洽，驾驶技术 娴熟劳，有责任心，耐心细致，同事相处融洽，驾驶技术 娴熟，，多年驾驶经验</view>
+	</view>
+</view>

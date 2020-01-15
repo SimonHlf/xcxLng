@@ -1,0 +1,22 @@
+<view class="zpList padd">
+	<view class="zpListItem">
+		<view class="iconView">
+			<i class="iconfont icon-gongwenbao"></i>
+		</view>
+		<view class="conView">
+			<view class="compName">
+				<view class="innerTxt ellip">山东蓝翔挖掘机大学</view>
+				<view class="editView">
+					<i class="iconfont icon-edit"></i>
+				</view>
+			</view>
+			<view class="detCon">
+				<view>司机</view>
+				<view>|</view>
+				<view>2人</view>
+				<view>男</view>
+				<view>50岁</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -2,19 +2,22 @@ const app = getApp();
 const util = require('../../utils/util');
 Page({
 	data : {
+		currJump : 'comeByMyComp',
 		tabNav : ['已有公司','待审核','未通过'],
 		currentTab : 0,
 		compList:[],
 		isPassFlag : true,
 		isCanPubFlag : false,
 		currSta : 1
-	},
-	onLoad : function(){
+	}, 
+	onLoad : function(options){
+		this.setData({
+			//currJump : options.currJump
+		});
 		this.loadMyCompList(1);
 	},
 	onShow(){
 		if(this.data.isCanPubFlag){//从最新发布页面返回过来并且已经发布
-			console.log('this.data.currSta=' + this.data.currSta)
 			this.loadMyCompList(this.data.currSta); 
 		}
 	},
@@ -53,10 +56,20 @@ Page({
 		this.loadMyCompList(currSta);
 	},
 	loadMyCompList : function(currSta){ 
-		var _this = this; 
-		///userCompany/getSelfJoinCompanyList
-		var field = {userId:wx.getStorageSync('userId'),checkStatus:currSta},url = app.globalData.serverUrl + '/company/getSelfCreateCompanyList';
-		console.log(field)
+		var _this = this,url = ''; 
+		if(this.data.currJump == 'comeByMyComp'){
+			url = app.globalData.serverUrl + '/company/getSelfCreateCompanyList';
+			wx.setNavigationBarTitle({
+				title: '我的公司' 
+			})
+		}else if(this.data.currJump == 'comeByJoinComp'){
+			wx.setNavigationBarTitle({
+				title: '已加入公司' 
+			})
+			url = app.globalData.serverUrl + '/userCompany/getSelfJoinCompanyList';
+		}
+		var field = {userId:wx.getStorageSync('userId'),checkStatus:currSta};
+		//console.log(field)
 		util.showLoading('加载中...');
 		wx.request({
 			url : url,
@@ -64,7 +77,7 @@ Page({
 			data:field,
 			success : function(res){
 				util.hideLoading();
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					_this.setData({
 						compList : res.data.datas
@@ -83,5 +96,12 @@ Page({
 		if(wx.getStorageSync('userId')){
 			util.navigateTo('/pages/createNewComp/index?currPageType=addPub&currSta=' + this.data.currSta);
 		}
+	},
+	editMyCompany : function(e){
+		let cpyId = e.currentTarget.dataset.id;
+		util.navigateTo('/pages/createNewComp/index?currPageType=editPub&cpyId=' + cpyId + '&currSta=' + this.data.currSta);
+	},
+	joinHotComp : function(){
+		
 	}
 })

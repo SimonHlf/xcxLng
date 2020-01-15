@@ -1,0 +1,129 @@
+page{
+	background: #efefef;
+}
+.feedBackWrap{
+	border-top: 1rpx solid #e8e8e8;
+	background: #fff;
+	padding-bottom: 20rpx;
+}
+.tit{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 30rpx;
+	color: #121212;
+}
+.typeItem{
+	width: 154rpx;
+	height: 48rpx;
+	line-height: 48rpx;
+	text-align: center;
+	font-size: 26rpx;
+	color: #121212;
+	border:1rpx solid #a9a9a9;
+	float: left;
+	margin-right: 23rpx;
+}
+.typeItem:last-child{
+	margin-right: 0;
+}
+.typeItem.active{
+	color: #3c7de9;
+	border:1rpx solid #3c7de9;
+	background: #e0ecff;
+}
+.feeBackCon{
+	min-height: 400rpx;
+	background: #f8f8f8;
+	margin-top: 20rpx;
+}
+.editCon{
+	height: 300rpx;
+}
+.editCon textarea{
+	width: 94%;
+	height: 94%;
+	font-size: 26rpx;
+	padding: 3%;
+}
+.holderCol{
+	color: #a9a9a9;
+}
+.upImgWrap{
+	margin-top: 24rpx;
+	padding: 0 3%;
+}
+.upImgItem,
+.uploadImg{
+	width: 140rpx;
+	height: 140rpx;
+	border-radius: 6rpx;
+	float: left;
+	position: relative;
+	margin-right: 27rpx;
+	margin-bottom: 27rpx;
+	line-height: 140rpx;
+	text-align: center;
+}
+.uploadImg{
+	border:1rpx dashed #c8c8c8;
+}
+.upImgItem:nth-of-type(4n){
+	margin-right: 0;
+}
+.upImgItem image{
+	width: 142rpx;
+	height: 142rpx;
+	border-radius: 6rpx;
+}
+.delView{
+	width: 60rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 5;
+	text-align: center;
+	border-radius: 0 6rpx 0 0;
+}
+.delView i{
+	font-size: 36rpx;
+	color: #fff;
+}
+.uploadImg i{
+	font-size: 40rpx;
+	color: #c8c8c8;
+}
+.phoneNum{
+	height: 100rpx;
+	line-height: 100rpx;
+	background: #fff;
+}
+.phoneTit{
+	float: left;
+	font-size: 28rpx;
+	color: #121212;
+} 
+.phoneNum input{
+	float: left;
+	width: 80%;
+	height: 100%;
+	margin-left: 15rpx;
+	font-size: 26rpx;
+	color: #121212;
+}
+.sureBtn{
+	width: 600rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	background: #3c7de9;
+	color: #fff;
+	text-align: center;
+	font-size: 31rpx;
+	padding: 0;
+	margin-top: 100rpx;
+	font-weight: normal;
+	position: relative;
+	border-radius: 6rpx;
+}

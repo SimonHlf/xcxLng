@@ -80,6 +80,7 @@
 			vertical="true"
 			class="swiper">
 			<swiper-item
+				class="ellip"
 				wx:for="{{wholeIndexData.topMsgList}}"
 				wx:key="*this"
 			>{{item.title}}</swiper-item>

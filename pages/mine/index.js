@@ -48,6 +48,12 @@ Page({
 		util.navigateTo('/pages/perInfo/index');
 	},
 	goMyCompany : function(){
-		util.navigateTo('/pages/myCompany/index');
+		util.navigateTo('/pages/myCompany/index?currJump=comeByMyComp');
+	},
+	goMyJoinCompany : function(){
+		util.navigateTo('/pages/myCompany/index?currJump=comeByJoinComp');
+	},
+	goFeedBack : function(){
+		util.navigateTo('/pages/feedBack/index');
 	}
 }) 

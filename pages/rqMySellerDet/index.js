@@ -17,6 +17,7 @@ Page({
 		isHasDataFlag : true
 	},
 	onLoad(options){
+		psAreaData.length = 0;
 		this.setData({
 			tradeId : options.tradeId
 		});

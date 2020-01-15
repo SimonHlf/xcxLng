@@ -2,5 +2,5 @@
   "usingComponents": {
   	 "isAuthor" : "../../components/author/author"
   },
-  "navigationBarTitleText" : "我的公司"
+  "navigationBarTitleText" : ""
 }  

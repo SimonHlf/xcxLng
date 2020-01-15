@@ -8,6 +8,9 @@ Page({
 	onLoad(){
 		this.loadIndexData()
 	},
+	onShow(){
+		this.loadIndexData();
+	},
 	loadIndexData(){
 		let _this = this;
 		util.showLoading('数据加载中...')

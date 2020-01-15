@@ -127,10 +127,10 @@ Page({
 		});
 		cardNum = this.data.provView + this.data.wordsView + this.data.cardNum;
 		if(this.data.currTit == '车头车牌'){
-			field = {compId:this.data.cpyId,cp:cardNum};
+			field = {compId:this.data.cpyId,cp:cardNum,userId:wx.getStorageSync('userId')};
 			url = app.globalData.serverUrl + '/company/addTrucksHeadCp';
 		}else{
-			field = {compId:this.data.cpyId,gch:cardNum};
+			field = {compId:this.data.cpyId,gch:cardNum,userId:wx.getStorageSync('userId')};
 			url = app.globalData.serverUrl + '/company/addTrucksGcCp';
 		}
 		wx.request({
@@ -157,6 +157,8 @@ Page({
 					util.showToast('服务器错误');
 				}else if(res.data.code == 50003){
 					util.showToast('当前' + _this.data.currTit + '已存在,不能重复添加');
+				}else if(res.data.code == 10002){
+					util.showToast('参数不能为空');
 				}else if(res.data.code == 70001){
 					util.showToast('您暂无增加' + _this.data.currTit + '的权限');
 				}

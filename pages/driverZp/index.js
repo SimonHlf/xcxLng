@@ -89,6 +89,6 @@ Page({
 	},
 	getZpDet : function(e){
 		var id = e.currentTarget.dataset.id;
-		util.navigateTo('/pages/driverQzDet/index?id=' + id);
+		util.navigateTo('/pages/driverZpDet/index?id=' + id);
 	}
 })

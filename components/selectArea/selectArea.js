@@ -9,12 +9,26 @@ const component = {
 	  isShow: false,
 	  isHasSelFlag : false
 	},
+	properties : {
+		province : {
+			type : 'String'
+		},
+		city : {
+			type : 'String'
+		},
+		isHasSelFlag : {
+			type : 'Boolean'
+		}
+	}, 
 	attached : function(){
 		let provData = area.areaData;
 		this.setData({
 			provinces: area.areaData,
 			citys: area.areaData[0]['children'],
 		});
+	},
+	onShow() {
+		console.log('this.data.provName=' + this.data.provName)
 	},
 	methods : {
 		bindChange : function(e){
