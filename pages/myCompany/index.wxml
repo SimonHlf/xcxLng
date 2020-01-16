@@ -31,10 +31,10 @@
 			<view class="applyDate">申请日期：{{item.addTime}}</view>
 			<view class="btnWrap">
 				<block wx:if="{{isPassFlag}}">
-					<view class="viewDet">
+					<view class="viewDet" bindtap="viewCompDet" data-id="{{item.cpyId}}">
 						<i class="iconfont icon-viewDet"></i>
 					</view>
-					<view class="viewDet">
+					<view class="viewDet" bindtap="goDetalWidth" data-name="{{item.cpyName}}" data-id="{{item.cpyId}}">
 						<i class="iconfont icon-daichuli"></i>
 						<view class="waitNum">{{item.dealNum}}</view>
 					</view>

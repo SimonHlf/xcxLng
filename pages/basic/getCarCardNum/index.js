@@ -76,7 +76,8 @@ Page({
 						}
 					}
 					_this.setData({
-						cardNum : res.data.datas
+						cardNum : res.data.datas,
+						isHasDataFlag : true
 					});
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');

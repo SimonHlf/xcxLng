@@ -1,6 +1,6 @@
 <view class="modTit padd">
 	<view class="lineView"></view>
-	<view>添加{{currTit}}</view>
+	<view>{{currTit}}</view>
 </view>
 <form bindsubmit="formSubmit">
 	<view class="driverMod padd">

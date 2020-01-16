@@ -30,9 +30,10 @@ Page({
 		notUpLoadHeadImg : true,
 		isSelDate : false,
 		isHasUpLenFlag : false,
-		provName : '',
-		cityName : '',
-		kezukemaiFlag : false
+		provName : '请选择省',
+		cityName : '市',
+		kezukemaiFlag : false,
+		isHasSelFlag : false
 	},
 	onLoad : function(options){
 		this.setData({
@@ -144,7 +145,7 @@ Page({
 				util.showToast('请选择购置年份');
 			}else if(this.data.zzjzId == ''){
 				util.showToast('请选择装载介质');
-			}else if(this.data.provName == ''){
+			}else if(this.data.provName == '请选择省'){
 				util.showToast('请选择储罐所在地区');
 			}else if(this.data.zmjg == ''){
 				util.showToast('请输入租卖价格');
@@ -158,7 +159,7 @@ Page({
 				util.showToast('请输入联系人姓名');
 			}else if(this.data.lxrTel == ''){
 				util.showToast('请输入联系人手机号码');
-			}else if(!regPhone.test( this.data.lxrTel ) && this.data.lxrTel.length != 11){
+			}else if(!app.globalData.regPhone.test( this.data.lxrTel )){
 				util.showToast('手机号码格式不对，请重新填写');
 			}else{
 				var url = '',type = '',otherImg='',_this = this;

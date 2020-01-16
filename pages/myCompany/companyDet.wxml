@@ -1,181 +1,163 @@
-<!-- <view class="waitDeal padd">
-	<view class="dealTit">待处理</view>
-	<view class="dealListItem clearfix">
-		<view class="imageView">
-			
-		</view>
-		<view class="dealListCon">
-			<view class="listConTit ellip">王明申请加入公司</view>
-			<view class="applyDate">申请日期：2019-12-20 12:30</view>
-		</view>
-		<view class="dealBtnWrap">
-			<view class="dealBtn">同意</view>
-			<view class="dealBtn">拒绝</view>
-		</view>
-	</view>
-	
-	<view class="dealListItem clearfix">
-		<view class="imageView">
-			
-		</view>
-		<view class="dealListCon">
-			<view class="listConTit ellip">王明申请加入公司</view>
-			<view class="applyDate">申请日期：2019-12-20 12:30</view>
-		</view>
-		<view class="dealBtnWrap">
-			<view class="dealBtn">同意</view>
-			<view class="dealBtn">拒绝</view>
-		</view>
-	</view>
-	<view class="goMore"><text>更多</text><i class="iconfont icon-gengduo"></i></view>
-</view> -->
 <view class="compDetWrap">
 	<view class="compDetTabNav">
-		<view class="tabItem active">公司信息</view>
-		<view class="tabItem">公司员工</view>
-		<view class="tabItem">司机/押运人</view>
-		<view class="tabItem">车头车牌</view>
-		<view class="tabItem">挂车车牌</view>
-	</view>
+		<view class="tabItem {{currentTab == index ? 'active' : ''}}"
+			wx:for="{{tabNav}}"
+			wx:key="index"
+			data-index="{{index}}"
+			bindtap="getCurrentTabCon"
+		>{{item}}</view>
+	</view> 
 	<view class="tabCon">
-		
 		<!-- 公司信息 -->
-		<view class="compInfo comTabCon padd" style="display: block;">
+		<view class="compInfo comTabCon padd" hidden="{{currentTab != 0}}">
 			<view class="infoWrap">
 				<view class="infoItem">
 					<view class="iconView"><i class="iconfont icon-company"></i></view>
-					<view class="infoCon ellip">濮阳梁宇事业有限公司</view>
+					<view class="infoCon ellip">{{compInfoData.cpyName}}</view>
 				</view>
 				<view class="infoItem">
 					<view class="iconView"><i class="iconfont icon-leixing"></i></view>
-					<view class="infoCon ellip">LNG贸易商</view>
+					<view class="infoCon ellip">{{compInfoData.cptTypeName}}</view>
 				</view>
 				<view class="infoItem">
 					<view class="iconView"><i class="iconfont icon-weizhi1"></i></view>
-					<view class="infoCon ellip">河南省濮阳市华龙区科技创业园</view>
+					<view class="infoCon ellip">{{compInfoData.address}}</view>
 				</view>
 				<view class="infoItem">
 					<view class="iconView"><i class="iconfont icon-yyzz"></i></view>
 					<view class="infoCon ellip">公司营业执照</view>
 				</view>
 				<view class="infoItem_spec">
-					<image></image>
+					<image src="{{serverUrl}}/{{compInfoData.yyzzImg}}" bindtap="previewYyzz"  data-src="{{serverUrl}}/{{originYyzzImg}}"></image>
 				</view>
 				<view class="infoItem">
 					<view class="iconView"><i class="iconfont icon-yyzz"></i></view>
 					<view class="infoCon ellip">公司资质</view>
 				</view>
 				<view class="infoItem_spec">
-					<image></image>
+					<view class="imageDetItem"
+						wx:for="{{compInfoData.zzImageList}}"
+						wx:key="*this"
+					>
+						<image mode="aspectFill" src="{{serverUrl}}/{{item.czImage}}" bindtap="previewDetImg" data-index="{{index}}"></image>
+					</view>
 				</view>
 				
 			</view>
 		</view>
 		<!-- 公司员工 -->
-		<view class="staffList comTabCon padd">
-			<view class="staffItem clearfix">
+		<view class="staffList comTabCon padd" hidden="{{currentTab != 1}}">
+			<view class="staffItem clearfix"
+				wx:for="{{staffData}}"
+				wx:key="index"
+			>
 				<view class="headImgView">
-					
+					<image src="{{item.userHead}}"></image>
 				</view>
 				<view class="staffInfo">
 					<view class="staffName">
-						<text>李大力</text>
-						<text>18790952312</text>
+						<text>{{item.userName}}</text>
+						<text>{{item.userMobile}}</text>
 					</view>
-					<view class="applyDate">申请日期：2019-12-20 14:30</view>
-					<view class="delBtn"><i class="iconfont icon-delete"></i></view>
+					<view class="applyDate">申请日期：{{item.addTime}}</view>
+					<block wx:if="{{!item.selfCpyFlag}}">
+						<view class="delBtn" data-cpyid="{{item.cpyId}}" data-userid="{{item.userId}}" data-name="{{item.userName}}" bindtap="delUser"><i class="iconfont icon-delete"></i></view>
+					</block>
 				</view>
 			</view>
-			<view class="staffItem clearfix">
-				<view class="headImgView">
-					
-				</view>
-				<view class="staffInfo">
-					<view class="staffName">
-						<text>李大力</text>
-						<text>18790952312</text>
-					</view>
-					<view class="applyDate">申请日期：2019-12-20 14:30</view>
-					<view class="delBtn"><i class="iconfont icon-delete"></i></view>
-				</view>
-			</view>
-			
-			<view class="staffItem clearfix">
-				<view class="headImgView">
-					
-				</view>
-				<view class="staffInfo">
-					<view class="staffName">
-						<text>李大力</text>
-						<text>18790952312</text>
-					</view>
-					<view class="applyDate">申请日期：2019-12-20 14:30</view>
-					<view class="delBtn"><i class="iconfont icon-delete"></i></view>
-				</view>
-			</view>
-			
 		</view>	
 			
 			
 		<!-- 司机/押运人 -->
-		<view class="driverYyy comTabCon padd">
-			<view class="yyyItem clearfix">
-				<view class="nameItem">
-					<text class="yyyTit">姓名</text>
-					<text class="yyyName">黄利峰</text>
+		<view class="driverYyy comTabCon padd"  hidden="{{currentTab != 2}}">
+			<block wx:if="{{loadDriverYyy.length > 0}}">
+				<view class="yyyItem clearfix"
+					wx:for="{{loadDriverYyy}}"
+					wx:key="index"
+				>
+					<view class="nameItem"> 
+						<text class="yyyTit">姓名</text>
+						<text class="yyyName">{{item.psrName}}</text>
+					</view>
+					<view class="telItem">
+						<text class="yyyTit">电话</text>
+						<text class="yyyName">{{item.psrMobile}}</text>
+					</view>
+					<view class="edit" data-id="{{item.psrId}}" data-name="{{item.psrName}}" data-phone="{{item.psrMobile}}" bindtap="editYyyInfo"><i class="iconfont icon-bianji"></i></view>
 				</view>
-				<view class="telItem">
-					<text class="yyyTit">电话</text>
-					<text class="yyyName">18790951323</text>
+				<view class="pubBtnWrap" bindtap="addDriverYyy">
+					<image src="../../images/pub.png"></image>
+					<i class="iconfont icon-tianjia"></i>
 				</view>
-				<view class="edit"><i class="iconfont icon-bianji"></i></view>
-			</view>
-			<view class="yyyItem clearfix">
-				<view class="nameItem">
-					<text class="yyyTit">姓名</text>
-					<text class="yyyName">黄利峰1</text>
+			</block>
+			<block wx:else>
+				<view class="noDataWrap" style="margin-top: 200rpx;"  bindtap="addDriverYyy">
+					<view class="noDataAdd">
+						<i class="iconfont icon-add"></i>
+						<text>添加司机/押运人</text>
+					</view>
+					<view class="tipInfo">暂无信息，点击添加</view>
 				</view>
-				<view class="telItem">
-					<text class="yyyTit">电话</text>
-					<text class="yyyName">18790951323</text>
-				</view>
-				<view class="edit"><i class="iconfont icon-bianji"></i></view>
-			</view>
+			</block>
 		</view>
 		
 		<!-- 车头车牌 -->
-		<view class="driverYyy comTabCon padd">
-			<view class="cpList">
-				<text>豫J6Z283</text>
-				<i class="iconfont icon-bianji"></i>
-			</view>
-			<view class="cpList">
-				<text>豫J6Z283</text>
-				<i class="iconfont icon-bianji"></i>
-			</view>
-			<view class="cpList">
-				<text>豫J6Z283</text>
-				<i class="iconfont icon-bianji"></i>
-			</view>
-			<view class="cpList">
-				<text>豫J6Z283</text>
-				<i class="iconfont icon-bianji"></i>
-			</view>
-			<view class="cpList">
-				<text>豫JWWWWW</text>
-				<i class="iconfont icon-bianji"></i>
-			</view>
+		<view class="driverYyy comTabCon padd"  hidden="{{currentTab != 3}}">
+			<block wx:if="{{ctNumData.length > 0}}">
+				<view class="cpList"
+					wx:for="{{ctNumData}}"
+					wx:key="index"
+					bindtap="editCtNum"
+					data-cph="{{item.cph}}"
+					data-id="{{item.id}}"
+				>
+					<text>{{item.cph}}</text>
+					<i class="iconfont icon-bianji"></i>
+				</view>
+				<view class="pubBtnWrap" bindtap="addCtNum">
+					<image src="../../images/pub.png"></image>
+					<i class="iconfont icon-tianjia"></i>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="noDataWrap" style="margin-top: 200rpx;"  bindtap="addCtNum">
+					<view class="noDataAdd">
+						<i class="iconfont icon-add"></i>
+						<text>添加车头车牌</text>
+					</view>
+					<view class="tipInfo">暂无信息，点击添加</view>
+				</view>
+			</block>
 		</view>
 		
 		<!-- 挂车车牌 -->
-		<view class="driverYyy comTabCon padd">
-			<view class="noDataWrap">
-				<view class="noDataAdd">
-					<i class="iconfont icon-add"></i>
-					<text>添加挂车车牌信息</text>
+		<view class="driverYyy comTabCon padd"  hidden="{{currentTab != 4}}">
+			<block wx:if="{{gcNumData.length > 0}}">
+				<view class="cpList"
+					wx:for="{{gcNumData}}"
+					wx:key="index"
+					bindtap="editGcNum"
+					data-cph="{{item.cph}}"
+					data-id="{{item.id}}"
+				>
+					<text>{{item.cph}}</text>
+					<i class="iconfont icon-bianji"></i>
 				</view>
-				<view class="tipInfo">暂无信息，点击添加</view>
-			</view>
+				<view class="pubBtnWrap" bindtap="addGcNum">
+					<image src="../../images/pub.png"></image>
+					<i class="iconfont icon-tianjia"></i>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="noDataWrap" style="margin-top: 200rpx;"  bindtap="addGcNum">
+					<view class="noDataAdd">
+						<i class="iconfont icon-add"></i>
+						<text>添加挂车车牌信息</text>
+					</view>
+					<view class="tipInfo">暂无信息，点击添加</view>
+				</view>
+			</block>
+			
 			<!-- <view class="cpList">
 				<text>豫J6Z283</text>
 				<i class="iconfont icon-bianji"></i>

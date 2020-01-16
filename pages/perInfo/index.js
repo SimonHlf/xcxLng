@@ -62,7 +62,6 @@ Page({
 	},
 	formSubmit : function(e){
 		var submitField = e.detail.value;
-		var regPhone = /^1\d{10}$/;
 		this.setData({
 			realName : submitField.realName,
 			phoneNum : submitField.phoneNum
@@ -76,7 +75,7 @@ Page({
 				util.showToast('请选择出生年月');
 			}else if(this.data.phoneNum == ''){
 				util.showToast('请输入手机号码');
-			}else if(!regPhone.test( this.data.phoneNum ) && this.data.phoneNum.length != 11){
+			}else if(!app.globalData.regPhone.test( this.data.phoneNum )){
 				util.showToast('手机号码格式不对，请重新填写');
 			}else{
 				var field = {userId:wx.getStorageSync('userId'),realName:this.data.realName,mobile:this.data.phoneNum,sex:this.data.sex,birthday:this.data.birth};

@@ -33,7 +33,8 @@ Page({
 						}
 					}
 					_this.setData({
-						lqTypeData : res.data.datas
+						lqTypeData : res.data.datas,
+						isHasDataFlag : true
 					});
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');

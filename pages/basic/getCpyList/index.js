@@ -6,17 +6,27 @@ Page({
 		state:-1,
 		cpyData:[],
 		isHasDataFlag : true,
-		address : ''
+		address : '',
+		currTit : ''
 	},
 	onLoad : function(options){
 		currPage = options.currPage;
+		if(options.currPage == 'addRqTradePage'){
+			this.setData({
+				currTit : '贸易商'
+			});
+		}else{
+			this.setData({
+				currTit : '公司'
+			});
+		}
 		cpyId = options.cpyId;
 		this.getCpyList();
 	},
 	getCpyList : function(){ 
 		var _this = this,
 			field = null;
-		currPage == 'addRqTradePage' ? field = {typeName:'LNG贸易商',checkStatus:1,opt:1,userId:wx.getStorageSync('userId')} : {checkStatus:1,opt:1,userId:wx.getStorageSync('userId')};
+		currPage == 'addRqTradePage' ? field = {typeName:'LNG贸易商',checkStatus:1,opt:1,userId:wx.getStorageSync('userId')} : field = {checkStatus:1,opt:1,userId:wx.getStorageSync('userId')};
 		util.showLoading('加载中...');
 		wx.request({
 			url : app.globalData.serverUrl + '/company/getCompanyList',

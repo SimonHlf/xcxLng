@@ -1,14 +1,21 @@
 page{
 	background: #fff;
+	margin-top: 91rpx;
 }
 .compDetWrap{
 	background: #fff;
 }
 .compDetTabNav{
+	width: 100%;
 	height: 90rpx;
 	line-height: 90rpx;
 	border-bottom: 1rpx solid #e8e8e8;
 	color: #121212;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	background: #fff;
 }
 .compDetTabNav .tabItem{
 	width: 20%;
@@ -25,24 +32,24 @@ page{
 	height: 70rpx;
 	line-height: 70rpx;
 }
+.infoItem_spec image{
+	width: 100%;
+	margin-bottom: 20rpx;
+}
 .iconView{
-	width: 15%;
+	width: 8%;
 	height: 100%;
 	float: left;
-	text-align: center;
 }
 .iconView i{
 	color: #81b0ff;
 }
 .infoCon{
-	width: 85%;
+	width: 92%;
 	height: 100%;
  	float: left;
 	font-size: 26rpx;
 	color: #121212;
-}
-.comTabCon{
-	display: none;
 }
 .staffItem{
 	padding: 20rpx 0;

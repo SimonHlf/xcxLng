@@ -10,7 +10,7 @@
 				</view>
 			</view>
 			<view class="pubItem_spec clearfix"> 
-				<view class="pubTit">燃气设备主图<text>*</text></view>
+				<view class="pubTit"><text>*</text>燃气设备主图</view>
 				<view class="uploadMainImg" bindtap='uploadMainImg'>
 					<image class="mainHeadImg" src="{{headImg}}" mode="aspectFill"></image>
 					<i class="iconfont icon-xiangji"></i>

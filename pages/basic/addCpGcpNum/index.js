@@ -11,26 +11,66 @@ Page({
 		maskLayerFlag : true,
 		isShow_prov : false,
 		isShow_words : false,
-		currOpenType : '',
+		currOpenType : '', 
 		value_prov : [0],
 		value_words : [0],
-		cpyId : ''
+		cpyId : '',
+		currJump : '',
+		cphId : '',
+		gchId :''
 	},
 	onLoad(options){
 		if(options.currJump == 'cpJump'){
 			this.setData({
-				currTit : '车头车牌'
+				currJump : 'cpJump',
+				currTit : '添加车头车牌', 
+				cpyId : options.cpyId,
+				provView : this.data.cardTitle[0],
+				wordsView : this.data.cardWords[0]
 			});
 		}else if(options.currJump == 'gccpJump'){
 			this.setData({
-				currTit : '挂车车牌'
+				currJump : 'gccpJump',
+				currTit : '添加挂车车牌',
+				cpyId : options.cpyId,
+				provView : this.data.cardTitle[0],
+				wordsView : this.data.cardWords[0]
+			});
+		}else if(options.currJump == 'addByMine_ct'){
+			this.setData({
+				currJump : 'addByMine_ct',
+				currTit : '添加车头车牌',
+				cpyId : options.cpyId,
+				provView : this.data.cardTitle[0],
+				wordsView : this.data.cardWords[0]
+			});
+		}else if(options.currJump == 'addByMine_gc'){
+			this.setData({
+				currJump : 'addByMine_gc',
+				currTit : '添加挂车车牌',
+				cpyId : options.cpyId,
+				provView : this.data.cardTitle[0],
+				wordsView : this.data.cardWords[0]
+			});
+		}else if(options.currJump == 'editCphJump'){
+			this.setData({
+				currJump : 'editCphJump',
+				currTit : '编辑车头车牌',
+				cardNum : options.cph.substring(2,options.cph.length),
+				cphId : options.id,
+				provView : options.cph.substring(0,1),
+				wordsView : options.cph.substring(2,1)
+			});
+		}else if(options.currJump == 'editGcJump'){
+			this.setData({
+				currJump : 'editGcJump',
+				currTit : '编辑挂车车牌',
+				cardNum : options.gch.substring(2,options.gch.length),
+				gchId : options.id,
+				provView : options.gch.substring(0,1),
+				wordsView : options.gch.substring(2,1)
 			});
 		}
-		this.setData({
-			provView : this.data.cardTitle[0],
-			wordsView : this.data.cardWords[0],
-			cpyId : options.cpyId
-		});
 	},
 	selProv : function(){
 		this.setData({
@@ -79,7 +119,6 @@ Page({
 		})
 	},
 	selCurr : function(){
-		console.log(this.data.nowUsePage)
 		if(this.data.currOpenType == 'selProv'){
 			const val = this.data.value_prov;
 			this.setData({
@@ -109,7 +148,7 @@ Page({
 		}
 	},
 	formSubmit : function(e){
-		var _this = this,field = null,url = '',cardNum = '',reg =  /^[0-9a-zA-Z]+$/;
+		var _this = this,field = null,url = '',cardNum = '',reg =  /^[0-9a-zA-Z]+$/,type='';
 		if(e.detail.value.cardNum == ''){
 			util.showToast('请输入' + this.data.currTit);
 			return;
@@ -126,41 +165,79 @@ Page({
 			cardNum : e.detail.value.cardNum
 		});
 		cardNum = this.data.provView + this.data.wordsView + this.data.cardNum;
-		if(this.data.currTit == '车头车牌'){
+		if(this.data.currJump == 'cpJump' || this.data.currJump == 'addByMine_ct'){
 			field = {compId:this.data.cpyId,cp:cardNum,userId:wx.getStorageSync('userId')};
 			url = app.globalData.serverUrl + '/company/addTrucksHeadCp';
-		}else{
+			type = 'post';
+		}else if(this.data.currJump == 'gccpJump' ||　this.data.currJump == 'addByMine_gc'){
 			field = {compId:this.data.cpyId,gch:cardNum,userId:wx.getStorageSync('userId')};
 			url = app.globalData.serverUrl + '/company/addTrucksGcCp';
+			type = 'post';
+		}else if(this.data.currJump == 'editCphJump'){//编辑车头车牌
+			field = {id:this.data.cphId,cp:cardNum};
+			url = app.globalData.serverUrl + '/company/updateHeadCp';
+			type = 'put';
+		}else if(this.data.currJump == 'editGcJump'){
+			field = {id:this.data.gchId,gch:cardNum};
+			url = app.globalData.serverUrl + '/company/updateCompanyGcCp';
+			type = 'put';
 		}
+		console.log(field)
+		console.log(url)
 		wx.request({
 			url : url,
-			method:'post',
+			method:type,
 			data :field,
 			header: {
 			  'content-type': 'application/x-www-form-urlencoded',
 			},
 			success : function(res){
 				if(res.data.code == 200){
-					util.showToast('添加' + _this.data.currTit + '成功');
-					setTimeout(function(){
-						let pages = getCurrentPages();
-						let prevPage = pages[pages.length - 2];
-						prevPage.setData({
-							addNewFlag :  true
-						})
-						wx.navigateBack({
-							delta:1
-						})
-					},1500); 
+					util.showToast(_this.data.currTit + '成功');
+					if(_this.data.currJump == 'cpJump' || _this.data.currJump == 'addByMine_ct' || _this.data.currJump == 'gccpJump' ||　_this.data.currJump == 'addByMine_gc'){
+						setTimeout(function(){
+							let pages = getCurrentPages();
+							let prevPage = pages[pages.length - 2];
+							if(_this.data.currJump == 'cpJump' || _this.data.currJump == 'addByMine_ct'){
+								prevPage.setData({
+									addNewFlag_ct :  true
+								})
+							}else{
+								prevPage.setData({
+									addNewFlag_gc :  true
+								})
+							}
+							wx.navigateBack({
+								delta:1
+							})
+						},1500); 
+					}else if(_this.data.currJump == 'editCphJump' || _this.data.currJump == 'editGcJump'){
+						setTimeout(function(){
+							let pages = getCurrentPages();
+							let prevPage = pages[pages.length - 2];
+							if(_this.data.currJump == 'editCphJump'){
+								prevPage.setData({
+									isEditFlag_ct :  true
+								})
+							}else{
+								prevPage.setData({
+									isEditFlag_gc :  true
+								})
+							}
+							wx.navigateBack({
+								delta:1
+							})
+						},1500); 
+					}
+					
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');
 				}else if(res.data.code == 50003){
-					util.showToast('当前' + _this.data.currTit + '已存在,不能重复添加');
+					util.showToast('车头车牌/挂车车牌已存在,不能重复添加');
 				}else if(res.data.code == 10002){
 					util.showToast('参数不能为空');
 				}else if(res.data.code == 70001){
-					util.showToast('您暂无增加' + _this.data.currTit + '的权限');
+					util.showToast('您暂无' + _this.data.currTit + '的权限');
 				}
 			}
 		});

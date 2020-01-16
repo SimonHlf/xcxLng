@@ -1,6 +1,6 @@
 <view class="modTit padd">
 	<view class="lineView"></view>
-	<view>选择公司</view>
+	<view>选择{{currTit}}</view>
 </view>
 <view class="modList padd clearfix">
 	<view class="modListItem {{state == index ?'active' : ''}}"

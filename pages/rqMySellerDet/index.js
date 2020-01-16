@@ -18,6 +18,7 @@ Page({
 	},
 	onLoad(options){
 		psAreaData.length = 0;
+		previewImgArr.length = 0;
 		this.setData({
 			tradeId : options.tradeId
 		});

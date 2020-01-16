@@ -8,7 +8,8 @@ Page({
 		compList:[],
 		isPassFlag : true,
 		isCanPubFlag : false,
-		currSta : 1
+		currSta : 1,
+		isDealFlag : false
 	}, 
 	onLoad : function(options){
 		this.setData({
@@ -20,10 +21,14 @@ Page({
 		if(this.data.isCanPubFlag){//从最新发布页面返回过来并且已经发布
 			this.loadMyCompList(this.data.currSta); 
 		}
+		if(this.data.isDealFlag){//说明在申请页面已经处理申请并返回
+			this.loadMyCompList(1); 
+		}
 	},
 	onHide(){
 		this.setData({
-			isCanPubFlag : false
+			isCanPubFlag : false,
+			isDealFlag : false
 		});
 	},
 	getCurrentTabCon : function(e){
@@ -101,7 +106,16 @@ Page({
 		let cpyId = e.currentTarget.dataset.id;
 		util.navigateTo('/pages/createNewComp/index?currPageType=editPub&cpyId=' + cpyId + '&currSta=' + this.data.currSta);
 	},
+	viewCompDet : function(e){
+		let cpyId = e.currentTarget.dataset.id;
+		util.navigateTo('/pages/myCompany/companyDet?cpyId=' + cpyId);
+	},
 	joinHotComp : function(){
 		
+	},
+	goDetalWidth : function(e){
+		let cpyId = e.currentTarget.dataset.id,
+			name = e.currentTarget.dataset.name;
+		util.navigateTo('/pages/dealWithCompApply/index?cpyId=' + cpyId + '&name=' + name);
 	}
 })

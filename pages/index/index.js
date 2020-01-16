@@ -3,13 +3,21 @@ const util = require('../../utils/util');
 Page({
 	data : {
 		wholeIndexData : [],
+		isShowFlag : false,
 		serverUrl : app.globalData.serverUrl
 	},
 	onLoad(){
 		this.loadIndexData()
 	},
 	onShow(){
-		this.loadIndexData();
+		if(this.data.isShowFlag){
+			this.loadIndexData();
+		}
+	},
+	onHide : function(){
+		this.setData({
+			isShowFlag : true
+		});
 	},
 	loadIndexData(){
 		let _this = this;

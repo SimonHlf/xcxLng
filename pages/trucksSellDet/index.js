@@ -20,6 +20,8 @@ Page({
 		ufId : ''
 	},
 	onLoad(options){
+		previewImgArr.length = 0;
+		psAreaData.length = 0;
 		this.setData({
 			ttId : options.ttId
 		});

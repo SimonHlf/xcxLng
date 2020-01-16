@@ -17,8 +17,8 @@ Page({
 		cpyId : '',
 		headImg : '',
 		succHeadImg : '',
-		provName : '',
-		cityName : '',
+		provName : '请选择省',
+		cityName : '市',
 		carCardNum : '',
 		gcCardNum : '',
 		gznf : '请选择购置年份',
@@ -80,7 +80,8 @@ Page({
 		value_prov_gc : [0],
 		value_words : [0],
 		value_words_gc : [0],
-		currPageType : ''
+		currPageType : '',
+		isHasSelFlag : false
 	},
 	onLoad(options){
 		this.setData({
@@ -381,7 +382,6 @@ Page({
 	formSubmit : function(e){
 		let submitField = e.detail.value,
 			regNum = /^(0|[1-9][0-9]*)$/,
-			regPhone = /^1\d{10}$/,
 			regCardNum =  /^[0-9a-zA-Z]+$/;
 		this.setData({  
 			tradeTypeId : submitField.tradeTypeId,
@@ -474,7 +474,7 @@ Page({
 				util.showToast('请输入联系人姓名');
 			}else if(this.data.lxrTel == ''){
 				util.showToast('请输入联系人手机号码');
-			}else if(!regPhone.test( this.data.lxrTel ) && this.data.lxrTel.length != 11){
+			}else if(!app.globalData.regPhone.test( this.data.lxrTel )){
 				util.showToast('手机号码格式不对，请重新填写');
 			}else if(this.data.tradeTypeId == 1 && this.data.psAreaName == ''){
 				util.showToast('请选择运输范围');

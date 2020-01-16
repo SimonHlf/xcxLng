@@ -52,12 +52,6 @@
 						 wx:key="index"
 					> 
 						<image src="{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
-						<!-- <block wx:if="{{currPageType == 'addPub'}}">
-							
-						</block>
-						<block wx:else>
-							<image src="{{serverUrl}}/{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
-						</block> -->
 						<view class="delView" bindtap="delMultiImg" data-index="{{index}}">
 							<i class="iconfont icon-shanchu"></i>
 						</view>

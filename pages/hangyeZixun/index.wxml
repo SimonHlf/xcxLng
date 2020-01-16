@@ -17,3 +17,21 @@
 		</view>
 	</view>
 </view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt">暂无记录</view>
+</view> 
+<block wx:if="{{isHasDataFlag}}">
+	<view class="loadingIcon">
+		<block wx:if="{{loading}}">
+			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+		</block>
+		<block wx:else>
+			<view class="noDataTxt">
+				<text>——————</text>
+				<text>我是有底线的~</text>
+				<text>——————</text>
+			</view>
+		</block>
+	</view> 
+</block>

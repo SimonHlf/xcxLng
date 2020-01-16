@@ -44,7 +44,7 @@
 				</view>
 			</block>
 			<view class="pubItem_spec clearfix"> 
-				<view class="pubTit">车辆主图<text>*</text></view>
+				<view class="pubTit"><text>*</text>车辆主图</view>
 				<view class="uploadMainImg" bindtap='uploadMainImg'>
 					<image class="mainHeadImg" src="{{headImg}}" mode="aspectFill"></image>
 					<i class="iconfont icon-xiangji"></i>
@@ -53,7 +53,7 @@
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>车辆注册地</view>
 				<view class="selItem">
-					<city-picker bind:selected="selectCity"></city-picker>
+					<city-picker province="{{provName}}" city="{{cityName}}" isHasSelFlag="{{isHasSelFlag}}" bind:selected="selectCity"></city-picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>

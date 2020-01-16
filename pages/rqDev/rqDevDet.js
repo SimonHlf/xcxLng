@@ -15,6 +15,7 @@ Page({
 		ufId : ''
 	},
 	onLoad(options){
+		previewImgArr.length = 0;
 		this.setData({
 			rqDevId : options.rqDevId
 		});

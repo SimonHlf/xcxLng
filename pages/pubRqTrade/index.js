@@ -57,8 +57,7 @@ Page({
 	formSubmit : function(e){
 		let submitField = e.detail.value,
 			regNum = /^\+?[1-9]\d*$/,
-			regPriceNum = /^(0|[1-9][0-9]*)$/,
-			regPhone = /^1\d{10}$/;
+			regPriceNum = /^(0|[1-9][0-9]*)$/;
 		this.setData({  
 			cpyName : submitField.cpyName,
 			yydName : submitField.yydName,
@@ -99,7 +98,7 @@ Page({
 				util.showToast('请输入联系人姓名');
 			}else if(this.data.lxrTel == ''){
 				util.showToast('请输入联系人手机号码');
-			}else if(!regPhone.test( this.data.lxrTel ) && this.data.lxrTel.length != 11){
+			}else if(!app.globalData.regPhone.test( this.data.lxrTel )){
 				util.showToast('手机号码格式不对，请重新填写');
 			}else if(this.data.carCardNum == ''){
 				util.showToast('请选择车牌号');

@@ -194,12 +194,17 @@ page{
 }
 .proDetImg{
 	background: #fff;
+	padding:0 30rpx 15rpx;
 }
 .proDetImg.hasMargBot{
 	margin-bottom: 20rpx;
 }
 .detImgWrap image{
 	width: 100%;
+	margin-bottom: 15rpx;
+}
+.detImgWrap:last-child image{
+	margin-bottom: 0;
 }
 .botFun{
 	width: 100%;

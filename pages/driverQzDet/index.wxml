@@ -15,7 +15,12 @@
 	<view class="basicInfo">
 		<view>{{zpDetData.sex}}</view>
 		<view>{{zpDetData.age}}岁</view>
-		<view>{{zpDetData.marriage}}</view>
+		<block wx:if="{{zpDetData.marriage == '否'}}">
+			<view>未婚</view>
+		</block>
+		<block wx:else>
+			<view>已婚</view>
+		</block>
 		<view>{{zpDetData.education}}</view>
 	</view>
 	<view class="infoItemWrap clearfix"> 

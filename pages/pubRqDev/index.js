@@ -58,8 +58,7 @@ Page({
 	},
 	formSubmit : function(e){
 		let submitField = e.detail.value,
-			regNum = /^(0|[1-9][0-9]*)$/,
-			regPhone = /^1\d{10}$/;
+			regNum = /^(0|[1-9][0-9]*)$/;
 		this.setData({
 			cpyName : submitField.cpyName,
 			rqDevName : submitField.rqDevName,
@@ -95,7 +94,7 @@ Page({
 				util.showToast('请输入联系人姓名');
 			}else if(this.data.lxrTel == ''){
 				util.showToast('请输入联系人手机号码');
-			}else if(!regPhone.test( this.data.lxrTel ) && this.data.lxrTel.length != 11){
+			}else if(!app.globalData.regPhone.test( this.data.lxrTel )){
 				util.showToast('手机号码格式不对，请重新填写');
 			}else{
 				var url = '',type = '',otherImg='',_this = this;

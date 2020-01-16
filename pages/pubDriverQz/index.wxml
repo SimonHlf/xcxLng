@@ -63,7 +63,7 @@
 				<view class="modConItem short">
 					<view class="modTit">驾龄</view>
 					<view class="modCon">
-						<input type="number" name="driveYear" value="{{driveYear}}" placeholder="请输入驾龄" placeholder-class="numberHolder" maxlength="3"/>
+						<input type="number" name="driveYear" value="{{driveYear}}" placeholder="请输入驾龄" placeholder-class="numberHolder" maxlength="2"/>
 						<text class="unit">年</text>
 					</view>
 				</view>
@@ -109,7 +109,7 @@
 			<view class="modConItem">
 				<view class="modTit">期望月薪</view>
 				<view class="modCon smPadd">
-					<input type="number" name="qwyx" value="{{qwyx}}" placeholder-class="numberHolder" placeholder="请输入您的期望月薪(0为面议)"/>
+					<input type="number" name="qwyx" value="{{qwyx}}" placeholder-class="numberHolder" placeholder="请输入您的期望月薪(0为面议)" maxlength="5"/>
 					<text class="unit">元</text>
 				</view>
 			</view>

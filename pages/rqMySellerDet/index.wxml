@@ -3,7 +3,7 @@
 </view>
 <view class="sellerInfo padd">
 	<view class="topSellerInfo">
-		<view class="compName ellip">濮阳浩泰能源有限公司</view>
+		<view class="compName ellip">{{tradeDetData.cpyName}}</view>
 		<block wx:if="{{tradeDetData.hpRate == '暂无'}}">
 			<view class="hpNum">暂无公司好评度</view>
 		</block>

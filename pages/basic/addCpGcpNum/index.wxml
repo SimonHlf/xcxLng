@@ -1,6 +1,6 @@
 <view class="modTit padd">
 	<view class="lineView"></view>
-	<view>添加{{currTit}}号</view>
+	<view>{{currTit}}号</view>
 </view>
 <form bindsubmit="formSubmit">
 	<view class="cardNumWrap padd">

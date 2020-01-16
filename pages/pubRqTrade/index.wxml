@@ -27,7 +27,7 @@
 				<input type="text" name="lqName" value="{{lqTypeId}}" hidden="{{true}}" diasbled/>
 			</view>
 			<view class="pubItem_spec clearfix"> 
-				<view class="pubTit">燃气贸易主图<text>*</text></view>
+				<view class="pubTit"><text>*</text>燃气贸易主图</view>
 				<view class="uploadMainImg" bindtap='uploadMainImg'>
 					<image class="mainHeadImg" src="{{headImg}}" hidden="{{notUpLoadHeadImg}}" mode="aspectFill"></image>
 					<i class="iconfont icon-xiangji"></i>
@@ -35,11 +35,11 @@
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>装载量/m³</view>
-				<input type="number" name="zzlName" value="{{zzlName}}" placeholder="请输入装载量" maxlength="8"/>
+				<input type="number" name="zzlName" value="{{zzlName}}" placeholder="请输入装载量" maxlength="3"/>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>单价/元</view>
-				<input type="number" name="djName" value="{{djName}}" placeholder="请输入单价" maxlength="8"/>
+				<input type="number" name="djName" value="{{djName}}" placeholder="请输入单价" maxlength="4"/>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>装车日期</view>

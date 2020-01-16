@@ -56,32 +56,33 @@
 		<view class="ellip">{{zpDetData.address}}</view>
 	</view>
 </view>
-<block wx:if="{{currJump == 'comeByZpList'}}">
-	<view class="botFun">
-		<block wx:if="{{ufId != ''}}">
-			<view class="focusView">
-				<view class="iconView">
-					<i class="iconfont icon-guanzhu1"></i>
-				</view>
-				<view class="iconTxt">已关注</view>
-				<isAuthor bind:flagEvent="cancelFocus"></isAuthor>
+<view class="botFun">
+	<block wx:if="{{ufId != ''}}">
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu1"></i>
 			</view>
-		</block>
-		<block wx:else>
-			<view class="focusView">
-				<view class="iconView">
-					<i class="iconfont icon-guanzhu"></i>
-				</view>
-				<view class="iconTxt">关注</view>
-				<isAuthor bind:flagEvent="getFocus"></isAuthor>
+			<view class="iconTxt">已关注</view>
+			<isAuthor bind:flagEvent="cancelFocus"></isAuthor>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="focusView">
+			<view class="iconView">
+				<i class="iconfont icon-guanzhu"></i>
 			</view>
-		</block>
-		<view class="buyGasBtn" data-phone="{{zpDetData.lxTel}}" bindtap="getPhoneCall">电话联系</view>
-	</view>
+			<view class="iconTxt">关注</view>
+			<isAuthor bind:flagEvent="getFocus"></isAuthor>
+		</view>
+	</block>
+	<view class="buyGasBtn" data-phone="{{zpDetData.lxTel}}" bindtap="getPhoneCall">电话联系</view>
+</view>
+<!-- <block wx:if="{{currJump == 'comeByZpList'}}">
+	
 </block>
 <block wx:elif="{{currJump == 'mineZpPage'}}">
 	11111
-</block>
+</block> -->
 <view class="noDataList" hidden="{{isHasDataFlag}}">
 	<image mode="widthFix" src="../../images/noData.png"></image>
 	<view class="noDataTxt">暂无记录</view>

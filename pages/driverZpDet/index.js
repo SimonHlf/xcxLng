@@ -9,7 +9,6 @@ Page({
 		currJump : ''
 	},
 	onLoad : function(options){
-		console.log("hahhahahah-------")
 		this.setData({
 			id : options.id
 		});

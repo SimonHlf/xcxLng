@@ -205,6 +205,7 @@ page{
 .tradeDetView{
 	background: #fff;
 	margin-top: 20rpx;
+  padding: 0 30rpx 20rpx;
 }
 .imgItemTit{
 	height: 80rpx;

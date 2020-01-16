@@ -27,9 +27,6 @@ const component = {
 			citys: area.areaData[0]['children'],
 		});
 	},
-	onShow() {
-		console.log('this.data.provName=' + this.data.provName)
-	},
 	methods : {
 		bindChange : function(e){
 			const val = e.detail.value;

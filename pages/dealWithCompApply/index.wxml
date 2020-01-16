@@ -1,43 +1,26 @@
 <view class="waitDeal padd">
-	<view class="dealListItem clearfix">
-		<view class="imageView">
-			
+	<block wx:if="{{dealList.length > 0}}">
+		<view class="dealListItem clearfix"
+			wx:for="{{dealList}}"
+			wx:key="index"
+		>
+			<view class="imageView">
+				<image src="{{item.userHead}}"></image>
+			</view>
+			<view class="dealListCon">
+				<view class="listConTit ellip">{{item.userName}}</view>
+				<view class="applyDate">申请日期：{{item.addTime}}</view>
+			</view>
+			<view class="dealBtnWrap">
+				<view class="dealBtn" bindtap="agreeJoin" data-num="1" data-id="{{item.id}}" data-username="{{item.userName}}">同意</view>
+				<view class="dealBtn" bindtap="refuseJoin" data-num="2" data-id="{{item.id}}" data-username="{{item.userName}}">拒绝</view>
+			</view>
 		</view>
-		<view class="dealListCon">
-			<view class="listConTit ellip">王明申请加入公司</view>
-			<view class="applyDate">申请日期：2019-12-20 12:30</view>
+	</block>
+	<block wx:else>
+		<view class="noDataList">
+			<image mode="widthFix" src="../../images/noData.png"></image>
+			<view class="noDataTxt">暂无申请记录</view>
 		</view>
-		<view class="dealBtnWrap">
-			<view class="dealBtn">同意</view>
-			<view class="dealBtn">拒绝</view>
-		</view>
-	</view>
-	
-	<view class="dealListItem clearfix">
-		<view class="imageView">
-			
-		</view>
-		<view class="dealListCon">
-			<view class="listConTit ellip">王明申请加入公司</view>
-			<view class="applyDate">申请日期：2019-12-20 12:30</view>
-		</view>
-		<view class="dealBtnWrap">
-			<view class="dealBtn">同意</view>
-			<view class="dealBtn">拒绝</view>
-		</view>
-	</view>
-	
-	<view class="dealListItem clearfix">
-		<view class="imageView">
-			
-		</view>
-		<view class="dealListCon">
-			<view class="listConTit ellip">王明申请加入公司</view>
-			<view class="applyDate">申请日期：2019-12-20 12:30</view>
-		</view>
-		<view class="dealBtnWrap">
-			<view class="dealBtn">同意</view>
-			<view class="dealBtn">拒绝</view>
-		</view>
-	</view>
+	</block>
 </view>

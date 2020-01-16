@@ -133,7 +133,7 @@ Page({
 				util.showToast('请输入公司名称');
 			}else if(this.data.comTypeId == ''){
 				util.showToast('请选择公司类型');
-			}else if(this.data.provName == ''){
+			}else if(this.data.provName == '请选择省'){
 				util.showToast('请选择省市');
 			}else if(this.data.address == ''){
 				util.showToast('请输入公司地址');

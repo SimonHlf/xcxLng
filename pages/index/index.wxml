@@ -30,7 +30,7 @@
 				<view class="imgView">
 					<image src="../../images/cczm.jpg"></image>
 				</view>
-				<text class="listTabTit">槽车租卖</text>
+				<text class="listTabTit">货车租卖</text>
 			</navigator>
 		</view>
 	</view>
@@ -120,21 +120,21 @@
 <!-- mainBlock -->
 <view class="modulePart">
 	<view class="modItem">
-		<navigator class="blockA" hover-class="none">
+		<navigator class="blockA"  url="/pages/trucksTrade/index" hover-class="none">
 			<text class="modTit">货车租卖</text>
 			<view class="newPubNum hczuCol">{{wholeIndexData.tructsTradeNum}}条新发布</view>
 			<image src="../../images/hczmBig.png"></image>
 		</navigator>
 	</view>
 	<view class="modItem">
-		<navigator class="blockA">
+		<navigator class="blockA" url="/pages/rqDev/index" hover-class="none">
 			<text class="modTit">设备买卖</text>
 			<view class="newPubNum sbmmCol">{{wholeIndexData.rqDevTradeNum}}条新发布</view>
 			<image src="../../images/sbmmBig.png"></image>
 		</navigator>
 	</view>
 	<view class="modItem">
-		<navigator class="blockA">
+		<navigator class="blockA" url="/pages/potTrade/index" hover-class="none">
 			<text class="modTit">储罐买卖</text>
 			<view class="newPubNum cgmmCol">{{wholeIndexData.potTradeNum}}条新发布</view>
 			<image src="../../images/cgmmBig.png"></image>
@@ -142,11 +142,11 @@
 	</view>
 </view>
 <!-- 行业资讯 -->
-<view class="newsList">
+<view class="newsList"> 
 	<view class="myTit">
 	 	<text>行业资讯</text>
 		<text class="subTxt">最新政策早知道</text>
-		<navigator hover-class="none">更多</navigator>
+		<navigator hover-class="none" url="/pages/hangyeZixun/index">更多</navigator>
 	</view>
 	<view class="newsListCon">
 		<block wx:if="{{wholeIndexData.newsList.length > 0}}">

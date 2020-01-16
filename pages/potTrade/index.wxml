@@ -41,13 +41,13 @@
 				<text>购置年份：{{item.buyYear}}</text>
 			</view>
 			<view class="priceView clearfix">
-				<view class="hasFloat">
+				<view>
 					<text class="priceTit">租卖价格:</text>
 					<text class="unit">¥</text>
 					<text class="priceNum">{{item.leasePrice}}</text>
 				</view>
 				<block wx:if="{{item.tradeStatus == 0}}">
-					<view class="hasFloat hasMargL">
+					<view>
 						<text class="priceTit">销售价格:</text>
 						<text class="unit">¥</text>
 						<text class="priceNum">{{item.sellPrice}}</text>

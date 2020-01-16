@@ -15,7 +15,7 @@ Page({
 		ufId : ''
 	},
 	onLoad(options){
-		console.log(options.ptId)
+		previewImgArr.length = 0;
 		this.setData({
 			ptId : options.ptId
 		});

@@ -18,8 +18,13 @@
 		<view class="priceItem smPad clearfix">
 			<view class="priceNum potPrice">
 				<text class="rmb">￥</text>
-				<text class="price">{{devDetData.price}}</text>
-				<text class="rmb">万</text>
+				<block wx:if="{{devDetData.price == '面议'}}">
+					<text class="price">{{devDetData.price}}</text>
+				</block>
+				<block wx:else>
+					<text class="price">{{devDetData.price}}</text>
+					<text class="rmb">万</text>
+				</block>
 			</view>
 			<view class="distance">行驶{{devDetData.xsDistance}}公里</view>
 		</view>

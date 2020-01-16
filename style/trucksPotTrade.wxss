@@ -98,7 +98,7 @@ page{
 }
 .listItemCon{
 	width: 71%;
-	height: 180rpx;
+	min-height: 180rpx;
 	float: left;
 	position: relative;
 }
@@ -205,7 +205,7 @@ page{
 	color: #acacac;
 	font-size: 24rpx;
 	float: right;
-	margin-top: 3rpx;
+	margin-top: -40rpx;
 }
 .itemTit{
 	font-size: 30rpx;

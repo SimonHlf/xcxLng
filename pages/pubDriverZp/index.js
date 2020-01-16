@@ -101,7 +101,7 @@ Page({
 		});
 	},
 	formSubmit : function(e){
-		var submitField = e.detail.value,regPhone = /^1\d{10}$/,regNumThanZero = /^\+?[1-9]\d*$/,regNum = /^(0|[1-9][0-9]*)$/;
+		var submitField = e.detail.value,regNumThanZero = /^\+?[1-9]\d*$/,regNum = /^(0|[1-9][0-9]*)$/;
 		this.setData({
 			cpyId : submitField.cpyId,
 			address : submitField.address,
@@ -120,7 +120,7 @@ Page({
 				util.showToast('请输入联系人姓名');
 			}else if(this.data.isCanPubFlag && this.data.lxTel == ''){
 				util.showToast('请输入联系人手机号');
-			}else if(this.data.isCanPubFlag && !regPhone.test( this.data.lxTel ) && this.data.lxTel.length != 11){
+			}else if(this.data.isCanPubFlag && !app.globalData.regPhone.test( this.data.lxTel )){
 				util.showToast('手机号码格式不对，请重新填写');
 			}else if(this.data.isCanPubFlag && this.data.xinzi == ''){
 				util.showToast('请输入招聘月薪(0)为面议');

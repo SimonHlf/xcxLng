@@ -19,7 +19,7 @@ Page({
 	},
 	loadZxList : function(){
 		var _this = this;
-		var field = {msgTypeId:1,showStatus:0,readSta:-1};
+		var field = {msgTypeId:1,showStatus:0,readSta:-1,page:this.data.nowPage,limit:50};
 		this.setData({
 			loading : true
 		}); 
@@ -31,7 +31,7 @@ Page({
 			data : field,
 			success : function(res){  
 				wx.hideLoading(); 
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					if(res.data.datas.length > 0){
 						nowPage += 1;

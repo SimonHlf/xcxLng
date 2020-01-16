@@ -18,7 +18,7 @@
 				</view> 
 			</view>
 			<view class="pubItem_spec clearfix"> 
-				<view class="pubTit">储罐主图<text>*</text></view>
+				<view class="pubTit"><text>*</text>储罐主图</view>
 				<view class="uploadMainImg" bindtap='uploadMainImg'>
 					<image class="mainHeadImg" src="{{headImg}}" mode="aspectFill"></image>
 					<i class="iconfont icon-xiangji"></i>
@@ -34,7 +34,7 @@
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>储罐容积/m³</view>
-				<input type="number" name="volume" value="{{volume}}" placeholder="请输入储罐容积" maxlength="8"/>
+				<input type="number" name="volume" value="{{volume}}" placeholder="请输入储罐容积" maxlength="3"/>
 			</view>
 			<view class="pubItem"> 
 				<view class="pubTit"><text>*</text>有无手续</view>
@@ -66,18 +66,18 @@
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>储罐所在地区</view>
 				<view class="selItem">
-					<city-picker bind:selected="selectCity"></city-picker>
+					<city-picker province="{{provName}}" city="{{cityName}}" isHasSelFlag="{{isHasSelFlag}}" bind:selected="selectCity"></city-picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>
 			<view class="pubItem">
 				<view class="pubTit"><text>*</text>租卖价格</view>
-				<input type="number" name="zmjg" value="{{zmjg}}" placeholder="请输入租卖价格" maxlength="8"/>
+				<input type="number" name="zmjg" value="{{zmjg}}" placeholder="请输入租卖价格" maxlength="4"/>
 			</view>
 			<block wx:if="{{kezukemaiFlag}}">
 				<view class="pubItem">
 					<view class="pubTit"><text>*</text>销售价格</view>
-					<input type="number" name="xsjg" value="{{xsjg}}" placeholder="请输入销售价格" maxlength="8"/>
+					<input type="number" name="xsjg" value="{{xsjg}}" placeholder="请输入销售价格" maxlength="4"/>
 				</view>
 			</block>
 			<view class="pubItem">

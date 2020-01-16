@@ -47,7 +47,7 @@ Page({
 		});
 	},
 	formSubmit : function(e){
-		var submitField = e.detail.value,regPhone = /^1\d{10}$/,regNumThanZero = /^\+?[1-9]\d*$/,regNum = /^(0|[1-9][0-9]*)$/;
+		var submitField = e.detail.value,regNumThanZero = /^\+?[1-9]\d*$/,regNum = /^(0|[1-9][0-9]*)$/;
 		this.setData({
 			realName : submitField.realName,
 			driveYear : submitField.driveYear,
@@ -80,7 +80,7 @@ Page({
 				util.showToast('驾龄应为大于0的正整数');
 			}else if(this.data.phoneNum == ''){
 				util.showToast('请输入您的手机号码');
-			}else if(!regPhone.test( this.data.phoneNum ) && this.data.phoneNum.length != 11){
+			}else if(!app.globalData.regPhone.test( this.data.phoneNum )){
 				util.showToast('手机号码格式不对，请重新填写');
 			}else if(this.data.address == ''){
 				util.showToast('请输入您的通讯地址');

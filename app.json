@@ -1,8 +1,10 @@
 {
   "pages": [
-	  "pages/index/index",    
+	"pages/index/index",
 	"pages/myCompany/index",
-	  
+	"pages/pubTrucksTrade/index",
+	"pages/pubPotTrade/index",
+	"pages/trucksTrade/index",
 	"pages/myZp/index",
     "pages/myResume/index",
     "pages/mine/index",
@@ -12,7 +14,7 @@
     "pages/myCompany/companyDet",
     "pages/basic/addDriverYyy/index",
     "pages/perInfo/index",
-    "pages/msg/index",
+    "pages/msg/index", 
     "pages/hangyeZixun/index",
     "pages/hangyeZixun/zixunDet",
     "pages/driverQz/index",
@@ -24,11 +26,8 @@
     "pages/driverZpDet/index",
     "pages/driverQzDet/index",
     "pages/pubRqTrade/index",
-    "pages/trucksTrade/index",
-    "pages/pubTrucksTrade/index",
     "pages/basic/addCpGcpNum/index",
     "pages/trucksSellDet/index",
-    "pages/pubPotTrade/index",
     "pages/rqDev/index",
     "pages/pubRqDev/index",
     "pages/rqMySellerDet/index",

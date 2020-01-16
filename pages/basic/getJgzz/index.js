@@ -45,7 +45,8 @@ Page({
 							}
 						}
 						_this.setData({
-							carTypeData: _this.data.carTypeData
+							carTypeData: _this.data.carTypeData,
+							isHasDataFlag : true
 						});
 					}
 				}else if(res.data.code == 1000){

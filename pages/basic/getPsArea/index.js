@@ -35,7 +35,8 @@ Page({
 							} 
 						}
 						_this.setData({
-							provData: _this.data.provData
+							provData: _this.data.provData,
+							isHasDataFlag : true
 						});
 					}
 				}else if(res.data.code == 1000){
