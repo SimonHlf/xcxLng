@@ -511,16 +511,27 @@ Page({
 					});
 				}
 				if(flag && wx.getStorageSync('userId')){
-					var url = '',type = '',otherImg='',_this = this;
+					var url = '',type = '',otherImg='',_this = this,cardNum_ct = '',cardNum_gc = '';
 					if(upSuccDetImgArr.length > 0){ 
 						otherImg = upSuccDetImgArr.join(',');
 					} 
 					var signPlace = this.data.provName + '-' + this.data.cityName;
-					var cardNum_ct = this.data.provView + this.data.wordsView + this.data.carCardNum;
-					var cardNum_gc = '';
-					if(this.data.gcCardNum != ''){
-						cardNum_gc = this.data.provView_gc + this.data.wordsView_gc + this.data.gcCardNum;
+					if(this.data.compTypeId == 1){
+						cardNum_ct = this.data.provView + this.data.wordsView + this.data.carCardNum;
+						if(this.data.gcCardNum != ''){
+							cardNum_gc = this.data.provView_gc + this.data.wordsView_gc + this.data.gcCardNum;
+						}
+					}else{
+						cardNum_ct = this.data.carCardNum;
+						if(this.data.gcCardNum != ''){
+							cardNum_gc = this.data.gcCardNum;
+						}
 					}
+					// console.log('this.data.provView=' + this.data.provView)
+					// console.log('this.data.wordsView=' + this.data.wordsView)
+					// console.log('this.data.carCardNum=' + this.data.carCardNum)
+					console.log('cardNum_ct=' + cardNum_ct)
+					console.log('cardNum_gc=' + cardNum_gc)
 					var field = {userId:wx.getStorageSync('userId'),tradeType:this.data.tradeTypeId,compId:this.data.cpyName,trucksTypeId:this.data.carTypeId,mainImg:this.data.succHeadImg,trucksNo:cardNum_ct,
 								trucksGcNo:cardNum_gc,spYear:this.data.ctspny,buyYear:this.data.gznf,headTypeId:this.data.ctTypeId ,headPpId:this.data.ctPpId,
 								xsDistance:this.data.distance,wqpfbzId:this.data.wqpfbzId,potPpId:this.data.potBandId,potVol:this.data.volume,spYearPot:this.data.cgspny,

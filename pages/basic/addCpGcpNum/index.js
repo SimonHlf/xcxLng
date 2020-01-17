@@ -182,8 +182,6 @@ Page({
 			url = app.globalData.serverUrl + '/company/updateCompanyGcCp';
 			type = 'put';
 		}
-		console.log(field)
-		console.log(url)
 		wx.request({
 			url : url,
 			method:type,
@@ -200,11 +198,13 @@ Page({
 							let prevPage = pages[pages.length - 2];
 							if(_this.data.currJump == 'cpJump' || _this.data.currJump == 'addByMine_ct'){
 								prevPage.setData({
-									addNewFlag_ct :  true
+									addNewFlag_ct :  true,
+									addNewFlag : true
 								})
 							}else{
 								prevPage.setData({
-									addNewFlag_gc :  true
+									addNewFlag_gc :  true,
+									addNewFlag : true
 								})
 							}
 							wx.navigateBack({

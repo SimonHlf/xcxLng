@@ -10,6 +10,8 @@
 		data-cpyname="{{item.cpyName}}"
 		data-cpyid="{{item.cpyId}}"
 		data-dz="{{item.address}}"
+		data-lxrname="{{item.lxName}}"
+		data-lxrtel="{{item.lxTel}}"
 		bindtap="selectCpy" 
 	>{{item.cpyName}}</view>
 </view> 

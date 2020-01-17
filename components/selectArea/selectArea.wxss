@@ -39,6 +39,7 @@ view.areaViewTxt{
   z-index: 999;
   transition: ease .3s;
   transform: translateY(100%);
+  z-index: 100;
 }
 .city-body.active{
   transform: translateY(0);

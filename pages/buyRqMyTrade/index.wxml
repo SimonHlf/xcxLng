@@ -1,0 +1,50 @@
+<view class="pubWrap">
+	<form bindsubmit="formSubmit">
+		<view class="pubModTit padd">
+			<view><i class="iconfont icon-editInfo"></i></view>
+			<view>请填写以下信息</view>
+		</view>
+		<view class="pubForm padd">
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>公司名称</view>
+				<view class="selItem" bindtap="getCpyList">
+					<input placeholder="请选择公司" value="{{cpyName}}" disabled/>
+					<input type="text" value="{{cpyId}}" hidden="{{true}}" diasbled/>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view> 
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>联系电话</view>
+				<input type="number" name="lxrTel" value="{{lxrTel}}" placeholder="请输入您的手机号码" maxlength="11"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>报价</view>
+				<input type="number" name="buyPrice" value="{{buyPrice}}" placeholder="请输入您的报价(元/吨)" maxlength="5"/>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>配送区域</view>
+				<view class="selItem">
+					<city-picker province="{{lxrProv}}" city="{{lxrCity}}" isHasSelFlag="{{isHasSelFlag}}" bind:selected="selectCity"></city-picker>
+					<i class="iconfont icon-gengduo"></i>
+				</view>
+			</view>
+			<view class="pubItem">
+				<view class="pubTit"><text>*</text>详细地址</view>
+				<input type="text" name="psAddress" value="{{psAddress}}" placeholder="请输入您的详细地址" maxlength="40"/>
+			</view>
+			<view class="pubItem_spec clearfix">
+				<view class="pubTit">备注</view>
+				<view class="remark">
+					<textarea name="remark" value="{{remark}}" placeholder="请输入备注(200字以内)" maxlength="200"></textarea>
+				</view>
+			</view>
+		</view> 
+		
+		<button class="sureBtn" formType="submit">
+			我要买气
+			<isAuthor bind:flagEvent="submit"></isAuthor>
+		</button>
+	</form>
+</view>
+
+

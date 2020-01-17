@@ -59,3 +59,4 @@
 		</view>
 	</block>
 </view> 
+<view class="addMsgBtn" bindtap="addLngMsgDet">我要回复</view>

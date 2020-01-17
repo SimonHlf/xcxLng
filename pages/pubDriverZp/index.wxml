@@ -40,7 +40,7 @@
 				<view class="modConItem">
 					<view class="modTit">手机号码</view>
 					<view class="modCon wholeWid">
-						<input type="number" name="lxTel" value="{{lxTel}}" placeholder="请输入联系人手机号码"maxlength="11"/>
+						<input type="number" name="lxTel" value="{{lxTel}}" placeholder="请输入联系人手机号码" placeholder-class="numberHolder" maxlength="11"/>
 					</view>
 				</view>
 			</view>
@@ -105,7 +105,7 @@
 			<view class="modConItem">
 				<view class="modTit">招聘人数</view>
 				<view class="modCon smPadd">
-					<input type="number" name="zprs" value="{{zprs}}" placeholder-class="numberHolder" placeholder="请输入招聘人数" maxlength="3"/>
+					<input type="number" name="zprs" value="{{zprs}}" placeholder-class="numberHolder" placeholder="请输入招聘人数" maxlength="2"/>
 					<text class="unit">人</text>
 				</view>
 			</view>
@@ -125,7 +125,7 @@
 			<view class="modConItem">
 				<view class="modTit">工作地址</view>
 				<view class="modCon smPadd">
-					<city-picker bind:selected="selectCity"></city-picker>
+					<city-picker province="{{provName}}" city="{{cityName}}" isHasSelFlag="{{isHasSelFlag}}" bind:selected="selectCity"></city-picker>
 					<i class="iconfont icon-gengduo"></i>
 				</view>
 			</view>

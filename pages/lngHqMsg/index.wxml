@@ -9,7 +9,7 @@
 				</view>
 				<view class="msgListCon">
 					<view class="msgUserName">{{item.userName}}</view>
-					<view class="msgCon">{{item.content}}  </view>
+					<view class="msgCon">{{item.content}}</view>
 					<block wx:if="{{item.replyNumber > 0}}">
 						<view class="replyNum" data-id="{{item.id}}" bindtap="viewReplyDet">共{{item.replyNumber}}条回复<i class="iconfont icon-gengduo"></i></view>
 					</block>
@@ -17,7 +17,7 @@
 						<view class="timeView">
 							<text>{{item.addTime}}</text>
 						</view>
-						<view class="zanView" bindtap="dianzan" data-index="{{index}}"  data-id="{{item.id}}">
+						<view class="zanView" bindtap="dianzan" data-index="{{index}}" data-id="{{item.id}}">
 							<i class="iconfont icon-dianzan"></i>
 							<text>{{replyLike[index]}}</text>
 						</view>

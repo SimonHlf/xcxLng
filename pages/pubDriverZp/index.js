@@ -11,8 +11,8 @@ Page({
 		lxTel : '',
 		xinzi : '',
 		zprs : '',
-		provName : '',
-		cityName : '',
+		provName : '请选择省',
+		cityName : '市',
 		gwzz : '',
 		jzTypeArr : ["A1","A2","A3","B1","B2","C1","C2","C3","C4","D","E","F","M","N","P"],
 		degreeArr : ['不限','初中','中专/中技','高中','大专','本科','硕士','博士'],
@@ -57,7 +57,8 @@ Page({
 			{"name" : "双休","state" : 0}
 		], 
 		isCanPubFlag : true,
-		isBackBySelComp : false
+		isBackBySelComp : false,
+		isHasSelFlag : false
 	},
 	onLoad(options){
 		this.setData({ 
@@ -140,7 +141,7 @@ Page({
 				util.showToast('招聘人数应为大于0的正整数');
 			}else if(this.data.isCanPubFlag && this.data.workYearName == '请选择工作年限'){
 				util.showToast('请选择要求工作年限');
-			}else if(this.data.isCanPubFlag && this.data.provName == ''){
+			}else if(this.data.isCanPubFlag && this.data.provName == '请选择省'){
 				util.showToast('请选择工作地址');
 			}else if(this.data.isCanPubFlag && this.data.gwzz == ''){
 				util.showToast('请输入岗位职责');

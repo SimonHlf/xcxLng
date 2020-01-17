@@ -41,7 +41,7 @@ Page({
 	loadMyTradeDet : function(){
 		var _this = this;
 		var field = {id:this.data.ptId,userId:wx.getStorageSync('userId')};
-		console.log(field) 
+		//console.log(field) 
 		util.showLoading('加载中...');
 		wx.request({
 			url : app.globalData.serverUrl + '/potTrade/getPotTradeById',
@@ -49,7 +49,7 @@ Page({
 			data:field,
 			success : function(res){
 				util.hideLoading();
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					_this.setData({
 						devDetData : res.data.datas[0],

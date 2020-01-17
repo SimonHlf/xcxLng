@@ -19,8 +19,6 @@ Page({
 		gznf : '请选择购置年份',
 		zzjzName : '',
 		zzjzId : '',
-		provName : '',
-		cityName : '',
 		zmjg : '',
 		xsjg : '',
 		lxrName : '',

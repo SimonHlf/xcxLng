@@ -111,7 +111,7 @@ Page({
 		util.navigateTo('/pages/myCompany/companyDet?cpyId=' + cpyId);
 	},
 	joinHotComp : function(){
-		
+		util.navigateTo('/pages/joinCompany/index');
 	},
 	goDetalWidth : function(e){
 		let cpyId = e.currentTarget.dataset.id,

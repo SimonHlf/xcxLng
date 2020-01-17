@@ -34,6 +34,7 @@ Page({
 			data:field,
 			success : function(res){
 				util.hideLoading();
+				console.log(res)
 				if(res.data.code == 200){
 					if(cpyId != ''){//之前已经选择对应公司 进行匹配
 						for(var i=0;i<res.data.datas.length;i++){
@@ -45,7 +46,8 @@ Page({
 						}
 					}
 					_this.setData({
-						cpyData : res.data.datas
+						cpyData : res.data.datas,
+						isHasDataFlag : true
 					});
 				}else if(res.data.code == 1000){
 					util.showToast('服务器错误');
@@ -63,7 +65,9 @@ Page({
 	selectCpy : function(e){
 		var cpyName = e.currentTarget.dataset.cpyname,
 			cpyId = e.currentTarget.dataset.cpyid,
-			dz = e.currentTarget.dataset.dz;
+			dz = e.currentTarget.dataset.dz,
+			lxrTel = e.currentTarget.dataset.lxrtel,
+			lxrName = e.currentTarget.dataset.lxrname;
 		this.setData({
 			state:e.currentTarget.dataset.key
 		});
@@ -76,7 +80,9 @@ Page({
 		if(currPage == 'addDriverZpPage'){
 			prevPage.setData({
 				address : dz,
-				isBackBySelComp : true
+				isBackBySelComp : true,
+				lxName : lxrName,
+				lxTel : lxrTel,
 			});
 		}
 		wx.navigateBack({

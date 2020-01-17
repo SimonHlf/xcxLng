@@ -1,7 +1,7 @@
 <view class="myComp padd">
 	<view class="hasCompImg">
 		<block wx:if="{{currJump == 'comeByMyComp'}}">
-			<image src="../../images/joinImg.png"></image>
+			<image bindtap="joinHotComp" src="../../images/joinImg.png"></image>
 		</block>
 		<block wx:else>
 			<image src="../../images/create.jpg"></image>

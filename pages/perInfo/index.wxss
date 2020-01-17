@@ -37,11 +37,12 @@ page{
 }
 .perInfoCon picker{
 	width: 88%;
+	height: 90rpx;
 	float: left;
 }
 .perInfoCon picker view{
 	width: 100%;
-	height: 100%;
+	height: 90rpx;
 	text-align: right;
 	font-size: 28rpx;
 	color: #121212;

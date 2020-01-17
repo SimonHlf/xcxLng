@@ -68,9 +68,14 @@
 						</block>
 					</block>
 					<block wx:else>
-						<text class="unit">¥</text>
-						<text class="priceNum">{{item.price}}</text>
-						<text class="unitTxt">万</text>
+						<block wx:if="{{item.price == '面议'}}">
+							<text class="mianyi">面议</text>
+						</block>
+						<block wx:else>
+							<text class="unit">¥</text>
+							<text class="priceNum">{{item.price}}</text>
+							<text class="unitTxt">万/辆</text>
+						</block>
 					</block>
 				</view>
 				<i class="iconfont icon-gengduo"></i>

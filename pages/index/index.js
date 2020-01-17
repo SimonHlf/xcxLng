@@ -4,7 +4,8 @@ Page({
 	data : {
 		wholeIndexData : [],
 		isShowFlag : false,
-		serverUrl : app.globalData.serverUrl
+		serverUrl : app.globalData.serverUrl,
+		days : 3
 	},
 	onLoad(){
 		this.loadIndexData()
@@ -25,7 +26,9 @@ Page({
 		wx.request({
 			url : app.globalData.serverUrl + '/common/getWelcomeData',
 			method : 'get',
+			data : {days : _this.data.days},
 			success: function(res){ 
+				console.log(res)
 				util.hideLoading();
 				if(res.data.code == 200){
 					_this.setData({
@@ -46,5 +49,17 @@ Page({
 	getRqMyDet : function(e){
 		let tradeId = e.currentTarget.dataset.id;
 		util.navigateTo('/pages/rqMySellerDet/index?tradeId=' + tradeId);
+	},
+	goZpList : function(e){
+		if(this.data.wholeIndexData.zpList.length > 0){
+			var id = e.currentTarget.dataset.id;
+			util.navigateTo('/pages/driverZpDet/index?id=' + id);
+		}
+	},
+	goQzList : function(e){
+		if(this.data.wholeIndexData.qzList.length > 0){
+			var id = e.currentTarget.dataset.id;
+			util.navigateTo('/pages/driverQzDet/index?id=' + id);
+		}
 	}
 })

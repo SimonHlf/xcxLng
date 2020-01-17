@@ -17,10 +17,6 @@ Page({
 		});
 		this.getCarHeadTypeList();
 	},
-	onHide(){
-		jgzzArr.length = 0;
-		jgzzArrName.length = 0;
-	},
 	getCarHeadTypeList : function(){
 		var _this = this,
 			field = {validSta:0},url = app.globalData.serverUrl + '/qual/queryQual';
@@ -101,6 +97,5 @@ Page({
 		wx.navigateBack({
 			delta:1
 		})
-		
 	}
 })

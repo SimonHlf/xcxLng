@@ -154,7 +154,7 @@ page{
 	padding-right: 8%;
 }
 .modConItem .modCon input[type='number']{
-	font-size: 34rpx;
+	font-size: 30rpx;
 }
 .numberHolder{
 	font-size: 28rpx;

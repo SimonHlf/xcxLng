@@ -27,7 +27,7 @@ Page({
 			data:field,
 			success : function(res){
 				util.hideLoading();
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					_this.setData({
 						dealList : res.data.datas

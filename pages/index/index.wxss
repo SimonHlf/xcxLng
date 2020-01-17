@@ -321,3 +321,7 @@ page{
 	font-size: 24rpx;
 	color: #a9a9a9;
 }
+.subTxt{
+	font-size: 24rpx;
+	color: #a9a9a9;
+}

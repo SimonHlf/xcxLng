@@ -1,5 +1,6 @@
 page{
 	background: #efefef;
+	margin-bottom: 86rpx;
 }
 .msgDetTitWrap{
 	padding: 20rpx 30rpx;
@@ -72,4 +73,17 @@ page{
 	border-bottom: 1rpx solid #e0e0e0;
 	padding-bottom: 15rpx;
 	margin-bottom: 20rpx;
+}
+.addMsgBtn{
+	width: 100%;
+	height: 86rpx;
+	line-height: 86rpx;
+	background: #3c7de9;
+	color: #fff;
+	text-align: center;
+	font-size: 30rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
 }

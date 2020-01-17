@@ -174,7 +174,7 @@
 				</view>
 			</block>
 			<view class="pubItem">
-				<view class="pubTit"><text>*</text>行驶里程</view>
+				<view class="pubTit"><text>*</text>行驶里程/Km</view>
 				<input type="number" name="distance" value="{{distance}}" placeholder="请输入行驶里程(公里)" maxlength="7"/>
 			</view>
 			<view class="pubItem">

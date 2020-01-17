@@ -2,7 +2,12 @@
 	<view class="compName">{{zpDetData.companyName}}</view>
 	<view class="xinzi clearfix">
 		<view class="zpTit">招聘司机</view>
-		<view class="price">{{zpDetData.wage}}千/月</view>
+		<block wx:if="{{zpDetData.wage == 0}}">
+			<view class="price">薪资面议</view>
+		</block>
+		<block wx:else>
+			<view class="price">{{zpDetData.wage}}千/月</view>
+		</block>
 	</view>
 	<view class="welfare clearfix">
 		<view class="welfareItem"
@@ -14,7 +19,7 @@
 <view class="zhiweiDetInfo">
 	<view class="zhiweiTit">职位描述</view>
 	<view class="yqWrap">
-		<view class="yqTit">要求</view>
+		<view class="yqTit">职位要求</view>
 		<view class="detYq">
 			<text>招{{zpDetData.num}}人</text>
 			<text>|</text>
@@ -27,7 +32,7 @@
 			<text>{{zpDetData.sjAge}}岁</text>
 		</view>
 	</view>
-	<view class="gwzzTit">岗位职责</view>
+	<view class="yqTit">岗位职责</view>
 	<view class="gwzzCon">
 		<view>{{zpDetData.remark}}</view>
 	</view>

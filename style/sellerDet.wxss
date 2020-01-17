@@ -130,10 +130,14 @@ page{
 }
 .telInfo{
 	float: left;
-	line-height: 80rpx;
+	/* line-height: 80rpx; */
 	margin-left: 15rpx;
 	color: #121212;
 	font-size: 28rpx;
+}
+.telInfo view:last-child{
+	font-size: 26rpx;
+	color: #606060;
 }
 .phoneCall{
 	float: right;

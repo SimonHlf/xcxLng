@@ -31,9 +31,19 @@ Page({
 							sex : res.data.datas[0].sex,
 							isSelBirth : true,
 							realName : res.data.datas[0].realName,
-							phoneNum : res.data.datas[0].mobile,
-							birth : res.data.datas[0].birthday == null ? '请选择出生年月' : res.data.datas[0].birthday
+							phoneNum : res.data.datas[0].mobile
 						});
+						if(res.data.datas[0].birthday == '' ||　res.data.datas[0].birthday == null){
+							_this.setData({
+								birth : '请选择出生年月',
+								isSelBirth : false
+							});
+						}else{
+							_this.setData({
+								birth : res.data.datas[0].birthday,
+								isSelBirth : true
+							});
+						}
 					}else if(res.data.code == 1000){
 						util.showToast('服务器错误');
 						_this.setData({

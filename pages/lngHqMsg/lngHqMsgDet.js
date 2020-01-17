@@ -6,13 +6,37 @@ Page({
 		nowPage : 1,
 		mainList : [],
 		msgDetList : [],
-		loading:false
+		loading:false,
+		isReplyFlag : false
 	}, 
 	onLoad : function(options){
 		this.setData({
 			msgId : options.msgId
 		});
 		this.loadMsgDetList();
+	},
+	onShow : function(){
+		if(this.data.isReplyFlag){
+			console.log("jinlaile")
+			this.setData({
+				nowPage : 1,
+				loading : false,
+				msgDetList : []
+			});
+			this.loadMsgDetList();
+		}
+	},
+	onUnload : function(){
+		if(this.data.isReplyFlag){
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			this.setData({
+				isReplyFlag : false
+			});
+			prevPage.setData({
+				canLoadFlag : true
+			})
+		}
 	},
 	onReachBottom : function(){
 		if( !this.data.loading ){
@@ -21,7 +45,8 @@ Page({
 	},
 	loadMsgDetList : function(){
 		let _this = this,
-			field = {msgId:this.data.msgId,page:this.data.nowPage,limit:15};
+			field = {msgId:this.data.msgId,page:this.data.nowPage,limit:50};
+		//console.log(field)
 		let { nowPage,msgDetList } = this.data;
 		this.setData({
 			loading : true
@@ -31,7 +56,7 @@ Page({
 			method:'get',
 			data :field,
 			success : function(res){
-				console.log(res) 
+				//console.log(res) 
 				if(res.data.code == 200){
 					_this.setData({
 						mainList : res.data.datas[0].mainList[0],
@@ -56,5 +81,8 @@ Page({
 				}
 			}
 		});
+	},
+	addLngMsgDet : function(){
+		util.navigateTo('/pages/lngHqMsg/leaveMsg?currBackPage=msgDetBtn&msgId=' + this.data.msgId);
 	}
 })

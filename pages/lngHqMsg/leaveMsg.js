@@ -11,7 +11,7 @@ Page({
 		this.setData({
 			currPosPage : options.currBackPage
 		});
-		if(this.data.currPosPage == 'msgDetList'){
+		if(this.data.currPosPage == 'msgDetList' ||　this.data.currPosPage == 'msgDetBtn'){
 			this.setData({
 				msgId : options.msgId
 			});
@@ -30,7 +30,7 @@ Page({
 			if(this.data.currPosPage == 'mainMsgList'){
 				field = {content:this.data.msgVal,userId:wx.getStorageSync('userId')};
 				url = app.globalData.serverUrl + '/lngMsg/addLngMsg';
-			}else if(this.data.currPosPage == 'msgDetList'){
+			}else if(this.data.currPosPage == 'msgDetList' || this.data.currPosPage == 'msgDetBtn'){
 				field = {msgId:this.data.msgId,content:this.data.msgVal,userId:wx.getStorageSync('userId')};
 				url = app.globalData.serverUrl + '/lngMsg/addLngMsgRep';
 			}
@@ -48,15 +48,25 @@ Page({
 						setTimeout(function(){
 							let pages = getCurrentPages();
 							let prevPage = pages[pages.length - 2];
-							prevPage.setData({
-								currBackPage: _this.data.currPosPage
-							})
 							if(_this.data.currPosPage == 'mainMsgList'){
+								prevPage.setData({
+									currBackPage: _this.data.currPosPage
+								})
 								wx.navigateBack({
 									delta:1
 								})
 							}else if(_this.data.currPosPage == 'msgDetList'){
+								prevPage.setData({
+									currBackPage: _this.data.currPosPage
+								})
 								util.redirectTo('/pages/lngHqMsg/lngHqMsgDet?msgId=' + _this.data.msgId);
+							}else if(_this.data.currPosPage == 'msgDetBtn'){//通过我要回复按钮进来
+								prevPage.setData({
+									isReplyFlag : true
+								})
+								wx.navigateBack({
+									delta:1
+								})
 							}
 						},1200); 
 					}else if(res.data.code == 1000){

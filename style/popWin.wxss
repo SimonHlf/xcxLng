@@ -28,7 +28,6 @@
 	background: #fff;
 	border-radius: 0 0 8rpx 8rpx;
 	padding: 30rpx;
-	background: pink;
 }
 .buyGasForm scroll-view{
 	height: 400rpx;

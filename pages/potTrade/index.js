@@ -73,7 +73,6 @@ Page({
 	loadPotTradeList : function(){
 		var _this = this;
 		var field = {tradeStatus:this.data.currentTab,potPpId:this.data.potPpId,potVol:this.data.potVol,sxInfo:this.data.sxInfo,zzjzTypeId:this.data.zzjzTypeId,page:this.data.nowPage,limit:50,checkSta:1,showSta:0};
-		console.log(field)
 		this.setData({
 			loading : true
 		}); 
@@ -85,7 +84,7 @@ Page({
 			data : field,
 			success : function(res){  
 				wx.hideLoading(); 
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					if(res.data.datas.length > 0){
 						nowPage += 1;

@@ -21,13 +21,11 @@
 		</view>
 		<view class="itemCon">
 			<view class="devName ellip">{{item.devName}}</view>
-			<view class="tagView clearfix">
-				<text class="volumeItem ellip">产地:{{item.factory}}</text>
-				<text class="volumeItem ellip">型号:{{item.devNo}}</text>
-			</view>
+			<view class="xinghao">型号：{{item.devNo}}</view>
+			<view class="xinghao">生产厂家：{{item.factory}}</view>
 			<view class="priceView">
 				<text>¥</text>
-				<text class="priceNum">{{item.devPrice}}</text>
+				<text class="priceNum">{{item.devPrice}}<text>元</text></text>
 			</view>
 		</view>
 	</view>

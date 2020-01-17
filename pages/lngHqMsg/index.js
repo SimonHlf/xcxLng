@@ -10,14 +10,14 @@ Page({
 		currBackPage : '',
 		replyLike : [],
 		replyNum : 0,
+		canLoadFlag : false
 	},
 	onLoad(options){
 		replyLikeArr = this.data.replyLike;
 		this.loadLngMsgList();
 	},
 	onShow : function(){
-		console.log(this.data.currBackPage)
-		if(this.data.currBackPage == 'mainMsgList' || this.data.currBackPage == 'msgDetList'){
+		if(this.data.currBackPage == 'mainMsgList' || this.data.currBackPage == 'msgDetList' || this.data.canLoadFlag){
 			//从留言列表点击我要留言按钮到留言页面再返回
 			this.setData({
 				nowPage : 1,
@@ -32,7 +32,8 @@ Page({
 	},
 	onHide : function(){
 		this.setData({
-			currBackPage : ''
+			currBackPage : '',
+			canLoadFlag : false
 		});
 	},
 	onReachBottom : function(){
@@ -61,6 +62,7 @@ Page({
 							nowPage,
 							loading : false
 						});
+						replyLikeArr.length = 0;
 						for(var i=0;i<res.data.datas.length;i++){
 							replyLikeArr.push(res.data.datas[i].zcTimes);
 						}
@@ -109,7 +111,6 @@ Page({
 			data :field,
 			success : function(res){
 				util.hideLoading();
-				console.log(res) 
 				if(res.data.code == 200){
 					util.showToastSuc('点赞成功');
 					replyLikeArr[index] = parseInt(replyLikeArr[index]) + 1  //当前对象的原始值 +1

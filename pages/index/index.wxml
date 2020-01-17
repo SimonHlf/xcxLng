@@ -10,7 +10,7 @@
 			</navigator>
 		</view>
 		<view class="listTab">
-			<navigator>
+			<navigator hover-class="none">
 				<view class="imgView">
 					<image src="../../images/yyd.jpg"></image>
 				</view>
@@ -180,9 +180,10 @@
 <view class="zpQz">
 	<view class="myTit">
 	 	<text>找人/找活</text>
+		<text class="subTxt">(最近{{days}}天)</text>
 	</view>
 	<view class="zpQzList clearfix">
-		<view class="zpQzItem zpItem">
+		<view class="zpQzItem zpItem" bindtap="goZpList" data-id="{{wholeIndexData.zpList[0].qzId}}">
 			<view class="typeItem zpItem">聘司机</view>
 			<block wx:if="{{wholeIndexData.zpList.length > 0}}">
 				<view class="zpQzTit ellip">{{wholeIndexData.zpList[0].cpyName}}</view>
@@ -195,11 +196,11 @@
 				</view>
 			</block>
 		</view>
-		<view class="zpQzItem qzItem">
+		<view class="zpQzItem qzItem" bindtap="goQzList" data-id="{{wholeIndexData.qzList[0].qzId}}">
 			<view class="typeItem qzItem">求职</view>
 			<block wx:if="{{wholeIndexData.qzList.length > 0}}">
 				<view class="zpQzTit">{{wholeIndexData.qzList[0].qzUserName}}</view>
-				<view class="zpQzTxt multiEllip">{{wholeIndexData.qzList[0].userAge}}周岁  {{wholeIndexData.qzList[0].jzType}}驾照   驾龄{{wholeIndexData.qzList[0].jzYear}}年</view>
+				<view class="zpQzTxt multiEllip">{{wholeIndexData.qzList[0].userAge}}周岁  {{wholeIndexData.qzList[0].jzType}}驾照   驾龄{{wholeIndexData.qzList[0].jzYear}}年  居住地：{{wholeIndexData.qzList[0].address}}</view>
 			</block>
 			<block wx:else>
 				<view class="noZp">

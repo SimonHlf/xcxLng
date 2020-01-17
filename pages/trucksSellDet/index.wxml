@@ -6,7 +6,6 @@
 		<view class="topSellerInfo">
 			<view class="compName trucks ellip">
 				<view class="truckName ellip">{{devDetData.title}}</view>
-				<!-- <view>豫J12345</view> -->
 			</view>
 			<block wx:if="{{devDetData.CompanyName == '个人'}}">
 				<view class="compType">个人</view>
@@ -23,7 +22,12 @@
 				</block>
 				<block wx:else>
 					<text class="price">{{devDetData.price}}</text>
-					<text class="rmb">万</text>
+				</block>
+				<block wx:if="{{devDetData.tradeType == 1}}">
+					<text class="rmb">元/辆</text>
+				</block>
+				<block wx:else>
+					<text class="rmb">万/辆</text>
 				</block>
 			</view>
 			<view class="distance">行驶{{devDetData.xsDistance}}公里</view>
@@ -52,12 +56,26 @@
 	</view>
 	<view class="trucksInfoItem clearfix">
 		<view class="infoItem">
+			<view class="infoItemTit">车头车牌</view>
+			<view class="infoItemCon ellip">{{devDetData.trucksNo}}</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">车头类型</view>
+			<view class="infoItemCon ellip">{{devDetData.headTypeName}}</view>
+		</view>
+		<view class="infoItem">
 			<view class="infoItemTit">车头上牌年份</view>
 			<view class="infoItemCon ellip">{{devDetData.spYear}}</view>
 		</view>
+	</view>
+	<view class="trucksInfoItem clearfix">
 		<view class="infoItem">
-			<view class="infoItemTit">品牌型号</view>
+			<view class="infoItemTit">车头品牌</view>
 			<view class="infoItemCon ellip">{{devDetData.headPpName}}</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">车辆种类</view>
+			<view class="infoItemCon ellip">{{devDetData.trucksTypeName}}</view>
 		</view>
 		<view class="infoItem">
 			<view class="infoItemTit">排放标准</view>
@@ -66,24 +84,21 @@
 	</view>
 	<view class="trucksInfoItem clearfix">
 		<view class="infoItem">
-			<view class="infoItemTit">车头类型</view>
-			<view class="infoItemCon ellip">{{devDetData.headTypeName}}</view>
-		</view>
-		<view class="infoItem">
-			<view class="infoItemTit">车辆注册地</view>
-			<view class="infoItemCon ellip">{{devDetData.regPlace}}</view>
-		</view>
-		<view class="infoItem">
-			<view class="infoItemTit">重大事故</view>
-			<block wx:if="{{devDetData.accidentFlag}} == 0 ">
-				<view class="infoItemCon ellip">不公开</view>
-			</block>
-			<block wx:elif="{{devDetData.accidentFlag == 1}}">
-				<view class="infoItemCon ellip">是</view>
+			<view class="infoItemTit">挂车车牌</view>
+			<block wx:if="{{devDetData.trucksGcNo == ''}}">
+				<view class="infoItemCon ellip">暂无</view>
 			</block>
 			<block wx:else>
-				<view class="infoItemCon ellip">否</view>
+				<view class="infoItemCon ellip">{{devDetData.trucksGcNo}}</view>
 			</block>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">购置年份</view>
+			<view class="infoItemCon ellip">{{devDetData.buyYear}}年</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">行驶里程</view>
+			<view class="infoItemCon ellip">{{devDetData.xsDistance}}/Km</view>
 		</view>
 	</view>
 	<block wx:if="{{devDetData.trucksTypes == 2}}">
@@ -109,13 +124,50 @@
 		</view>
 	</block>
 	<view class="trucksInfoItem clearfix">
+		<view class="infoItem">
+			<view class="infoItemTit">车辆注册地</view>
+			<view class="infoItemCon ellip">{{devDetData.regPlace}}</view>
+		</view>
+		<view class="infoItem">
+			<view class="infoItemTit">重大事故</view>
+			<block wx:if="{{devDetData.accidentFlag}} == 0 ">
+				<view class="infoItemCon ellip">不公开</view>
+			</block>
+			<block wx:elif="{{devDetData.accidentFlag == 1}}">
+				<view class="infoItemCon ellip">是</view>
+			</block>
+			<block wx:else>
+				<view class="infoItemCon ellip">否</view>
+			</block>
+		</view>
+	</view>
+	<view class="trucksInfoItem clearfix">
 		<view class="infoItem spec">
 			<view class="infoItemTit">备注</view>
-			<view class="infoItemCon">{{devDetData.remark}}</view>
+			<block wx:if="{{devDetData.remark == ''}}">
+				<view class="infoItemCon" style="color: #a9a9a9;">暂无备注</view>
+			</block>
+			<block wx:else>
+				<view class="infoItemCon">{{devDetData.remark}}</view>
+			</block>
 		</view>
 	</view>
 </view>
-<block wx:if="{{devDetData.TradeTypeName == '租赁'}}">
+<block wx:if="{{devDetData.areaArr.length > 0}}">
+	<view class="proBasicInfo padd">
+		<view class="proTit noBor">
+			<view class="lineView"></view>
+			<view>运输范围</view>
+		</view>
+		<view class="jgzz clearfix">
+			<view class="jgzzItem"
+				wx:for="{{devDetData.areaArr}}"
+				wx:key="index"
+			>{{item}}</view>
+		</view>
+	</view>
+</block>
+<block wx:if="{{devDetData.tradeType == 1}}">
 	<view class="proBasicInfo padd">
 		<view class="proTit noBor">
 			<view class="lineView"></view>

@@ -41,7 +41,6 @@ Page({
 	loadMyTradeDet : function(){
 		var _this = this;
 		var field = {id:this.data.rqDevId,userId:wx.getStorageSync('userId')};
-		console.log(field) 
 		util.showLoading('加载中...');
 		wx.request({
 			url : app.globalData.serverUrl + '/rqDevTrade/getRqDevTradeById',

@@ -183,8 +183,8 @@ page{
 	margin-left:20rpx;
 }
 .basicInfoItem{
-	height: 80rpx;
-	line-height: 80rpx;
+	height: 70rpx;
+	line-height: 70rpx;
 	font-size: 28rpx;
 	color: #121212;
 }
@@ -249,7 +249,7 @@ page{
 }
 .buyGasBtn,
 .notBuyGasBtn{
-	width: 240rpx;
+	width: 400rpx;
 	height: 66rpx;
 	line-height: 66rpx;
 	color: #fff;

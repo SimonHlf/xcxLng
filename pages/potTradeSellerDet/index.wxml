@@ -11,12 +11,14 @@
 			<text class="priceTit">租卖价格：</text>
 			<text class="rmb">￥</text>
 			<text class="price">{{devDetData.leasePrice}}</text>
+			<text class="rmb">元</text>
 		</view>
 		<block wx:if="{{devDetData.tradeStatus == 0}}">
 			<view class="priceNum potPrice">
 				<text class="priceTit">销售价格：</text>
 				<text class="rmb">￥</text>
 				<text class="price">{{devDetData.sellPrice}}</text>
+				<text class="rmb">元</text>
 			</view>
 		</block>
 	</view>
@@ -47,6 +49,10 @@
 	<view class="basicInfoItem">
 		<text>储罐品牌</text>
 		<text>{{devDetData.potPpName}}</text> 
+	</view>
+	<view class="basicInfoItem">
+		<text>购置年份</text>
+		<text>{{devDetData.buyYear}}年</text> 
 	</view>
 	<view class="basicInfoItem">
 		<text>储罐容积</text>

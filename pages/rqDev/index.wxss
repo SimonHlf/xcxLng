@@ -87,12 +87,17 @@ page{
 	float: left;
 }
 .devName{
-	height: 50rpx;
-	line-height: 50rpx;
+	height: 45rpx;
+	line-height: 45rpx;
 	font-size: 30rpx;
 	color: #121212;
 }
-.tagView{
+.xinghao{
+	font-size: 26rpx;
+	color: #606060;
+	margin-top: 5rpx;
+}
+/* .tagView{
 	margin-top: 10rpx;
 }
 .volumeItem{
@@ -113,7 +118,7 @@ page{
 .volumeItem:last-child{
 	max-width: 37%;
 	margin-right: 15rpx;
-}
+} */
 .priceView{
 	height: 40rpx;
 	line-height: 40rpx;

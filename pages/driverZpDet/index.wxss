@@ -58,23 +58,19 @@ page{
 	color: #121212;
 }
 .yqWrap{
-	height: 50rpx;
-	line-height: 50rpx;
+	margin-bottom: 15rpx;
 }
-.yqWrap .yqTit{
-	width: 75rpx;
-	height: 38rpx;
+.yqTit{
+	width: 125rpx;
 	line-height: 38rpx;
 	background: #e0ecff;
 	color: #3c7de9;
 	font-size: 24rpx;
-	float: left;
 	text-align: center;
 	margin-top: 6rpx;
+	margin-bottom: 6rpx;
 }
 .detYq{
-	float: left;
-	margin-left: 15rpx;
 	color: #121212;
 	font-size: 28rpx;
 }

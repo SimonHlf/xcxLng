@@ -8,7 +8,7 @@
 	<view class="priceItem clearfix">
 		<view class="priceNum">
 			<text class="rmb">￥</text>
-			<text class="price">{{devDetData.devPrice}}</text>
+			<text class="price">{{devDetData.devPrice}}<text class="rmb">元</text></text>
 		</view>
 	</view>
 </view>
@@ -39,6 +39,14 @@
 	<view class="basicInfoItem">
 		<text>设备型号</text>
 		<text>{{devDetData.devNo}}</text> 
+	</view>
+	<view class="basicInfoItem">
+		<text>设备类目</text>
+		<text>{{devDetData.devTypeName1}}</text> 
+	</view>
+	<view class="basicInfoItem">
+		<text>设备种类</text>
+		<text>{{devDetData.devTypeName2}}</text> 
 	</view>
 </view>
 <!-- 产品详情图 --> 

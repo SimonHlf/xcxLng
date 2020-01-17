@@ -67,7 +67,6 @@ Page({
 	loadMyTradeDet : function(){
 		var _this = this;
 		var field = {id:this.data.ttId,userId:wx.getStorageSync('userId')};
-		console.log(field) 
 		util.showLoading('加载中...');
 		wx.request({
 			url : app.globalData.serverUrl + '/trucksTrade/getSpecTrucksTrade',
