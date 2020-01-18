@@ -151,7 +151,7 @@ Page({
 			data : field,  
 			success:function(res){
 				util.hideLoading();
-				console.log(res);
+				//console.log(res);
 				priceData.length = 0;
 				dateData.length = 0;
 				for(var attr in res.data.datas){
@@ -187,7 +187,7 @@ Page({
 			method: 'get',
 			success:function(res){
 				util.hideLoading();
-				console.log(res)
+				//console.log(res)
 				if(res.data.code == 200){
 					let resObj = res.data.datas[0];
 					_this.setData({

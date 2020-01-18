@@ -57,7 +57,6 @@ Page({
 			loading : true
 		}); 
 		let { nowPage,rqTradeData } = this.data;
-		wx.showNac
 		util.showLoading('数据加载中...');
 		wx.request({ 
 			url : app.globalData.serverUrl + '/gasTrade/getPageGasTradeList',

@@ -71,8 +71,6 @@ Page({
 			url = app.globalData.serverUrl + '/company/updateCompanyPsr';
 			type="put";
 		}
-		console.log(field)
-		console.log(url)
 		util.showLoading('加载中...');
 		wx.request({
 			url : url,

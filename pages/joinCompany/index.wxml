@@ -4,11 +4,25 @@
 		wx:key="index"
 		data-index="{{index}}"
 		class="tabItem {{currentTab == index ? 'active' : ''}}"
+		data-id="{{item.id}}"
 		bindtap="getCurrentTabCon"
-	><view class="lineView"></view>{{item}}</view>
+	><view class="lineView"></view>{{item.name}}</view>
 </view>
 <view class="compListWrap padd">
-	<view class="listItem">
+	<block wx:if="{{compListData.length > 0}}">
+		<view class="listItem"
+			wx:for="{{compListData}}"
+			wx:key="index"
+		>
+			<view class="itemTit ellip">{{item.cpyName}}</view>
+			<view class="location clearfix">
+				<i class="iconfont icon-weizhi"></i>
+				<view class="ellip">{{item.address}}</view>
+			</view>
+			<view class="applyBtn" bindtap="applyInComp" data-id="{{item.id}}" data-name="{{item.cpyName}}">申请加入</view>
+		</view>
+	</block>
+	<!-- <view class="listItem">
 		<view class="itemTit ellip">濮阳亮宇实业有限濮阳亮宇实业有限公司濮阳亮宇实业有限公司濮阳亮宇实业有限公司公司</view>
 		<view class="location clearfix">
 			<i class="iconfont icon-weizhi"></i>
@@ -23,8 +37,28 @@
 			<view class="ellip">濮阳市经开大道黄河路交叉道黄河路交叉口路西海斯口路西海斯顿公园</view>
 		</view>
 		<view class="applyBtn notJoin">已申请</view>
-	</view>
+	</view> -->
 </view>
+<view class="noDataList" hidden="{{isHasDataFlag}}">
+	<image mode="widthFix" src="../../images/noData.png"></image>
+	<view class="noDataTxt hasMargTop">暂无记录</view>
+</view> 
+<block wx:if="{{isHasDataFlag}}">
+	<view class="loadingIcon">
+		<block wx:if="{{loading}}">
+			<image src="../../images/loading-bars.svg" mode="widthFix"></image>
+		</block>
+		<block wx:else>
+			<view class="noDataTxt">
+				<text>——————</text>
+				<text>我是有底线的~</text>
+				<text>——————</text>
+			</view>
+		</block>
+	</view> 
+</block>
+
+
 <view class="maskLayer"  style="display: none;"></view>
 <view class="buyGasView" style="display: none;">
 	<view class="buyGasTit joinComp">选择已有贸易公司(多选)</view>

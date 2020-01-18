@@ -83,6 +83,7 @@ Page({
 					_this.setData({
 						isHasDataFlag : false,
 						loading : false
+						
 					});
 				}
 			}

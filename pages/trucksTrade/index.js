@@ -80,7 +80,7 @@ Page({
 	loadTruksTradeList : function(){
 		var _this = this;
 		var field = {tradeType:this.data.currentTradeType,potPpId:this.data.potPpId,spYear:this.data.spYear,headPpId:this.data.headPpId,page:this.data.nowPage,limit:50,checkSta:1,showSta:0};
-		//console.log(field)
+		console.log(field)
 		this.setData({
 			loading : true
 		}); 

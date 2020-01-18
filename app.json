@@ -1,8 +1,8 @@
 {
   "pages": [
-	  "pages/myCompany/index",
+	  "pages/index/index",
 	"pages/joinCompany/index",
-    "pages/index/index",
+	"pages/myCompany/index",
     "pages/potTrade/index",
     "pages/lngHqMsg/index",
     "pages/rqDev/index",

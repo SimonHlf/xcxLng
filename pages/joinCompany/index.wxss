@@ -22,13 +22,13 @@ page{
 	position: relative;
 }
 .lineView{
-	width: 130rpx;
+	width: 150rpx;
 	height: 8rpx;
 	background: #3c7de9;
 	border-radius: 10rpx;
 	position: absolute;
 	left: 50%;
-	margin-left: -65rpx;
+	margin-left: -75rpx;
 	bottom: 0;
 	display: none;
 }

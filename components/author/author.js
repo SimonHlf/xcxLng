@@ -101,6 +101,7 @@ Component({
 					util.hideLoading();
 					console.log(res) 
 					if(res.data.code == 200){  
+						util.showToastSuc('登录成功');
 						that.setData({  
 							isAuthor : true,
 							isShowFlag : true
